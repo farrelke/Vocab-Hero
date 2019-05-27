@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    popup: path.join(__dirname, "src/popup/index.tsx"),
+    newTab: path.join(__dirname, "src/newTab/index.tsx"),
     eventPage: path.join(__dirname, "src/eventPage.ts")
   },
   output: {
@@ -14,7 +14,7 @@ module.exports = {
       {
         exclude: /node_modules/,
         test: /\.tsx?$/,
-        use: "ts-loader"
+        use: ["ts-loader", "unicode-loader"]
       },
       {
         exclude: /node_modules/,
