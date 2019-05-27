@@ -1,6 +1,5 @@
-# Chrome Extension (built with TypeScript + React)
+# Learn Chinese Vocab Extension
 
-> This project is a boilerplate project to allow you to quickly build chrome extensions using TypeScript and React.
 
 ## Building
 
