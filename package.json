@@ -28,7 +28,9 @@
   },
   "dependencies": {
     "react": "^16.2.0",
+    "react-autosize-textarea": "^7.0.0",
     "react-dom": "^16.2.0",
+    "react-radio-buttons": "^1.2.2",
     "unicode-loader": "^1.0.7"
   }
 }

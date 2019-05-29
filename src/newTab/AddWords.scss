@@ -1,10 +1,8 @@
-
-
 .AddWords {
   background-color: #efefef;
   width: 100vw;
   height: 100vh;
-  color: #1BBC9B;
+  color: #1bbc9b;
   font-family: "PingFang SC", serif;
   display: flex;
   flex-direction: column;
@@ -16,6 +14,58 @@
 
 .AddWords__title {
   font-size: 80px;
-  color: #1BBC9B;
+  color: #1bbc9b;
   cursor: pointer;
+}
+
+.AddWords__addArea {
+  display: flex;
+}
+
+.AddWords__selectTypeArea {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.AddWords__typeOptions {
+  display: flex;
+  flex-direction: row;
+  margin: 3px 0;
+}
+
+.AddWords__typeOption {
+  padding: 2px 5px;
+  margin: 0 5px;
+
+  opacity: 0.5;
+  cursor: pointer;
+  font-size: 16px;
+
+
+  &--word {
+    --theme-color: #1BBC9B;
+  }
+  &--pinyin {
+    --theme-color: #E64C66;
+  }
+  &--meaning {
+    --theme-color: #2D3E50;
+  }
+  &--sentence {
+    --theme-color: #1BBC9B;
+  }
+  &--sentencePinyin {
+    --theme-color: #E64C66;
+  }
+
+  color: var(--theme-color);
+  border: 1px solid  var(--theme-color);;
+
+  &:hover, &--selected {
+    opacity: 1;
+
+    color: white;
+    background-color: var(--theme-color);;
+  }
 }

@@ -10,7 +10,19 @@
     "persistent": false
   },
 
-  "permissions": [],
+  "icons": {
+    "16": "vocabulary-small.png",
+    "48": "vocabulary-medium.png",
+    "128": "vocabulary-big.png"
+  },
+
+  "browser_action": {
+    "default_icon": "vocabulary-small.png"
+  },
+
+  "permissions": [
+    "storage"
+  ],
 
   "chrome_url_overrides": {
     "newtab": "index.html"

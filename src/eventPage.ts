@@ -9,3 +9,10 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
     return isResponseAsync;
 });
+
+
+
+chrome.browserAction.onClicked.addListener(() => {
+  window.focus();
+  chrome.tabs.create({ url: chrome.extension.getURL('index.html#from_action') });
+});
