@@ -37,7 +37,7 @@ class LearnPage extends PureComponent<Props> {
           <>
             <div
               className="LearnPage__sentence"
-              onClick={() => this.speak(sentence.sentences)}
+              onClick={() => this.speak(sentence.sentence)}
             >
               {sentence.sentence}
             </div>

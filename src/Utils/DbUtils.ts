@@ -1,4 +1,12 @@
-import { VocabWord } from "./AddWords";
+export interface VocabWord {
+  word: string;
+  wordPinyin: string;
+  meaning: string;
+  sentences: {
+    sentence: string;
+    pinyin: string;
+  }[];
+}
 
 export async function getVocabWords(): Promise<VocabWord[]> {
   return new Promise<VocabWord[]>(resolve => {

@@ -39,7 +39,7 @@ time, mark, audio, video {
   border: 1px solid #1BBC9B;
   color: #1BBC9B;
   opacity: 0.4;
-  transition: 200ms ease-in opacity;
+  transition: 50ms ease-in opacity;
   cursor: pointer;
   text-decoration: none;
 
@@ -60,7 +60,7 @@ time, mark, audio, video {
   border: 1px solid #1BBC9B;
   color: #1BBC9B;
   opacity: 0.4;
-  transition: 200ms ease-in opacity;
+  transition: 50ms ease-in opacity;
   cursor: pointer;
   text-decoration: none;
 
@@ -69,6 +69,24 @@ time, mark, audio, video {
   }
 }
 
+
+.NewTabPage__backBtn {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+
+  border-radius:2px;
+  padding: 0 20px;
+  font-size: 25px;
+  border: 1px solid #1BBC9B;
+  color: #1BBC9B;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
 
 .NewTabPage__iconsLink {
   position: fixed;

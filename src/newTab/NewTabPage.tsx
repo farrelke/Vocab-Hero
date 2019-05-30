@@ -2,9 +2,9 @@ import * as React from "react";
 import { PureComponent } from "react";
 import "./NewTabPage.scss";
 import LearnPage from "./LearnPage";
-import AddWords, { VocabWord } from "./AddWords";
+import AddWords from "./AddWords";
 import ManageWords from "./ManageWords";
-import { getVocabWords, setVocabWords } from "./DbUtils";
+import { getVocabWords, setVocabWords, VocabWord } from "../Utils/DbUtils";
 
 type Props = {};
 
@@ -23,7 +23,8 @@ class NewTabPage extends PureComponent<Props> {
 
   async componentDidMount() {
     const words = await getVocabWords();
-    if (!words) {
+    if (!words || words.length === 0) {
+      this.setState({ page: Pages.Add });
       return;
     }
 
@@ -39,12 +40,19 @@ class NewTabPage extends PureComponent<Props> {
     await setVocabWords(words);
   };
 
+  addWord = async (word: VocabWord) => {
+    let { words } = this.state;
+    words = [word, ...words];
+    this.setState({ words, vocab: word });
+    await setVocabWords(words);
+  };
+
   render() {
     const { page, vocab, words } = this.state;
 
     return (
       <div className="NewTabPage">
-        {page === Pages.Add && <AddWords />}
+        {page === Pages.Add && <AddWords addWord={this.addWord} />}
         {page === Pages.Learn && vocab && <LearnPage vocab={vocab} />}
         {page === Pages.Manage && words && <ManageWords words={words} deleteWord={this.deleteWord} />}
 
@@ -64,6 +72,14 @@ class NewTabPage extends PureComponent<Props> {
             </div>
           </>
         )}
+        {page !== Pages.Learn && words && words.length && <>
+          <div
+            className="NewTabPage__backBtn"
+            onClick={() => this.setState({ page: Pages.Learn })}
+          >
+            Back
+          </div>
+        </>}
       </div>
     );
   }

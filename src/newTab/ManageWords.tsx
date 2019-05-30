@@ -1,7 +1,8 @@
 import * as React from "react";
 import { PureComponent } from "react";
 import "./ManageWords.scss";
-import { VocabWord } from "./AddWords";
+import { VocabWord } from "../Utils/DbUtils";
+import VocabCard from "./VocabCard";
 
 type Props = {
   words: VocabWord[];
@@ -16,12 +17,7 @@ class ManageWords extends PureComponent<Props> {
       <div className="ManageWords">
         <div className="ManageWords__title">Manage Vocab</div>
         {words.map(word => (
-          <div className="ManageWords__wordCard">
-            <div className="ManageWords__wordPinyin">{word.wordPinyin}</div>
-            <div className="ManageWords__deleteBtn" onClick={() => deleteWord(word)}>Delete</div>
-            <div className="ManageWords__word">{word.word}</div>
-            <div className="ManageWords__wordMeaning">{word.meaning}</div>
-          </div>
+          <VocabCard key={word.word} word={word} deleteWord={() => deleteWord(word)} />
         ))}
       </div>
     );

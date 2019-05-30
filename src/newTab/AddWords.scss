@@ -8,7 +8,7 @@
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  padding: 50px;
+  padding: 40px;
   justify-content: flex-start;
 }
 
@@ -27,7 +27,6 @@
   flex-direction: column;
 }
 
-
 .AddWords__typeOptions {
   display: flex;
   flex-direction: row;
@@ -42,30 +41,96 @@
   cursor: pointer;
   font-size: 16px;
 
-
   &--word {
-    --theme-color: #1BBC9B;
+    --theme-color: #1bbc9b;
   }
-  &--pinyin {
-    --theme-color: #E64C66;
+  &--wordPinyin {
+    --theme-color: #e64c66;
   }
   &--meaning {
-    --theme-color: #2D3E50;
+    --theme-color: #2d3e50;
   }
   &--sentence {
-    --theme-color: #1BBC9B;
+    --theme-color: #1bbc9b;
   }
   &--sentencePinyin {
-    --theme-color: #E64C66;
+    --theme-color: #e64c66;
   }
 
   color: var(--theme-color);
-  border: 1px solid  var(--theme-color);;
+  border: 1px solid var(--theme-color);
 
-  &:hover, &--selected {
-    opacity: 1;
-
-    color: white;
-    background-color: var(--theme-color);;
+  &:active {
+    opacity: 0.9;
   }
+
+  &:hover,
+  &--selected {
+    opacity: 1;
+    color: white;
+    background-color: var(--theme-color);
+  }
+  user-select: none;
+}
+
+.AddWords__textArea {
+  line-height: 33px;
+  font-size: 18px;
+  min-width: 600px;
+  z-index: 2;
+  position: relative;
+  background: none;
+}
+
+.AddWords__textAreaContainer {
+  position: relative;
+}
+
+.AddWords__textAreaBackgrounds {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.AddWords__textAreaBackground {
+  height: 34px;
+  width: 100%;
+
+  &--word {
+    --theme-color: #1bbc9b;
+  }
+  &--wordPinyin {
+    --theme-color: #e64c66;
+  }
+  &--meaning {
+    --theme-color: #2d3e50;
+  }
+  &--sentence {
+    --theme-color: #1bbc9b;
+  }
+  &--sentencePinyin {
+    --theme-color: #e64c66;
+  }
+
+  opacity: 0.1;
+  background-color: var(--theme-color);
+}
+
+.AddWords__textAreaTester {
+  line-height: 33px;
+  font-size: 18px;
+}
+
+
+#AddWords__textTester
+{
+  position: absolute;
+  visibility: hidden;
+  height: auto;
+  width: auto;
+  line-height: 33px;
+  font-size: 18px;
+  white-space: nowrap; /* Thanks to Herb Caudill comment */
 }
