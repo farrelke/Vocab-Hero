@@ -1,5 +1,9 @@
 # Learn Chinese Vocab Extension
 
+<p align="center">
+  <img height="230" src="https://raw.githubusercontent.com/farrelke/chinese-vocab/master/images/vocab-yingxiong.png">
+</p>
+
 
 ## Building
 
