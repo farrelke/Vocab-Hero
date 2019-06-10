@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e1e404d4-de09-4160-b4a1-8e8a594b13aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/dist/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/vocabulary-big.png" beforeDir="false" afterPath="$PROJECT_DIR$/dist/vocabulary-big.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/vocabulary-medium.png" beforeDir="false" afterPath="$PROJECT_DIR$/dist/vocabulary-medium.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/vocabulary-small.png" beforeDir="false" afterPath="$PROJECT_DIR$/dist/vocabulary-small.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newTab/AddWords.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/AddWords.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newTab/LearnPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/LearnPage.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newTab/NewTabPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/NewTabPage.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newTab/NewTabPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/NewTabPage.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="e1e404d4-de09-4160-b4a1-8e8a594b13aa" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -284,12 +273,12 @@
       <workItem from="1559222686879" duration="7158000" />
       <workItem from="1559319233240" duration="1004000" />
       <workItem from="1560140410773" duration="1085000" />
-      <workItem from="1560167328629" duration="542000" />
+      <workItem from="1560167328629" duration="756000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32795000" />
+    <option name="totallyTimeSpent" value="33009000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
