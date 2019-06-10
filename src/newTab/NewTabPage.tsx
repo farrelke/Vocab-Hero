@@ -68,7 +68,7 @@ class NewTabPage extends PureComponent<Props> {
               className="NewTabPage__addWords"
               onClick={() => this.setState({ page: Pages.Add })}
             >
-              Update Vocab
+              Add Vocab
             </div>
           </>
         )}
