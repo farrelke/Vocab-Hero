@@ -1,17 +1,19 @@
 import * as React from "react";
 import { PureComponent } from "react";
 import "./NewTabPage.scss";
-import LearnPage from "./LearnPage";
-import AddWords from "./AddWords";
-import ManageWords from "./ManageWords";
+import LearnPage from "./LearnPage/LearnPage";
+import AddWords from "./AddWords/AddWords";
+import ManageWords from "./ManageWords/ManageWords";
 import { getVocabWords, setVocabWords, VocabWord } from "../Utils/DbUtils";
+import ImportPage from "./ImportPage/ImportPage";
 
 type Props = {};
 
 enum Pages {
   Learn,
   Add,
-  Manage
+  Manage,
+  Import
 }
 
 class NewTabPage extends PureComponent<Props> {
@@ -51,12 +53,12 @@ class NewTabPage extends PureComponent<Props> {
     if (newWords.length === 0) return;
     let { words } = this.state;
     words = [...newWords, ...words];
-    this.setState({ words, vocab: newWords[0] });
+    this.setState({ words, vocab: newWords[0], page: Pages.Manage });
     await setVocabWords(words);
   };
 
   clearAll = async () => {
-    this.setState({ page: Pages.Add });
+    this.setState({ words: [] });
     await setVocabWords([]);
   };
 
@@ -67,34 +69,52 @@ class NewTabPage extends PureComponent<Props> {
       <div className="NewTabPage">
         {page === Pages.Add && <AddWords addWord={this.addWord} />}
         {page === Pages.Learn && vocab && <LearnPage vocab={vocab} />}
-        {page === Pages.Manage && words && <ManageWords
-          clearAll={this.clearAll}
-          words={words} deleteWord={this.deleteWord} addWords={this.addWords} />}
+        {page === Pages.Manage &&
+          words && <ManageWords words={words} deleteWord={this.deleteWord} />}
+        {page === Pages.Import &&
+          words && (
+            <ImportPage clearAll={this.clearAll} addWords={this.addWords} />
+          )}
 
-        {page === Pages.Learn && (
-          <>
+        <div className="NewTabPage__buttons">
+          {page !== Pages.Import && (
             <div
-              className="NewTabPage__manageWords"
+              className="NewTabPage__button"
+              onClick={() => this.setState({ page: Pages.Import })}
+            >
+              Import
+            </div>
+          )}
+          {page !== Pages.Manage && (
+            <div
+              className="NewTabPage__button"
               onClick={() => this.setState({ page: Pages.Manage })}
             >
               Manage Vocab
             </div>
+          )}
+          {page !== Pages.Add && (
             <div
-              className="NewTabPage__addWords"
+              className="NewTabPage__button"
               onClick={() => this.setState({ page: Pages.Add })}
             >
               Add Vocab
             </div>
-          </>
-        )}
-        {page !== Pages.Learn && words && words.length && <>
-          <div
-            className="NewTabPage__backBtn"
-            onClick={() => this.setState({ page: Pages.Learn })}
-          >
-            Back
-          </div>
-        </>}
+          )}
+        </div>
+
+        {page !== Pages.Learn &&
+          words &&
+          words.length && (
+            <>
+              <div
+                className="NewTabPage__backBtn"
+                onClick={() => this.setState({ page: Pages.Learn })}
+              >
+                Back
+              </div>
+            </>
+          )}
       </div>
     );
   }

@@ -1,10 +1,10 @@
 import * as React from "react";
 import { PureComponent } from "react";
 import "./AddWords.scss";
-import { VocabWord } from "../Utils/DbUtils";
+import { VocabWord } from "../../Utils/DbUtils";
 import { TextareaAutosize } from "react-autosize-textarea/lib/TextareaAutosize";
-import { getTextLines } from "../Utils/StringUtils";
-import VocabCard from "./VocabCard";
+import { getTextLines } from "../../Utils/StringUtils";
+import VocabCard from "./../VocabCard";
 
 type Props = {
   addWord: (word: VocabWord) => any;

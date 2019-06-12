@@ -1,0 +1,50 @@
+
+.ImportPage {
+  font-family: "PingFang SC", serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  justify-content: start;
+}
+
+.ImportPage__title {
+  font-size: 40px;
+  color: #1BBC9B;
+  margin-bottom: 10px;
+}
+
+.ImportPage__clearBtn {
+  border-radius:2px;
+  font-size: 15px;
+  border: 1px solid #E64C66;
+  color: #E64C66;
+  opacity: 0.4;
+  transition: 50ms ease-in opacity;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 2px 10px;
+  margin-left: 10px;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.ImportPage__section {
+  margin-top: 40px;
+  max-width: 600px;
+}
+
+.ImportPage__sectionTitle {
+  font-size: 20px;
+  color: #1BBC9B;
+  border-bottom: 1px solid  #1BBC9B;;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.ImportPage__sectionDesc {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
