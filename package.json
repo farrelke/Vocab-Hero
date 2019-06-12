@@ -27,10 +27,12 @@
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
+    "@types/xml-js": "^1.0.0",
     "react": "^16.8.6",
     "react-autosize-textarea": "^7.0.0",
     "react-dom": "^16.8.6",
     "react-radio-buttons": "^1.2.2",
-    "unicode-loader": "^1.0.7"
+    "unicode-loader": "^1.0.7",
+    "xml-js": "^1.6.11"
   }
 }

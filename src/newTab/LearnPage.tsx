@@ -31,7 +31,7 @@ class LearnPage extends PureComponent<Props> {
         <div className="LearnPage__word" onClick={() => this.speak(vocab.word)}>
           {vocab.word}
         </div>
-        <div className="LearnPage__meaning">{vocab.meaning}</div>
+        <div className={`LearnPage__meaning ${vocab.meaning.length > 40 ? 'LearnPage__meaning--long' : ''}`}>{vocab.meaning}</div>
 
         {vocab.sentences.map(sentence => (
           <>
