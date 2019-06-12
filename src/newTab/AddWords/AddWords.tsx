@@ -129,7 +129,6 @@ class AddWords extends PureComponent<Props> {
       pinyin: ""
     };
     let lastType = "";
-    let sentences = [];
 
     selectedValues.forEach((type, i) => {
       let line = lines[i];

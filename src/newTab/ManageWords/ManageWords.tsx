@@ -8,23 +8,22 @@ import { importPlecoFile } from "../../Utils/PlecoUtils";
 type Props = {
   words: VocabWord[];
   deleteWord: (word: VocabWord) => any;
+  updateWord: (word: VocabWord, index: number) => any;
 };
 
 class ManageWords extends PureComponent<Props> {
-
-
   render() {
-    const { words, deleteWord } = this.props;
+    const { words, deleteWord, updateWord } = this.props;
 
     return (
       <div className="ManageWords">
-
         <div className="ManageWords__title">Manage Vocab</div>
-        {words.map(word => (
+        {words.map((word, i) => (
           <VocabCard
             key={word.word}
             word={word}
             deleteWord={() => deleteWord(word)}
+            updateWord={word => updateWord(word, i)}
           />
         ))}
       </div>

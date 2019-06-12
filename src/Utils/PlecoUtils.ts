@@ -17,7 +17,6 @@ export async function getTextFromFile(file: File): Promise<string> {
 export async function importPlecoFile(file: File): Promise<VocabWord[]> {
   const xmlString = await getTextFromFile(file);
   const obj: any = convert.xml2js(xmlString, { compact: true });
-  const pinyinConverter = new PinyinConverter();
 
   return obj.plecoflash.cards.card.map(({entry}) => {
     const defData: string[] = Array.isArray(entry.defn)
@@ -50,7 +49,7 @@ export async function importPlecoFile(file: File): Promise<VocabWord[]> {
     
     return {
       word: headword,
-      wordPinyin: pinyinConverter.convert(pron.replace("//", " ")),
+      wordPinyin: PinyinConverter.convert(pron.replace("//", " ")),
       meaning: def.trim(),
       sentences: [
         {

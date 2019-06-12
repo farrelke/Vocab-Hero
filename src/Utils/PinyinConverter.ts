@@ -93,4 +93,4 @@ class PinyinConverter {
 }
 
 
-export default PinyinConverter;
+export default new PinyinConverter();

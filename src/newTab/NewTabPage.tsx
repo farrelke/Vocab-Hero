@@ -57,7 +57,14 @@ class NewTabPage extends PureComponent<Props> {
     await setVocabWords(words);
   };
 
-  clearAll = async () => {
+  updateWord = async (word: VocabWord, index: number) => {
+    let words = [...this.state.words];
+    words[index] = word;
+    this.setState({ words });
+    await setVocabWords(words);
+  };
+
+    clearAll = async () => {
     this.setState({ words: [] });
     await setVocabWords([]);
   };
@@ -70,7 +77,7 @@ class NewTabPage extends PureComponent<Props> {
         {page === Pages.Add && <AddWords addWord={this.addWord} />}
         {page === Pages.Learn && vocab && <LearnPage vocab={vocab} />}
         {page === Pages.Manage &&
-          words && <ManageWords words={words} deleteWord={this.deleteWord} />}
+          words && <ManageWords words={words} deleteWord={this.deleteWord} updateWord={this.updateWord} />}
         {page === Pages.Import &&
           words && (
             <ImportPage clearAll={this.clearAll} addWords={this.addWords} />
@@ -105,7 +112,7 @@ class NewTabPage extends PureComponent<Props> {
 
         {page !== Pages.Learn &&
           words &&
-          words.length && (
+          !!words.length && (
             <>
               <div
                 className="NewTabPage__backBtn"

@@ -9,6 +9,10 @@
   margin: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  input {
+    margin-bottom: 5px;
+  }
 }
 
 .VocabCard__wordPinyin {
@@ -40,21 +44,18 @@
   grid-column-end: span 2;
 }
 
-
-.VocabCard__deleteBtn {
-  border-radius:2px;
-  padding: 2px 10px;
-  font-size: 15px;
-  border: 1px solid #E64C66;
-  color: #E64C66;
-  cursor: pointer;
-  text-align: center;
-  display: inline-block;
-  width: 43px;
+.VocabCard__btns {
+  display: flex;
   justify-self: end;
 }
 
-.VocabCard__addBtn {
+.VocabCard__editBtns {
+  justify-self: end;
+  grid-column-end: span 2;
+}
+
+
+.VocabCard__btn {
   border-radius:2px;
   padding: 2px 10px;
   font-size: 15px;
@@ -63,6 +64,30 @@
   cursor: pointer;
   text-align: center;
   display: inline-block;
-  width: 43px;
   justify-self: end;
+  margin-left: 10px;
+  height: 21px;
+  user-select: none;
+
+  &--save {
+    justify-self: end;
+    grid-column-end: span 2;
+  }
+
+  &--delete {
+    border: 1px solid #E64C66;
+    color: #E64C66;
+  }
+
+  &--cancel {
+    border: 1px solid #AEAEAE;
+    color: #AEAEAE;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: 0.9;
+  }
 }
