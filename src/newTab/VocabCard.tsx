@@ -3,7 +3,6 @@ import { VocabWord } from "../Utils/DbUtils";
 import "./VocabCard.scss";
 import * as React from "react";
 import PinyinConverter from "../Utils/PinyinConverter";
-import { any } from "prop-types";
 
 type Props = {
   word: VocabWord;
@@ -12,10 +11,11 @@ type Props = {
   updateWord?: (word: VocabWord) => any;
 };
 
-class EditVocabCard extends PureComponent<{
-  word: VocabWord;
-  save: (word: VocabWord) => any;
-  cancel: () => any;
+export class EditVocabCard extends PureComponent<{
+  word?: VocabWord;
+  save?: (word: VocabWord) => any;
+  cancel?: () => any;
+  addWord?: (word: VocabWord) => any;
 }> {
   state = {
     word: "",
@@ -25,11 +25,13 @@ class EditVocabCard extends PureComponent<{
 
   componentDidMount(): void {
     const { word } = this.props;
-    this.setState({
-      word: word.word,
-      pinyin: word.wordPinyin,
-      meaning: word.meaning
-    });
+    if (word) {
+      this.setState({
+        word: word.word,
+        pinyin: word.wordPinyin,
+        meaning: word.meaning
+      });
+    }
   }
 
   updateText = (type: string) => (e: React.FormEvent<HTMLInputElement>) => {
@@ -52,8 +54,21 @@ class EditVocabCard extends PureComponent<{
     save({ ...wordObj, word, wordPinyin: pinyin, meaning });
   };
 
+  addWord = () => {
+    const { addWord } = this.props;
+    const { word, pinyin, meaning } = this.state;
+    const newWord: VocabWord = {
+      word,
+      wordPinyin: PinyinConverter.convert(pinyin),
+      meaning,
+      sentences: []
+    };
+    addWord(newWord);
+    this.setState({ word: "", pinyin: "", meaning: "" });
+  };
+
   render() {
-    const { cancel } = this.props;
+    const { cancel, addWord } = this.props;
     const { word, pinyin, meaning } = this.state;
     return (
       <div className="VocabCard">
@@ -62,6 +77,7 @@ class EditVocabCard extends PureComponent<{
           value={pinyin}
           onChange={this.updateText("pinyin")}
           className="VocabCard__wordPinyin"
+          placeholder="pinyin"
         />
         <div className="VocabCard__btns">
           <div onClick={this.pinyinise} className="VocabCard__btn">
@@ -73,23 +89,34 @@ class EditVocabCard extends PureComponent<{
           type="text"
           value={word}
           className="VocabCard__word"
+          placeholder="hanzi"
         />
         <input
           type="text"
           onChange={this.updateText("meaning")}
           value={meaning}
           className="VocabCard__wordMeaning"
+          placeholder="translation"
         />
         <div className="VocabCard__editBtns VocabCard__btn--save">
-          <div
-            onClick={cancel}
-            className="VocabCard__btn VocabCard__btn--cancel"
-          >
-            Cancel
-          </div>
-          <div onClick={this.save} className="VocabCard__btn">
-            Save
-          </div>
+          {!addWord && (
+            <>
+              <div
+                onClick={cancel}
+                className="VocabCard__btn VocabCard__btn--cancel"
+              >
+                Cancel
+              </div>
+              <div onClick={this.save} className="VocabCard__btn">
+                Save
+              </div>
+            </>
+          )}
+          {addWord && (
+            <div onClick={this.addWord} className="VocabCard__btn">
+              Add
+            </div>
+          )}
         </div>
       </div>
     );
@@ -115,7 +142,13 @@ class VocabCard extends PureComponent<Props> {
     const { word, deleteWord, addWord } = this.props;
 
     if (editMode) {
-      return <EditVocabCard word={word} cancel={this.toggleEditing} save={this.updateWord} />;
+      return (
+        <EditVocabCard
+          word={word}
+          cancel={this.toggleEditing}
+          save={this.updateWord}
+        />
+      );
     }
 
     return (

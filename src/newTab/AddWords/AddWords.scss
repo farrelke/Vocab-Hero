@@ -18,119 +18,33 @@
   cursor: pointer;
 }
 
-.AddWords__addArea {
+.AddWords__methods {
+  color: #1bbc9b;
+  border: 1px solid #1bbc9b;
   display: flex;
+  margin: 20px 0;
+  border-radius:2px;
 }
 
-.AddWords__selectTypeArea {
-  display: flex;
-  flex-direction: column;
-}
-
-.AddWords__typeOptions {
-  display: flex;
-  flex-direction: row;
-  margin: 3px 0;
-}
-
-.AddWords__typeOption {
-  padding: 2px 5px;
-  margin: 0 5px;
-
-  opacity: 0.5;
+.AddWords__method {
+  padding: 2px 10px;
+  font-size: 15px;
+  color: #1BBC9B;
   cursor: pointer;
-  font-size: 16px;
-
-  &--word {
-    --theme-color: #1bbc9b;
-  }
-  &--wordPinyin {
-    --theme-color: #e64c66;
-  }
-  &--meaning {
-    --theme-color: #2d3e50;
-  }
-  &--sentence {
-    --theme-color: #1bbc9b;
-  }
-  &--sentencePinyin {
-    --theme-color: #e64c66;
-  }
-
-  color: var(--theme-color);
-  border: 1px solid var(--theme-color);
-
-  &:active {
-    opacity: 0.9;
-  }
-
-  &:hover,
-  &--selected {
-    opacity: 1;
-    color: white;
-    background-color: var(--theme-color);
-  }
+  text-align: center;
+  height: 21px;
   user-select: none;
-}
 
-.AddWords__textArea {
-  line-height: 33px;
-  font-size: 18px;
-  min-width: 600px;
-  z-index: 2;
-  position: relative;
-  background: none;
-}
-
-.AddWords__textAreaContainer {
-  position: relative;
-}
-
-.AddWords__textAreaBackgrounds {
-  z-index: 1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-.AddWords__textAreaBackground {
-  height: 34px;
-  width: 100%;
-
-  &--word {
-    --theme-color: #1bbc9b;
-  }
-  &--wordPinyin {
-    --theme-color: #e64c66;
-  }
-  &--meaning {
-    --theme-color: #2d3e50;
-  }
-  &--sentence {
-    --theme-color: #1bbc9b;
-  }
-  &--sentencePinyin {
-    --theme-color: #e64c66;
+  &:first-child {
+    border-right: 1px solid #1bbc9b;;
   }
 
-  opacity: 0.1;
-  background-color: var(--theme-color);
-}
+  &--selected  {
+    color: white;
+    background-color: #1BBC9B;
+  }
 
-.AddWords__textAreaTester {
-  line-height: 33px;
-  font-size: 18px;
-}
-
-
-#AddWords__textTester
-{
-  position: absolute;
-  visibility: hidden;
-  height: auto;
-  width: auto;
-  line-height: 33px;
-  font-size: 18px;
-  white-space: nowrap; /* Thanks to Herb Caudill comment */
+  &:hover {
+    opacity: 0.8;
+  }
 }
