@@ -4,6 +4,7 @@
     <list default="true" id="e1e404d4-de09-4160-b4a1-8e8a594b13aa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/data/create-word-db.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/create-word-db.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utils/DbUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/DbUtils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -29,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/create-word-db.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+            <state relative-caret-position="285">
+              <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -38,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+            <state relative-caret-position="153">
+              <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -50,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/newTab/VocabCard.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-357">
-              <caret line="125" column="6" selection-start-line="125" selection-start-column="6" selection-end-line="125" selection-end-column="6" />
+            <state relative-caret-position="595">
+              <caret line="43" column="64" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="64" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -62,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+            <state relative-caret-position="425">
+              <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -74,8 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/AddWords.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="70" column="75" selection-start-line="70" selection-start-column="75" selection-end-line="70" selection-end-column="75" />
+            <state relative-caret-position="543">
+              <caret line="67" column="18" lean-forward="true" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -86,8 +87,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/PasteAdd.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="36" />
+            <state relative-caret-position="387">
+              <caret line="173" column="37" lean-forward="true" selection-start-line="172" selection-start-column="2" selection-end-line="173" selection-end-column="37" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -98,15 +99,6 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.scss">
           <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/AddWords.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="38" column="35" lean-forward="true" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
-            </state>
-          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -333,12 +325,12 @@
       <workItem from="1560312615850" duration="3488000" />
       <workItem from="1560352175247" duration="3747000" />
       <workItem from="1560399384650" duration="2743000" />
-      <workItem from="1560667390859" duration="4484000" />
+      <workItem from="1560667390859" duration="5241000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53479000" />
+    <option name="totallyTimeSpent" value="54236000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -578,13 +570,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/wordDict.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret column="1503" selection-start-column="1503" selection-end-column="1503" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/newTab/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -626,16 +611,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/newTab/NewTabPage.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
@@ -649,10 +624,27 @@
     <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.scss">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/PasteAdd.tsx">
+    <entry file="file://$PROJECT_DIR$/data/wordDict.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="36" />
+        <state relative-caret-position="90">
+          <caret column="820" selection-start-column="820" selection-end-column="820" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/AddWords.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="67" column="18" lean-forward="true" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -661,18 +653,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/newTab/VocabCard.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-357">
-          <caret line="125" column="6" selection-start-line="125" selection-start-column="6" selection-end-line="125" selection-end-column="6" />
+        <state relative-caret-position="595">
+          <caret line="43" column="64" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="64" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/AddWords.tsx">
+    <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/PasteAdd.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="70" column="75" selection-start-line="70" selection-start-column="75" selection-end-line="70" selection-end-column="75" />
+        <state relative-caret-position="387">
+          <caret line="173" column="37" lean-forward="true" selection-start-line="172" selection-start-column="2" selection-end-line="173" selection-end-column="37" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -681,8 +673,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+        <state relative-caret-position="425">
+          <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -698,8 +690,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data/create-word-db.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+        <state relative-caret-position="285">
+          <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
         </state>
       </provider>
     </entry>

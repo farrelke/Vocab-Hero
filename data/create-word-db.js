@@ -17,7 +17,7 @@ const init = async () => {
       (wordData.definitions && wordData.definitions[0].pinyin) || "";
     word.meaning =
       (wordData.definitions &&
-        wordData.definitions[0].translations.join("\n")) ||
+        wordData.definitions[0].translations.join(", ")) ||
       "";
     wordList[word.word] = word;
   });
