@@ -6,7 +6,8 @@
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack --config webpack.dev.js",
     "watch": "webpack -w --config webpack.dev.js",
-    "lint": "tslint 'src/**/*.{ts, tsx}'"
+    "lint": "tslint 'src/**/*.{ts, tsx}'",
+    "create-data": "node ./data/create-word-db.js"
   },
   "author": "Joe Martella",
   "license": "MIT",
@@ -28,6 +29,7 @@
   },
   "dependencies": {
     "@types/xml-js": "^1.0.0",
+    "cedict": "^1.19.0",
     "react": "^16.8.6",
     "react-autosize-textarea": "^7.0.0",
     "react-dom": "^16.8.6",
