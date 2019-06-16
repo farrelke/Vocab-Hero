@@ -33,7 +33,7 @@
 
 .ImportPage__section {
   margin-top: 40px;
-  max-width: 600px;
+  width: 600px;
 }
 
 .ImportPage__sectionTitle {
@@ -47,4 +47,26 @@
 .ImportPage__sectionDesc {
   font-size: 16px;
   margin-bottom: 20px;
+}
+
+.ImportPage__hskButtons {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+}
+
+.ImportPage__hskBtn {
+  border-radius:2px;
+  font-size: 15px;
+  border: 1px solid #1BBC9B;
+  color: #1BBC9B;
+  transition: 50ms ease-in opacity;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 2px 10px;
+  margin-left: 10px;
+
+  &:hover {
+    opacity: 0.9;
+  }
 }

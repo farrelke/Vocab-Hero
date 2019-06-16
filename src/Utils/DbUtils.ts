@@ -1,3 +1,5 @@
+import { getJsonFile } from "./FetchUtils";
+
 export interface VocabWord {
   word: string;
   wordPinyin: string;
@@ -27,12 +29,6 @@ function getChromeStorage<T>(key: string): Promise<T> {
 function setChromeStorage(key: string, value: any): Promise<void> {
   return new Promise(resolve => {
     chrome.storage.local.set({ [key]: value }, resolve);
-  });
-}
-
-function getJsonFile<T>(url: string): Promise<T> {
-  return fetch(url).then(response => {
-    return response.json();
   });
 }
 
