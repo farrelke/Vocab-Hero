@@ -22,6 +22,8 @@ const init = async () => {
     wordList[word.word] = word;
   });
 
+  const json = JSON.stringify(wordList);
+
   fs.writeFile("./data/wordDict.json", json, "utf8", () => {});
 };
 

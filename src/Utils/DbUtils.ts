@@ -49,7 +49,7 @@ let wordDict: WordDefDict;
 export async function getWordDict(): Promise<WordDefDict> {
   try {
     if (wordDict) return wordDict;
-    wordDict = await getChromeStorage<WordDefDict>("wordDict");
+  //  wordDict = await getChromeStorage<WordDefDict>("wordDict");
     if (wordDict) return wordDict;
 
     wordDict = await getJsonFile<WordDefDict>(
