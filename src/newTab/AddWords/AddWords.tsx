@@ -4,6 +4,7 @@ import "./AddWords.scss";
 import { VocabWord } from "../../Utils/DbUtils";
 import PasteAdd from "./PasteAdd";
 import { EditVocabCard } from "../VocabCard";
+import SearchAdd from "./SearchAdd";
 
 type Props = {
   addWord: (word: VocabWord) => any;
@@ -11,6 +12,7 @@ type Props = {
 
 enum InputMethod {
   Input = "Input",
+  Search = "Search",
   Paste = "Paste"
 }
 
@@ -20,20 +22,22 @@ function InputMethodSelector(props: {
 }) {
   return (
     <div className="AddWords__methods">
-      {[InputMethod.Input, InputMethod.Paste].map(method => {
-        return (
-          <div
-            className={`AddWords__method ${
-              method === props.selectedMethod
-                ? "AddWords__method--selected"
-                : ""
-            }`}
-            onClick={() => props.updateMethod(method)}
-          >
-            {method}
-          </div>
-        );
-      })}
+      {[InputMethod.Input, InputMethod.Search, InputMethod.Paste].map(
+        method => {
+          return (
+            <div
+              className={`AddWords__method ${
+                method === props.selectedMethod
+                  ? "AddWords__method--selected"
+                  : ""
+              }`}
+              onClick={() => props.updateMethod(method)}
+            >
+              {method}
+            </div>
+          );
+        }
+      )}
     </div>
   );
 }
@@ -60,8 +64,11 @@ class AddWords extends PureComponent<Props> {
           updateMethod={this.updateMethod}
         />
 
-        {inputMethod === InputMethod.Input && <EditVocabCard addWord={addWord} />}
+        {inputMethod === InputMethod.Input && (
+          <EditVocabCard addWord={addWord} />
+        )}
         {inputMethod === InputMethod.Paste && <PasteAdd addWord={addWord} />}
+        {inputMethod === InputMethod.Search && <SearchAdd addWord={addWord} />}
       </div>
     );
   }

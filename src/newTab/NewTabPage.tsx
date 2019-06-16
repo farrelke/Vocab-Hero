@@ -4,7 +4,7 @@ import "./NewTabPage.scss";
 import LearnPage from "./LearnPage/LearnPage";
 import AddWords from "./AddWords/AddWords";
 import ManageWords from "./ManageWords/ManageWords";
-import { getVocabWords, setVocabWords, VocabWord } from "../Utils/DbUtils";
+import { getVocabWords, getWordDict, setVocabWords, VocabWord } from "../Utils/DbUtils";
 import ImportPage from "./ImportPage/ImportPage";
 
 type Props = {};

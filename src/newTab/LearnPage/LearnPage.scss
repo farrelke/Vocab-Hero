@@ -38,6 +38,13 @@
   }
 }
 
+.LearnPage__sentenceWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .LearnPage__sentence {
   font-size: 20px;
   color: #1BBC9B;

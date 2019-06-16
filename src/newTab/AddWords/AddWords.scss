@@ -35,8 +35,8 @@
   height: 21px;
   user-select: none;
 
-  &:first-child {
-    border-right: 1px solid #1bbc9b;;
+  &:not(:first-child) {
+    border-left: 1px solid #1bbc9b;
   }
 
   &--selected  {
