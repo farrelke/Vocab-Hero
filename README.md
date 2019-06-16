@@ -4,6 +4,9 @@
   <img height="230" src="https://raw.githubusercontent.com/farrelke/chinese-vocab/master/images/vocab-yingxiong.png">
 </p>
 
+## Chrome web store
+
+https://chrome.google.com/webstore/detail/vocab-%E8%8B%B1%E9%9B%84/egbhlijnkoompngemjibfdfpchopglaf
 
 ## Building
 

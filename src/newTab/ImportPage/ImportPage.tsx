@@ -54,6 +54,11 @@ class ImportPage extends PureComponent<Props> {
             onChange={e => this.handleChange(e.target.files)}
           />
         </div>
+
+
+        <div className="ImportPage__section">
+          <div className="ImportPage__sectionTitle">Hsk Cards</div>
+        </div>
       </div>
     );
   }
