@@ -14,7 +14,7 @@ module.exports = {
       {
         exclude: /node_modules/,
         test: /\.tsx?$/,
-        use: ["ts-loader", "unicode-loader"]
+        use: ["ts-loader"]
       },
       {
         exclude: /node_modules/,
@@ -30,6 +30,10 @@ module.exports = {
             loader: "sass-loader" // Compiles Sass to CSS
           }
         ]
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        loader: 'url-loader'
       }
     ]
   },

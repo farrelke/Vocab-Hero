@@ -1,0 +1,55 @@
+
+.Sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 280px;
+  height: 100vh;
+  background-color: #2d3e50;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.Sidebar__logo {
+  margin-top: 100px;
+  width: 160px;
+  height: 160px;
+}
+
+.Sidebar__logoText {
+  padding: {
+    top: 10px;
+    bottom: 30px;
+  };
+  text-align: center;
+  width: 100%;
+  color: white;
+  font-size: 30px;
+  border-bottom: 1px solid white;
+  text-shadow:  2px 2px 2px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
+}
+
+.Sidebar__option {
+  padding: 5px 10px;
+  margin-left: 20px;
+  margin-bottom: 5px;
+  width: calc(100% - 70px);
+  text-align: left;
+  font-size: 20px;
+  cursor: pointer;
+
+  &--selected {
+    background-color: rgba(196, 196, 196, 0.2);
+  }
+
+  &:hover {
+    background-color: rgba(196, 196, 196, 0.3);
+  }
+  &:active {
+    background-color: rgba(196, 196, 196, 0.2);
+  }
+}

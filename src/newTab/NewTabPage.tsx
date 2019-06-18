@@ -6,6 +6,7 @@ import AddWords from "./AddWords/AddWords";
 import ManageWords from "./ManageWords/ManageWords";
 import { getVocabWords, getWordDict, setVocabWords, VocabWord } from "../Utils/DbUtils";
 import ImportPage from "./ImportPage/ImportPage";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 type Props = {};
 
@@ -74,6 +75,7 @@ class NewTabPage extends PureComponent<Props> {
 
     return (
       <div className="NewTabPage">
+
         {page === Pages.Add && <AddWords addWord={this.addWord} />}
         {page === Pages.Learn && vocab && <LearnPage vocab={vocab} />}
         {page === Pages.Manage &&

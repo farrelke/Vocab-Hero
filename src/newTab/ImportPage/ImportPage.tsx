@@ -88,9 +88,9 @@ class ImportPage extends PureComponent<Props> {
         </div>
 
         <div className="ImportPage__section">
-          <div className="ImportPage__sectionTitle">Import Hsk Cards</div>
+          <div className="ImportPage__sectionTitle">Import Hsk Vocabulary</div>
           <div className="ImportPage__sectionDesc">
-            Flashcards built to learn about hsk cards.
+            Hsk Vocabulary divided by level
           </div>
           <div className="ImportPage__hskButtons">
             {["Hsk 1", "Hsk 2", "Hsk 3", "Hsk 4", "Hsk 5", "Hsk 6"].map(

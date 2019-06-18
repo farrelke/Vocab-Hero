@@ -1,3 +1,8 @@
 
 
 declare module "react-radio-buttons";
+
+declare module "*.png" {
+  const value: any;
+  export = value;
+}
