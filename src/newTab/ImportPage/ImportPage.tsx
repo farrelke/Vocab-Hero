@@ -5,10 +5,12 @@ import { importPlecoFile } from "../../Utils/PlecoUtils";
 import { getJsonFile } from "../../Utils/FetchUtils";
 import { VocabWord } from "../../Utils/DbUtils";
 import PinyinConverter from "../../Utils/PinyinConverter";
+import { SubPage } from "../components/Sidebar/Sidebar";
 
 type Props = {
   addWords: (words: VocabWord[]) => any;
   clearAll: () => any;
+  subPage: SubPage;
 };
 
 class ImportPage extends PureComponent<Props> {
@@ -44,7 +46,7 @@ class ImportPage extends PureComponent<Props> {
     );
     const words: VocabWord[] = wordData.filter(word => word).map(word => ({
       ...word,
-      wordPinyin: PinyinConverter.convert(word.wordPinyin || ''),
+      wordPinyin: PinyinConverter.convert(word.wordPinyin || ""),
       sentences: []
     }));
     this.props.addWords(words);
@@ -52,6 +54,7 @@ class ImportPage extends PureComponent<Props> {
 
   render() {
     const { addingWord } = this.state;
+    const { subPage } = this.props;
 
     if (addingWord) {
       return (
@@ -63,49 +66,55 @@ class ImportPage extends PureComponent<Props> {
 
     return (
       <div className="ImportPage">
-        <div className="ImportPage__title">Import Vocab</div>
-
         <div className="ImportPage__clearBtn" onClick={this.clearAllCards}>
-          Delete All Current Vocabulary
+          Delete Current Vocabulary
         </div>
 
-        <div className="ImportPage__section">
-          <div className="ImportPage__sectionTitle">
-            Import flashcards from Pleco
+        {subPage === SubPage.Pleco && (
+          <div className="ImportPage__section">
+            <div className="ImportPage__sectionTitle">
+              Import flashcards from Pleco
+            </div>
+            <div className="ImportPage__sectionDesc">
+              To generate an export file in Pleco:
+              <ul className="ImportPage__sectionDescList" >
+                <li>First open the export file function in <b> Pleco > Flashcards > Import/Export</b>.</li>
+                <li>Set the file format to  <b>XML File</b> (should be the default).</li>
+                <li>Set <b>card and dictionary definitions</b> to export.</li>
+              </ul>
+            </div>
+            <input
+              type="file"
+              id="files"
+              name="files[]"
+              onChange={e => this.handleChange(e.target.files)}
+            />
           </div>
-          <div className="ImportPage__sectionDesc">
-            To import flashcards from pleco first create an export file in Pleco
-            > Flashcards > Import/Export. The file format should be "XML File".
-            The included data should have card and dictionary definitions set to
-            export.
-          </div>
-          <input
-            type="file"
-            id="files"
-            name="files[]"
-            onChange={e => this.handleChange(e.target.files)}
-          />
-        </div>
+        )}
 
-        <div className="ImportPage__section">
-          <div className="ImportPage__sectionTitle">Import Hsk Vocabulary</div>
-          <div className="ImportPage__sectionDesc">
-            Hsk Vocabulary divided by level
+        {subPage === SubPage.PreMade && (
+          <div className="ImportPage__section">
+            <div className="ImportPage__sectionTitle">
+              Import Hsk Vocabulary
+            </div>
+            <div className="ImportPage__sectionDesc">
+              Hsk Vocabulary divided by level
+            </div>
+            <div className="ImportPage__hskButtons">
+              {["Hsk 1", "Hsk 2", "Hsk 3", "Hsk 4", "Hsk 5", "Hsk 6"].map(
+                (hsk, i) => (
+                  <div
+                    className="ImportPage__hskBtn"
+                    key={i}
+                    onClick={() => this.addHskCards(i + 1)}
+                  >
+                    {hsk}
+                  </div>
+                )
+              )}
+            </div>
           </div>
-          <div className="ImportPage__hskButtons">
-            {["Hsk 1", "Hsk 2", "Hsk 3", "Hsk 4", "Hsk 5", "Hsk 6"].map(
-              (hsk, i) => (
-                <div
-                  className="ImportPage__hskBtn"
-                  key={i}
-                  onClick={() => this.addHskCards(i + 1)}
-                >
-                  {hsk}
-                </div>
-              )
-            )}
-          </div>
-        </div>
+        )}
       </div>
     );
   }

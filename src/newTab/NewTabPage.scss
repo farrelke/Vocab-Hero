@@ -72,3 +72,25 @@ time, mark, audio, video {
   left: 20px;
   color: #ababab;
 }
+
+.NewTabPage__layout {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-areas: "sidebar header" "sidebar content";
+  grid-template-rows:  140px auto;
+  grid-template-columns: 300px  auto;
+}
+
+.NewTabPage__sidebar {
+  grid-area: sidebar;
+}
+
+.NewTabPage__header {
+  grid-area: header;
+}
+
+.NewTabPage__content {
+  grid-area: content;
+
+}

@@ -17,7 +17,6 @@ class ManageWords extends PureComponent<Props> {
 
     return (
       <div className="ManageWords">
-        <div className="ManageWords__title">Manage Vocab</div>
         {words.map((word, i) => (
           <VocabCard
             key={word.word + i}

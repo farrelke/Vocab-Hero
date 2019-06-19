@@ -1,0 +1,40 @@
+
+.Header {
+  width: 100%;
+  height: 100%;
+  background-color: #1bbc9b;
+  z-index: 3;
+  padding-left: 40px;
+  box-sizing: border-box;
+}
+
+.Header__title {
+  padding-top: 40px;
+  width: 100%;
+  height: 30px;
+  color: white;
+  font-size: 28px;
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.1);;
+}
+
+.Header__options {
+  display: flex;
+  color: white;
+}
+
+.Header__option {
+  margin-top: 39px;
+  margin-right: 20px;
+  font-size: 16px;
+  padding-bottom: 10px;
+  padding-left: 2px;
+  padding-right: 2px;
+  border-bottom: 4px solid transparent;
+  cursor: pointer;
+  opacity: 0.6;
+
+  &--selected {
+    opacity: 1;
+    border-bottom: 4px solid white;
+  }
+}

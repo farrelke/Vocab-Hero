@@ -5,9 +5,12 @@ import { VocabWord } from "../../Utils/DbUtils";
 import PasteAdd from "./PasteAdd";
 import { EditVocabCard } from "../VocabCard";
 import SearchAdd from "./SearchAdd";
+import { SubPage } from "../components/Sidebar/Sidebar";
+import InputAdd from "./InputAdd";
 
 type Props = {
   addWord: (word: VocabWord) => any;
+  subPage: SubPage;
 };
 
 enum InputMethod {
@@ -53,12 +56,14 @@ class AddWords extends PureComponent<Props> {
 
   render() {
     const { inputMethod } = this.state;
-    const { addWord } = this.props;
+    const { addWord, subPage } = this.props;
+
+    if (subPage === SubPage.Input) {
+      return  <InputAdd  addWord={addWord} />
+    }
 
     return (
       <div className="AddWords">
-        <div className="AddWords__title">Add Vocab</div>
-
         <InputMethodSelector
           selectedMethod={inputMethod}
           updateMethod={this.updateMethod}

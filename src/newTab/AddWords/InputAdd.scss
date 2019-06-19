@@ -1,0 +1,64 @@
+
+.InputAdd {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.InputAdd__inputContainer {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.InputAdd__inputLabel {
+  width: 120px;
+  font-size: 20px;
+  color: #333;
+  line-height: 41px;
+  align-self: start;
+}
+
+.InputAdd__input {
+  width: 340px;
+  font-size: 18px;
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+  background: #FFFFFF;
+  box-shadow:0px 3px 5px rgba(0, 0, 0, 0.20);
+  padding: 10px 10px;
+  color: #333333;
+
+  &--textarea {
+    width: 450px;
+    resize: none;
+  }
+}
+
+.InputAdd__btn {
+  font-size: 20px;
+  color: white;
+  padding: 5px 10px;
+  background-color: #1bbc9b;
+  box-shadow:0px 3px 5px rgba(0, 0, 0, 0.20);
+  margin-left: 10px;
+  text-align: center;
+  cursor: pointer;
+
+  &--add {
+    align-self: end;
+    margin-left: 485px;
+  }
+
+  &--inputBtn {
+    width: 80px;
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+  &:active {
+    opacity: 0.85;
+  }
+}

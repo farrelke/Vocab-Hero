@@ -1,16 +1,15 @@
 
 .Sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 280px;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: #2d3e50;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0 30px;
+  z-index: 4;
+  box-sizing: border-box;
 }
 
 .Sidebar__logo {
@@ -35,9 +34,9 @@
 
 .Sidebar__option {
   padding: 5px 10px;
-  margin-left: 20px;
+  margin-left: 10px;
   margin-bottom: 5px;
-  width: calc(100% - 70px);
+  width: calc(100% - 60px);
   text-align: left;
   font-size: 20px;
   cursor: pointer;

@@ -4,22 +4,17 @@ import "./NewTabPage.scss";
 import LearnPage from "./LearnPage/LearnPage";
 import AddWords from "./AddWords/AddWords";
 import ManageWords from "./ManageWords/ManageWords";
-import { getVocabWords, getWordDict, setVocabWords, VocabWord } from "../Utils/DbUtils";
+import { getVocabWords, setVocabWords, VocabWord } from "../Utils/DbUtils";
 import ImportPage from "./ImportPage/ImportPage";
-import Sidebar from "./components/Sidebar/Sidebar";
+import Sidebar, { Page, SubPage } from "./components/Sidebar/Sidebar";
+import Header from "./components/Header/Header";
 
 type Props = {};
 
-enum Pages {
-  Learn,
-  Add,
-  Manage,
-  Import
-}
-
 class NewTabPage extends PureComponent<Props> {
   state = {
-    page: Pages.Learn,
+    page: Page.Learn,
+    subPage: SubPage.Learn,
     vocab: null as VocabWord,
     words: [] as VocabWord[]
   };
@@ -27,7 +22,7 @@ class NewTabPage extends PureComponent<Props> {
   async componentDidMount() {
     const words = await getVocabWords();
     if (!words || words.length === 0) {
-      this.setState({ page: Pages.Add });
+      this.setState({ page: Page.Add });
       return;
     }
 
@@ -54,7 +49,7 @@ class NewTabPage extends PureComponent<Props> {
     if (newWords.length === 0) return;
     let { words } = this.state;
     words = [...newWords, ...words];
-    this.setState({ words, vocab: newWords[0], page: Pages.Manage });
+    this.setState({ words, vocab: newWords[0], page: Page.Manage });
     await setVocabWords(words);
   };
 
@@ -65,65 +60,64 @@ class NewTabPage extends PureComponent<Props> {
     await setVocabWords(words);
   };
 
-    clearAll = async () => {
+  clearAll = async () => {
     this.setState({ words: [] });
     await setVocabWords([]);
   };
 
+  selectPage = (page: Page, subPage: SubPage) => {
+    this.setState({ page, subPage });
+  };
+
   render() {
-    const { page, vocab, words } = this.state;
+    const { page, vocab, words, subPage } = this.state;
+    const pages = [Page.Manage, Page.Add, Page.Import, Page.Learn];
 
     return (
       <div className="NewTabPage">
+        {page === Page.Learn && vocab && <LearnPage vocab={vocab} />}
 
-        {page === Pages.Add && <AddWords addWord={this.addWord} />}
-        {page === Pages.Learn && vocab && <LearnPage vocab={vocab} />}
-        {page === Pages.Manage &&
-          words && <ManageWords words={words} deleteWord={this.deleteWord} updateWord={this.updateWord} />}
-        {page === Pages.Import &&
-          words && (
-            <ImportPage clearAll={this.clearAll} addWords={this.addWords} />
-          )}
+        {page !== Page.Learn && (
+          <div className="NewTabPage__layout">
+            <div className="NewTabPage__sidebar">
+              <Sidebar
+                pages={pages}
+                selectPage={this.selectPage}
+                selectedPage={page}
+              />
+            </div>
+            <div className="NewTabPage__header">
+              <Header
+                page={page}
+                subPage={subPage}
+                selectPage={this.selectPage}
+              />
+            </div>
 
-        <div className="NewTabPage__buttons">
-          {page !== Pages.Import && (
-            <div
-              className="NewTabPage__button"
-              onClick={() => this.setState({ page: Pages.Import })}
-            >
-              Import
-            </div>
-          )}
-          {page !== Pages.Manage && (
-            <div
-              className="NewTabPage__button"
-              onClick={() => this.setState({ page: Pages.Manage })}
-            >
-              Manage Vocab
-            </div>
-          )}
-          {page !== Pages.Add && (
-            <div
-              className="NewTabPage__button"
-              onClick={() => this.setState({ page: Pages.Add })}
-            >
-              Add Vocab
-            </div>
-          )}
-        </div>
+            <div className="NewTabPage__content">
+              {page === Page.Add && (
+                <AddWords subPage={subPage} addWord={this.addWord} />
+              )}
 
-        {page !== Pages.Learn &&
-          words &&
-          !!words.length && (
-            <>
-              <div
-                className="NewTabPage__backBtn"
-                onClick={() => this.setState({ page: Pages.Learn })}
-              >
-                Back
-              </div>
-            </>
-          )}
+              {page === Page.Manage &&
+                words && (
+                  <ManageWords
+                    words={words}
+                    deleteWord={this.deleteWord}
+                    updateWord={this.updateWord}
+                  />
+                )}
+              {page === Page.Import &&
+                words && (
+                  <ImportPage
+                    subPage={subPage}
+                    clearAll={this.clearAll}
+                    addWords={this.addWords}
+                  />
+                )}
+            </div>
+          </div>
+        )}
       </div>
     );
   }

@@ -3,19 +3,43 @@ import { PureComponent } from "react";
 import "./Sidebar.scss";
 import * as SidebarLogo from "./sidebar-logo.png";
 
-type Props = {};
+export enum Page {
+  Learn = "Main Page",
+  Add = "Add Vocabulary",
+  Manage = "Manage Vocabulary",
+  Import = "Import Vocabulary"
+}
+
+export enum SubPage {
+  Learn = "Learn",
+
+  Input = "Input",
+  Search = "Search",
+  Paste = "Paste",
+
+  Words = "Words",
+
+  Pleco = "Pleco",
+  PreMade = "Vocabulary Lists"
+}
+
+type Props = {
+  selectPage: (page: Page, subPage: SubPage) => any;
+  pages: Page[];
+  selectedPage: Page;
+};
+
+
+export const SubPagesDict = {
+  [Page.Learn] : [SubPage.Learn],
+  [Page.Add ] : [SubPage.Input, SubPage.Search, SubPage.Paste],
+  [Page.Manage] : [SubPage.Words],
+  [Page.Import] : [SubPage.Pleco, SubPage.PreMade],
+};
 
 class Sidebar extends PureComponent<Props> {
   render() {
-    const pages = [
-
-      "Learn",
-      "Manage Vocabulary",
-      "Add Vocabulary",
-      "Import / Export",
-      "Preferences"
-    ];
-    const selected = "Learn";
+    const { pages, selectedPage, selectPage } = this.props;
 
     return (
       <div className="Sidebar">
@@ -24,8 +48,10 @@ class Sidebar extends PureComponent<Props> {
 
         {pages.map(page => (
           <div
+            key={page}
+            onClick={() => selectPage(page, SubPagesDict[page]![0])}
             className={`Sidebar__option ${
-              selected === page ? "Sidebar__option--selected" : ""
+              selectedPage === page ? "Sidebar__option--selected" : ""
             }`}
           >
             {page}
