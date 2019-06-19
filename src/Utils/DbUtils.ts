@@ -1,4 +1,6 @@
 import { getJsonFile } from "./FetchUtils";
+import PinyinConverter from "./PinyinConverter";
+import * as FlexSearch from "flexsearch";
 
 export interface VocabWord {
   word: string;
@@ -17,9 +19,8 @@ export interface WordDef {
 }
 
 export interface WordDefDict {
-  [word: string]: WordDef
+  [word: string]: WordDef;
 }
-
 
 function getChromeStorage<T>(key: string): Promise<T> {
   return new Promise<T>(resolve => {
@@ -32,7 +33,6 @@ function setChromeStorage(key: string, value: any): Promise<void> {
   });
 }
 
-
 export async function getVocabWords(): Promise<VocabWord[]> {
   return getChromeStorage<VocabWord[]>("words");
 }
@@ -42,6 +42,7 @@ export async function setVocabWords(words: VocabWord[]) {
 }
 
 let wordDict: WordDefDict;
+
 export async function getWordDict(): Promise<WordDefDict> {
   try {
     if (wordDict) return wordDict;
@@ -52,11 +53,45 @@ export async function getWordDict(): Promise<WordDefDict> {
       "https://raw.githubusercontent.com/farrelke/chinese-vocab/master/data/wordDict.json"
     );
 
+    Object.keys(wordDict).forEach(key => {
+
+    });
+
     // noinspection JSIgnoredPromiseFromCall
-    setChromeStorage("wordDict", wordDict);
+    setChromeStorage(
+      "wordDict",
+      wordDict
+    );
 
     return wordDict;
   } catch (e) {
     return {};
   }
+}
+
+let dictIndex: any;
+export async function getDictIndex(): Promise<any> {
+  if (dictIndex) return dictIndex;
+  const wordDict = await getWordDict();
+  dictIndex = new FlexSearch({
+    doc: {
+      id: "word",
+      field: [
+        "word",
+        "wordPinyin",
+        "simplePinyin",
+        "meaning"
+      ]
+    }
+  });
+
+  const words = Object.keys(wordDict).map(key => {
+    let word = wordDict[key];
+    const wordPinyin = word.wordPinyin.replace(" ", "");
+    const simplePinyin = wordPinyin.replace(/[0-9]/g, '');
+    return { ...word, wordPinyin, simplePinyin }
+  });
+  dictIndex.add(words);
+
+  return dictIndex;
 }

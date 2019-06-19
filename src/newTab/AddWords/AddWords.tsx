@@ -3,7 +3,6 @@ import { PureComponent } from "react";
 import "./AddWords.scss";
 import { VocabWord } from "../../Utils/DbUtils";
 import PasteAdd from "./PasteAdd";
-import { EditVocabCard } from "../VocabCard";
 import SearchAdd from "./SearchAdd";
 import { SubPage } from "../components/Sidebar/Sidebar";
 import InputAdd from "./InputAdd";
@@ -60,20 +59,13 @@ class AddWords extends PureComponent<Props> {
 
     if (subPage === SubPage.Input) {
       return  <InputAdd  addWord={addWord} />
+    } else if (subPage === SubPage.Search) {
+      return <SearchAdd addWord={addWord} />
     }
 
     return (
       <div className="AddWords">
-        <InputMethodSelector
-          selectedMethod={inputMethod}
-          updateMethod={this.updateMethod}
-        />
-
-        {inputMethod === InputMethod.Input && (
-          <EditVocabCard addWord={addWord} />
-        )}
-        {inputMethod === InputMethod.Paste && <PasteAdd addWord={addWord} />}
-        {inputMethod === InputMethod.Search && <SearchAdd addWord={addWord} />}
+        {subPage === SubPage.Paste && <PasteAdd addWord={addWord} />}
       </div>
     );
   }

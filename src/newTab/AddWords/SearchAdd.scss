@@ -1,4 +1,60 @@
-
 .SearchAdd {
+  padding: 40px;
+}
 
+.SearchAdd__loading {
+  color: #1bbc9b;
+  font-size: 20px;
+}
+
+
+.SearchAdd__word {
+
+}
+
+
+
+.SearchAdd__inputContainer {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.SearchAdd__inputLabel {
+  margin-right: 20px;
+  font-size: 20px;
+  color: #333;
+  line-height: 41px;
+  align-self: start;
+}
+
+.SearchAdd__input {
+  width: 340px;
+  font-size: 18px;
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+  background: #FFFFFF;
+  box-shadow:0px 3px 5px rgba(0, 0, 0, 0.20);
+  padding: 10px 10px;
+  color: #333333;
+}
+
+.SearchAdd__btn {
+  font-size: 20px;
+  color: white;
+  padding: 5px 10px;
+  background-color: #1bbc9b;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.20);
+  margin-left: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.SearchAdd__resultsTitle {
+  width: 460px;
+  font-size: 20px;
+  margin-top: 40px;
+  color: #b9b9b9;
+  border-bottom: 1px solid #b9b9b9;;
 }

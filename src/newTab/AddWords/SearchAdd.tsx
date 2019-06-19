@@ -1,7 +1,7 @@
 import * as React from "react";
 import { PureComponent } from "react";
 import "./SearchAdd.scss";
-import { getWordDict, VocabWord, WordDefDict } from "../../Utils/DbUtils";
+import { getDictIndex, getWordDict, VocabWord, WordDef, WordDefDict } from "../../Utils/DbUtils";
 import VocabCard from "../VocabCard";
 import PinyinConverter from "../../Utils/PinyinConverter";
 
@@ -12,17 +12,56 @@ type Props = {
 class SearchAdd extends PureComponent<Props> {
   state = {
     wordDict: null as WordDefDict,
-    searchWord: "" as string
+    dictIndex: null as any,
+    searchWord: "" as string,
+    results: [] as VocabWord[]
   };
 
   async componentDidMount() {
     const wordDict = await getWordDict();
-    this.setState({ wordDict });
+    const dictIndex = await getDictIndex();
+    this.setState({ wordDict, dictIndex });
   }
 
   updateSearchWord = async (e: React.FormEvent<HTMLInputElement>) => {
     const searchWord = e.currentTarget.value;
-    this.setState({ searchWord });
+    this.setState({ searchWord, results: [] });
+    if (!searchWord) return;
+
+    const { dictIndex, wordDict } = this.state;
+
+
+    // check chinese first
+    let results: WordDef[] = Object.keys(wordDict).filter(a =>
+      a.indexOf(searchWord) > -1
+    ) .map(key => wordDict[key])
+      .sort((a, b) => a.word.length - b.word.length);
+
+
+    // try pinyin
+    if (results.length <= 0 && searchWord.length >= 2) {
+      results = dictIndex.search({
+        field: ["wordPinyin", "simplePinyin"],
+        bool: "or",
+        query: searchWord.replace(" ", "")
+      })
+        .map(r => wordDict[r.word])
+        .sort((a, b) => a.word.length - b.word.length)
+        .slice(0, 20);
+
+      // try translation
+      if (results.length <= 0)
+        results = dictIndex.search({
+          field: "meaning",
+          query: searchWord
+          // remove dedups
+        })
+          .map(r => wordDict[r.word])
+          .sort((a, b) => a.word.length - b.word.length);
+    }
+
+
+    this.setState({ results });
   };
 
   addWord = () => {
@@ -39,36 +78,39 @@ class SearchAdd extends PureComponent<Props> {
       this.props.addWord(word);
     }
 
-    this.setState({ searchWord: "" });
+    this.setState({ searchWord: "", results: [] });
   };
 
   render() {
-    const { wordDict, searchWord } = this.state;
-
-    let card: any = {};
-    if (wordDict && wordDict[searchWord]) {
-      card = wordDict[searchWord];
-      if (card && card.wordPinyin) {
-        card.wordPinyin = PinyinConverter.convert(card.wordPinyin);
-      }
-      console.log(card);
-    }
+    const { wordDict, results, searchWord } = this.state;
 
     return (
       <div className="SearchAdd">
-        {!wordDict && <div>Loading dictionary...</div>}
+        {!wordDict && (
+          <div className="SearchAdd__loading">Loading dictionary...</div>
+        )}
         {wordDict && (
           <>
-            {" "}
-            <div>Dictionary loaded</div>
-            <input
-              onChange={this.updateSearchWord}
-              type="text"
-              value={searchWord}
-              className="SearchAdd__word"
-              placeholder="hanzi"
-            />
-            {card && <VocabCard word={card} addWord={this.addWord} />}
+            <div className="SearchAdd__inputContainer">
+              <div className="SearchAdd__inputLabel">Search</div>
+              <input
+                type="text"
+                value={searchWord}
+                onChange={this.updateSearchWord}
+                className="SearchAdd__input"
+              />
+            </div>
+
+            <div className="SearchAdd__resultsTitle">Results</div>
+
+            {results &&
+              results.map(result => (
+                <VocabCard
+                  key={result.word + result.wordPinyin}
+                  word={result}
+                  addWord={this.addWord}
+                />
+              ))}
           </>
         )}
       </div>

@@ -92,5 +92,12 @@ time, mark, audio, video {
 
 .NewTabPage__content {
   grid-area: content;
+}
 
+
+.NewTabPage__settings {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  cursor: pointer;
 }

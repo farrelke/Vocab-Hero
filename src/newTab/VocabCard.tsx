@@ -153,7 +153,7 @@ class VocabCard extends PureComponent<Props> {
 
     return (
       <div className="VocabCard">
-        <div className="VocabCard__wordPinyin">{word.wordPinyin}</div>
+        <div className="VocabCard__wordPinyin">{PinyinConverter.convert(word.wordPinyin)}</div>
 
         {deleteWord &&
           !editMode && (

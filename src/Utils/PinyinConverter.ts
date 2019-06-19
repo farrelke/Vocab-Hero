@@ -24,9 +24,15 @@ class PinyinConverter {
     5: ["a", "e", "i", "o", "u", "ü", "A", "E", "I", "O", "U", "Ü"]
   };
   accentMap: any;
+  cache = {
+    "": ""
+  };
 
-  convert = (string: string) => {
-    var j, len, match, matches, replacement;
+  convert = (string: string = "") => {
+    if (this.cache[string]) return this.cache[string];
+    const originalStr = string;
+
+    let j, len, match, matches, replacement;
     matches = string.match(this.pinyinRegex);
     if (!matches) {
       return string;
@@ -36,6 +42,7 @@ class PinyinConverter {
       replacement = this.getReplacement(match);
       string = string.replace(match, replacement);
     }
+    this.cache[originalStr] = string;
     return string;
   };
   getReplacement = (match: string) => {
@@ -91,6 +98,5 @@ class PinyinConverter {
     return this.accentMap;
   };
 }
-
 
 export default new PinyinConverter();

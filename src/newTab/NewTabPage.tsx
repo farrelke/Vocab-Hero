@@ -8,13 +8,14 @@ import { getVocabWords, setVocabWords, VocabWord } from "../Utils/DbUtils";
 import ImportPage from "./ImportPage/ImportPage";
 import Sidebar, { Page, SubPage } from "./components/Sidebar/Sidebar";
 import Header from "./components/Header/Header";
+import * as SettingIcon from "./settings-icon.svg";
 
 type Props = {};
 
 class NewTabPage extends PureComponent<Props> {
   state = {
-    page: Page.Learn,
-    subPage: SubPage.Learn,
+    page: Page.Add,
+    subPage: SubPage.Search,
     vocab: null as VocabWord,
     words: [] as VocabWord[]
   };
@@ -117,6 +118,14 @@ class NewTabPage extends PureComponent<Props> {
                 )}
             </div>
           </div>
+        )}
+
+        {page === Page.Learn && (
+          <img
+            src={SettingIcon}
+            className="NewTabPage__settings"
+            onClick={() => this.selectPage(Page.Manage, SubPage.Words)}
+          />
         )}
       </div>
     );
