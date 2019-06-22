@@ -1,5 +1,4 @@
 import { getJsonFile } from "./FetchUtils";
-import PinyinConverter from "./PinyinConverter";
 import * as FlexSearch from "flexsearch";
 
 export interface VocabWord {
@@ -53,15 +52,8 @@ export async function getWordDict(): Promise<WordDefDict> {
       "https://raw.githubusercontent.com/farrelke/chinese-vocab/master/data/wordDict.json"
     );
 
-    Object.keys(wordDict).forEach(key => {
-
-    });
-
     // noinspection JSIgnoredPromiseFromCall
-    setChromeStorage(
-      "wordDict",
-      wordDict
-    );
+    setChromeStorage("wordDict", wordDict);
 
     return wordDict;
   } catch (e) {
@@ -72,26 +64,33 @@ export async function getWordDict(): Promise<WordDefDict> {
 let dictIndex: any;
 export async function getDictIndex(): Promise<any> {
   if (dictIndex) return dictIndex;
-  const wordDict = await getWordDict();
+
   dictIndex = new FlexSearch({
     doc: {
       id: "word",
-      field: [
-        "word",
-        "wordPinyin",
-        "simplePinyin",
-        "meaning"
-      ]
+      field: ["word", "wordPinyin", "simplePinyin", "meaning"]
     }
   });
 
+  const dictIndexData = await getChromeStorage<WordDefDict>("dictIndex");
+  if (dictIndexData) {
+    try {
+      dictIndex.import(dictIndexData);
+      return dictIndex;
+    } catch (e) {}
+  }
+
+  const wordDict = await getWordDict();
   const words = Object.keys(wordDict).map(key => {
     let word = wordDict[key];
     const wordPinyin = word.wordPinyin.replace(" ", "");
-    const simplePinyin = wordPinyin.replace(/[0-9]/g, '');
-    return { ...word, wordPinyin, simplePinyin }
+    const simplePinyin = wordPinyin.replace(/[0-9]/g, "");
+    return { ...word, wordPinyin, simplePinyin };
   });
   dictIndex.add(words);
+
+  // noinspection JSIgnoredPromiseFromCall
+  setChromeStorage("dictIndex", dictIndex.export());
 
   return dictIndex;
 }

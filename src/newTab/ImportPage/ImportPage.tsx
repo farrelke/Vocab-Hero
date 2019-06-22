@@ -1,26 +1,57 @@
 import * as React from "react";
 import { PureComponent } from "react";
 import "./ImportPage.scss";
-import { importPlecoFile } from "../../Utils/PlecoUtils";
 import { getJsonFile } from "../../Utils/FetchUtils";
 import { VocabWord } from "../../Utils/DbUtils";
 import PinyinConverter from "../../Utils/PinyinConverter";
 import { SubPage } from "../components/Sidebar/Sidebar";
+import { saveAs } from "file-saver";
+import PreviewDeck from "./PreviewDeck";
+import { importJsonFile, importPlecoFile } from "../../Utils/ImportUtils";
+import { getVocabDecks } from "../../Utils/GithubUtils";
 
 type Props = {
+  words: VocabWord[];
   addWords: (words: VocabWord[]) => any;
   clearAll: () => any;
   subPage: SubPage;
 };
 
 class ImportPage extends PureComponent<Props> {
-  state = { addingWord: false };
+  state = {
+    addingWord: false,
+    previewUrl: ""
+  };
 
-  handleChange = async (selectorFiles: FileList) => {
+  async componentDidMount() {
+     const words = await getVocabDecks();
+  }
+
+  componentDidUpdate(prevProps: Readonly<Props>): void {
+    if (prevProps.subPage !== this.props.subPage) {
+      this.setState({
+        addingWord: false,
+        previewUrl: ""
+      });
+    }
+  }
+
+  handlePlecoImport = async (selectorFiles: FileList) => {
     try {
       if (selectorFiles && selectorFiles[0]) {
         this.setState({ addingWord: true });
         const words = await importPlecoFile(selectorFiles[0]);
+        this.props.addWords(words);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  handleJsonImport = async (selectorFiles: FileList) => {
+    try {
+      if (selectorFiles && selectorFiles[0]) {
+        this.setState({ addingWord: true });
+        const words = await importJsonFile(selectorFiles[0]);
         this.props.addWords(words);
       }
     } catch (e) {
@@ -35,6 +66,16 @@ class ImportPage extends PureComponent<Props> {
     if (confirm1) {
       this.props.clearAll();
     }
+  };
+
+  previewDesk = async (previewUrl: string) => {
+    this.setState({ previewUrl });
+  };
+
+  previewHskLevel = async (level: number) => {
+    this.previewDesk(
+      `https://raw.githubusercontent.com/farrelke/chinese-vocab/master/data/hsk-${level}.json`
+    );
   };
 
   addHskCards = async (level: number) => {
@@ -52,9 +93,33 @@ class ImportPage extends PureComponent<Props> {
     this.props.addWords(words);
   };
 
+  exportVocabulary = async () => {
+    const { words } = this.props;
+    const vocabFile = new File(
+      [JSON.stringify(words, null, 2)],
+      "vocab-list.json",
+      {
+        type: "application/json;charset=utf-8"
+      }
+    );
+    saveAs(vocabFile);
+  };
+
+  importLocal = async () => {};
+
   render() {
-    const { addingWord } = this.state;
-    const { subPage } = this.props;
+    const { addingWord, previewUrl } = this.state;
+    const { subPage, addWords } = this.props;
+
+    if (previewUrl) {
+      return (
+        <PreviewDeck
+          previewUrl={previewUrl}
+          addWords={addWords}
+          goBack={() => this.setState({ previewUrl: "" })}
+        />
+      );
+    }
 
     if (addingWord) {
       return (
@@ -66,9 +131,10 @@ class ImportPage extends PureComponent<Props> {
 
     return (
       <div className="ImportPage">
-        <div className="ImportPage__clearBtn" onClick={this.clearAllCards}>
-          Delete Current Vocabulary
-        </div>
+
+          <div className="ImportPage__clearBtn" onClick={this.clearAllCards}>
+            Delete Current Vocabulary
+          </div>
 
         {subPage === SubPage.Pleco && (
           <div className="ImportPage__section">
@@ -77,17 +143,25 @@ class ImportPage extends PureComponent<Props> {
             </div>
             <div className="ImportPage__sectionDesc">
               To generate an export file in Pleco:
-              <ul className="ImportPage__sectionDescList" >
-                <li>First open the export file function in <b> Pleco > Flashcards > Import/Export</b>.</li>
-                <li>Set the file format to  <b>XML File</b> (should be the default).</li>
-                <li>Set <b>card and dictionary definitions</b> to export.</li>
+              <ul className="ImportPage__sectionDescList">
+                <li>
+                  First open the export file function in{" "}
+                  <b> Pleco > Flashcards > Import/Export</b>.
+                </li>
+                <li>
+                  Set the file format to <b>XML File</b> (should be the
+                  default).
+                </li>
+                <li>
+                  Set <b>card and dictionary definitions</b> to export.
+                </li>
               </ul>
             </div>
             <input
               type="file"
               id="files"
               name="files[]"
-              onChange={e => this.handleChange(e.target.files)}
+              onChange={e => this.handlePlecoImport(e.target.files)}
             />
           </div>
         )}
@@ -106,7 +180,7 @@ class ImportPage extends PureComponent<Props> {
                   <div
                     className="ImportPage__hskBtn"
                     key={i}
-                    onClick={() => this.addHskCards(i + 1)}
+                    onClick={() => this.previewHskLevel(i + 1)}
                   >
                     {hsk}
                   </div>
@@ -114,6 +188,31 @@ class ImportPage extends PureComponent<Props> {
               )}
             </div>
           </div>
+        )}
+
+        {subPage === SubPage.Local && (
+          <>
+            <div className="ImportPage__section">
+              <div className="ImportPage__sectionTitle">
+                Export vocabulary to json file
+              </div>
+              <div className="ImportPage__btn" onClick={this.exportVocabulary}>
+                Export Vocabulary
+              </div>
+            </div>
+            <div className="ImportPage__section">
+              <div className="ImportPage__sectionTitle">
+                Import local json file
+              </div>
+
+              <input
+                type="file"
+                id="files"
+                name="files[]"
+                onChange={e => this.handleJsonImport(e.target.files)}
+              />
+            </div>
+          </>
         )}
       </div>
     );

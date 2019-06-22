@@ -64,20 +64,16 @@ class SearchAdd extends PureComponent<Props> {
     this.setState({ results });
   };
 
-  addWord = () => {
-    const { wordDict, searchWord } = this.state;
-    const card = wordDict[searchWord];
-    if (card && card.word) {
+  addWord = (wordDef: WordDef) => {
+    if (wordDef && wordDef.word) {
       const word: VocabWord = {
-        word: card.word,
-        wordPinyin: PinyinConverter.convert(card.wordPinyin),
-        meaning: card.meaning,
+        word: wordDef.word,
+        wordPinyin: PinyinConverter.convert(wordDef.wordPinyin),
+        meaning: wordDef.meaning,
         sentences: []
       };
-
       this.props.addWord(word);
     }
-
     this.setState({ searchWord: "", results: [] });
   };
 
@@ -108,7 +104,7 @@ class SearchAdd extends PureComponent<Props> {
                 <VocabCard
                   key={result.word + result.wordPinyin}
                   word={result}
-                  addWord={this.addWord}
+                  addWord={() => this.addWord(result)}
                 />
               ))}
           </>

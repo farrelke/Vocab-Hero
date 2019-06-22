@@ -3,6 +3,7 @@ import { VocabWord } from "../Utils/DbUtils";
 import "./VocabCard.scss";
 import * as React from "react";
 import PinyinConverter from "../Utils/PinyinConverter";
+import { speak } from "../Utils/SpeechUtils";
 
 type Props = {
   word: VocabWord;
@@ -176,12 +177,12 @@ class VocabCard extends PureComponent<Props> {
           </div>
         )}
 
-        <div className="VocabCard__word">{word.word}</div>
+        <div className="VocabCard__word" onClick={() => speak(word.word)} >{word.word}</div>
         <div className="VocabCard__wordMeaning">{word.meaning}</div>
         {word.sentences &&
           word.sentences.map(sentence => (
             <>
-              <div className="VocabCard__sentence">{sentence.sentence}</div>
+              <div className="VocabCard__sentence" onClick={() => speak(sentence.sentence)} >{sentence.sentence}</div>
               <div className="VocabCard__sentenceMeaning">
                 {sentence.pinyin}
               </div>

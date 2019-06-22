@@ -2,6 +2,7 @@ import * as React from "react";
 import { PureComponent } from "react";
 import "./Sidebar.scss";
 import * as SidebarLogo from "./sidebar-logo.png";
+import { speak } from "../../../Utils/SpeechUtils";
 
 export enum Page {
   Learn = "Main Page",
@@ -20,7 +21,8 @@ export enum SubPage {
   Words = "Words",
 
   Pleco = "Pleco",
-  PreMade = "Vocabulary Lists"
+  PreMade = "Vocabulary Lists",
+  Local = "Local Import/Export"
 }
 
 type Props = {
@@ -29,12 +31,11 @@ type Props = {
   selectedPage: Page;
 };
 
-
 export const SubPagesDict = {
-  [Page.Learn] : [SubPage.Learn],
-  [Page.Add ] : [SubPage.Input, SubPage.Search, SubPage.Paste],
-  [Page.Manage] : [SubPage.Words],
-  [Page.Import] : [SubPage.Pleco, SubPage.PreMade],
+  [Page.Learn]: [SubPage.Learn],
+  [Page.Add]: [SubPage.Input, SubPage.Search, SubPage.Paste],
+  [Page.Manage]: [SubPage.Words],
+  [Page.Import]: [SubPage.Pleco, SubPage.PreMade, SubPage.Local]
 };
 
 class Sidebar extends PureComponent<Props> {

@@ -14,6 +14,16 @@ export async function getTextFromFile(file: File): Promise<string> {
   });
 }
 
+export async function importJsonFile(file: File): Promise<VocabWord[]> {
+  try {
+    const jsonString = await getTextFromFile(file);
+    const data = JSON.parse(jsonString);
+    return data as VocabWord[];
+  } catch (e) {
+    return [];
+  }
+}
+
 export async function importPlecoFile(file: File): Promise<VocabWord[]> {
   const xmlString = await getTextFromFile(file);
   const obj: any = convert.xml2js(xmlString, { compact: true });

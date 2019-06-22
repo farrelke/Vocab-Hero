@@ -112,6 +112,7 @@ class NewTabPage extends PureComponent<Props> {
                 words && (
                   <ImportPage
                     subPage={subPage}
+                    words={words}
                     clearAll={this.clearAll}
                     addWords={this.addWords}
                   />
