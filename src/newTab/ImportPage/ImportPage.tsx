@@ -26,7 +26,6 @@ class ImportPage extends PureComponent<Props> {
 
   async componentDidMount() {
     const vocabLists = await getVocabDecks();
-    console.log(vocabLists);
     this.setState({ vocabLists });
   }
 
@@ -200,15 +199,19 @@ class ImportPage extends PureComponent<Props> {
                 Vocab lists submitted by users
               </div>
               <div className="ImportPage__hskButtons">
-                {vocabLists.map(list => (
-                  <div
-                    className="ImportPage__hskBtn"
-                    key={list.name}
-                    onClick={() => this.previewDesk(list.downloadUrl)}
-                  >
-                    {list.name}
-                  </div>
-                ))}
+                {!vocabLists && (
+                  <div className="ImportPage__loading">Fetching Decks...</div>
+                )}
+                {vocabLists &&
+                  vocabLists.map(list => (
+                    <div
+                      className="ImportPage__hskBtn"
+                      key={list.name}
+                      onClick={() => this.previewDesk(list.downloadUrl)}
+                    >
+                      {list.name}
+                    </div>
+                  ))}
               </div>
             </div>
           </>
