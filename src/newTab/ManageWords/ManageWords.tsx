@@ -3,7 +3,6 @@ import { PureComponent } from "react";
 import "./ManageWords.scss";
 import { VocabWord } from "../../Utils/DbUtils";
 import VocabCard from "./../VocabCard";
-import { importPlecoFile } from "../../Utils/PlecoUtils";
 
 type Props = {
   words: VocabWord[];

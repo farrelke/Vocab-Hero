@@ -8,7 +8,7 @@ import { SubPage } from "../components/Sidebar/Sidebar";
 import { saveAs } from "file-saver";
 import PreviewDeck from "./PreviewDeck";
 import { importJsonFile, importPlecoFile } from "../../Utils/ImportUtils";
-import { getVocabDecks } from "../../Utils/GithubUtils";
+import { getVocabDecks, GithubFile } from "../../Utils/GithubUtils";
 
 type Props = {
   words: VocabWord[];
@@ -20,11 +20,14 @@ type Props = {
 class ImportPage extends PureComponent<Props> {
   state = {
     addingWord: false,
-    previewUrl: ""
+    previewUrl: "",
+    vocabLists: undefined as GithubFile[]
   };
 
   async componentDidMount() {
-     const words = await getVocabDecks();
+    const vocabLists = await getVocabDecks();
+    console.log(vocabLists);
+    this.setState({ vocabLists });
   }
 
   componentDidUpdate(prevProps: Readonly<Props>): void {
@@ -108,7 +111,7 @@ class ImportPage extends PureComponent<Props> {
   importLocal = async () => {};
 
   render() {
-    const { addingWord, previewUrl } = this.state;
+    const { addingWord, previewUrl, vocabLists } = this.state;
     const { subPage, addWords } = this.props;
 
     if (previewUrl) {
@@ -131,10 +134,9 @@ class ImportPage extends PureComponent<Props> {
 
     return (
       <div className="ImportPage">
-
-          <div className="ImportPage__clearBtn" onClick={this.clearAllCards}>
-            Delete Current Vocabulary
-          </div>
+        <div className="ImportPage__clearBtn" onClick={this.clearAllCards}>
+          Delete Current Vocabulary
+        </div>
 
         {subPage === SubPage.Pleco && (
           <div className="ImportPage__section">
@@ -167,27 +169,49 @@ class ImportPage extends PureComponent<Props> {
         )}
 
         {subPage === SubPage.PreMade && (
-          <div className="ImportPage__section">
-            <div className="ImportPage__sectionTitle">
-              Import Hsk Vocabulary
+          <>
+            <div className="ImportPage__section">
+              <div className="ImportPage__sectionTitle">
+                Import Hsk Vocabulary
+              </div>
+              <div className="ImportPage__sectionDesc">
+                Hsk Vocabulary divided by level
+              </div>
+              <div className="ImportPage__hskButtons">
+                {["Hsk 1", "Hsk 2", "Hsk 3", "Hsk 4", "Hsk 5", "Hsk 6"].map(
+                  (hsk, i) => (
+                    <div
+                      className="ImportPage__hskBtn"
+                      key={i}
+                      onClick={() => this.previewHskLevel(i + 1)}
+                    >
+                      {hsk}
+                    </div>
+                  )
+                )}
+              </div>
             </div>
-            <div className="ImportPage__sectionDesc">
-              Hsk Vocabulary divided by level
-            </div>
-            <div className="ImportPage__hskButtons">
-              {["Hsk 1", "Hsk 2", "Hsk 3", "Hsk 4", "Hsk 5", "Hsk 6"].map(
-                (hsk, i) => (
+
+            <div className="ImportPage__section">
+              <div className="ImportPage__sectionTitle">
+                Import User made lists
+              </div>
+              <div className="ImportPage__sectionDesc">
+                Vocab lists submitted by users
+              </div>
+              <div className="ImportPage__hskButtons">
+                {vocabLists.map(list => (
                   <div
                     className="ImportPage__hskBtn"
-                    key={i}
-                    onClick={() => this.previewHskLevel(i + 1)}
+                    key={list.name}
+                    onClick={() => this.previewDesk(list.downloadUrl)}
                   >
-                    {hsk}
+                    {list.name}
                   </div>
-                )
-              )}
+                ))}
+              </div>
             </div>
-          </div>
+          </>
         )}
 
         {subPage === SubPage.Local && (
