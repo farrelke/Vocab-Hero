@@ -28,45 +28,54 @@ export async function importPlecoFile(file: File): Promise<VocabWord[]> {
   const xmlString = await getTextFromFile(file);
   const obj: any = convert.xml2js(xmlString, { compact: true });
 
-  return obj.plecoflash.cards.card.map(({entry}) => {
-    const defData: string[] = Array.isArray(entry.defn)
-      ? entry.defn[0]._text
-      : entry.defn._text;
-    const headword = Array.isArray(entry.headword)
-      ? entry.headword[0]._text
-      : entry.headword._text;
-    const pron = Array.isArray(entry.pron)
-      ? entry.pron[0]._text
-      : entry.pron._text;
+  return obj.plecoflash.cards.card.map(({ entry }) => {
+    try {
+      const defData: string[] =
+        (entry.defn &&
+          (Array.isArray(entry.defn) ? entry.defn[0]._text : entry.defn._text)) ||
+        "";
+      const headword =
+        (entry.headword &&
+          (Array.isArray(entry.headword)
+            ? entry.headword[0]._text
+            : entry.headword._text)) ||
+        "";
+      const pron =
+        (entry.pron &&
+          (Array.isArray(entry.pron) ? entry.pron[0]._text : entry.pron._text)) ||
+        "";
 
-    let def = "";
-    let i = 0;
-    for (; i < defData.length; i++) {
-      const letter = defData[i];
-      if (isChineseChar(letter)) {
-        break;
-      }
-      def += letter;
-    }
-    let sentence = "";
-    for (; i < defData.length; i++) {
-      const letter = defData[i];
-      if (!isChineseChar(letter)) {
-        break;
-      }
-      sentence += letter;
-    }
-    
-    return {
-      word: headword,
-      wordPinyin: PinyinConverter.convert(pron.replace("//", " ")),
-      meaning: def.trim(),
-      sentences: [
-        {
-          sentence: sentence,
-          pinyin: ""
+      let def = "";
+      let i = 0;
+      for (; i < defData.length; i++) {
+        const letter = defData[i];
+        if (isChineseChar(letter)) {
+          break;
         }
-      ]
-    };
-  });
+        def += letter;
+      }
+      let sentence = "";
+      for (; i < defData.length; i++) {
+        const letter = defData[i];
+        if (!isChineseChar(letter)) {
+          break;
+        }
+        sentence += letter;
+      }
+
+      return {
+        word: headword,
+        wordPinyin: PinyinConverter.convert(pron.replace("//", " ")),
+        meaning: def.trim(),
+        sentences: [
+          {
+            sentence: sentence,
+            pinyin: ""
+          }
+        ]
+      };
+    } catch (e) {
+      return null
+    }
+  }).filter(a => a);
 }
