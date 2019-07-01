@@ -2,7 +2,7 @@ import * as React from "react";
 import { PureComponent } from "react";
 import "./InputAdd.scss";
 import PinyinConverter from "../../Utils/PinyinConverter";
-import { VocabWord } from "../../Utils/DbUtils";
+import { getDictIndex, getWordDict, VocabWord, WordDefDict } from "../../Utils/DbUtils";
 
 type Props = {
   addWord: (word: VocabWord) => any;
@@ -12,9 +12,18 @@ class InputAdd extends PureComponent<Props> {
   state = {
     hanzi: "",
     pinyin: "",
-    translation: ""
+    translation: "",
+    wordDict: null as WordDefDict
   };
   hanziInput: any;
+
+
+  async componentDidMount() {
+    const wordDict = await getWordDict();
+    this.setState({ wordDict });
+  }
+
+
 
   updateText = (type: string) => (
     e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -36,11 +45,14 @@ class InputAdd extends PureComponent<Props> {
 
   addWord = () => {
     const { addWord } = this.props;
-    const { hanzi, pinyin, translation } = this.state;
+    const { hanzi, pinyin, translation, wordDict } = this.state;
+    const dictRef = wordDict && wordDict[hanzi];
+
+
     const newWord: VocabWord = {
       word: hanzi,
-      wordPinyin: PinyinConverter.convert(pinyin),
-      meaning: translation,
+      wordPinyin: PinyinConverter.convert(pinyin || dictRef.wordPinyin),
+      meaning: translation || dictRef.meaning,
       sentences: []
     };
     addWord(newWord);
@@ -62,7 +74,9 @@ class InputAdd extends PureComponent<Props> {
 
 
   render() {
-    const { hanzi, pinyin, translation } = this.state;
+    const { hanzi, pinyin, translation, wordDict } = this.state;
+
+    const dictRef = wordDict && wordDict[hanzi];
 
     return (
       <div className="InputAdd">
@@ -82,6 +96,7 @@ class InputAdd extends PureComponent<Props> {
           <input
             type="text"
             value={pinyin}
+            placeholder={PinyinConverter.convert((dictRef && dictRef.wordPinyin) || "")}
             onKeyDown={this.onKeyDownPinyin}
             onChange={this.updateText("pinyin")}
             className="InputAdd__input"
@@ -95,6 +110,7 @@ class InputAdd extends PureComponent<Props> {
             rows={4}
             onKeyDown={this.onKeyDownTranslation}
             value={translation}
+            placeholder={(dictRef && dictRef.meaning) || ""}
             onChange={this.updateText("translation")}
             className="InputAdd__input InputAdd__input--textarea"
           />

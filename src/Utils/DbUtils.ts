@@ -23,12 +23,37 @@ export interface WordDefDict {
 
 function getChromeStorage<T>(key: string): Promise<T> {
   return new Promise<T>(resolve => {
-    chrome.storage.local.get([key], result => resolve(result[key]));
+    const hasChromeStorage =
+      window.chrome && chrome.storage && chrome.storage.local;
+    if (hasChromeStorage) {
+      chrome.storage.local.get([key], result => resolve(result[key]));
+    } else {
+      try {
+        resolve(JSON.parse(localStorage.getItem(key)));
+      } catch (e) {
+        console.log(e);
+        resolve(null);
+      }
+    }
   });
 }
-function setChromeStorage(key: string, value: any): Promise<void> {
+function setChromeStorage(key: string, value: any, onlyExtension = false): Promise<void> {
   return new Promise(resolve => {
-    chrome.storage.local.set({ [key]: value }, resolve);
+    const hasChromeStorage =
+      window.chrome && chrome.storage && chrome.storage.local;
+    if (hasChromeStorage) {
+      chrome.storage.local.set({ [key]: value }, resolve);
+    } else if(!onlyExtension) {
+      try {
+        localStorage.setItem(key, JSON.stringify(value));
+        resolve();
+      } catch (e) {
+        console.log(e);
+        resolve();
+      }
+    } else {
+      resolve();
+    }
   });
 }
 
@@ -53,7 +78,7 @@ export async function getWordDict(): Promise<WordDefDict> {
     );
 
     // noinspection JSIgnoredPromiseFromCall
-    setChromeStorage("wordDict", wordDict);
+    setChromeStorage("wordDict", wordDict, true);
 
     return wordDict;
   } catch (e) {
@@ -90,7 +115,7 @@ export async function getDictIndex(): Promise<any> {
   dictIndex.add(words);
 
   // noinspection JSIgnoredPromiseFromCall
-  setChromeStorage("dictIndex", dictIndex.export());
+  setChromeStorage("dictIndex", dictIndex.export(), true);
 
   return dictIndex;
 }

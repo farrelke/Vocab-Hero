@@ -4,6 +4,7 @@ import "./SearchAdd.scss";
 import { getDictIndex, getWordDict, VocabWord, WordDef, WordDefDict } from "../../Utils/DbUtils";
 import VocabCard from "../VocabCard";
 import PinyinConverter from "../../Utils/PinyinConverter";
+import { isChineseChar } from "../../Utils/StringUtils";
 
 type Props = {
   addWord: (word: VocabWord) => any;
@@ -32,7 +33,9 @@ class SearchAdd extends PureComponent<Props> {
 
 
     // check chinese first
-    let results: WordDef[] = Object.keys(wordDict).filter(a =>
+    const isHanzi = searchWord.split("").every(a => isChineseChar(a));
+
+    let results: WordDef[] = !isHanzi ? [] : Object.keys(wordDict).filter(a =>
       a.indexOf(searchWord) > -1
     ) .map(key => wordDict[key])
       .sort((a, b) => a.word.length - b.word.length);
