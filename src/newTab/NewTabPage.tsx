@@ -23,7 +23,7 @@ class NewTabPage extends PureComponent<Props> {
   async componentDidMount() {
     const words = await getVocabWords();
     if (!words || words.length === 0) {
-      this.setState({ page: Page.Add });
+      this.setState({ page: Page.Import, subPage: SubPage.PreMade });
       return;
     }
 
@@ -58,7 +58,7 @@ class NewTabPage extends PureComponent<Props> {
     if (newWords.length === 0) return;
     let { words } = this.state;
     words = [...newWords, ...words];
-    this.setState({ words, vocab: newWords[0], page: Page.Manage });
+    this.setState({ words, vocab: newWords[0], page: Page.Manage, subPage: SubPage.Words });
     await setVocabWords(words);
   };
 
