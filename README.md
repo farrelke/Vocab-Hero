@@ -8,6 +8,11 @@
 
 https://chrome.google.com/webstore/detail/vocab-%E8%8B%B1%E9%9B%84/egbhlijnkoompngemjibfdfpchopglaf
 
+## Preview Link
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e2244508-d9fb-455e-8d44-36f1be853335/deploy-status)](https://app.netlify.com/sites/objective-wozniak-f2a462/deploys) 
+
+https://objective-wozniak-f2a462.netlify.com/
+
 ## Building
 
 1.  Clone repo
