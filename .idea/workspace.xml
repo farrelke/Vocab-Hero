@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1e404d4-de09-4160-b4a1-8e8a594b13aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/newTab/ImportPage/AnkiImport.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/newTab/ImportPage/AnkiImport.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/kevinfarrell.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/kevinfarrell.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/ImportUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/ImportUtils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/StringUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/StringUtils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newTab/ImportPage/ImportPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/ImportPage/ImportPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newTab/components/Sidebar/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/components/Sidebar/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/newTab/NewTabPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/NewTabPage.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -25,18 +19,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Utils/ImportUtils.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="610">
-              <caret line="102" column="72" selection-start-line="102" selection-start-column="72" selection-end-line="102" selection-end-column="72" />
-              <folding>
-                <element signature="e#0#34#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/newTab/ImportPage/AnkiImport.tsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="473">
@@ -44,27 +26,6 @@
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/AddWords.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="63" column="5" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/newTab/VocabCard.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -78,14 +39,56 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
-              <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+            <state relative-caret-position="315">
+              <caret line="61" column="12" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="12" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/newTab/NewTabPage.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="298">
+              <caret line="40" column="24" lean-forward="true" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/newTab/ManageWords/ManageWords.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="117">
+              <caret line="8" column="39" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="8" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/newTab/NewTabPage.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="427">
+              <caret line="101" column="18" lean-forward="true" selection-start-line="98" selection-start-column="1" selection-end-line="101" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="67" column="16" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -111,7 +114,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/newTab/ImportPage/ImportPage.tsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="334">
@@ -119,15 +122,6 @@
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/AddWords.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -192,7 +186,6 @@
         <option value="$PROJECT_DIR$/src/newTab/AddWords/PasteAdd.scss" />
         <option value="$PROJECT_DIR$/create-defs.js" />
         <option value="$PROJECT_DIR$/create-word-db.js" />
-        <option value="$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.scss" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/data/create-word-db.js" />
         <option value="$PROJECT_DIR$/data/hsk-1.json" />
@@ -213,11 +206,9 @@
         <option value="$PROJECT_DIR$/src/Utils/SpeechUtils.ts" />
         <option value="$PROJECT_DIR$/src/newTab/VocabCard.tsx" />
         <option value="$PROJECT_DIR$/src/newTab/VocabCard.scss" />
-        <option value="$PROJECT_DIR$/src/newTab/NewTabPage.tsx" />
         <option value="$PROJECT_DIR$/src/newTab/ImportPage/PreviewDeck.scss" />
         <option value="$PROJECT_DIR$/src/newTab/ImportPage/PreviewDeck.tsx" />
         <option value="$PROJECT_DIR$/src/Utils/GithubUtils.ts" />
-        <option value="$PROJECT_DIR$/src/newTab/ManageWords/ManageWords.tsx" />
         <option value="$PROJECT_DIR$/src/newTab/ImportPage/ImportPage.scss" />
         <option value="$USER_HOME$/Desktop/Pleco-flashcards-john.xml" />
         <option value="$PROJECT_DIR$/dist/manifest.json" />
@@ -230,12 +221,15 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/newTab/components/Sidebar/Sidebar.tsx" />
         <option value="$PROJECT_DIR$/src/newTab/ImportPage/AnkiImport.scss" />
-        <option value="$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.tsx" />
         <option value="$PROJECT_DIR$/src/Utils/ImportUtils.ts" />
         <option value="$PROJECT_DIR$/src/Utils/StringUtils.ts" />
         <option value="$PROJECT_DIR$/src/newTab/AddWords/PasteAdd.tsx" />
         <option value="$PROJECT_DIR$/src/newTab/ImportPage/AnkiImport.tsx" />
         <option value="$PROJECT_DIR$/src/newTab/ImportPage/ImportPage.tsx" />
+        <option value="$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.scss" />
+        <option value="$PROJECT_DIR$/src/newTab/ManageWords/ManageWords.tsx" />
+        <option value="$PROJECT_DIR$/src/newTab/NewTabPage.tsx" />
+        <option value="$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.tsx" />
       </list>
     </option>
   </component>
@@ -282,13 +276,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="newTab" type="462c0819:PsiDirectoryNode" />
               <item name="AddWords" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vocab-extension" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vocab-extension" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="newTab" type="462c0819:PsiDirectoryNode" />
-              <item name="ImportPage" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="vocab-extension" type="b2602c69:ProjectViewProjectNode" />
@@ -408,12 +395,12 @@
       <workItem from="1562215286202" duration="485000" />
       <workItem from="1562243980038" duration="3138000" />
       <workItem from="1562301405189" duration="1759000" />
-      <workItem from="1562384767669" duration="3338000" />
+      <workItem from="1562384767669" duration="4091000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101820000" />
+    <option name="totallyTimeSpent" value="102573000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -425,7 +412,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -456,9 +443,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data/hsk-6.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/newTab/components/Sidebar/sidebar-log.png" />
     <entry file="file://$PROJECT_DIR$/webpack.prod.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -521,13 +505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/newTab/NewTabPage.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="61" column="24" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="61" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/newTab/ManageWords/ManageWords.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="419">
@@ -539,16 +516,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" selection-start-line="5" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/newTab/ManageWords/ManageWords.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -679,16 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/newTab/NewTabPage.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/newTab/components/Sidebar/Sidebar.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -763,16 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/ImportUtils.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="610">
@@ -821,6 +768,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
           <caret line="207" column="43" selection-start-line="207" selection-start-column="43" selection-end-line="207" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/newTab/NewTabPage.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="101" column="18" lean-forward="true" selection-start-line="98" selection-start-column="1" selection-end-line="101" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="67" column="16" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/newTab/ManageWords/ManageWords.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="8" column="39" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="8" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/newTab/NewTabPage.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="40" column="24" lean-forward="true" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="61" column="12" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="12" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>

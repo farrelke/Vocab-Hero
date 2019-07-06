@@ -33,9 +33,17 @@ class NewTabPage extends PureComponent<Props> {
   }
 
   deleteWord = async (word: VocabWord) => {
-    let { words } = this.state;
+    let { words, vocab } = this.state;
     words = words.filter(w => w !== word);
-    this.setState({ words });
+
+    if (word === vocab) {
+      vocab =
+        words.length > 0
+          ? words[Math.floor(Math.random() * words.length)]
+          : vocab;
+    }
+
+    this.setState({ words, vocab });
     await setVocabWords(words);
   };
 
@@ -76,7 +84,8 @@ class NewTabPage extends PureComponent<Props> {
 
     return (
       <div className="NewTabPage">
-        {page === Page.Learn && vocab && <LearnPage vocab={vocab} />}
+        {page === Page.Learn &&
+          vocab && <LearnPage vocab={vocab} deleteWord={this.deleteWord} />}
 
         {page !== Page.Learn && (
           <div className="NewTabPage__layout">

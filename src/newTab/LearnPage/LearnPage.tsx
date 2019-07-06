@@ -2,12 +2,21 @@ import * as React from "react";
 import { PureComponent } from "react";
 import "./LearnPage.scss";
 import { speak } from "../../Utils/SpeechUtils";
+import { VocabWord } from "../../Utils/DbUtils";
 
 type Props = {
-  vocab: any;
+  vocab: VocabWord;
+  deleteWord: (word: VocabWord) => any;
 };
 
 class LearnPage extends PureComponent<Props> {
+  deleteWord = () => {
+    const confirmed = confirm("Are you sure you want to delete this word?");
+    if (confirmed) {
+      this.props.deleteWord(this.props.vocab);
+    }
+  };
+
   render() {
     const { vocab } = this.props;
 
@@ -27,28 +36,35 @@ class LearnPage extends PureComponent<Props> {
           {vocab.meaning}
         </div>
 
-        {vocab.sentences && vocab.sentences.map((sentence, i) => (
-          <div className="LearnPage__sentenceWrapper" key={i}>
-            <div
-              className="LearnPage__sentence"
-              onClick={() => speak(sentence.sentence)}
-            >
-              {sentence.sentence}
-            </div>
+        {vocab.sentences &&
+          vocab.sentences.map((sentence, i) => (
+            <div className="LearnPage__sentenceWrapper" key={i}>
+              <div
+                className="LearnPage__sentence"
+                onClick={() => speak(sentence.sentence)}
+              >
+                {sentence.sentence}
+              </div>
 
-            <div className="LearnPage__sentencePinyin">{sentence.pinyin}</div>
-          </div>
-        ))}
+              <div className="LearnPage__sentencePinyin">{sentence.pinyin}</div>
+            </div>
+          ))}
 
         <a
-          className="LearnPage__chinesePodBtn"
+          className="LearnPage__btn LearnPage__btn--chinesePod"
           target="_blank"
-          href={`https://chinesepod.com/dictionary/english-chinese/${
-            vocab.word && vocab.word.split(" ")[0]
-          }`}
+          href={`https://chinesepod.com/dictionary/english-chinese/${vocab.word &&
+            vocab.word.split(" ")[0]}`}
         >
           Open in Chinesepod
         </a>
+
+        <div
+          className="LearnPage__btn LearnPage__btn--delete"
+          onClick={this.deleteWord}
+        >
+          Delete word
+        </div>
       </div>
     );
   }
