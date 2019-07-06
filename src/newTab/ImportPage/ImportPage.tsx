@@ -7,8 +7,14 @@ import PinyinConverter from "../../Utils/PinyinConverter";
 import { SubPage } from "../components/Sidebar/Sidebar";
 import { saveAs } from "file-saver";
 import PreviewDeck from "./PreviewDeck";
-import { importJsonFile, importPlecoFile } from "../../Utils/ImportUtils";
+import {
+  AnkiData,
+  importAnkiFile,
+  importJsonFile,
+  importPlecoFile
+} from "../../Utils/ImportUtils";
 import { getVocabDecks, GithubFile } from "../../Utils/GithubUtils";
+import AnkiImport from "./AnkiImport";
 
 type Props = {
   words: VocabWord[];
@@ -21,7 +27,8 @@ class ImportPage extends PureComponent<Props> {
   state = {
     addingWord: false,
     previewUrl: "",
-    vocabLists: undefined as GithubFile[]
+    vocabLists: undefined as GithubFile[],
+    ankiData: undefined as AnkiData
   };
 
   async componentDidMount() {
@@ -33,7 +40,8 @@ class ImportPage extends PureComponent<Props> {
     if (prevProps.subPage !== this.props.subPage) {
       this.setState({
         addingWord: false,
-        previewUrl: ""
+        previewUrl: "",
+        ankiData: undefined
       });
     }
   }
@@ -49,6 +57,23 @@ class ImportPage extends PureComponent<Props> {
       console.log(e);
     }
   };
+
+  handleAnkiImport = async (selectorFiles: FileList) => {
+    try {
+      if (selectorFiles && selectorFiles[0]) {
+        this.setState({ addingWord: true });
+        const ankiData = await importAnkiFile(selectorFiles[0]);
+        if (!ankiData) {
+          this.setState({ addingWord: false });
+        }
+        console.log(ankiData);
+        this.setState({ ankiData });
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   handleJsonImport = async (selectorFiles: FileList) => {
     try {
       if (selectorFiles && selectorFiles[0]) {
@@ -110,8 +135,12 @@ class ImportPage extends PureComponent<Props> {
   importLocal = async () => {};
 
   render() {
-    const { addingWord, previewUrl, vocabLists } = this.state;
+    const { addingWord, previewUrl, vocabLists, ankiData } = this.state;
     const { subPage, addWords } = this.props;
+
+    if (ankiData) {
+      return <AnkiImport addWords={addWords} ankiData={ankiData} />;
+    }
 
     if (previewUrl) {
       return (
@@ -163,6 +192,47 @@ class ImportPage extends PureComponent<Props> {
               id="files"
               name="files[]"
               onChange={e => this.handlePlecoImport(e.target.files)}
+            />
+          </div>
+        )}
+
+        {subPage === SubPage.Anki && (
+          <div className="ImportPage__section">
+            <div className="ImportPage__sectionTitle">
+              Import flashcards from Anki
+            </div>
+            <div className="ImportPage__sectionDesc">
+              To generate an export file in Anki:
+              <ul className="ImportPage__sectionDescList">
+                <li>
+                  First install the add-on{" "}
+                  <a href="https://ankiweb.net/shared/info/1788670778">
+                    CrowdAnki: JSON export&import
+                  </a>{" "}
+                  in anki using <b>Tools > Add-ons > Get Add-ons...</b>.
+                </li>
+                <li>
+                  After you install the CrowdAnki add-on then export your anki
+                  deck using <b>Export..</b>.
+                </li>
+                <li>
+                  Set the export format to CrowdAnki JSON representation and
+                  select the deck you want to export.&nbsp;
+                  <b>Do not select "All Decks"</b>
+                </li>
+                <li>
+                  Unset <b>include media</b> and <b>include tags</b>
+                </li>
+                <li>
+                  Click <b>Export...</b>
+                </li>
+              </ul>
+            </div>
+            <input
+              type="file"
+              id="files"
+              name="files[]"
+              onChange={e => this.handleAnkiImport(e.target.files)}
             />
           </div>
         )}

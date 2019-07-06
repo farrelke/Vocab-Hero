@@ -11,6 +11,12 @@ export function isChineseChar(char: string): boolean {
   return /[\u4E00-\u9FCC\u3400-\u4DB5]/i.test(char);
 }
 
+export function stripHtml(text: string){
+  if (!text) return '';
+  const doc = new DOMParser().parseFromString(text, 'text/html');
+  return doc.body.textContent || "";
+}
+
 export function getTextLines(
   divWidth: number,
   testDivId: string,

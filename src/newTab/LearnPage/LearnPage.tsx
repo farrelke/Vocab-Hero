@@ -7,10 +7,7 @@ type Props = {
   vocab: any;
 };
 
-
-
 class LearnPage extends PureComponent<Props> {
-
   render() {
     const { vocab } = this.props;
 
@@ -20,10 +17,18 @@ class LearnPage extends PureComponent<Props> {
         <div className="LearnPage__word" onClick={() => speak(vocab.word)}>
           {vocab.word}
         </div>
-        <div className={`LearnPage__meaning ${vocab.meaning.length > 40 ? 'LearnPage__meaning--long' : ''}`}>{vocab.meaning}</div>
+        <div
+          className={`LearnPage__meaning ${
+            vocab.meaning && vocab.meaning.length > 40
+              ? "LearnPage__meaning--long"
+              : ""
+          }`}
+        >
+          {vocab.meaning}
+        </div>
 
-        {vocab.sentences.map((sentence, i) => (
-          <div  className="LearnPage__sentenceWrapper" key={i}>
+        {vocab.sentences && vocab.sentences.map((sentence, i) => (
+          <div className="LearnPage__sentenceWrapper" key={i}>
             <div
               className="LearnPage__sentence"
               onClick={() => speak(sentence.sentence)}
@@ -31,9 +36,7 @@ class LearnPage extends PureComponent<Props> {
               {sentence.sentence}
             </div>
 
-            <div className="LearnPage__sentencePinyin">
-              {sentence.pinyin}
-            </div>
+            <div className="LearnPage__sentencePinyin">{sentence.pinyin}</div>
           </div>
         ))}
 
@@ -41,7 +44,7 @@ class LearnPage extends PureComponent<Props> {
           className="LearnPage__chinesePodBtn"
           target="_blank"
           href={`https://chinesepod.com/dictionary/english-chinese/${
-            vocab.word.split(" ")[0]
+            vocab.word && vocab.word.split(" ")[0]
           }`}
         >
           Open in Chinesepod

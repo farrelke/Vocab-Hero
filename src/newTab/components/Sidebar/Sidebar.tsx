@@ -21,6 +21,7 @@ export enum SubPage {
   Words = "Words",
 
   Pleco = "Pleco",
+  Anki = "Anki",
   PreMade = "Vocabulary Lists",
   Local = "Local Import/Export"
 }
@@ -35,7 +36,7 @@ export const SubPagesDict = {
   [Page.Learn]: [SubPage.Learn],
   [Page.Add]: [SubPage.Input, SubPage.Search, SubPage.Paste],
   [Page.Manage]: [SubPage.Words],
-  [Page.Import]: [SubPage.Pleco, SubPage.PreMade, SubPage.Local]
+  [Page.Import]: [SubPage.Pleco, SubPage.Anki, SubPage.PreMade, SubPage.Local]
 };
 
 class Sidebar extends PureComponent<Props> {

@@ -1,5 +1,5 @@
 import * as convert from "xml-js";
-import { isChineseChar } from "./StringUtils";
+import { isChineseChar, stripHtml } from "./StringUtils";
 import { VocabWord } from "./DbUtils";
 import PinyinConverter from "./PinyinConverter";
 
@@ -78,4 +78,33 @@ export async function importPlecoFile(file: File): Promise<VocabWord[]> {
       return null
     }
   }).filter(a => a);
+}
+
+
+export type AnkiData = {
+  deckName: string;
+  notes: { [key: string]: string }[],
+  fields: string[]
+}
+
+export async function importAnkiFile(file: File): Promise<AnkiData | null> {
+  try {
+    const jsonString = await getTextFromFile(file);
+    const data = JSON.parse(jsonString);
+    console.log(data);
+
+    if (data.note_models.length !== 1) {
+      alert("Only export one deck at a time");
+      return null;
+    }
+
+    const fields = data.note_models[0].flds.map(f => f.name);
+    const notes = data.notes.map(note => {
+      return fields.reduce((acc, field, i) => ({...acc, [field]: stripHtml(note.fields[i])}), {})
+    });
+    return { deckName: data.name, fields, notes}
+  } catch (e) {
+    alert("Could not import file");
+    return null;
+  }
 }
