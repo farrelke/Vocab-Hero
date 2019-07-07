@@ -3,13 +3,12 @@ import { PureComponent } from 'react';
 import "./PasteAdd.scss"
 import { TextareaAutosize } from "react-autosize-textarea/lib/TextareaAutosize";
 import VocabCard from "../VocabCard";
-import { VocabWord } from "../../Utils/DbUtils";
 import { getTextLines } from "../../Utils/StringUtils";
+import { VocabWord } from "../../Utils/IndexdbUtils";
 
 type Props = {
   addWord: (word: VocabWord) => any;
 }
-
 
 function RadioButton(props: {
   index: number;

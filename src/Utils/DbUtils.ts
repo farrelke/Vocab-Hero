@@ -1,16 +1,6 @@
 import { getJsonFile } from "./FetchUtils";
 import * as FlexSearch from "flexsearch";
 
-export interface VocabWord {
-  word: string;
-  wordPinyin: string;
-  meaning: string;
-  sentences: {
-    sentence: string;
-    pinyin: string;
-  }[];
-}
-
 export interface WordDef {
   word: string;
   wordPinyin: string;
@@ -55,14 +45,6 @@ function setChromeStorage(key: string, value: any, onlyExtension = false): Promi
       resolve();
     }
   });
-}
-
-export async function getVocabWords(): Promise<VocabWord[]> {
-  return getChromeStorage<VocabWord[]>("words");
-}
-
-export async function setVocabWords(words: VocabWord[]) {
-  return setChromeStorage("words", words);
 }
 
 let wordDict: WordDefDict;

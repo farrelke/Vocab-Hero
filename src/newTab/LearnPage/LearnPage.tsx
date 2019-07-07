@@ -2,7 +2,7 @@ import * as React from "react";
 import { PureComponent } from "react";
 import "./LearnPage.scss";
 import { speak } from "../../Utils/SpeechUtils";
-import { VocabWord } from "../../Utils/DbUtils";
+import { VocabWord } from "../../Utils/IndexdbUtils";
 
 type Props = {
   vocab: VocabWord;

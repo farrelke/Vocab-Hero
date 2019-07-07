@@ -2,7 +2,8 @@ import * as React from "react";
 import { PureComponent } from "react";
 import "./InputAdd.scss";
 import PinyinConverter from "../../Utils/PinyinConverter";
-import { getDictIndex, getWordDict, VocabWord, WordDefDict } from "../../Utils/DbUtils";
+import { getDictIndex, getWordDict, WordDefDict } from "../../Utils/DbUtils";
+import { VocabWord } from "../../Utils/IndexdbUtils";
 
 type Props = {
   addWord: (word: VocabWord) => any;

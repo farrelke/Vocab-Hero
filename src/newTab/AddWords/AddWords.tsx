@@ -1,11 +1,11 @@
 import * as React from "react";
 import { PureComponent } from "react";
 import "./AddWords.scss";
-import { VocabWord } from "../../Utils/DbUtils";
 import PasteAdd from "./PasteAdd";
 import SearchAdd from "./SearchAdd";
 import { SubPage } from "../components/Sidebar/Sidebar";
 import InputAdd from "./InputAdd";
+import { VocabWord } from "../../Utils/IndexdbUtils";
 
 type Props = {
   addWord: (word: VocabWord) => any;

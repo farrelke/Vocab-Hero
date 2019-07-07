@@ -1,8 +1,8 @@
 import * as React from "react";
 import { PureComponent } from "react";
 import "./ManageWords.scss";
-import { VocabWord } from "../../Utils/DbUtils";
 import VocabCard from "./../VocabCard";
+import { VocabWord } from "../../Utils/IndexdbUtils";
 
 type Props = {
   words: VocabWord[];
@@ -18,7 +18,7 @@ class ManageWords extends PureComponent<Props> {
       <div className="ManageWords">
         {words.map((word, i) => (
           <VocabCard
-            key={word.word + i}
+            key={word.id}
             word={word}
             deleteWord={() => deleteWord(word)}
             updateWord={word => updateWord(word, i)}

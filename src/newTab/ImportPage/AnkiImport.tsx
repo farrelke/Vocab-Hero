@@ -3,7 +3,7 @@ import { PureComponent } from "react";
 import "./AnkiImport.scss";
 import { AnkiData } from "../../Utils/ImportUtils";
 import VocabCard from "../VocabCard";
-import { VocabWord } from "../../Utils/DbUtils";
+import { VocabWord } from "../../Utils/IndexdbUtils";
 
 type Props = {
   ankiData: AnkiData;

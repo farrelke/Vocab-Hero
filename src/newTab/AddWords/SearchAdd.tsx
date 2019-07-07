@@ -1,10 +1,11 @@
 import * as React from "react";
 import { PureComponent } from "react";
 import "./SearchAdd.scss";
-import { getDictIndex, getWordDict, VocabWord, WordDef, WordDefDict } from "../../Utils/DbUtils";
+import { getDictIndex, getWordDict, WordDef, WordDefDict } from "../../Utils/DbUtils";
 import VocabCard from "../VocabCard";
 import PinyinConverter from "../../Utils/PinyinConverter";
 import { isChineseChar } from "../../Utils/StringUtils";
+import { VocabWord } from "../../Utils/IndexdbUtils";
 
 type Props = {
   addWord: (word: VocabWord) => any;

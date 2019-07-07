@@ -2,7 +2,6 @@ import * as React from "react";
 import { PureComponent } from "react";
 import "./ImportPage.scss";
 import { getJsonFile } from "../../Utils/FetchUtils";
-import { VocabWord } from "../../Utils/DbUtils";
 import PinyinConverter from "../../Utils/PinyinConverter";
 import { SubPage } from "../components/Sidebar/Sidebar";
 import { saveAs } from "file-saver";
@@ -15,6 +14,7 @@ import {
 } from "../../Utils/ImportUtils";
 import { getVocabDecks, GithubFile } from "../../Utils/GithubUtils";
 import AnkiImport from "./AnkiImport";
+import { VocabWord } from "../../Utils/IndexdbUtils";
 
 type Props = {
   words: VocabWord[];

@@ -30,10 +30,12 @@
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
+    "@types/dexie": "^1.3.1",
     "@types/file-saver": "^2.0.1",
     "@types/localforage": "0.0.34",
     "@types/xml-js": "^1.0.0",
     "cedict": "^1.19.0",
+    "dexie": "^2.0.4",
     "file-saver": "^2.0.2",
     "flexsearch": "^0.6.22",
     "localforage": "^1.7.3",

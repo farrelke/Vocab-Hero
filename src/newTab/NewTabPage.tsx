@@ -4,11 +4,20 @@ import "./NewTabPage.scss";
 import LearnPage from "./LearnPage/LearnPage";
 import AddWords from "./AddWords/AddWords";
 import ManageWords from "./ManageWords/ManageWords";
-import { getVocabWords, setVocabWords, VocabWord } from "../Utils/DbUtils";
 import ImportPage from "./ImportPage/ImportPage";
 import Sidebar, { Page, SubPage } from "./components/Sidebar/Sidebar";
 import Header from "./components/Header/Header";
 import * as SettingIcon from "./settings-icon.svg";
+import {
+  addVocabWord,
+  bulkAddVocabWords,
+  clearAllVocab,
+  deleteVocabWord,
+  getRandomVocabWord,
+  getVocabWords,
+  updateVocabWord,
+  VocabWord
+} from "../Utils/IndexdbUtils";
 
 type Props = {};
 
@@ -21,21 +30,21 @@ class NewTabPage extends PureComponent<Props> {
   };
 
   async componentDidMount() {
-    const words = await getVocabWords();
-    if (!words || words.length === 0) {
+    const vocab = await getRandomVocabWord();
+    if (vocab) {
+      document.title = vocab.word;
+      this.setState({ vocab });
+    } else {
       this.setState({ page: Page.Import, subPage: SubPage.PreMade });
-      return;
     }
 
-    const vocab = words[Math.floor(Math.random() * words.length)];
-    document.title = vocab.word;
-    this.setState({ vocab, words });
+    const words = await getVocabWords();
+    this.setState({ words });
   }
 
   deleteWord = async (word: VocabWord) => {
     let { words, vocab } = this.state;
-    words = words.filter(w => w !== word);
-
+    words = words.filter(w => w.id !== word.id);
     if (word === vocab) {
       vocab =
         words.length > 0
@@ -44,34 +53,43 @@ class NewTabPage extends PureComponent<Props> {
     }
 
     this.setState({ words, vocab });
-    await setVocabWords(words);
+    await deleteVocabWord(word as any);
   };
 
   addWord = async (word: VocabWord) => {
     let { words } = this.state;
-    words = [word, ...words];
-    this.setState({ words, vocab: word });
-    await setVocabWords(words);
+    const addedWord = await addVocabWord(word);
+    words = [addedWord, ...words];
+    this.setState({ words, vocab: addedWord });
   };
 
   addWords = async (newWords: VocabWord[]) => {
     if (newWords.length === 0) return;
-    let { words } = this.state;
-    words = [...newWords, ...words];
-    this.setState({ words, vocab: newWords[0], page: Page.Manage, subPage: SubPage.Words });
-    await setVocabWords(words);
+    this.setState({
+      page: Page.Manage,
+      subPage: SubPage.Words
+    });
+
+    // reverse the words so it keeps the same order as the import
+    await bulkAddVocabWords(newWords.reverse());
+    const words = await getVocabWords();
+
+    this.setState({
+      words,
+      vocab: newWords[0]
+    });
   };
 
   updateWord = async (word: VocabWord, index: number) => {
     let words = [...this.state.words];
     words[index] = word;
     this.setState({ words });
-    await setVocabWords(words);
+    await updateVocabWord(word);
   };
 
   clearAll = async () => {
     this.setState({ words: [] });
-    await setVocabWords([]);
+    await clearAllVocab();
   };
 
   selectPage = (page: Page, subPage: SubPage) => {

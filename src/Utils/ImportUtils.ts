@@ -1,7 +1,7 @@
 import * as convert from "xml-js";
 import { isChineseChar, stripHtml } from "./StringUtils";
-import { VocabWord } from "./DbUtils";
 import PinyinConverter from "./PinyinConverter";
+import { VocabWord } from "./IndexdbUtils";
 
 export async function getTextFromFile(file: File): Promise<string> {
   return new Promise<string>(resolve => {

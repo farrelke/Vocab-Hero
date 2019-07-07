@@ -1,9 +1,9 @@
 import { PureComponent } from "react";
-import { VocabWord } from "../Utils/DbUtils";
 import "./VocabCard.scss";
 import * as React from "react";
 import PinyinConverter from "../Utils/PinyinConverter";
 import { speak } from "../Utils/SpeechUtils";
+import { VocabWord } from "../Utils/IndexdbUtils";
 
 type Props = {
   word: VocabWord;
@@ -154,7 +154,9 @@ class VocabCard extends PureComponent<Props> {
 
     return (
       <div className="VocabCard">
-        <div className="VocabCard__wordPinyin">{PinyinConverter.convert(word.wordPinyin)}</div>
+        <div className="VocabCard__wordPinyin">
+          {PinyinConverter.convert(word.wordPinyin)}
+        </div>
 
         {deleteWord &&
           !editMode && (
@@ -177,16 +179,23 @@ class VocabCard extends PureComponent<Props> {
           </div>
         )}
 
-        <div className="VocabCard__word" onClick={() => speak(word.word)} >{word.word}</div>
+        <div className="VocabCard__word" onClick={() => speak(word.word)}>
+          {word.word}
+        </div>
         <div className="VocabCard__wordMeaning">{word.meaning}</div>
         {word.sentences &&
-          word.sentences.map(sentence => (
-            <>
-              <div className="VocabCard__sentence" onClick={() => speak(sentence.sentence)} >{sentence.sentence}</div>
+          word.sentences.map((sentence, i) => (
+            <div key={i}>
+              <div
+                className="VocabCard__sentence"
+                onClick={() => speak(sentence.sentence)}
+              >
+                {sentence.sentence}
+              </div>
               <div className="VocabCard__sentenceMeaning">
                 {sentence.pinyin}
               </div>
-            </>
+            </div>
           ))}
       </div>
     );

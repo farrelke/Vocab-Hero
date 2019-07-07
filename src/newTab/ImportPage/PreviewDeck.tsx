@@ -1,10 +1,10 @@
 import * as React from "react";
 import { PureComponent } from "react";
 import "./PreviewDeck.scss";
-import { VocabWord } from "../../Utils/DbUtils";
 import { getJsonFile } from "../../Utils/FetchUtils";
 import PinyinConverter from "../../Utils/PinyinConverter";
 import VocabCard from "../VocabCard";
+import { VocabWord } from "../../Utils/IndexdbUtils";
 
 type Props = {
   previewUrl: string;
