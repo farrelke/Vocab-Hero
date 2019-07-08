@@ -12,12 +12,15 @@ type Props = {
   updateWord?: (word: VocabWord) => any;
 };
 
-export class EditVocabCard extends PureComponent<{
-  word?: VocabWord;
-  save?: (word: VocabWord) => any;
-  cancel?: () => any;
-  addWord?: (word: VocabWord) => any;
-}> {
+export class EditVocabCard extends PureComponent<
+  {
+    word?: VocabWord;
+    save?: (word: VocabWord) => any;
+    cancel?: () => any;
+    addWord?: (word: VocabWord) => any;
+  },
+  { word: string; reading: string; meaning: string }
+> {
   state = {
     word: "",
     reading: "",
@@ -37,13 +40,13 @@ export class EditVocabCard extends PureComponent<{
 
   updateText = (type: string) => (e: React.FormEvent<HTMLInputElement>) => {
     const newValue = e.currentTarget.value;
-    this.setState({ [type]: newValue });
+    this.setState({ [type]: newValue } as any);
   };
 
   pinyinise = () => {
     try {
-      const pinyin = PinyinConverter.convert(this.state.reading);
-      this.setState({ pinyin });
+      const reading = PinyinConverter.convert(this.state.reading);
+      this.setState({ reading });
     } catch (e) {
       console.log(e);
     }
@@ -154,7 +157,7 @@ class VocabCard extends PureComponent<Props> {
 
     return (
       <div className="VocabCard">
-        <div className="VocabCard__wordPinyin">
+        <div className="VocabCard__reading">
           {PinyinConverter.convert(word.reading)}
         </div>
 

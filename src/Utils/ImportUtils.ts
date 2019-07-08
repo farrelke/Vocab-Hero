@@ -70,7 +70,7 @@ export async function importPlecoFile(file: File): Promise<VocabWord[]> {
         sentences: [
           {
             sentence: sentence,
-            pinyin: ""
+            reading: ""
           }
         ]
       };
