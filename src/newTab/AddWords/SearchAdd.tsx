@@ -16,7 +16,7 @@ class SearchAdd extends PureComponent<Props> {
     wordDict: null as WordDefDict,
     dictIndex: null as any,
     searchWord: "" as string,
-    results: [] as VocabWord[]
+    results: [] as WordDef[]
   };
 
   async componentDidMount() {
@@ -45,7 +45,7 @@ class SearchAdd extends PureComponent<Props> {
     // try pinyin
     if (results.length <= 0 && searchWord.length >= 2) {
       results = dictIndex.search({
-        field: ["wordPinyin", "simplePinyin"],
+        field: ["reading", "simplePinyin"],
         bool: "or",
         query: searchWord.replace(" ", "")
       })
@@ -72,7 +72,7 @@ class SearchAdd extends PureComponent<Props> {
     if (wordDef && wordDef.word) {
       const word: VocabWord = {
         word: wordDef.word,
-        wordPinyin: PinyinConverter.convert(wordDef.wordPinyin),
+        reading: PinyinConverter.convert(wordDef.reading),
         meaning: wordDef.meaning,
         sentences: []
       };
@@ -106,8 +106,8 @@ class SearchAdd extends PureComponent<Props> {
             {results &&
               results.map(result => (
                 <VocabCard
-                  key={result.word + result.wordPinyin}
-                  word={result}
+                  key={result.word + result.reading}
+                  word={{ ...result, sentences: [] }}
                   addWord={() => this.addWord(result)}
                 />
               ))}

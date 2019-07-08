@@ -15,7 +15,7 @@ const init = async () => {
   data.map(wordData => {
     const word = {};
     word.word = wordData.simplified || wordData.traditional;
-    word.wordPinyin =
+    word.reading =
       (wordData.definitions && wordData.definitions[0].pinyin) || "";
     word.meaning =
       (wordData.definitions &&

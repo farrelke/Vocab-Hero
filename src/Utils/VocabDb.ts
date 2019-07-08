@@ -4,11 +4,11 @@ import Dexie from 'dexie';
 export interface VocabWord {
   id?: string;
   word: string;
-  wordPinyin: string;
+  reading: string;
   meaning: string;
   sentences: {
     sentence: string;
-    pinyin: string;
+    reading: string;
   }[];
 }
 
@@ -18,7 +18,7 @@ export class VocabDb extends Dexie {
   constructor() {
     super('VocabDb');
     this.version(1).stores({
-      vocab: '++id,word,wordPinyin,meaning'
+      vocab: '++id,word,reading,meaning'
     });
   }
 

@@ -47,7 +47,7 @@ function TypeLine(props: {
       />
       <RadioButton
         index={props.index}
-        name="wordPinyin"
+        name="reading"
         label={"pinyin"}
         selected={props.selected}
         onSelect={props.onSelect}
@@ -78,10 +78,10 @@ function TypeLine(props: {
 
 const defaultOrder = [
   "word",
-  "wordPinyin",
+  "reading",
   "meaning",
   "sentence",
-  "sentencePinyin"
+  "sentenceReading"
 ];
 
 
@@ -121,14 +121,14 @@ class PasteAdd extends PureComponent<Props> {
     );
     const card: VocabWord = {
       word: "",
-      wordPinyin: "",
+      reading: "",
       meaning: "",
       sentences: []
     };
     const { selectedValues } = this.state;
     let lastSentence = {
       sentence: "",
-      pinyin: ""
+      reading: ""
     };
     let lastType = "";
 
@@ -141,26 +141,26 @@ class PasteAdd extends PureComponent<Props> {
           card.sentences.push(lastSentence);
           lastSentence = {
             sentence: "",
-            pinyin: ""
+            reading: ""
           };
         }
         lastSentence.sentence += line;
       } else if (type === "sentencePinyin") {
-        if (lastType === "sentence" && lastSentence.pinyin) {
+        if (lastType === "sentence" && lastSentence.reading) {
           card.sentences.push(lastSentence);
           lastSentence = {
             sentence: "",
-            pinyin: ""
+            reading: ""
           };
         }
-        lastSentence.pinyin += line;
+        lastSentence.reading += line;
       } else {
         card[type] += line;
       }
       lastType = type;
     });
 
-    if (lastSentence.pinyin || lastSentence.sentence) {
+    if (lastSentence.reading || lastSentence.sentence) {
       card.sentences.push(lastSentence);
     }
 

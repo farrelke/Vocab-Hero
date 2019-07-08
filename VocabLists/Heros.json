@@ -1,25 +1,25 @@
 [
   {
     "word": "闪电侠",
-    "wordPinyin": "shǎndiànxiá",
+    "reading": "shǎndiànxiá",
     "meaning": "The Flash",
     "sentences": []
   },
   {
     "word": "海王",
-    "wordPinyin": "hǎiwáng",
+    "reading": "hǎiwáng",
     "meaning": "Aquaman ",
     "sentences": []
   },
   {
     "word": "死侍",
-    "wordPinyin": "sǐshì",
+    "reading": "sǐshì",
     "meaning": "Deadpool",
     "sentences": []
   },
   {
     "word": "沙赞",
-    "wordPinyin": "shāzàn ",
+    "reading": "shāzàn ",
     "meaning": "Shazam ",
     "sentences": []
   },
@@ -27,78 +27,78 @@
     "meaning": "Wolverine",
     "sentences": [],
     "word": "金钢狼",
-    "wordPinyin": "Jīn gāng láng"
+    "reading": "Jīn gāng láng"
   },
   {
     "meaning": "Captain Marvel",
     "sentences": [],
     "word": "惊奇队长",
-    "wordPinyin": "Duìzhǎng qíjī"
+    "reading": "Duìzhǎng qíjī"
   },
   {
     "meaning": "Black panther",
     "sentences": [],
     "word": "黑豹",
-    "wordPinyin": "Hēibào"
+    "reading": "Hēibào"
   },
   {
     "meaning": "Wonder Woman",
     "sentences": [],
     "word": "神奇女侠",
-    "wordPinyin": "Shénqí nǚ xiá"
+    "reading": "Shénqí nǚ xiá"
   },
   {
     "meaning": "Black Widow",
     "sentences": [],
     "word": "黑寡妇",
-    "wordPinyin": "hēiguǎfù"
+    "reading": "hēiguǎfù"
   },
   {
     "meaning": "Hulk",
     "sentences": [],
     "word": "浩克",
-    "wordPinyin": "hào kè"
+    "reading": "hào kè"
   },
   {
     "meaning": "Doctor Strange",
     "sentences": [],
     "word": "奇异博士",
-    "wordPinyin": "qíyì bóshì"
+    "reading": "qíyì bóshì"
   },
   {
     "meaning": "Captain America",
     "sentences": [],
     "word": "美国队长",
-    "wordPinyin": "měiguó duìzhǎng"
+    "reading": "měiguó duìzhǎng"
   },
   {
     "meaning": "Thor",
     "sentences": [],
     "word": "雷神",
-    "wordPinyin": "léi shén"
+    "reading": "léi shén"
   },
   {
     "meaning": "Iron Man, comic book superhero",
     "sentences": [],
     "word": "钢铁侠",
-    "wordPinyin": "Gāng tiě xiá"
+    "reading": "Gāng tiě xiá"
   },
   {
     "meaning": "Superman, comic book superhero",
     "sentences": [],
     "word": "超人",
-    "wordPinyin": "Chāo rén"
+    "reading": "Chāo rén"
   },
   {
     "meaning": "Spider-Man, comic book superhero",
     "sentences": [],
     "word": "蜘蛛侠",
-    "wordPinyin": "Zhī zhū xiá"
+    "reading": "Zhī zhū xiá"
   },
   {
     "meaning": "Batman, comic book superhero",
     "sentences": [],
     "word": "蝙蝠侠",
-    "wordPinyin": "Biān fú xiá"
+    "reading": "Biān fú xiá"
   }
 ]

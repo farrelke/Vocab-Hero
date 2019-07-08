@@ -2,24 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1e404d4-de09-4160-b4a1-8e8a594b13aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Utils/IndexdbUtils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Utils/VocabDb.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/kevinfarrell.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/kevinfarrell.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VocabLists/Actors.json" beforeDir="false" afterPath="$PROJECT_DIR$/VocabLists/Actors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VocabLists/Beers.json" beforeDir="false" afterPath="$PROJECT_DIR$/VocabLists/Beers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VocabLists/Heros.json" beforeDir="false" afterPath="$PROJECT_DIR$/VocabLists/Heros.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VocabLists/TV Shows.json" beforeDir="false" afterPath="$PROJECT_DIR$/VocabLists/TV Shows.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/create-word-db.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/create-word-db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hsk-1.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/hsk-1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hsk-2.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/hsk-2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hsk-3.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/hsk-3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hsk-4.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/hsk-4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hsk-5.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/hsk-5.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hsk-6.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/hsk-6.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/wordDict.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/wordDict.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utils/DbUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/DbUtils.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utils/ImportUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/ImportUtils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newTab/AddWords/AddWords.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/AddWords/AddWords.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/VocabDb.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/VocabDb.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/newTab/AddWords/InputAdd.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/AddWords/InputAdd.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/newTab/AddWords/PasteAdd.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/AddWords/PasteAdd.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/newTab/AddWords/PasteAdd.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/AddWords/PasteAdd.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/newTab/ImportPage/AnkiImport.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/ImportPage/AnkiImport.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/newTab/ImportPage/ImportPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/ImportPage/ImportPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/newTab/ImportPage/PreviewDeck.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/ImportPage/PreviewDeck.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/newTab/ManageWords/ManageWords.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/ManageWords/ManageWords.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/newTab/ManageWords/ManageWords.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/ManageWords/ManageWords.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/newTab/NewTabPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/NewTabPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/newTab/VocabCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/VocabCard.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/newTab/VocabCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/VocabCard.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -35,79 +46,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/newTab/NewTabPage.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="84" column="24" lean-forward="true" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/newTab/VocabCard.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Utils/ImportUtils.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#34#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Utils/VocabDb.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Utils/IndexdbUtils.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Utils/DbUtils.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-822">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/AddWords.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="150">
+              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -115,8 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/InputAdd.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+            <state relative-caret-position="-65">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -127,8 +69,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/PasteAdd.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="288">
+              <caret line="148" column="59" selection-start-line="148" selection-start-column="59" selection-end-line="148" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/newTab/VocabCard.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="62" column="46" selection-start-line="62" selection-start-column="46" selection-end-line="62" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/newTab/ImportPage/ImportPage.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="550">
+              <caret line="123" column="17" selection-start-line="123" selection-start-column="17" selection-end-line="123" selection-end-column="17" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -137,13 +103,58 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx">
+        <entry file="file://$PROJECT_DIR$/src/newTab/ImportPage/AnkiImport.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+            <state relative-caret-position="-94">
+              <caret line="75" column="5" lean-forward="true" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Utils/DbUtils.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-604">
+              <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="873">
+              <caret line="76" column="21" lean-forward="true" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Utils/ImportUtils.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="89" column="36" selection-start-line="89" selection-start-column="22" selection-end-line="89" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VocabLists/Actors.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -164,11 +175,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>createE</find>
-      <find>letters</find>
-      <find>sentence</find>
-      <find>onSelect</find>
-      <find>react-textarea-autosize</find>
       <find>isCh</find>
       <find>LearnPage__meaning</find>
       <find>accentMap</find>
@@ -191,7 +197,18 @@
       <find>InputAdd__btn</find>
       <find>sentencePinyin</find>
       <find>setVocabWords</find>
+      <find>deleteWord</find>
+      <find>addHskCards</find>
+      <find>importLocal</find>
+      <find>getJsonFile</find>
+      <find>words</find>
+      <find>results</find>
+      <find>wordPinyin</find>
+      <find>importAnkiFile</find>
     </findStrings>
+    <replaceStrings>
+      <replace>reading</replace>
+    </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/dist</dir>
     </dirStrings>
@@ -239,20 +256,20 @@
         <option value="$PROJECT_DIR$/dist/manifest.json" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/Utils/DbUtils.ts" />
-        <option value="$PROJECT_DIR$/src/newTab/ManageWords/ManageWords.tsx" />
         <option value="$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.tsx" />
-        <option value="$PROJECT_DIR$/src/newTab/ImportPage/AnkiImport.tsx" />
-        <option value="$PROJECT_DIR$/src/newTab/ImportPage/ImportPage.tsx" />
         <option value="$PROJECT_DIR$/src/newTab/ImportPage/PreviewDeck.tsx" />
         <option value="$PROJECT_DIR$/src/newTab/AddWords/AddWords.tsx" />
+        <option value="$PROJECT_DIR$/src/Utils/ImportUtils.ts" />
+        <option value="$PROJECT_DIR$/src/Utils/IndexdbUtils.ts" />
+        <option value="$PROJECT_DIR$/src/newTab/ImportPage/ImportPage.tsx" />
+        <option value="$PROJECT_DIR$/src/newTab/ManageWords/ManageWords.tsx" />
+        <option value="$PROJECT_DIR$/src/newTab/NewTabPage.tsx" />
+        <option value="$PROJECT_DIR$/src/Utils/VocabDb.ts" />
         <option value="$PROJECT_DIR$/src/newTab/AddWords/InputAdd.tsx" />
         <option value="$PROJECT_DIR$/src/newTab/AddWords/PasteAdd.tsx" />
         <option value="$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx" />
-        <option value="$PROJECT_DIR$/src/Utils/VocabDb.ts" />
-        <option value="$PROJECT_DIR$/src/Utils/ImportUtils.ts" />
-        <option value="$PROJECT_DIR$/src/newTab/NewTabPage.tsx" />
+        <option value="$PROJECT_DIR$/src/newTab/ImportPage/AnkiImport.tsx" />
         <option value="$PROJECT_DIR$/src/newTab/VocabCard.tsx" />
-        <option value="$PROJECT_DIR$/src/Utils/IndexdbUtils.ts" />
       </list>
     </option>
   </component>
@@ -300,33 +317,7 @@
               <item name="vocab-extension" type="b2602c69:ProjectViewProjectNode" />
               <item name="vocab-extension" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="newTab" type="462c0819:PsiDirectoryNode" />
-              <item name="ImportPage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vocab-extension" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vocab-extension" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="newTab" type="462c0819:PsiDirectoryNode" />
-              <item name="LearnPage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vocab-extension" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vocab-extension" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="newTab" type="462c0819:PsiDirectoryNode" />
-              <item name="ManageWords" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vocab-extension" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vocab-extension" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vocab-extension" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vocab-extension" type="462c0819:PsiDirectoryNode" />
-              <item name="VocabLists" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -348,6 +339,7 @@
     <property name="prettierjs.PrettierConfiguration.Package" value="/usr/local/lib/node_modules/prettier" />
     <property name="settings.editor.selected.configurable" value="terminal" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="ts.rename.search.for.js.occurrences" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -428,18 +420,19 @@
       <workItem from="1562243980038" duration="3138000" />
       <workItem from="1562301405189" duration="1759000" />
       <workItem from="1562384767669" duration="5194000" />
-      <workItem from="1562470089934" duration="6468000" />
+      <workItem from="1562470089934" duration="8955000" />
+      <workItem from="1562559571749" duration="1216000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110144000" />
+    <option name="totallyTimeSpent" value="113847000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24236111" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -469,20 +462,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/newTab/ImportPage/ImportPage.tsx</url>
-          <line>45</line>
+          <line>41</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/newTab/components/Sidebar/Sidebar.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/newTab/settings-icon.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -525,13 +511,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" selection-start-line="5" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/newTab/ImportPage/PreviewDeck.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="711">
-          <caret line="53" column="18" lean-forward="true" selection-start-line="52" selection-start-column="1" selection-end-line="53" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -672,13 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/newTab/NewTabPage.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1515">
-          <caret line="101" column="18" selection-start-line="98" selection-start-column="1" selection-end-line="101" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1005">
@@ -720,46 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/newTab/ManageWords/ManageWords.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/newTab/ImportPage/AnkiImport.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/newTab/ImportPage/ImportPage.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="19" column="14" lean-forward="true" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/newTab/ImportPage/PreviewDeck.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -780,10 +712,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/newTab/LearnPage/LearnPage.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="39" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/newTab/ImportPage/PreviewDeck.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" column="18" lean-forward="true" selection-start-line="52" selection-start-column="1" selection-end-line="53" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/IndexdbUtils.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/newTab/NewTabPage.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1515">
+          <caret line="101" column="18" selection-start-line="98" selection-start-column="1" selection-end-line="101" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/newTab/ManageWords/ManageWords.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="4" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/newTab/NewTabPage.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="47" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/VocabDb.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/InputAdd.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        <state relative-caret-position="-65">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -792,55 +779,65 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/PasteAdd.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="288">
+          <caret line="148" column="59" selection-start-line="148" selection-start-column="59" selection-end-line="148" selection-end-column="59" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx">
+    <entry file="file://$PROJECT_DIR$/VocabLists/Actors.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/VocabDb.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+        <state relative-caret-position="375">
+          <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/DbUtils.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-822">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="-604">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="873">
+          <caret line="76" column="21" lean-forward="true" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/ImportUtils.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+        <state relative-caret-position="414">
+          <caret line="89" column="36" selection-start-line="89" selection-start-column="22" selection-end-line="89" selection-end-column="36" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/newTab/NewTabPage.tsx">
+    <entry file="file://$PROJECT_DIR$/src/newTab/ImportPage/ImportPage.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="84" column="24" lean-forward="true" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
+        <state relative-caret-position="550">
+          <caret line="123" column="17" selection-start-line="123" selection-start-column="17" selection-end-line="123" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/newTab/ImportPage/AnkiImport.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-94">
+          <caret line="75" column="5" lean-forward="true" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -849,18 +846,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/newTab/VocabCard.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+        <state relative-caret-position="315">
+          <caret line="62" column="46" selection-start-line="62" selection-start-column="46" selection-end-line="62" selection-end-column="46" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/IndexdbUtils.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>

@@ -22,7 +22,7 @@ class LearnPage extends PureComponent<Props> {
 
     return (
       <div className="LearnPage">
-        <div className="LearnPage__wordPinyin">{vocab.wordPinyin}</div>
+        <div className="LearnPage__reading">{vocab.reading}</div>
         <div className="LearnPage__word" onClick={() => speak(vocab.word)}>
           {vocab.word}
         </div>
@@ -46,7 +46,7 @@ class LearnPage extends PureComponent<Props> {
                 {sentence.sentence}
               </div>
 
-              <div className="LearnPage__sentencePinyin">{sentence.pinyin}</div>
+              <div className="LearnPage__sentencePinyin">{sentence.reading}</div>
             </div>
           ))}
 

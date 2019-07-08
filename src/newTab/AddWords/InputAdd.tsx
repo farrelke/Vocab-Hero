@@ -25,7 +25,6 @@ class InputAdd extends PureComponent<Props> {
   }
 
 
-
   updateText = (type: string) => (
     e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -52,7 +51,7 @@ class InputAdd extends PureComponent<Props> {
 
     const newWord: VocabWord = {
       word: hanzi,
-      wordPinyin: PinyinConverter.convert(pinyin || dictRef.wordPinyin),
+      reading: PinyinConverter.convert(pinyin || dictRef.reading),
       meaning: translation || dictRef.meaning,
       sentences: []
     };
@@ -97,7 +96,7 @@ class InputAdd extends PureComponent<Props> {
           <input
             type="text"
             value={pinyin}
-            placeholder={PinyinConverter.convert((dictRef && dictRef.wordPinyin) || "")}
+            placeholder={PinyinConverter.convert((dictRef && dictRef.reading) || "")}
             onKeyDown={this.onKeyDownPinyin}
             onChange={this.updateText("pinyin")}
             className="InputAdd__input"

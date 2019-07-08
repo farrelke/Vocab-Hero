@@ -1,8 +1,6 @@
 import * as React from "react";
 import { PureComponent } from "react";
 import "./ImportPage.scss";
-import { getJsonFile } from "../../Utils/FetchUtils";
-import PinyinConverter from "../../Utils/PinyinConverter";
 import { SubPage } from "../components/Sidebar/Sidebar";
 import { saveAs } from "file-saver";
 import PreviewDeck from "./PreviewDeck";
@@ -14,12 +12,10 @@ import {
 } from "../../Utils/ImportUtils";
 import { getVocabDecks, GithubFile } from "../../Utils/GithubUtils";
 import AnkiImport from "./AnkiImport";
-import { VocabWord } from "../../Utils/IndexdbUtils";
+import { clearAllVocab, getVocabWords, VocabWord } from "../../Utils/IndexdbUtils";
 
 type Props = {
-  words: VocabWord[];
   addWords: (words: VocabWord[]) => any;
-  clearAll: () => any;
   subPage: SubPage;
 };
 
@@ -66,7 +62,6 @@ class ImportPage extends PureComponent<Props> {
         if (!ankiData) {
           this.setState({ addingWord: false });
         }
-        console.log(ankiData);
         this.setState({ ankiData });
       }
     } catch (e) {
@@ -86,12 +81,12 @@ class ImportPage extends PureComponent<Props> {
     }
   };
 
-  clearAllCards = () => {
+  clearAllCards = async () => {
     const confirm1 = confirm(
       "Are you sure you want to delete all current cards. This action cannot be undo!"
     );
     if (confirm1) {
-      this.props.clearAll();
+      await clearAllVocab();
     }
   };
 
@@ -105,23 +100,12 @@ class ImportPage extends PureComponent<Props> {
     );
   };
 
-  addHskCards = async (level: number) => {
-    this.setState({ addingWord: true });
-    const wordData = await getJsonFile<
-      { word: string; wordPinyin: string; meaning: string }[]
-    >(
-      `https://raw.githubusercontent.com/farrelke/chinese-vocab/master/data/hsk-${level}.json`
-    );
-    const words: VocabWord[] = wordData.filter(word => word).map(word => ({
-      ...word,
-      wordPinyin: PinyinConverter.convert(word.wordPinyin || ""),
-      sentences: []
-    }));
-    this.props.addWords(words);
-  };
-
   exportVocabulary = async () => {
-    const { words } = this.props;
+    const words = (await getVocabWords()).reverse().map(word => {
+      delete word.id;
+      return word;
+    });
+
     const vocabFile = new File(
       [JSON.stringify(words, null, 2)],
       "vocab-list.json",
@@ -131,8 +115,6 @@ class ImportPage extends PureComponent<Props> {
     );
     saveAs(vocabFile);
   };
-
-  importLocal = async () => {};
 
   render() {
     const { addingWord, previewUrl, vocabLists, ankiData } = this.state;

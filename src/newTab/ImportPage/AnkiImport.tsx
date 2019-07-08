@@ -13,7 +13,7 @@ type Props = {
 const VocabOptions = [
   { label: "Not Exported", value: "" },
   { label: "Hanzi", value: "word" },
-  { label: "Pinyin", value: "wordPinyin" },
+  { label: "Pinyin", value: "reading" },
   { label: "Meaning", value: "meaning" },
   { label: "Example", value: "example" },
   { label: "Example Pinyin", value: "examplePinyin" }
@@ -67,17 +67,17 @@ class AnkiImport extends PureComponent<Props> {
     mapping: { [key: string]: string },
     ankiNote: { [key: string]: string }
   ): VocabWord => {
-    const sentences: { sentence: string; pinyin: string }[] = [];
+    const sentences: { sentence: string; reading: string }[] = [];
     if (mapping.example || mapping.examplePinyin) {
       sentences.push({
         sentence: ankiNote[mapping.example] || "",
-        pinyin: ankiNote[mapping.examplePinyin] || ""
+        reading: ankiNote[mapping.examplePinyin] || ""
       });
     }
 
     return {
       word: ankiNote[mapping.word] || "",
-      wordPinyin: ankiNote[mapping.wordPinyin] || "",
+      reading: ankiNote[mapping.reading] || "",
       meaning: ankiNote[mapping.meaning] || "",
       sentences
     };

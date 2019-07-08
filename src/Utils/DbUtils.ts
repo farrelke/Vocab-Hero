@@ -3,7 +3,7 @@ import * as FlexSearch from "flexsearch";
 
 export interface WordDef {
   word: string;
-  wordPinyin: string;
+  reading: string;
   meaning: string;
 }
 
@@ -75,7 +75,7 @@ export async function getDictIndex(): Promise<any> {
   dictIndex = new FlexSearch({
     doc: {
       id: "word",
-      field: ["word", "wordPinyin", "simplePinyin", "meaning"]
+      field: ["word", "reading", "simplePinyin", "meaning"]
     }
   });
 
@@ -90,9 +90,9 @@ export async function getDictIndex(): Promise<any> {
   const wordDict = await getWordDict();
   const words = Object.keys(wordDict).map(key => {
     let word = wordDict[key];
-    const wordPinyin = word.wordPinyin.replace(" ", "");
-    const simplePinyin = wordPinyin.replace(/[0-9]/g, "");
-    return { ...word, wordPinyin, simplePinyin };
+    const reading = word.reading.replace(" ", "");
+    const simplePinyin = reading.replace(/[0-9]/g, "");
+    return { ...word, reading, simplePinyin };
   });
   dictIndex.add(words);
 

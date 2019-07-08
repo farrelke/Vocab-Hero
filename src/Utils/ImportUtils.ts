@@ -65,7 +65,7 @@ export async function importPlecoFile(file: File): Promise<VocabWord[]> {
 
       return {
         word: headword,
-        wordPinyin: PinyinConverter.convert(pron.replace("//", " ")),
+        reading: PinyinConverter.convert(pron.replace("//", " ")),
         meaning: def.trim(),
         sentences: [
           {

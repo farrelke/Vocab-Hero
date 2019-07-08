@@ -20,7 +20,7 @@ export class EditVocabCard extends PureComponent<{
 }> {
   state = {
     word: "",
-    pinyin: "",
+    reading: "",
     meaning: ""
   };
 
@@ -29,7 +29,7 @@ export class EditVocabCard extends PureComponent<{
     if (word) {
       this.setState({
         word: word.word,
-        pinyin: word.wordPinyin,
+        reading: word.reading,
         meaning: word.meaning
       });
     }
@@ -42,7 +42,7 @@ export class EditVocabCard extends PureComponent<{
 
   pinyinise = () => {
     try {
-      const pinyin = PinyinConverter.convert(this.state.pinyin);
+      const pinyin = PinyinConverter.convert(this.state.reading);
       this.setState({ pinyin });
     } catch (e) {
       console.log(e);
@@ -51,33 +51,33 @@ export class EditVocabCard extends PureComponent<{
 
   save = () => {
     const { save, word: wordObj } = this.props;
-    const { word, pinyin, meaning } = this.state;
-    save({ ...wordObj, word, wordPinyin: pinyin, meaning });
+    const { word, reading, meaning } = this.state;
+    save({ ...wordObj, word, reading, meaning });
   };
 
   addWord = () => {
     const { addWord } = this.props;
-    const { word, pinyin, meaning } = this.state;
+    const { word, reading, meaning } = this.state;
     const newWord: VocabWord = {
       word,
-      wordPinyin: PinyinConverter.convert(pinyin),
+      reading: PinyinConverter.convert(reading),
       meaning,
       sentences: []
     };
     addWord(newWord);
-    this.setState({ word: "", pinyin: "", meaning: "" });
+    this.setState({ word: "", reading: "", meaning: "" });
   };
 
   render() {
     const { cancel, addWord } = this.props;
-    const { word, pinyin, meaning } = this.state;
+    const { word, reading, meaning } = this.state;
     return (
       <div className="VocabCard">
         <input
           type="text"
-          value={pinyin}
-          onChange={this.updateText("pinyin")}
-          className="VocabCard__wordPinyin"
+          value={reading}
+          onChange={this.updateText("reading")}
+          className="VocabCard__reading"
           placeholder="pinyin"
         />
         <div className="VocabCard__btns">
@@ -155,7 +155,7 @@ class VocabCard extends PureComponent<Props> {
     return (
       <div className="VocabCard">
         <div className="VocabCard__wordPinyin">
-          {PinyinConverter.convert(word.wordPinyin)}
+          {PinyinConverter.convert(word.reading)}
         </div>
 
         {deleteWord &&
@@ -193,7 +193,7 @@ class VocabCard extends PureComponent<Props> {
                 {sentence.sentence}
               </div>
               <div className="VocabCard__sentenceMeaning">
-                {sentence.pinyin}
+                {sentence.reading}
               </div>
             </div>
           ))}

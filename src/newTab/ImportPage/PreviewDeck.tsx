@@ -20,11 +20,11 @@ class PreviewDeck extends PureComponent<Props> {
   async componentDidMount() {
     try {
       const wordData = await getJsonFile<
-        { word: string; wordPinyin: string; meaning: string }[]
+        { word: string; reading: string; meaning: string }[]
       >(this.props.previewUrl);
       const words: VocabWord[] = wordData.filter(word => word).map(word => ({
         ...word,
-        wordPinyin: PinyinConverter.convert(word.wordPinyin || ""),
+        reading: PinyinConverter.convert(word.reading || ""),
         sentences: []
       }));
 
