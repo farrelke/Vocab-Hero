@@ -4,6 +4,7 @@ import * as React from "react";
 import PinyinConverter from "../Utils/PinyinConverter";
 import { speak } from "../Utils/SpeechUtils";
 import { VocabWord } from "../Utils/IndexdbUtils";
+import { getUserPreferences, Language } from "../Utils/DbUtils";
 
 type Props = {
   word: VocabWord;
@@ -72,6 +73,7 @@ export class EditVocabCard extends PureComponent<
   };
 
   render() {
+    const isChinese = getUserPreferences().language === Language.Chinese;
     const { cancel, addWord } = this.props;
     const { word, reading, meaning } = this.state;
     return (
@@ -81,7 +83,7 @@ export class EditVocabCard extends PureComponent<
           value={reading}
           onChange={this.updateText("reading")}
           className="VocabCard__reading"
-          placeholder="pinyin"
+          placeholder={isChinese ? "pinyin" : "reading"}
         />
         <div className="VocabCard__btns">
           <div onClick={this.pinyinise} className="VocabCard__btn">
@@ -93,7 +95,7 @@ export class EditVocabCard extends PureComponent<
           type="text"
           value={word}
           className="VocabCard__word"
-          placeholder="hanzi"
+          placeholder={isChinese ? "hanzi" : "kanji"}
         />
         <input
           type="text"
@@ -188,17 +190,20 @@ class VocabCard extends PureComponent<Props> {
         <div className="VocabCard__wordMeaning">{word.meaning}</div>
         {word.sentences &&
           word.sentences.map((sentence, i) => (
-            <div key={i}>
+            <>
               <div
+                key={'a' + i}
                 className="VocabCard__sentence"
                 onClick={() => speak(sentence.sentence)}
               >
                 {sentence.sentence}
               </div>
-              <div className="VocabCard__sentenceMeaning">
+              <div
+                key={'b' + i}
+                className="VocabCard__sentenceMeaning">
                 {sentence.reading}
               </div>
-            </div>
+            </>
           ))}
       </div>
     );

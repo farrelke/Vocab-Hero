@@ -1,14 +1,15 @@
 import * as React from "react";
-import { PureComponent } from 'react';
-import "./PasteAdd.scss"
+import { PureComponent } from "react";
+import "./PasteAdd.scss";
 import { TextareaAutosize } from "react-autosize-textarea/lib/TextareaAutosize";
 import VocabCard from "../VocabCard";
 import { getTextLines } from "../../Utils/StringUtils";
 import { VocabWord } from "../../Utils/IndexdbUtils";
+import { getUserPreferences, Language } from "../../Utils/DbUtils";
 
 type Props = {
   addWord: (word: VocabWord) => any;
-}
+};
 
 function RadioButton(props: {
   index: number;
@@ -24,7 +25,7 @@ function RadioButton(props: {
       onClick={() => props.onSelect(props.index, word)}
       className={`AddWords__typeOption AddWords__typeOption--${word} ${
         isSelected ? "AddWords__typeOption--selected" : ""
-        }`}
+      }`}
     >
       {props.label}
     </div>
@@ -36,19 +37,20 @@ function TypeLine(props: {
   selected: string;
   onSelect: (index: number, value: string) => any;
 }) {
+  const isChinese = getUserPreferences().language === Language.Chinese;
   return (
     <div className="AddWords__typeOptions">
       <RadioButton
         index={props.index}
         name="word"
-        label={"hanzi"}
+        label={isChinese ? "hanzi" : "kanji"}
         selected={props.selected}
         onSelect={props.onSelect}
       />
       <RadioButton
         index={props.index}
         name="reading"
-        label={"pinyin"}
+        label={isChinese ? "pinyin" : "reading"}
         selected={props.selected}
         onSelect={props.onSelect}
       />
@@ -67,8 +69,8 @@ function TypeLine(props: {
       />
       <RadioButton
         index={props.index}
-        name={"sentencePinyin"}
-        label={"example pinyin"}
+        name={"sentenceReading"}
+        label={isChinese ? "example pinyin": "example reading"}
         selected={props.selected}
         onSelect={props.onSelect}
       />
@@ -83,7 +85,6 @@ const defaultOrder = [
   "sentence",
   "sentenceReading"
 ];
-
 
 class PasteAdd extends PureComponent<Props> {
   state = {
@@ -137,7 +138,7 @@ class PasteAdd extends PureComponent<Props> {
       if (!line) return;
 
       if (type === "sentence") {
-        if (lastType === "sentencePinyin" && lastSentence.sentence) {
+        if (lastType === "sentenceReading" && lastSentence.sentence) {
           card.sentences.push(lastSentence);
           lastSentence = {
             sentence: "",
@@ -145,7 +146,7 @@ class PasteAdd extends PureComponent<Props> {
           };
         }
         lastSentence.sentence += line;
-      } else if (type === "sentencePinyin") {
+      } else if (type === "sentenceReading") {
         if (lastType === "sentence" && lastSentence.reading) {
           card.sentences.push(lastSentence);
           lastSentence = {

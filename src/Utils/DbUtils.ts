@@ -27,13 +27,17 @@ function getChromeStorage<T>(key: string): Promise<T> {
     }
   });
 }
-function setChromeStorage(key: string, value: any, onlyExtension = false): Promise<void> {
+function setChromeStorage(
+  key: string,
+  value: any,
+  onlyExtension = false
+): Promise<void> {
   return new Promise(resolve => {
     const hasChromeStorage =
       window.chrome && chrome.storage && chrome.storage.local;
     if (hasChromeStorage) {
       chrome.storage.local.set({ [key]: value }, resolve);
-    } else if(!onlyExtension) {
+    } else if (!onlyExtension) {
       try {
         localStorage.setItem(key, JSON.stringify(value));
         resolve();
@@ -48,7 +52,6 @@ function setChromeStorage(key: string, value: any, onlyExtension = false): Promi
 }
 
 let wordDict: WordDefDict;
-
 export async function getWordDict(): Promise<WordDefDict> {
   try {
     if (wordDict) return wordDict;
@@ -101,3 +104,30 @@ export async function getDictIndex(): Promise<any> {
 
   return dictIndex;
 }
+
+export enum Language {
+  Chinese = "Chinese",
+  Japanese = "Japanese"
+}
+export const Languages = Object.keys(Language);
+
+export type UserPreferences = {
+  language: Language;
+  voiceURI: string;
+};
+
+let preferences: UserPreferences;
+
+export const getUserPreferences = () => {
+  if (preferences) return preferences;
+  preferences = JSON.parse(localStorage.getItem("userPreferences")) || {
+    language: Language.Chinese,
+    voiceURI: "Google\u00A0普通话（中国大陆）" // unicode space is different from ascii space :(
+  };
+  return preferences;
+};
+
+export const setUserPreferences = (userPreferences: UserPreferences) => {
+  preferences = userPreferences;
+  localStorage.setItem("userPreferences", JSON.stringify(userPreferences));
+};

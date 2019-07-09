@@ -2,7 +2,12 @@ import * as React from "react";
 import { PureComponent } from "react";
 import "./InputAdd.scss";
 import PinyinConverter from "../../Utils/PinyinConverter";
-import { getDictIndex, getWordDict, WordDefDict } from "../../Utils/DbUtils";
+import {
+  getUserPreferences,
+  getWordDict,
+  Language,
+  WordDefDict
+} from "../../Utils/DbUtils";
 import { VocabWord } from "../../Utils/IndexdbUtils";
 
 type Props = {
@@ -18,12 +23,13 @@ class InputAdd extends PureComponent<Props> {
   };
   hanziInput: any;
 
-
   async componentDidMount() {
-    const wordDict = await getWordDict();
-    this.setState({ wordDict });
+    const userPref = getUserPreferences();
+    if (userPref.language === Language.Chinese) {
+      const wordDict = await getWordDict();
+      this.setState({ wordDict });
+    }
   }
-
 
   updateText = (type: string) => (
     e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -31,7 +37,6 @@ class InputAdd extends PureComponent<Props> {
     const newValue = e.currentTarget.value;
     this.setState({ [type]: newValue });
   };
-
 
   pinyinise = () => {
     try {
@@ -42,12 +47,10 @@ class InputAdd extends PureComponent<Props> {
     }
   };
 
-
   addWord = () => {
     const { addWord } = this.props;
     const { hanzi, pinyin, translation, wordDict } = this.state;
     const dictRef = wordDict && wordDict[hanzi];
-
 
     const newWord: VocabWord = {
       word: hanzi,
@@ -60,20 +63,20 @@ class InputAdd extends PureComponent<Props> {
   };
 
   onKeyDownTranslation = (e: any) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       this.addWord();
       this.hanziInput && this.hanziInput.focus();
     }
   };
 
   onKeyDownPinyin = (e: any) => {
-    if (e.key === 'Enter') {
-      this.pinyinise()
+    if (e.key === "Enter") {
+      this.pinyinise();
     }
   };
 
-
   render() {
+    const isChinese = getUserPreferences().language === Language.Chinese;
     const { hanzi, pinyin, translation, wordDict } = this.state;
 
     const dictRef = wordDict && wordDict[hanzi];
@@ -81,9 +84,11 @@ class InputAdd extends PureComponent<Props> {
     return (
       <div className="InputAdd">
         <div className="InputAdd__inputContainer">
-          <div className="InputAdd__inputLabel">Hanzi</div>
+          <div className="InputAdd__inputLabel">
+            {isChinese ? "Hanzi" : "Kanji"}
+          </div>
           <input
-            ref={ref => this.hanziInput = ref}
+            ref={ref => (this.hanziInput = ref)}
             type="text"
             value={hanzi}
             onChange={this.updateText("hanzi")}
@@ -92,16 +97,27 @@ class InputAdd extends PureComponent<Props> {
         </div>
 
         <div className="InputAdd__inputContainer">
-          <div className="InputAdd__inputLabel">Pinyin</div>
+          <div className="InputAdd__inputLabel">
+            {isChinese ? "Pinyin" : "Reading"}
+          </div>
           <input
             type="text"
             value={pinyin}
-            placeholder={PinyinConverter.convert((dictRef && dictRef.reading) || "")}
+            placeholder={PinyinConverter.convert(
+              (dictRef && dictRef.reading) || ""
+            )}
             onKeyDown={this.onKeyDownPinyin}
             onChange={this.updateText("pinyin")}
             className="InputAdd__input"
           />
-          <div className="InputAdd__btn InputAdd__btn--inputBtn" onClick={this.pinyinise}>Pinyinise</div>
+          {isChinese && (
+            <div
+              className="InputAdd__btn InputAdd__btn--inputBtn"
+              onClick={this.pinyinise}
+            >
+              Pinyinise
+            </div>
+          )}
         </div>
 
         <div className="InputAdd__inputContainer">
@@ -116,7 +132,12 @@ class InputAdd extends PureComponent<Props> {
           />
         </div>
 
-        <div className="InputAdd__btn InputAdd__btn--add" onClick={this.addWord}>Add Word</div>
+        <div
+          className="InputAdd__btn InputAdd__btn--add"
+          onClick={this.addWord}
+        >
+          Add Word
+        </div>
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { PureComponent } from "react";
 import "./Header.scss";
-import { Page, SubPage, SubPagesDict } from "../Sidebar/Sidebar";
+import { getSubPageDict, Page, SubPage } from "../Sidebar/Sidebar";
 
 type Props = {
   page: Page;
@@ -13,7 +13,7 @@ class Header extends PureComponent<Props> {
   render() {
     const { page, subPage, selectPage } = this.props;
 
-    const subPages = SubPagesDict[page] || [];
+    const subPages = getSubPageDict()[page] || [];
 
     return (
       <div className="Header">

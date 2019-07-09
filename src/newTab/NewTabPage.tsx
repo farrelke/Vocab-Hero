@@ -15,6 +15,7 @@ import {
   getRandomVocabWord,
   VocabWord
 } from "../Utils/IndexdbUtils";
+import UserPreferences from "./UserPreferences/UserPreferences";
 
 type Props = {};
 
@@ -69,7 +70,13 @@ class NewTabPage extends PureComponent<Props> {
 
   render() {
     const { page, vocab, subPage } = this.state;
-    const pages = [Page.Manage, Page.Add, Page.Import, Page.Learn];
+    const pages = [
+      Page.Manage,
+      Page.Add,
+      Page.Import,
+      Page.UserPreferences,
+      Page.Learn
+    ];
 
     return (
       <div className="NewTabPage">
@@ -104,6 +111,8 @@ class NewTabPage extends PureComponent<Props> {
               {page === Page.Import && (
                 <ImportPage subPage={subPage} addWords={this.addWords} />
               )}
+
+              {page === Page.UserPreferences && <UserPreferences />}
             </div>
           </div>
         )}

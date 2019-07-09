@@ -3,6 +3,7 @@ import { PureComponent } from "react";
 import "./LearnPage.scss";
 import { speak } from "../../Utils/SpeechUtils";
 import { VocabWord } from "../../Utils/IndexdbUtils";
+import { getUserPreferences, Language } from "../../Utils/DbUtils";
 
 type Props = {
   vocab: VocabWord;
@@ -18,6 +19,7 @@ class LearnPage extends PureComponent<Props> {
   };
 
   render() {
+    const isChinese = getUserPreferences().language === Language.Chinese;
     const { vocab } = this.props;
 
     return (
@@ -46,18 +48,33 @@ class LearnPage extends PureComponent<Props> {
                 {sentence.sentence}
               </div>
 
-              <div className="LearnPage__sentencePinyin">{sentence.reading}</div>
+              <div className="LearnPage__sentencePinyin">
+                {sentence.reading}
+              </div>
             </div>
           ))}
 
-        <a
-          className="LearnPage__btn LearnPage__btn--chinesePod"
-          target="_blank"
-          href={`https://chinesepod.com/dictionary/english-chinese/${vocab.word &&
+        {isChinese && (
+          <a
+            className="LearnPage__btn LearnPage__btn--chinesePod"
+            target="_blank"
+            href={`https://chinesepod.com/dictionary/english-chinese/${vocab.word &&
+              vocab.word.split(" ")[0]}`}
+          >
+            Open in Chinesepod
+          </a>
+        )}
+
+        {!isChinese && (
+          <a
+            className="LearnPage__btn LearnPage__btn--jisho"
+            target="_blank"
+            href={`https://jisho.org/search/${vocab.word &&
             vocab.word.split(" ")[0]}`}
-        >
-          Open in Chinesepod
-        </a>
+          >
+            Open in jisho
+          </a>
+        )}
 
         <div
           className="LearnPage__btn LearnPage__btn--delete"

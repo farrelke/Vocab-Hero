@@ -2,13 +2,14 @@ import * as React from "react";
 import { PureComponent } from "react";
 import "./Sidebar.scss";
 import * as SidebarLogo from "./sidebar-logo.png";
-import { speak } from "../../../Utils/SpeechUtils";
+import { getUserPreferences, Language } from "../../../Utils/DbUtils";
 
 export enum Page {
   Learn = "Main Page",
   Add = "Add Vocabulary",
   Manage = "Manage Vocabulary",
-  Import = "Import Vocabulary"
+  Import = "Import Vocabulary",
+  UserPreferences = "User Preferences"
 }
 
 export enum SubPage {
@@ -23,7 +24,9 @@ export enum SubPage {
   Pleco = "Pleco",
   Anki = "Anki",
   PreMade = "Vocabulary Lists",
-  Local = "Local Import/Export"
+  Local = "Local Import/Export",
+
+  Preferences = "Preferences"
 }
 
 type Props = {
@@ -32,26 +35,50 @@ type Props = {
   selectedPage: Page;
 };
 
-export const SubPagesDict = {
+const CnSubPagesDict = {
   [Page.Learn]: [SubPage.Learn],
   [Page.Add]: [SubPage.Input, SubPage.Search, SubPage.Paste],
   [Page.Manage]: [SubPage.Words],
-  [Page.Import]: [SubPage.Pleco, SubPage.Anki, SubPage.PreMade, SubPage.Local]
+  [Page.Import]: [SubPage.Pleco, SubPage.Anki, SubPage.PreMade, SubPage.Local],
+  [Page.UserPreferences]: [SubPage.Preferences]
+};
+
+const JaSubPagesDict = {
+  [Page.Learn]: [SubPage.Learn],
+  [Page.Add]: [SubPage.Input, SubPage.Paste],
+  [Page.Manage]: [SubPage.Words],
+  [Page.Import]: [SubPage.Anki, SubPage.Local],
+  [Page.UserPreferences]: [SubPage.Preferences]
+};
+
+export const getSubPageDict = () => {
+  const userPrefs = getUserPreferences();
+  return userPrefs.language === Language.Chinese
+    ? CnSubPagesDict
+    : JaSubPagesDict;
 };
 
 class Sidebar extends PureComponent<Props> {
+  onSelectPage = (page: Page) => {
+    const subPagesDict = getSubPageDict();
+    this.props.selectPage(page, subPagesDict[page]![0]);
+  };
+
   render() {
+    const isChinese = getUserPreferences().language === Language.Chinese;
     const { pages, selectedPage, selectPage } = this.props;
 
     return (
       <div className="Sidebar">
         <img className="Sidebar__logo" src={SidebarLogo} alt="Vocab Hero!" />
-        <div className="Sidebar__logoText">Vocab 英雄</div>
+        <div className="Sidebar__logoText">
+          Vocab {isChinese ? "英雄" : "勇者"}
+        </div>
 
         {pages.map(page => (
           <div
             key={page}
-            onClick={() => selectPage(page, SubPagesDict[page]![0])}
+            onClick={() => this.onSelectPage(page)}
             className={`Sidebar__option ${
               selectedPage === page ? "Sidebar__option--selected" : ""
             }`}

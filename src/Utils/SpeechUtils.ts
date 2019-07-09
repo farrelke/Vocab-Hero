@@ -1,16 +1,24 @@
-let chineseVoice: any = null;
-window.speechSynthesis.onvoiceschanged = () => {
-  const voices = speechSynthesis.getVoices();
-  // need to be able to tell the subtitle language
-  const chineseVoices = voices.filter(a => a.lang === "zh-CN");
+import { getUserPreferences } from "./DbUtils";
 
-  // choose last voice because it should be google which sounds better
-  chineseVoice = chineseVoices[chineseVoices.length - 1];
+let voices: SpeechSynthesisVoice[] = [];
+
+
+window.speechSynthesis.onvoiceschanged = () => {
+  voices = speechSynthesis.getVoices();
 };
 
+export function getVoices() {
+  return voices || [];
+}
+
+
 export function speak(word: string) {
-  if (!chineseVoice) return;
+  if (voices.length === 0) return;
+
+  const voice = voices.find(a => a.voiceURI === getUserPreferences().voiceURI);
+  if (!voice) return;
+
   const utterance = new SpeechSynthesisUtterance(word);
-  utterance.voice = chineseVoice;
+  utterance.voice = voice;
   speechSynthesis.speak(utterance);
 }
