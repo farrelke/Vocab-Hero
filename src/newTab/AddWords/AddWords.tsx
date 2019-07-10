@@ -6,6 +6,8 @@ import SearchAdd from "./SearchAdd";
 import { SubPage } from "../components/Sidebar/Sidebar";
 import InputAdd from "./InputAdd";
 import { VocabWord } from "../../Utils/IndexdbUtils";
+import JapaneseSearchAdd from "./JapaneseSearchAdd";
+import { getUserPreferences, Language } from "../../Utils/DbUtils";
 
 type Props = {
   addWord: (word: VocabWord) => any;
@@ -60,7 +62,8 @@ class AddWords extends PureComponent<Props> {
     if (subPage === SubPage.Input) {
       return  <InputAdd  addWord={addWord} />
     } else if (subPage === SubPage.Search) {
-      return <SearchAdd addWord={addWord} />
+      const isChinese = getUserPreferences().language === Language.Chinese;
+      return isChinese ? <SearchAdd addWord={addWord} /> :  <JapaneseSearchAdd addWord={addWord} />;
     }
 
     return (

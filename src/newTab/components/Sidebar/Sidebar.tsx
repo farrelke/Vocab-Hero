@@ -45,7 +45,7 @@ const CnSubPagesDict = {
 
 const JaSubPagesDict = {
   [Page.Learn]: [SubPage.Learn],
-  [Page.Add]: [SubPage.Input, SubPage.Paste],
+  [Page.Add]: [SubPage.Input,  SubPage.Search, SubPage.Paste],
   [Page.Manage]: [SubPage.Words],
   [Page.Import]: [SubPage.Anki, SubPage.Local],
   [Page.UserPreferences]: [SubPage.Preferences]

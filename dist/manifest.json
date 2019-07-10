@@ -23,7 +23,8 @@
 
   "permissions": [
     "storage",
-    "unlimitedStorage"
+    "unlimitedStorage",
+    "*://*.jisho.org/*"
   ],
 
   "chrome_url_overrides": {
