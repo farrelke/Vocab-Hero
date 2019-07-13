@@ -47,9 +47,14 @@ export async function addDictIndex(): Promise<any> {
 }
 
 export async function searchDict(query: string): Promise<any> {
-  const words = await db.dict.where("meaningWords").startsWithIgnoreCase(query)
-    .limit(25)
-    .toArray();
-  console.log(query, words);
+  if (query.length < 2) return [];
+
+  const words = await db.dict
+    .where("meaningWords")
+    .startsWithIgnoreCase(query)
+    .distinct()
+    .sortBy("freq");
+
+  console.log(query, words.reverse());
   return words;
 }

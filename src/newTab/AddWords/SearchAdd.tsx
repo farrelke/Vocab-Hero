@@ -20,7 +20,7 @@ class SearchAdd extends PureComponent<Props> {
   };
 
   async componentDidMount() {
-   // await addDictIndex();
+    // await addDictIndex();
    // const wordDict = await getWordDict();
    // const dictIndex = await getDictIndex();
     this.setState({  });
@@ -108,7 +108,7 @@ class SearchAdd extends PureComponent<Props> {
               results.map(result => (
                 <VocabCard
                   key={result.word + result.reading}
-                  word={{ ...result, sentences: [] }}
+                  word={{ ...result, sentences: [] } as any}
                   addWord={() => this.addWord(result)}
                 />
               ))}

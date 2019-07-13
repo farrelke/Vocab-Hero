@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1e404d4-de09-4160-b4a1-8e8a594b13aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/create-freq-list.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Utils/DictUtils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/kevinfarrell.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/kevinfarrell.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/create-word-db.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/create-word-db.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/hsk-1.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/hsk-1.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/hsk-2.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/hsk-2.json" afterDir="false" />
@@ -14,13 +9,7 @@
       <change beforePath="$PROJECT_DIR$/data/hsk-4.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/hsk-4.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/hsk-5.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/hsk-5.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/hsk-6.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/hsk-6.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/wordDict.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/wordDict.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/DbUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/DbUtils.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utils/IndexdbUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/IndexdbUtils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/VocabDb.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/VocabDb.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newTab/AddWords/JapaneseSearchAdd.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/AddWords/JapaneseSearchAdd.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -47,38 +36,37 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/create-word-db.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+            <state relative-caret-position="570">
+              <caret line="38" column="67" selection-start-line="38" selection-start-column="67" selection-end-line="38" selection-end-column="67" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/create-freq-list.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/data/hsk-1.json">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="69">
               <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="491">
+              <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,8 +91,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Utils/IndexdbUtils.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="639">
-              <caret line="49" column="49" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="49" />
+            <state relative-caret-position="624">
+              <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
               </folding>
@@ -128,7 +116,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>text-decoration</find>
       <find>text-shadow:</find>
       <find>.ImportPage__hskBtn</find>
       <find>ImportPage__btn</find>
@@ -158,6 +145,7 @@
       <find>sentenceReading</find>
       <find>tokeni</find>
       <find>tokenize</find>
+      <find>SearchAdd.tsx</find>
     </findStrings>
     <replaceStrings>
       <replace>reading</replace>
@@ -214,15 +202,15 @@
         <option value="$PROJECT_DIR$/src/Utils/JishoUtils.ts" />
         <option value="$PROJECT_DIR$/src/newTab/AddWords/JapaneseSearchAdd.tsx" />
         <option value="$PROJECT_DIR$/src/Utils/DictUtils.ts" />
-        <option value="$PROJECT_DIR$/src/Utils/IndexdbUtils.ts" />
-        <option value="$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/imported-data/SUBTLEX-CH-WF.csv" />
         <option value="$PROJECT_DIR$/data/create-freq-list.js" />
-        <option value="$PROJECT_DIR$/data/create-word-db.js" />
         <option value="$PROJECT_DIR$/src/Utils/VocabDb.ts" />
         <option value="$PROJECT_DIR$/src/Utils/DbUtils.ts" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx" />
+        <option value="$PROJECT_DIR$/src/Utils/IndexdbUtils.ts" />
+        <option value="$PROJECT_DIR$/data/create-word-db.js" />
       </list>
     </option>
   </component>
@@ -435,12 +423,12 @@
       <workItem from="1562683126382" duration="4704000" />
       <workItem from="1562733610402" duration="2481000" />
       <workItem from="1562818343468" duration="507000" />
-      <workItem from="1562991981356" duration="7915000" />
+      <workItem from="1562991981356" duration="9509000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134270000" />
+    <option name="totallyTimeSpent" value="135864000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -488,19 +476,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/newTab/ImportPage/PreviewDeck.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/newTab/ImportPage/PreviewDeck.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
@@ -786,16 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1168">
-          <caret line="91" selection-start-line="91" selection-end-line="91" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/cedict/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -827,32 +792,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/create-word-db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/wordDict.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret column="470670" selection-start-column="470666" selection-end-column="470670" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/DictUtils.ts">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/IndexdbUtils.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
-          <caret line="49" column="49" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/VocabDb.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -878,6 +819,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/IndexdbUtils.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/wordDictList.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1944">
+          <caret column="2562" selection-start-column="2562" selection-end-column="2562" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/wordDict.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret column="470670" selection-start-column="470666" selection-end-column="470670" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/hsk-1.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/create-word-db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="67" selection-start-line="38" selection-start-column="67" selection-end-line="38" selection-end-column="67" />
         </state>
       </provider>
     </entry>
