@@ -5,6 +5,8 @@ export interface WordDef {
   word: string;
   reading: string;
   meaning: string;
+  freq: number,
+  hsk: number
 }
 
 export interface WordDefDict {
@@ -55,8 +57,8 @@ let wordDict: WordDefDict;
 export async function getWordDict(): Promise<WordDefDict> {
   try {
     if (wordDict) return wordDict;
-    wordDict = await getChromeStorage<WordDefDict>("wordDict");
-    if (wordDict) return wordDict;
+   // wordDict = await getChromeStorage<WordDefDict>("wordDict");
+   // if (wordDict) return wordDict;
 
     wordDict = await getJsonFile<WordDefDict>(
       "https://raw.githubusercontent.com/farrelke/chinese-vocab/master/data/wordDict.json"
@@ -82,18 +84,26 @@ export async function getDictIndex(): Promise<any> {
     }
   });
 
+  /*
   const dictIndexData = await getChromeStorage<WordDefDict>("dictIndex");
   if (dictIndexData) {
     try {
       dictIndex.import(dictIndexData);
       return dictIndex;
     } catch (e) {}
-  }
+  } */
 
   const wordDict = await getWordDict();
+
+  const words1 = Object.keys(wordDict).map(key => wordDict[key]);
+
+
   const words = Object.keys(wordDict).map(key => {
+    if (!wordDict[key]) return;
     let word = wordDict[key];
-    const reading = word.reading.replace(" ", "");
+    const reading = (word.reading || (word as any).wordPinyin || '').replace(" ", "");
+    if (!word.reading) {
+    }
     const simplePinyin = reading.replace(/[0-9]/g, "");
     return { ...word, reading, simplePinyin };
   });

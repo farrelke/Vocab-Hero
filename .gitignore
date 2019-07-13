@@ -1,5 +1,6 @@
 dist/js
 node_modules
+imported-data
 
 .DS_Store
 dist.zip

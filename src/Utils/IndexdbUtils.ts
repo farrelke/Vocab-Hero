@@ -1,4 +1,5 @@
 import { VocabDb, VocabWord } from "./VocabDb";
+import { getWordDict } from "./DbUtils";
 export { VocabWord } from "./VocabDb";
 
 const db: VocabDb = new VocabDb();
@@ -39,3 +40,16 @@ export async function getRandomVocabWord(): Promise<VocabWord | null> {
 
 
 
+export async function addDictIndex(): Promise<any> {
+  const wordDict = await getWordDict();
+  const words = Object.keys(wordDict).map(key => wordDict[key]);
+  await db.dict.bulkAdd(words);
+}
+
+export async function searchDict(query: string): Promise<any> {
+  const words = await db.dict.where("meaningWords").startsWithIgnoreCase(query)
+    .limit(25)
+    .toArray();
+  console.log(query, words);
+  return words;
+}

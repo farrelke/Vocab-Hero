@@ -32,14 +32,18 @@ class JapaneseSearchAdd extends PureComponent<Props> {
       return {
         word: r.slug,
         reading: reading,
-        meaning: meaning
+        meaning: meaning,
+        sentences: []
       };
     });
 
     this.setState({ results });
   };
 
-  addWord = (word: any) => {};
+  addWord = (word: VocabWord) => {
+    this.setState({ searchWord: "", results: [] });
+    this.props.addWord(word);
+  };
 
   render() {
     const { results, searchWord } = this.state;

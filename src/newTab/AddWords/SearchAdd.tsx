@@ -5,7 +5,7 @@ import { getDictIndex, getWordDict, WordDef, WordDefDict } from "../../Utils/DbU
 import VocabCard from "../VocabCard";
 import PinyinConverter from "../../Utils/PinyinConverter";
 import { isChineseChar } from "../../Utils/StringUtils";
-import { VocabWord } from "../../Utils/IndexdbUtils";
+import { addDictIndex, searchDict, VocabWord } from "../../Utils/IndexdbUtils";
 
 type Props = {
   addWord: (word: VocabWord) => any;
@@ -20,9 +20,10 @@ class SearchAdd extends PureComponent<Props> {
   };
 
   async componentDidMount() {
-    const wordDict = await getWordDict();
-    const dictIndex = await getDictIndex();
-    this.setState({ wordDict, dictIndex });
+   // await addDictIndex();
+   // const wordDict = await getWordDict();
+   // const dictIndex = await getDictIndex();
+    this.setState({  });
   }
 
   updateSearchWord = async (e: React.FormEvent<HTMLInputElement>) => {
@@ -32,7 +33,9 @@ class SearchAdd extends PureComponent<Props> {
 
     const { dictIndex, wordDict } = this.state;
 
+    await searchDict(searchWord);
 
+    return;
     // check chinese first
     const isHanzi = searchWord.split("").every(a => isChineseChar(a));
 
@@ -86,10 +89,8 @@ class SearchAdd extends PureComponent<Props> {
 
     return (
       <div className="SearchAdd">
-        {!wordDict && (
-          <div className="SearchAdd__loading">Loading dictionary...</div>
-        )}
-        {wordDict && (
+
+        {(
           <>
             <div className="SearchAdd__inputContainer">
               <div className="SearchAdd__inputLabel">Search</div>
