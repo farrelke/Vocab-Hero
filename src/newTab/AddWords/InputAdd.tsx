@@ -4,11 +4,10 @@ import "./InputAdd.scss";
 import PinyinConverter from "../../Utils/PinyinConverter";
 import {
   getUserPreferences,
-  getWordDict,
-  Language,
-  WordDefDict
+  Language
 } from "../../Utils/DbUtils";
-import { VocabWord } from "../../Utils/IndexdbUtils";
+import { findWord, VocabWord } from "../../Utils/IndexdbUtils";
+import { WordDef } from "../../Utils/VocabDb";
 
 type Props = {
   addWord: (word: VocabWord) => any;
@@ -19,23 +18,26 @@ class InputAdd extends PureComponent<Props> {
     hanzi: "",
     pinyin: "",
     translation: "",
-    wordDict: null as WordDefDict
+    dictDef: null as WordDef
   };
   hanziInput: any;
 
-  async componentDidMount() {
-    const userPref = getUserPreferences();
-    if (userPref.language === Language.Chinese) {
-      const wordDict = await getWordDict();
-      this.setState({ wordDict });
-    }
-  }
+  async componentDidMount() {}
 
-  updateText = (type: string) => (
+  updateText = (type: string) => async (
     e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const newValue = e.currentTarget.value;
     this.setState({ [type]: newValue });
+
+
+    if (type === "hanzi" && getUserPreferences().language === Language.Chinese) {
+      this.setState({ dictDef: null });
+      const dictDef = await findWord(newValue);
+      if (newValue === this.state.hanzi) {
+        this.setState({ dictDef });
+      }
+    }
   };
 
   pinyinise = () => {
@@ -49,13 +51,13 @@ class InputAdd extends PureComponent<Props> {
 
   addWord = () => {
     const { addWord } = this.props;
-    const { hanzi, pinyin, translation, wordDict } = this.state;
-    const dictRef = wordDict && wordDict[hanzi];
+    const { hanzi, pinyin, translation, dictDef } = this.state;
+
 
     const newWord: VocabWord = {
       word: hanzi,
-      reading: PinyinConverter.convert(pinyin || dictRef.reading),
-      meaning: translation || dictRef.meaning,
+      reading: PinyinConverter.convert(pinyin || dictDef.reading),
+      meaning: translation || dictDef.meaning,
       sentences: []
     };
     addWord(newWord);
@@ -77,9 +79,8 @@ class InputAdd extends PureComponent<Props> {
 
   render() {
     const isChinese = getUserPreferences().language === Language.Chinese;
-    const { hanzi, pinyin, translation, wordDict } = this.state;
+    const { hanzi, pinyin, translation, dictDef } = this.state;
 
-    const dictRef = wordDict && wordDict[hanzi];
 
     return (
       <div className="InputAdd">
@@ -104,7 +105,7 @@ class InputAdd extends PureComponent<Props> {
             type="text"
             value={pinyin}
             placeholder={PinyinConverter.convert(
-              (dictRef && dictRef.reading) || ""
+              (dictDef && dictDef.reading) || ""
             )}
             onKeyDown={this.onKeyDownPinyin}
             onChange={this.updateText("pinyin")}
@@ -126,7 +127,7 @@ class InputAdd extends PureComponent<Props> {
             rows={4}
             onKeyDown={this.onKeyDownTranslation}
             value={translation}
-            placeholder={(dictRef && dictRef.meaning) || ""}
+            placeholder={(dictDef && dictDef.meaning) || ""}
             onChange={this.updateText("translation")}
             className="InputAdd__input InputAdd__input--textarea"
           />

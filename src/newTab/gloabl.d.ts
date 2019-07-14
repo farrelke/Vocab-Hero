@@ -1,7 +1,6 @@
 
 
 declare module "react-radio-buttons";
-declare module "flexsearch";
 
 declare module "*.png" {
   const value: any;

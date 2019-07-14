@@ -1,13 +1,11 @@
-import { VocabDb, VocabWord } from "./VocabDb";
-import { getWordDict } from "./DbUtils";
+import { getWordTokens, VocabDb, VocabWord, WordDef } from "./VocabDb";
+import { isChineseChar } from "./StringUtils";
+import { getJsonFile } from "./FetchUtils";
 export { VocabWord } from "./VocabDb";
 
 const db: VocabDb = new VocabDb();
 
-
-export async function bulkAddVocabWords(
-  words: VocabWord[]
-): Promise<void> {
+export async function bulkAddVocabWords(words: VocabWord[]): Promise<void> {
   await db.vocab.bulkAdd(words);
 }
 
@@ -38,23 +36,86 @@ export async function getRandomVocabWord(): Promise<VocabWord | null> {
   return await db.vocab.offset(Math.floor(Math.random() * cnt)).first();
 }
 
+let dictPromise: Promise<void> = null;
+export async function initDict(): Promise<void> {
+  if (dictPromise) return dictPromise;
 
+  const dictCnt = await db.dict.count();
+  if (dictCnt > 0) return;
 
-export async function addDictIndex(): Promise<any> {
-  const wordDict = await getWordDict();
-  const words = Object.keys(wordDict).map(key => wordDict[key]);
-  await db.dict.bulkAdd(words);
+  dictPromise = addDict();
+  await dictPromise;
+  dictPromise = null;
 }
 
-export async function searchDict(query: string): Promise<any> {
-  if (query.length < 2) return [];
+export async function addDict(): Promise<void> {
+  const wordDict = await getJsonFile<WordDef[]>(
+    "https://raw.githubusercontent.com/farrelke/chinese-vocab/master/data/wordDictList.json"
+  );
+  await db.dict.bulkAdd(wordDict);
+}
 
-  const words = await db.dict
-    .where("meaningWords")
-    .startsWithIgnoreCase(query)
-    .distinct()
-    .sortBy("freq");
+export async function findWord(word: string): Promise<WordDef> {
+  return await db.dict
+    .where("word")
+    .equals(word)
+    .first();
+}
 
-  console.log(query, words.reverse());
-  return words;
+export async function searchDict(query: string): Promise<WordDef[]> {
+  query = query.toLowerCase();
+
+  const isHanzi = query.split("").every(a => isChineseChar(a));
+
+  if (isHanzi) {
+    return await db.dict
+      .where("word")
+      .startsWith(query)
+      .distinct()
+      .limit(35)
+      .toArray();
+  }
+
+  const words = getWordTokens(query);
+  console.log(words);
+
+  if (words.length === 0) return [];
+
+  if (words.length === 1) {
+    const word = words[0];
+    return await db.dict
+      .where("readingNoSpaces")
+      .startsWith(word)
+      .or("readingSimple")
+      .startsWith(word)
+      .or("meaningWords")
+      .startsWith(word)
+      .distinct()
+      .limit(35)
+      .toArray();
+  }
+
+  return db.transaction("r", db.dict, async () => {
+    const results = await Promise.all(
+      words.map(prefix =>
+        db.dict
+          .where("meaningWords")
+          .startsWith(prefix)
+          .primaryKeys()
+      )
+    );
+
+    // Intersect result set of primary keys
+    const reduced = results.reduce((a, b) => {
+      const set = new Set(b);
+      return a.filter(k => set.has(k));
+    });
+
+    return await db.dict
+      .where(":id")
+      .anyOf(reduced)
+      .distinct()
+      .limit(35)
+      .toArray();
+  });
 }

@@ -1,7 +1,6 @@
 import * as React from "react";
 import { VocabWord } from "../../Utils/VocabDb";
 import { PureComponent } from "react";
-import { WordDef, WordDefDict } from "../../Utils/DbUtils";
 import VocabCard from "../VocabCard";
 import { searchJisho } from "../../Utils/JishoUtils";
 
