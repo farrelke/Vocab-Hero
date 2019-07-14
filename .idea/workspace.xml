@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1e404d4-de09-4160-b4a1-8e8a594b13aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/DbUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/DbUtils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/DictUtils.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/IndexdbUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/IndexdbUtils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/StringUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/StringUtils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/VocabDb.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/VocabDb.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newTab/AddWords/InputAdd.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/AddWords/InputAdd.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newTab/AddWords/JapaneseSearchAdd.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/AddWords/JapaneseSearchAdd.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newTab/gloabl.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/newTab/gloabl.d.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -48,13 +37,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Utils/VocabDb.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
               <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="22" column="2" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -174,12 +175,12 @@
         <option value="$PROJECT_DIR$/data/create-word-db.js" />
         <option value="$PROJECT_DIR$/src/newTab/gloabl.d.ts" />
         <option value="$PROJECT_DIR$/src/Utils/DbUtils.ts" />
-        <option value="$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx" />
         <option value="$PROJECT_DIR$/src/Utils/StringUtils.ts" />
         <option value="$PROJECT_DIR$/src/newTab/AddWords/JapaneseSearchAdd.tsx" />
         <option value="$PROJECT_DIR$/src/newTab/AddWords/InputAdd.tsx" />
         <option value="$PROJECT_DIR$/src/Utils/IndexdbUtils.ts" />
         <option value="$PROJECT_DIR$/src/Utils/VocabDb.ts" />
+        <option value="$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx" />
       </list>
     </option>
   </component>
@@ -213,12 +214,6 @@
               <item name="vocab-extension" type="b2602c69:ProjectViewProjectNode" />
               <item name="vocab-extension" type="462c0819:PsiDirectoryNode" />
               <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vocab-extension" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vocab-extension" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="@types" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="vocab-extension" type="b2602c69:ProjectViewProjectNode" />
@@ -403,16 +398,15 @@
       <workItem from="1562683126382" duration="4704000" />
       <workItem from="1562733610402" duration="2481000" />
       <workItem from="1562818343468" duration="507000" />
-      <workItem from="1562991981356" duration="16019000" />
+      <workItem from="1562991981356" duration="16509000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142374000" />
+    <option name="totallyTimeSpent" value="142864000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24236111" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -761,16 +755,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="56" column="16" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/DbUtils.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -838,6 +822,16 @@
           <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/newTab/AddWords/SearchAdd.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="22" column="2" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>

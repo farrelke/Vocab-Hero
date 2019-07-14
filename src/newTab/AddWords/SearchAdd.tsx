@@ -10,15 +10,18 @@ type Props = {
   addWord: (word: VocabWord) => any;
 };
 
+let dictLoaded = false;
+
 class SearchAdd extends PureComponent<Props> {
   state = {
-    isReady: false,
+    isReady: dictLoaded,
     searchWord: "" as string,
     results: [] as WordDef[]
   };
 
   async componentDidMount() {
     await initDict();
+    dictLoaded = true;
     this.setState({ isReady: true });
   }
 
