@@ -77,7 +77,6 @@ export async function searchDict(query: string): Promise<WordDef[]> {
   }
 
   const words = getWordTokens(query);
-  console.log(words);
 
   if (words.length === 0) return [];
 

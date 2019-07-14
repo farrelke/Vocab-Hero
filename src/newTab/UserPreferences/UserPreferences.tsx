@@ -1,7 +1,12 @@
 import * as React from "react";
 import { PureComponent } from "react";
 import "./UserPreferences.scss";
-import { getUserPreferences, Language, Languages, setUserPreferences } from "../../Utils/DbUtils";
+import {
+  getUserPreferences,
+  Language,
+  Languages,
+  setUserPreferences
+} from "../../Utils/DbUtils";
 import { getVoices } from "../../Utils/SpeechUtils";
 
 type Props = {};
@@ -10,20 +15,29 @@ class UserPreferences extends PureComponent<Props> {
   state = getUserPreferences();
 
   onChange = (field: string) => (e: React.ChangeEvent<HTMLSelectElement>) => {
-    this.setState({
+    const newState = {
       [field]: e.target.value
-    }, () => {
+    };
+    if (field === "language") {
+      const voices = this.getVoices(e.target.value as Language);
+      newState["voiceURI"] = voices[0].voiceURI;
+    }
+    this.setState(newState, () => {
       setUserPreferences(this.state);
+    });
+  };
+
+  getVoices = (language: Language) => {
+    return getVoices().filter(a => {
+      if (language === Language.Chinese) return a.lang.startsWith("zh");
+      if (language === Language.Japanese) return a.lang.startsWith("ja");
+      return true;
     });
   };
 
   render() {
     const { language, voiceURI } = this.state;
-    const voices = getVoices().filter(a => {
-      if (language === Language.Chinese) return a.lang.startsWith("zh");
-      if (language === Language.Japanese) return a.lang.startsWith("ja");
-      return true;
-    });
+    const voices = this.getVoices(language);
 
     return (
       <div className="UserPreferences">
@@ -50,7 +64,7 @@ class UserPreferences extends PureComponent<Props> {
             onChange={this.onChange("voiceURI")}
           >
             {voices.map(voice => (
-              <option key={voice.name} value={voice.voiceURI.trim()} >
+              <option key={voice.name} value={voice.voiceURI.trim()}>
                 {`${voice.lang} - ${voice.name}`}
               </option>
             ))}
