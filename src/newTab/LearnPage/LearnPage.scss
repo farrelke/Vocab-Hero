@@ -85,4 +85,14 @@
     left: 50px;
     cursor: pointer;
   }
+
+  &--test {
+    border: 1px solid #1BBC9B;
+    color: #1BBC9B;
+    opacity: 0.8;
+    position: fixed;
+    top: 16px;
+    right: 50px;
+    cursor: pointer;
+  }
 }

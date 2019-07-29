@@ -17,6 +17,7 @@ import {
 } from "../Utils/IndexdbUtils";
 import UserPreferences from "./UserPreferences/UserPreferences";
 import { upgradeLegacyUsers } from "../Utils/LegacyDBUtils";
+import TestPage from "./TestPage/TestPage";
 
 type Props = {};
 
@@ -82,12 +83,16 @@ class NewTabPage extends PureComponent<Props> {
       Page.Learn
     ];
 
+    const hasLayout = [Page.Learn, Page.Test].indexOf(page) === -1;
+
     return (
       <div className="NewTabPage">
         {page === Page.Learn &&
-          vocab && <LearnPage vocab={vocab} deleteWord={this.deleteWord} />}
+          vocab && <LearnPage vocab={vocab} deleteWord={this.deleteWord}  selectPage={this.selectPage} />}
 
-        {page !== Page.Learn && (
+        {page === Page.Test && <TestPage selectPage={this.selectPage} />}
+
+        {hasLayout && (
           <div className="NewTabPage__layout">
             <div className="NewTabPage__sidebar">
               <Sidebar

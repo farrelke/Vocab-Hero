@@ -5,6 +5,7 @@ import * as SidebarLogo from "./sidebar-logo.png";
 import { getUserPreferences, Language } from "../../../Utils/DbUtils";
 
 export enum Page {
+  Test = "Test Words Page",
   Learn = "Main Page",
   Add = "Add Vocabulary",
   Manage = "Manage Vocabulary",
@@ -13,6 +14,8 @@ export enum Page {
 }
 
 export enum SubPage {
+  TestWords = 'Test Words',
+
   Learn = "Learn",
 
   Input = "Input",

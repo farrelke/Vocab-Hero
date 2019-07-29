@@ -4,10 +4,12 @@ import "./LearnPage.scss";
 import { speak } from "../../Utils/SpeechUtils";
 import { VocabWord } from "../../Utils/IndexdbUtils";
 import { getUserPreferences, Language } from "../../Utils/DbUtils";
+import { Page, SubPage } from "../components/Sidebar/Sidebar";
 
 type Props = {
   vocab: VocabWord;
   deleteWord: (word: VocabWord) => any;
+  selectPage: (page: Page, subPage: SubPage) => any;
 };
 
 class LearnPage extends PureComponent<Props> {
@@ -70,7 +72,7 @@ class LearnPage extends PureComponent<Props> {
             className="LearnPage__btn LearnPage__btn--jisho"
             target="_blank"
             href={`https://jisho.org/search/${vocab.word &&
-            vocab.word.split(" ")[0]}`}
+              vocab.word.split(" ")[0]}`}
           >
             Open in jisho
           </a>
@@ -81,6 +83,13 @@ class LearnPage extends PureComponent<Props> {
           onClick={this.deleteWord}
         >
           Delete word
+        </div>
+
+        <div
+          className="LearnPage__btn LearnPage__btn--test"
+          onClick={() => this.props.selectPage(Page.Test, SubPage.TestWords)}
+        >
+          Test
         </div>
       </div>
     );
