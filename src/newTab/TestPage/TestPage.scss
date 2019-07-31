@@ -12,6 +12,10 @@
   justify-content: center;
 }
 
+.TestPage__buttons {
+  display: flex;
+}
+
 .TestPage__showBtn {
   font-size: 20px;
   color: white;
@@ -21,7 +25,14 @@
   margin-left: 10px;
   text-align: center;
   cursor: pointer;
+  user-select: none;
+
+  &--wrong {
+    background-color: #E64C66;
+  }
 }
+
+
 
 .TestPage__word {
   font-size: 140px;
@@ -31,6 +42,7 @@
 }
 
 .TestPage__reading {
+  height: 56px;
   font-size: 40px;
   color: #b9b9b9;
 }
