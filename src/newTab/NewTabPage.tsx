@@ -90,7 +90,7 @@ class NewTabPage extends PureComponent<Props> {
         {page === Page.Learn &&
           vocab && <LearnPage vocab={vocab} deleteWord={this.deleteWord}  selectPage={this.selectPage} />}
 
-        {page === Page.Test && <TestPage selectPage={this.selectPage} />}
+        {page === Page.Test && <TestPage vocab={vocab} selectPage={this.selectPage} />}
 
         {hasLayout && (
           <div className="NewTabPage__layout">

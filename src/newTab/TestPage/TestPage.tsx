@@ -10,6 +10,7 @@ import {
 import { Page, SubPage } from "../components/Sidebar/Sidebar";
 
 type Props = {
+  vocab: VocabWord;
   selectPage: (page: Page, subPage: SubPage) => any;
 };
 
@@ -23,8 +24,9 @@ class TestPage extends PureComponent<Props> {
   };
 
   async componentDidMount() {
+    const { vocab } = this.props;
     const vocabWords = await getVocabWords();
-    const vocabIndex = Math.floor(Math.random() * vocabWords.length);
+    const vocabIndex = vocabWords.findIndex(a => a.id === vocab.id);
     this.setState({ vocabWords, vocabIndex });
   }
 

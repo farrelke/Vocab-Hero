@@ -12,6 +12,10 @@
   box-sizing: border-box;
   padding: 50px;
   justify-content: center;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: #41403E;
+  }
 }
 
 .LearnPage__word {
