@@ -47,6 +47,7 @@ const setForceReviewHooks = () => {
     url: [{ hostContains: "reddit.com" }, { hostContains: "reddit.it" }]
   };
   const onUrlChange = details => {
+    // https://out.reddit.com contains a token which will expire and break the redirect link
     if (details.url.indexOf("https://out.reddit.com") === -1) {
       forceReview(details.tabId, details.url);
     }
