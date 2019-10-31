@@ -3,8 +3,8 @@ import * as React from "react";
 import "./ReviewTab.scss";
 import { speak } from "../Utils/SpeechUtils";
 import { getRandomVocabWord, VocabWord } from "../Utils/IndexdbUtils";
-import CountdownTimer from "../NewTab/components/CountdownTimer/CountdownTimer";
 import { getUserPreferences } from "../Utils/DbUtils";
+import CountdownTimer from "../newTab/components/CountdownTimer/CountdownTimer";
 
 type Props = {
   tabId: number;

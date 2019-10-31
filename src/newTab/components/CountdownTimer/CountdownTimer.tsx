@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./CountdownTimer.scss";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useInterval } from "../../../Hooks/useInterval";
 
 type Props = {
