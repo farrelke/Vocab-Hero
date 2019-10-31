@@ -3,8 +3,6 @@ import { PureComponent } from "react";
 import "./ManageWords.scss";
 import VocabCard from "./../VocabCard";
 import {
-  addVocabWord,
-  deleteVocabWord,
   getVocabWords,
   updateVocabWord,
   VocabWord

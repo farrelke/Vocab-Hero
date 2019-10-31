@@ -1,16 +1,18 @@
-import { getUserPreferences } from "./DbUtils";
+import { getUserPreferences, Language } from "./DbUtils";
 
 let voices: SpeechSynthesisVoice[] = [];
-
 
 window.speechSynthesis.onvoiceschanged = () => {
   voices = speechSynthesis.getVoices();
 };
 
-export function getVoices() {
-  return voices || [];
+export function getVoicesByLanguage(language: Language) {
+  return (voices || []).filter(voice => {
+    if (language === Language.Chinese) return voice.lang.startsWith("zh");
+    if (language === Language.Japanese) return voice.lang.startsWith("ja");
+    return true;
+  });
 }
-
 
 export function speak(word: string) {
   if (voices.length === 0) return;

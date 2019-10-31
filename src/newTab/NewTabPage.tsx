@@ -16,7 +16,6 @@ import {
   VocabWord
 } from "../Utils/IndexdbUtils";
 import UserPreferences from "./UserPreferences/UserPreferences";
-import { upgradeLegacyUsers } from "../Utils/LegacyDBUtils";
 import TestPage from "./TestPage/TestPage";
 
 type Props = {};
@@ -29,8 +28,8 @@ class NewTabPage extends PureComponent<Props> {
   };
 
   async componentDidMount() {
-    // Added 23 July, delete in 1 week
-    upgradeLegacyUsers().then();
+    // When updating the database add this back in
+    // upgradeLegacyUsers().then();
 
     const vocab = await getRandomVocabWord();
     if (vocab) {

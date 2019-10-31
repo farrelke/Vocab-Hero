@@ -43,7 +43,7 @@ export async function setVocabWords(words: LegacyVocabWord[]) {
 export async function fakeLegacyUser() {
   await setVocabWords(testWords);
 }
-*/
+
 
 export async function upgradeLegacyUsers() {
   if (window.localStorage.getItem("legacyWordsChecked")) return ;
@@ -63,4 +63,4 @@ export async function upgradeLegacyUsers() {
   }
   window.localStorage.setItem("legacyWordsChecked", "true");
 }
-
+*/

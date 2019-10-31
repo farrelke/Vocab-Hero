@@ -1,16 +1,27 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import NewTabPage from "./NewTabPage";
+import ReviewTab from "../ReviewTab/ReviewTab";
+
+const renderPage = () => {
+  const [url, action] = location.href.split("#");
+
+  if (action) {
+    const [actionType, value] = action.split("=");
+    if (actionType === "forceReview") {
+      const [tabId, url] = value.split("-");
+      ReactDOM.render(
+        <ReviewTab tabId={Number(tabId)} redirectUrl={url} />,
+        document.getElementById("root")
+      );
+      return;
+    }
+  }
+  ReactDOM.render(<NewTabPage />, document.getElementById("root"));
+};
 
 if (chrome && chrome.tabs && chrome.tabs.query) {
-  chrome.tabs.query({ active: true, currentWindow: true }, tab => {
-    ReactDOM.render(<NewTabPage />, document.getElementById("root"));
-  });
+  chrome.tabs.query({ active: true, currentWindow: true }, renderPage);
 } else {
-  window.addEventListener('load',  () => {
-    ReactDOM.render(
-      <NewTabPage />,
-      document.getElementById("root")
-    );
-  });
+  window.addEventListener("load", renderPage);
 }

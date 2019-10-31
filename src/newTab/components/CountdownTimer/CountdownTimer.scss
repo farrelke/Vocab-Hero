@@ -1,0 +1,41 @@
+.CountdownTimer {
+  position: relative;
+  height: 120px;
+  width: 120px;
+  text-align: center;
+}
+
+.CountdownTimer__text {
+  color: #1bbc9b;
+  display: inline-block;
+  line-height: 120px;
+  font-size: 20px;
+}
+
+.CountdownTimer__svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  transform: rotateY(-180deg) rotateZ(-90deg);
+}
+
+.CountdownTimer__svgCircle {
+  stroke-dasharray: 210px;
+  stroke-dashoffset: 0px;
+  stroke-linecap: round;
+  stroke-width: 2px;
+  stroke: #1bbc9b;
+  fill: none;
+  animation: CountdownTimer__countdown var(--countdown-seconds) linear forwards;
+}
+
+@keyframes CountdownTimer__countdown {
+  from {
+    stroke-dashoffset: 0px;
+  }
+  to {
+    stroke-dashoffset: 210px;
+  }
+}

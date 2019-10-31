@@ -18,9 +18,7 @@ class TestPage extends PureComponent<Props> {
   state = {
     vocabIndex: 0,
     vocabWords: null as VocabWord[],
-    showAnswer: false,
-    answered: 0,
-    correctAnswers: 0
+    showAnswer: false
   };
 
   async componentDidMount() {
@@ -31,21 +29,22 @@ class TestPage extends PureComponent<Props> {
   }
 
   showAnswer = async () => {
+    const { vocabWords, vocabIndex } = this.state;
+    const vocab = vocabWords[vocabIndex];
+    speak(vocab.word);
     this.setState({ showAnswer: true });
   };
 
-  next = async (correct?: boolean) => {
-    const { vocabIndex, vocabWords, answered, correctAnswers } = this.state;
+  next = async () => {
+    const { vocabIndex, vocabWords } = this.state;
     this.setState({
       showAnswer: false,
-      vocabIndex: (vocabIndex + 1) % vocabWords.length,
-      correctAnswers: correctAnswers + (correct ? 1 : 0),
-      answered: answered + 1
+      vocabIndex: (vocabIndex + 1) % vocabWords.length
     });
   };
 
   render() {
-    const { vocabWords, vocabIndex, showAnswer, answered, correctAnswers } = this.state;
+    const { vocabWords, vocabIndex, showAnswer } = this.state;
     if (!vocabWords) return null;
     const vocab = vocabWords[vocabIndex];
     if (!vocab) return null;
@@ -77,17 +76,12 @@ class TestPage extends PureComponent<Props> {
 
         {showAnswer && (
           <div className="TestPage__buttons" >
-            <div className="TestPage__showBtn TestPage__showBtn--wrong" onClick={() => this.next(false)} >
-              Forgot
-            </div>
-            <div className="TestPage__showBtn TestPage__showBtn--correct" onClick={() => this.next(true)} >
-              Remembered
+            <div className="TestPage__showBtn" onClick={() => this.next()} >
+              Next
             </div>
           </div>
         )}
 
-
-        <span style={{ marginTop: 30 }} >{correctAnswers} / {answered} Remembered Correctly</span>
 
         <div
           className="TestPage__closeBtn"

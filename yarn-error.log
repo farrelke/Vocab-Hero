@@ -1,23 +1,26 @@
 Arguments: 
-  /usr/local/bin/node /Users/kevinfarrell/.yarn/bin/yarn.js add file-saver @types/file-saver
+  /usr/local/bin/node /Users/kevinfarrell/.yarn/bin/yarn.js
 
 PATH: 
-  /opt/local/bin:/opt/local/sbin:/usr/local/opt/curl/bin:/Users/kevinfarrell/.yarn/bin:/usr/local/Cellar/ruby/2.5.2/bin/:/usr/local/apache-ant/bin:/usr/local/texlive/2016/bin/x86_64-darwin/:/Library/Frameworks/Python.framework/Versions/3.5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/opt/pkg/sbin:/opt/pkg/bin
+  /opt/local/bin:/opt/local/sbin:/usr/local/opt/curl/bin:/Users/kevinfarrell/.yarn/bin:/usr/local/Cellar/ruby/2.5.2/bin/:/usr/local/apache-ant/bin:/usr/local/texlive/2016/bin/x86_64-darwin/:/Library/Frameworks/Python.framework/Versions/3.5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/opt/pkg/sbin:/opt/pkg/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands
 
 Yarn version: 
-  0.16.1
+  1.19.1
 
 Node version: 
-  10.15.3
+  12.13.0
 
 Platform: 
   darwin x64
+
+Trace: 
+  Error: EACCES: permission denied, unlink '/Users/kevinfarrell/projects/vocab-extension/node_modules/adler-32/LICENSE'
 
 npm manifest: 
   {
     "name": "chrome-extension-react-typescript-boilerplate",
     "version": "1.0.0",
-    "description": "A boilerplate project to quickly build a Chrome extension using TypeScript and React (built using webpack).",
+    "description": "Vocab Hero a chrome extension to help you learn chinese.",
     "scripts": {
       "build": "webpack --config webpack.prod.js",
       "dev": "webpack --config webpack.dev.js",
@@ -25,7 +28,7 @@ npm manifest:
       "lint": "tslint 'src/**/*.{ts, tsx}'",
       "create-data": "node ./data/create-word-db.js"
     },
-    "author": "Joe Martella",
+    "author": "Kevin Farrell",
     "license": "MIT",
     "devDependencies": {
       "@types/chrome": "0.0.60",
@@ -46,16 +49,20 @@ npm manifest:
       "webpack-merge": "^4.1.4"
     },
     "dependencies": {
+      "@types/dexie": "^1.3.1",
+      "@types/file-saver": "^2.0.1",
       "@types/localforage": "0.0.34",
       "@types/xml-js": "^1.0.0",
       "cedict": "^1.19.0",
-      "flexsearch": "^0.6.22",
+      "dexie": "^2.0.4",
+      "file-saver": "^2.0.2",
       "localforage": "^1.7.3",
       "react": "^16.8.6",
       "react-autosize-textarea": "^7.0.0",
       "react-dom": "^16.8.6",
       "react-radio-buttons": "^1.2.2",
       "unicode-loader": "^1.0.7",
+      "xlsx": "^0.14.3",
       "xml-js": "^1.6.11"
     }
   }
@@ -63,11 +70,5 @@ npm manifest:
 yarn manifest: 
   No manifest
 
-bower manifest: 
-  No manifest
-
 Lockfile: 
   No lockfile
-
-Trace: 
-  Error: EACCES: permission denied, open '/Users/kevinfarrell/.yarn-cache/npm-combined-stream-1.0.8/package.json'

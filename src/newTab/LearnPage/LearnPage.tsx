@@ -21,11 +21,12 @@ class LearnPage extends PureComponent<Props> {
   };
 
   render() {
-    const isChinese = getUserPreferences().language === Language.Chinese;
+    const { showChinesePodLink, language } = getUserPreferences();
+    const isChinese = language === Language.Chinese;
     const { vocab } = this.props;
 
     return (
-      <div className="LearnPage">
+      <div className={`LearnPage ${(showChinesePodLink || !isChinese) ?  'LearnPage--deleteBottom' : ''}`} >
         <div className="LearnPage__reading">{vocab.reading}</div>
         <div className="LearnPage__word" onClick={() => speak(vocab.word)}>
           {vocab.word}
@@ -56,7 +57,7 @@ class LearnPage extends PureComponent<Props> {
             </div>
           ))}
 
-        {isChinese && (
+        {isChinese && showChinesePodLink && (
           <a
             className="LearnPage__btn LearnPage__btn--chinesePod"
             target="_blank"
