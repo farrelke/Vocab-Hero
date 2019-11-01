@@ -129,11 +129,13 @@ const ReaderPage = (props: Props) => {
         {lines.map((words, i) => (
           <div className="ReaderPage__sentence" key={i}>
             {words.map((word, j) => {
+              const hasDef = !!word.meaning;
               const hasHsk = word.hsk > 0 && word.hsk <= 6;
+
               const hsk = hasHsk ? word.hsk : 0;
-              const complicatedWord = hasHsk
-                ? hsk >= hskLevel
-                : (word.freq || 100000) < wordFreq;
+              const complicatedWord =
+                hasDef &&
+                (hasHsk ? hsk >= hskLevel : (word.freq || 0) < wordFreq);
               return (
                 <span
                   key={word.word + j}

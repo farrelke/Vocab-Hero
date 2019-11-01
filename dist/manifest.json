@@ -5,7 +5,7 @@
   "name": "Vocab 英雄",
   "short_name" : "Vocab Hero",
   "description": "Learn new Chinese words every time you open new tab. ",
-  "version": "0.0.16",
+  "version": "0.0.17",
 
   "background": {
     "scripts": ["js/eventPage.js"],
