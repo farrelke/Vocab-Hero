@@ -8,15 +8,10 @@ import ImportPage from "./ImportPage/ImportPage";
 import Sidebar, { Page, SubPage } from "./components/Sidebar/Sidebar";
 import Header from "./components/Header/Header";
 import * as SettingIcon from "./settings-icon.svg";
-import {
-  addVocabWord,
-  bulkAddVocabWords,
-  deleteVocabWord,
-  getRandomVocabWord,
-  VocabWord
-} from "../Utils/IndexdbUtils";
+import { addVocabWord, bulkAddVocabWords, deleteVocabWord, getRandomVocabWord, VocabWord } from "../Utils/IndexdbUtils";
 import UserPreferences from "./UserPreferences/UserPreferences";
 import TestPage from "./TestPage/TestPage";
+import ReaderPage from "./ReaderPage/ReaderPage";
 
 type Props = {};
 
@@ -75,6 +70,7 @@ class NewTabPage extends PureComponent<Props> {
   render() {
     const { page, vocab, subPage } = this.state;
     const pages = [
+      Page.Reader,
       Page.Manage,
       Page.Add,
       Page.Import,
@@ -119,6 +115,8 @@ class NewTabPage extends PureComponent<Props> {
               {page === Page.Import && (
                 <ImportPage subPage={subPage} addWords={this.addWords} />
               )}
+
+              {page === Page.Reader && <ReaderPage addWord={this.addWord} />}
 
               {page === Page.UserPreferences && <UserPreferences />}
             </div>

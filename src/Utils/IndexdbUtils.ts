@@ -1,6 +1,7 @@
 import { getWordTokens, VocabDb, VocabWord, WordDef } from "./VocabDb";
 import { isChineseChar } from "./StringUtils";
 import { getJsonFile } from "./FetchUtils";
+import { getChromeLocalVal, updateChromeSetting } from "./DbUtils";
 export { VocabWord } from "./VocabDb";
 
 const db: VocabDb = new VocabDb();
@@ -48,11 +49,37 @@ export async function initDict(): Promise<void> {
   dictPromise = null;
 }
 
+export type WordDict = { [word: string]: WordDef };
+let wordDict: WordDict | undefined;
+export async function getWordDict(): Promise<WordDict> {
+  if (wordDict) return wordDict;
+
+
+  wordDict = await getChromeLocalVal<WordDict | undefined>(
+    "wordDict",
+    undefined
+  );
+  if (wordDict) return wordDict;
+
+  wordDict = {};
+  await db.dict.each(def => {
+    wordDict[def.word] = def;
+  });
+
+  updateChromeSetting({ wordDict });
+
+  return wordDict;
+}
+
 export async function addDict(): Promise<void> {
   const wordDict = await getJsonFile<WordDef[]>(
     "https://raw.githubusercontent.com/farrelke/chinese-vocab/master/data/wordDictList.json"
   );
   await db.dict.bulkAdd(wordDict);
+}
+
+export async function findWordFast(word: string): Promise<WordDef> {
+  return await db.dict.get({ word });
 }
 
 export async function findWord(word: string): Promise<WordDef> {

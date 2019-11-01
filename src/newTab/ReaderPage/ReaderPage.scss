@@ -1,0 +1,93 @@
+.ReaderPage {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto 100px;
+}
+
+.ReaderPage__wordContainer {
+  padding: 40px 0;
+}
+
+.ReaderPage__word {
+  position: relative;
+  font-size: 20px;
+  margin-bottom: 2px;
+  &--hard {
+    cursor: pointer;
+    color: #14856d;
+
+    &:hover {
+      z-index: 10;
+      background: #1bbc9b;
+      color: white;
+    }
+  }
+}
+
+.ReaderPage__sentence {
+  min-height: 20px;
+}
+
+.ReaderPage__addWordBtn {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 20px;
+  color: white;
+  padding: 5px 10px;
+  background-color: #1bbc9b;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  cursor: pointer;
+}
+
+.ReaderPage__wordDefBox {
+  display: none;
+  position: absolute;
+  background: white;
+  border: 1px solid #1bbc9b;
+  top: 24px;
+  left: 0;
+  padding: 10px;
+  z-index: 10;
+  color: #333;
+  border-radius: 3px;
+  min-width: 300px;
+
+  .ReaderPage__word--hard:hover & {
+    display: block;
+  }
+}
+.ReaderPage__wordDefWord {
+  color: #1bbc9b;
+  font-size: 30px;
+}
+.ReaderPage__wordDefReading {
+  color: #b9b9b9;
+  font-size: 20px;
+}
+.ReaderPage__wordDefMeaning {
+  font-size: 22px;
+}
+
+.ReaderPage__wordDefHsk {
+  color: #b9b9b9;
+  font-size: 16px;
+}
+
+.ReaderPage__group {
+  display: flex;
+  justify-content: left;
+}
+
+.ReaderPage__label {
+  width: 360px;
+  font-size: 16px;
+  color: #333;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.ReaderPage__control {
+}

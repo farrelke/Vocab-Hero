@@ -10,6 +10,7 @@ export enum Page {
   Add = "Add Vocabulary",
   Manage = "Manage Vocabulary",
   Import = "Import Vocabulary",
+  Reader = "Reader",
   UserPreferences = "User Preferences"
 }
 
@@ -29,7 +30,9 @@ export enum SubPage {
   PreMade = "Vocabulary Lists",
   Local = "Local Import/Export",
 
-  Preferences = "Preferences"
+  Preferences = "Preferences",
+
+  Reader = "Reader",
 }
 
 type Props = {
@@ -43,6 +46,7 @@ const CnSubPagesDict = {
   [Page.Add]: [SubPage.Input, SubPage.Search, SubPage.Paste],
   [Page.Manage]: [SubPage.Words],
   [Page.Import]: [SubPage.Pleco, SubPage.Anki, SubPage.PreMade, SubPage.Local],
+  [Page.Reader]: [SubPage.Reader],
   [Page.UserPreferences]: [SubPage.Preferences]
 };
 
