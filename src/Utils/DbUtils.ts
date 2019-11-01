@@ -51,7 +51,7 @@ export const getChromeLocalVal = <T>(
   defaultVal: T
 ): Promise<T> => {
   return new Promise(resolve => {
-    if (chrome) {
+    if (chrome && chrome.storage && chrome.storage.local) {
       chrome.storage.local.get([key], res =>
         resolve(undefined ? defaultVal : res[key])
       );
@@ -61,6 +61,9 @@ export const getChromeLocalVal = <T>(
   });
 };
 
-export const updateChromeSetting = (settings: { [key: string] : any }) => {
-  chrome && chrome.storage.local.set(settings);
+export const updateChromeSetting = (settings: { [key: string]: any }) => {
+  chrome &&
+    chrome.storage &&
+    chrome.storage.local &&
+    chrome.storage.local.set(settings);
 };
