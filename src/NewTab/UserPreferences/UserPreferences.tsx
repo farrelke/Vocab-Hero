@@ -55,59 +55,39 @@ class UserPreferences extends PureComponent<Props> {
 
     return (
       <div className="UserPreferences">
-        <div className="UserPreferences__group">
-          <label className="UserPreferences__label">Language</label>
-          <select className="UserPreferences__control" value={language} onChange={this.onChange("language")}>
-            {Languages.map(lang => (
-              <option key={lang} value={lang}>
-                {lang}
-              </option>
-            ))}
-          </select>
-        </div>
+        <SelectOption
+          label="Language"
+          value={language}
+          options={Languages.map(lang => ({ value: lang, label: lang }))}
+          onChange={this.onChange("language")}
+        />
 
-        <div className="UserPreferences__group">
-          <label className="UserPreferences__label">Speech Voice</label>
-          <select className="UserPreferences__control" value={voiceURI.trim()} onChange={this.onChange("voiceURI")}>
-            {voices.map(voice => (
-              <option key={voice.name} value={voice.voiceURI.trim()}>
-                {`${voice.lang} - ${voice.name}`}
-              </option>
-            ))}
-          </select>
-        </div>
+        <SelectOption
+          label="Speech Voice"
+          value={voiceURI.trim()}
+          options={voices.map(voice => ({ value: voice.voiceURI.trim(), label: `${voice.lang} - ${voice.name}` }))}
+          onChange={this.onChange("voiceURI")}
+        />
 
-        <div className="UserPreferences__group">
-          <label className="UserPreferences__label">Link to ChinesePod</label>
-          <input
-            className="UserPreferences__control"
-            type="checkbox"
-            checked={showChinesePodLink}
-            onChange={this.onChange("showChinesePodLink")}
-          />
-        </div>
+        <CheckboxOption
+          label="Link to ChinesePod"
+          value={showChinesePodLink}
+          onChange={this.onChange("showChinesePodLink")}
+        />
 
         {chromeState && (
           <>
-            <div className="UserPreferences__group">
-              <label className="UserPreferences__label">Force Review when browsing reddit (every 30 mins)</label>
-              <input
-                className="UserPreferences__control"
-                type="checkbox"
-                checked={chromeState.forceReview}
-                onChange={this.onForceReviewChange}
-              />
-            </div>
+            <CheckboxOption
+              label="Force Review when browsing reddit (every 30 mins)"
+              value={chromeState.forceReview}
+              onChange={this.onForceReviewChange}
+            />
             {chromeState.forceReview && (
-              <div className="UserPreferences__group">
-                <label className="UserPreferences__label">Auto speak the word when in force review</label>
-                <input
-                  className="UserPreferences__control"
-                  type="checkbox"
-                  checked={forceReviewAutoSpeak}
-                  onChange={this.onChange("forceReviewAutoSpeak")}
-                />
-              </div>
+              <CheckboxOption
+                label="Auto speak the word when in force review"
+                value={forceReviewAutoSpeak}
+                onChange={this.onChange("forceReviewAutoSpeak")}
+              />
             )}
           </>
         )}
@@ -117,3 +97,36 @@ class UserPreferences extends PureComponent<Props> {
 }
 
 export default UserPreferences;
+
+const CheckboxOption = (props: {
+  label: string;
+  value: boolean;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => unknown;
+}) => {
+  return (
+    <div className="UserPreferences__group">
+      <label className="UserPreferences__label">{props.label}</label>
+      <input className="UserPreferences__control" type="checkbox" checked={props.value} onChange={props.onChange} />
+    </div>
+  );
+};
+
+const SelectOption = (props: {
+  label: string;
+  value: string;
+  options: { value: string; label: string }[];
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => unknown;
+}) => {
+  return (
+    <div className="UserPreferences__group">
+      <label className="UserPreferences__label">{props.label}</label>
+      <select className="UserPreferences__control" value={props.value} onChange={props.onChange}>
+        {props.options.map(opt => (
+          <option key={opt.value} value={opt.value}>
+            {opt.label}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+};

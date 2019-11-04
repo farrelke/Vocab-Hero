@@ -8,7 +8,13 @@ import ImportPage from "./ImportPage/ImportPage";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import Header from "./Components/Header/Header";
 import * as SettingIcon from "./settings-icon.svg";
-import { addVocabWord, bulkAddVocabWords, deleteVocabWord, getRandomVocabWord, VocabWord } from "../Utils/DB/IndexdbUtils";
+import {
+  addVocabWord,
+  bulkAddVocabWords,
+  deleteVocabWord,
+  getRandomVocabWord,
+  VocabWord
+} from "../Utils/DB/IndexdbUtils";
 import UserPreferences from "./UserPreferences/UserPreferences";
 import TestPage from "./TestPage/TestPage";
 import ReaderPage from "./ReaderPage/ReaderPage";
@@ -74,53 +80,38 @@ class NewTabPage extends PureComponent<Props> {
 
     return (
       <div className="NewTabPage">
-        {page === Page.Learn &&
-          vocab && <LearnPage vocab={vocab} deleteWord={this.deleteWord}  selectPage={this.selectPage} />}
-
-        {page === Page.Test && <TestPage vocab={vocab} selectPage={this.selectPage} />}
-
         {hasLayout && (
           <div className="NewTabPage__layout">
             <div className="NewTabPage__sidebar">
-              <Sidebar
-                selectPage={this.selectPage}
-                selectedPage={page}
-              />
+              <Sidebar selectPage={this.selectPage} selectedPage={page} />
             </div>
             <div className="NewTabPage__header">
-              <Header
-                page={page}
-                subPage={subPage}
-                selectPage={this.selectPage}
-              />
+              <Header page={page} subPage={subPage} selectPage={this.selectPage} />
             </div>
 
             <div className="NewTabPage__content">
-              {page === Page.Add && (
-                <AddWords subPage={subPage} addWord={this.addWord} />
-              )}
-
-              {page === Page.Manage && (
-                <ManageWords deleteWord={this.deleteWord} />
-              )}
-              {page === Page.Import && (
-                <ImportPage subPage={subPage} addWords={this.addWords} />
-              )}
-
+              {page === Page.Add && <AddWords subPage={subPage} addWord={this.addWord} />}
+              {page === Page.Manage && <ManageWords deleteWord={this.deleteWord} />}
+              {page === Page.Import && <ImportPage subPage={subPage} addWords={this.addWords} />}
               {page === Page.Reader && <ReaderPage addWord={this.addWord} />}
-
               {page === Page.UserPreferences && <UserPreferences />}
             </div>
           </div>
         )}
 
         {page === Page.Learn && (
-          <img
-            src={SettingIcon}
-            className="NewTabPage__settings"
-            onClick={() => this.selectPage(Page.Manage, SubPage.Words)}
-          />
+          <>
+            {vocab && <LearnPage vocab={vocab} deleteWord={this.deleteWord} selectPage={this.selectPage} />}
+            <img
+              alt=""
+              src={SettingIcon}
+              className="NewTabPage__settings"
+              onClick={() => this.selectPage(Page.Manage, SubPage.Words)}
+            />
+          </>
         )}
+
+        {page === Page.Test && <TestPage vocab={vocab} selectPage={this.selectPage} />}
       </div>
     );
   }

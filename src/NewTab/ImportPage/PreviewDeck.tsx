@@ -19,14 +19,15 @@ class PreviewDeck extends PureComponent<Props> {
 
   async componentDidMount() {
     try {
-      const wordData = await getJsonFile<
-        { word: string; reading: string; meaning: string }[]
-      >(this.props.previewUrl);
-      const words: VocabWord[] = wordData.filter(word => word).map(word => ({
-        ...word,
-        reading: PinyinConverter.convert(word.reading || ""),
-        sentences: []
-      }));
+      const wordData = await getJsonFile<{ word: string; reading: string; meaning: string }[]>(this.props.previewUrl);
+
+      const words: VocabWord[] = wordData
+        .filter(word => word)
+        .map(word => ({
+          ...word,
+          reading: PinyinConverter.convert(word.reading || ""),
+          sentences: []
+        }));
 
       this.setState({ words });
     } catch (e) {
@@ -53,17 +54,11 @@ class PreviewDeck extends PureComponent<Props> {
     return (
       <div className="PreviewDeck">
         <div className="PreviewDeck__btns">
-          <div
-            className="PreviewDeck__btn PreviewDeck__btn--back"
-            onClick={goBack}
-          >
+          <div className="PreviewDeck__btn PreviewDeck__btn--back" onClick={goBack}>
             Back
           </div>
           {words && (
-            <div
-              className="PreviewDeck__btn PreviewDeck__btn--add"
-              onClick={() => addWords(words)}
-            >
+            <div className="PreviewDeck__btn PreviewDeck__btn--add" onClick={() => addWords(words)}>
               Add Deck
             </div>
           )}

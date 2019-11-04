@@ -3,7 +3,7 @@ import { PureComponent } from "react";
 import "./AnkiImport.scss";
 import { AnkiData } from "../../Utils/Import/ImportUtils";
 import VocabCard from "../Components/VocabCard/VocabCard";
-import { VocabWord } from "../../Utils/DB/IndexdbUtils";
+import { VocabWord } from "../../Utils/DB/VocabDb";
 
 type Props = {
   ankiData: AnkiData;
@@ -42,15 +42,11 @@ class AnkiImport extends PureComponent<Props> {
     const vocabWordMapping = this.getVocabWordMapping();
 
     if (!vocabWordMapping.word) {
-      alert(
-        "You didn't export any Hanzi, please select the appropriate field using the dropdowns"
-      );
+      alert("You didn't export any Hanzi, please select the appropriate field using the dropdowns");
       return;
     }
 
-    const words = ankiData.notes.map(note =>
-      this.mapVocabWord(vocabWordMapping, note)
-    );
+    const words = ankiData.notes.map(note => this.mapVocabWord(vocabWordMapping, note));
     addWords(words);
   };
 
@@ -63,10 +59,7 @@ class AnkiImport extends PureComponent<Props> {
     return vocabWordMapping as any;
   };
 
-  mapVocabWord = (
-    mapping: { [key: string]: string },
-    ankiNote: { [key: string]: string }
-  ): VocabWord => {
+  mapVocabWord = (mapping: { [key: string]: string }, ankiNote: { [key: string]: string }): VocabWord => {
     const sentences: { sentence: string; reading: string }[] = [];
     if (mapping.example || mapping.examplePinyin) {
       sentences.push({
@@ -92,9 +85,7 @@ class AnkiImport extends PureComponent<Props> {
 
     return (
       <div className="AnkiImport">
-        <div className="ImportPage__sectionTitle">
-          Exported from {ankiData.deckName}
-        </div>
+        <div className="ImportPage__sectionTitle">Exported from {ankiData.deckName}</div>
         <table className="AnkiImport__table">
           <thead>
             <tr>
@@ -107,10 +98,7 @@ class AnkiImport extends PureComponent<Props> {
             {ankiData.fields.map(field => (
               <tr className="AnkiImport__row" key={field}>
                 <td className="AnkiImport__rowValue">
-                  <select
-                    value={mapFieldsTo[field] || 0}
-                    onChange={this.handleChange(field)}
-                  >
+                  <select value={mapFieldsTo[field] || 0} onChange={this.handleChange(field)}>
                     {VocabOptions.map(opt => (
                       <option key={opt.value} value={opt.value}>
                         {opt.label}

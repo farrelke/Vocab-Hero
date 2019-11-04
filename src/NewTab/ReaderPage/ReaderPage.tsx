@@ -76,7 +76,6 @@ const ReaderPage = (props: Props) => {
         label="Max word frequency (if no HSK level is found)"
         link={{
           link: "https://github.com/chrplr/openlexicon/blob/master/datasets-info/SUBTLEX-CH/README-subtlex-ch.md",
-
           label: "Based on Film Subtitles"
         }}
         value={wordFreq}
