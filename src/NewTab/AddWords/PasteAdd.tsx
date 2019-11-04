@@ -5,7 +5,7 @@ import { TextareaAutosize } from "react-autosize-textarea/lib/TextareaAutosize";
 import VocabCard from "../Components/VocabCard/VocabCard";
 import { getTextLines } from "../../Utils/StringUtils";
 import { VocabWord } from "../../Utils/DB/IndexdbUtils";
-import { getUserPreferences, Language } from "../../Utils/UserPreferencesUtils";
+import { isUserLangChinese } from "../../Utils/UserPreferencesUtils";
 
 type Props = {
   addWord: (word: VocabWord) => any;
@@ -37,7 +37,7 @@ function TypeLine(props: {
   selected: string;
   onSelect: (index: number, value: string) => any;
 }) {
-  const isChinese = getUserPreferences().language === Language.Chinese;
+  const isChinese = isUserLangChinese();
   return (
     <div className="AddWords__typeOptions">
       <RadioButton

@@ -31,6 +31,10 @@ export const getUserPreferences = () => {
   return preferences;
 };
 
+export const isUserLangChinese = () => {
+  return getUserPreferences().language === Language.Chinese;
+};
+
 export const setUserPreferences = (userPreferences: UserPreferences) => {
   preferences = userPreferences;
   localStorage.setItem("userPreferences", JSON.stringify(userPreferences));

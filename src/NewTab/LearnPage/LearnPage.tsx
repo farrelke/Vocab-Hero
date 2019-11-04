@@ -4,7 +4,8 @@ import "./LearnPage.scss";
 import { speak } from "../../Utils/SpeechUtils";
 import { VocabWord } from "../../Utils/DB/VocabDb";
 import { getUserPreferences, Language } from "../../Utils/UserPreferencesUtils";
-import { Page, SubPage } from "../Components/Sidebar/Sidebar";
+import { Page, SubPage } from "../Pages";
+
 
 type Props = {
   vocab: VocabWord;

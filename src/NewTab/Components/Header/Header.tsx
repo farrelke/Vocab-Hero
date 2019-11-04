@@ -1,7 +1,7 @@
 import * as React from "react";
-import { PureComponent } from "react";
 import "./Header.scss";
-import { getSubPageDict, Page, SubPage } from "../Sidebar/Sidebar";
+import { getSubPages, Page, SubPage } from "../../Pages";
+import classNames from "classnames";
 
 type Props = {
   page: Page;
@@ -9,31 +9,27 @@ type Props = {
   selectPage: (page: Page, subPage: SubPage) => any;
 };
 
-class Header extends PureComponent<Props> {
-  render() {
-    const { page, subPage, selectPage } = this.props;
+const Header = (props: Props) => {
+  const subPages = getSubPages(props.page);
 
-    const subPages = getSubPageDict()[page] || [];
-
-    return (
-      <div className="Header">
-        <div className="Header__title">{page}</div>
-        <div className="Header__options">
-          {subPages.map(subPageOpt => (
-            <div
-              key={subPageOpt}
-              onClick={() => selectPage(page, subPageOpt)}
-              className={`Header__option ${
-                subPage === subPageOpt ? "Header__option--selected" : ""
-              }`}
-            >
-              {subPageOpt}
-            </div>
-          ))}
-        </div>
+  return (
+    <div className="Header">
+      <div className="Header__title">{props.page}</div>
+      <div className="Header__options">
+        {subPages.map(subPage => (
+          <div
+            key={subPage}
+            onClick={() => props.selectPage(props.page, subPage)}
+            className={classNames("Header__option", {
+              "Header__option--selected": subPage === props.subPage
+            })}
+          >
+            {subPage}
+          </div>
+        ))}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Header;

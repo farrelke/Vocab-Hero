@@ -2,7 +2,7 @@ import * as React from "react";
 import  { useState } from "react";
 import "./EditVocabCard.scss";
 import { VocabWord } from "../../../Utils/DB/VocabDb";
-import { getUserPreferences, Language } from "../../../Utils/UserPreferencesUtils";
+import { isUserLangChinese } from "../../../Utils/UserPreferencesUtils";
 import PinyinConverter from "../../../Utils/PinyinConverter";
 
 type Props = {
@@ -16,7 +16,7 @@ const EditVocabCard = (props: Props) => {
   const [word, setWord] = useState(props.word ? props.word.word : "");
   const [reading, setReading] = useState(props.word ? props.word.reading : "");
   const [meaning, setMeaning] = useState(props.word ? props.word.meaning : "");
-  const isChinese = getUserPreferences().language === Language.Chinese;
+  const isChinese = isUserLangChinese();
 
   const resetState = () => {
     setWord("");

@@ -9,7 +9,7 @@ import {
   UserPreferences as UserPreferencesType
 } from "../../Utils/UserPreferencesUtils";
 import { getVoicesByLanguage } from "../../Utils/SpeechUtils";
-import { getChromeSettings, updateChromeSetting } from "../../Utils/ChromeSettingUtils";
+import { ChromeSettings, getChromeSettings, updateChromeSetting } from "../../Utils/ChromeSettingUtils";
 
 type Props = {};
 
@@ -18,7 +18,7 @@ class UserPreferences extends PureComponent<Props> {
     localState: getUserPreferences(),
     // State stored in  chrome storage is async so we need to wait for it
     // but it should be pretty fast
-    chromeState: { forceReview: false }
+    chromeState: null as null | ChromeSettings
   };
 
   async componentDidMount() {
@@ -26,15 +26,10 @@ class UserPreferences extends PureComponent<Props> {
     this.setState({ chromeState: setting });
   }
 
-  onChange = (field: keyof UserPreferencesType) => (
-    e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
-  ) => {
+  onChange = (field: keyof UserPreferencesType) => (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
     const newState = {
       ...this.state.localState,
-      [field]:
-        e.target.type === "checkbox"
-          ? (e.target as HTMLInputElement).checked
-          : e.target.value
+      [field]: e.target.type === "checkbox" ? (e.target as HTMLInputElement).checked : e.target.value
     };
 
     if (field === "language") {
@@ -54,24 +49,15 @@ class UserPreferences extends PureComponent<Props> {
   };
 
   render() {
-    const {
-      language,
-      voiceURI,
-      showChinesePodLink,
-      forceReviewAutoSpeak
-    } = this.state.localState;
-    const { forceReview } = this.state.chromeState;
+    const { language, voiceURI, showChinesePodLink, forceReviewAutoSpeak } = this.state.localState;
+    const chromeState = this.state.chromeState;
     const voices = getVoicesByLanguage(language);
 
     return (
       <div className="UserPreferences">
         <div className="UserPreferences__group">
           <label className="UserPreferences__label">Language</label>
-          <select
-            className="UserPreferences__control"
-            value={language}
-            onChange={this.onChange("language")}
-          >
+          <select className="UserPreferences__control" value={language} onChange={this.onChange("language")}>
             {Languages.map(lang => (
               <option key={lang} value={lang}>
                 {lang}
@@ -82,11 +68,7 @@ class UserPreferences extends PureComponent<Props> {
 
         <div className="UserPreferences__group">
           <label className="UserPreferences__label">Speech Voice</label>
-          <select
-            className="UserPreferences__control"
-            value={voiceURI.trim()}
-            onChange={this.onChange("voiceURI")}
-          >
+          <select className="UserPreferences__control" value={voiceURI.trim()} onChange={this.onChange("voiceURI")}>
             {voices.map(voice => (
               <option key={voice.name} value={voice.voiceURI.trim()}>
                 {`${voice.lang} - ${voice.name}`}
@@ -105,29 +87,29 @@ class UserPreferences extends PureComponent<Props> {
           />
         </div>
 
-        <div className="UserPreferences__group">
-          <label className="UserPreferences__label">
-            Force Review when browsing reddit (every 30 mins)
-          </label>
-          <input
-            className="UserPreferences__control"
-            type="checkbox"
-            checked={forceReview}
-            onChange={this.onForceReviewChange}
-          />
-        </div>
-        {forceReview && (
-          <div className="UserPreferences__group">
-            <label className="UserPreferences__label">
-              Auto speak the word when in force review
-            </label>
-            <input
-              className="UserPreferences__control"
-              type="checkbox"
-              checked={forceReviewAutoSpeak}
-              onChange={this.onChange("forceReviewAutoSpeak")}
-            />
-          </div>
+        {chromeState && (
+          <>
+            <div className="UserPreferences__group">
+              <label className="UserPreferences__label">Force Review when browsing reddit (every 30 mins)</label>
+              <input
+                className="UserPreferences__control"
+                type="checkbox"
+                checked={chromeState.forceReview}
+                onChange={this.onForceReviewChange}
+              />
+            </div>
+            {chromeState.forceReview && (
+              <div className="UserPreferences__group">
+                <label className="UserPreferences__label">Auto speak the word when in force review</label>
+                <input
+                  className="UserPreferences__control"
+                  type="checkbox"
+                  checked={forceReviewAutoSpeak}
+                  onChange={this.onChange("forceReviewAutoSpeak")}
+                />
+              </div>
+            )}
+          </>
         )}
       </div>
     );

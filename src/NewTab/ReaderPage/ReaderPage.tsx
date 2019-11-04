@@ -7,49 +7,17 @@ import classNames from "classnames";
 import { speak } from "../../Utils/SpeechUtils";
 import { useAsyncEffect } from "use-async-effect";
 import { getWordDict, initDict } from "../../Utils/DB/IndexdbUtils";
+
 type Props = {
   addWord: (word: VocabWord) => any;
 };
 
-const SelectGroup = (props: {
-  label: string;
-  link?: { label: string; link: string };
-  value: string | number;
-  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => any;
-  options: ({ value: string | number; label: string } | number | string)[];
-}) => {
-  return (
-    <div className="ReaderPage__group">
-      <label className="ReaderPage__label">
-        {props.label}{" "}
-        {props.link && (
-          <a href={props.link.link} target="_blank">
-            {props.link.label}
-          </a>
-        )}
-      </label>
-      <select
-        className="ReaderPage__control"
-        value={props.value}
-        onChange={props.onChange}
-      >
-        {props.options.map(option => {
-          const value = typeof option === "object" ? option.value : option;
-          const label = typeof option === "object" ? option.label : option;
-          return (
-            <option key={value} value={value}>
-              {label}
-            </option>
-          );
-        })}
-      </select>
-    </div>
-  );
-};
+const DEFAULT_HSK = 4;
+const DEFAULT_WORD_FREQ = 1000;
 
 const ReaderPage = (props: Props) => {
-  const [hskLevel, setHskLevel] = useState(4);
-  const [wordFreq, setWordFreq] = useState(1000);
+  const [hskLevel, setHskLevel] = useState(DEFAULT_HSK);
+  const [wordFreq, setWordFreq] = useState(DEFAULT_WORD_FREQ);
   const [loadingDict, setLoadingDict] = useState(true);
   const [lines, setLines] = useState([] as WordDef[][]);
   const [canHover, setCanHover] = useState(true);
@@ -107,8 +75,7 @@ const ReaderPage = (props: Props) => {
       <SelectGroup
         label="Max word frequency (if no HSK level is found)"
         link={{
-          link:
-            "https://github.com/chrplr/openlexicon/blob/master/datasets-info/SUBTLEX-CH/README-subtlex-ch.md",
+          link: "https://github.com/chrplr/openlexicon/blob/master/datasets-info/SUBTLEX-CH/README-subtlex-ch.md",
 
           label: "Based on Film Subtitles"
         }}
@@ -119,11 +86,7 @@ const ReaderPage = (props: Props) => {
         options={[10000, 1000, 500, 100, 50]}
       />
 
-      <textarea
-        rows={10}
-        onChange={onTextChanged}
-        placeholder="Copy and paste in some chinese text here"
-      />
+      <textarea rows={10} onChange={onTextChanged} placeholder="Copy and paste in some chinese text here" />
 
       <div className="ReaderPage__wordContainer">
         {lines.map((words, i) => (
@@ -133,43 +96,25 @@ const ReaderPage = (props: Props) => {
               const hasHsk = word.hsk > 0 && word.hsk <= 6;
 
               const hsk = hasHsk ? word.hsk : 0;
-              const complicatedWord =
-                hasDef &&
-                (hasHsk ? hsk >= hskLevel : (word.freq || 0) < wordFreq);
+              const complicatedWord = hasDef && (hasHsk ? hsk >= hskLevel : (word.freq || 0) < wordFreq);
               return (
                 <span
                   key={word.word + j}
-                  className={classNames(
-                    "ReaderPage__word",
-                    `ReaderPage__word--hsk-${word.hsk || 0}`,
-                    {
-                      [`ReaderPage__word--hard`]: complicatedWord
-                    }
-                  )}
+                  className={classNames("ReaderPage__word", `ReaderPage__word--hsk-${word.hsk || 0}`, {
+                    [`ReaderPage__word--hard`]: complicatedWord
+                  })}
                   onClick={() => complicatedWord && speak(word.word)}
                 >
                   {word.word}
                   {canHover && (
                     <div className="ReaderPage__wordDefBox">
-                      <div className="ReaderPage__wordDefReading">
-                        {word.reading}
-                      </div>
+                      <div className="ReaderPage__wordDefReading">{word.reading}</div>
                       <div className="ReaderPage__wordDefWord">{word.word}</div>
 
-                      <div className="ReaderPage__wordDefMeaning">
-                        {word.meaning}
-                      </div>
+                      <div className="ReaderPage__wordDefMeaning">{word.meaning}</div>
 
-                      {hasHsk && (
-                        <div className="ReaderPage__wordDefHsk">
-                          Hsk {word.hsk}
-                        </div>
-                      )}
-                      {!hasHsk && (
-                        <div className="ReaderPage__wordDefHsk">
-                          Word Freq {word.freq}
-                        </div>
-                      )}
+                      {hasHsk && <div className="ReaderPage__wordDefHsk">Hsk {word.hsk}</div>}
+                      {!hasHsk && <div className="ReaderPage__wordDefHsk">Word Freq {word.freq}</div>}
                       <div
                         className="ReaderPage__addWordBtn"
                         onClick={e => {
@@ -184,11 +129,7 @@ const ReaderPage = (props: Props) => {
                 </span>
               );
             })}
-            {words.length < 0 && (
-              <span onClick={() => speak(words.map(w => w.word).join(" "))}>
-                Play
-              </span>
-            )}
+            {words.length < 0 && <span onClick={() => speak(words.map(w => w.word).join(" "))}>Play</span>}
           </div>
         ))}
       </div>
@@ -197,3 +138,35 @@ const ReaderPage = (props: Props) => {
 };
 
 export default ReaderPage;
+
+const SelectGroup = (props: {
+  label: string;
+  link?: { label: string; link: string };
+  value: string | number;
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => any;
+  options: ({ value: string | number; label: string } | number | string)[];
+}) => {
+  return (
+    <div className="ReaderPage__group">
+      <label className="ReaderPage__label">
+        {props.label}{" "}
+        {props.link && (
+          <a href={props.link.link} target="_blank">
+            {props.link.label}
+          </a>
+        )}
+      </label>
+      <select className="ReaderPage__control" value={props.value} onChange={props.onChange}>
+        {props.options.map(option => {
+          const value = typeof option === "object" ? option.value : option;
+          const label = typeof option === "object" ? option.label : option;
+          return (
+            <option key={value} value={value}>
+              {label}
+            </option>
+          );
+        })}
+      </select>
+    </div>
+  );
+};

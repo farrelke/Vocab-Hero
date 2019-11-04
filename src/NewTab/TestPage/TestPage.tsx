@@ -3,8 +3,8 @@ import { PureComponent } from "react";
 import "./TestPage.scss";
 import { speak } from "../../Utils/SpeechUtils";
 import { getVocabWords, VocabWord } from "../../Utils/DB/IndexdbUtils";
-import { Page, SubPage } from "../Components/Sidebar/Sidebar";
 import classNames from "classnames";
+import { Page, SubPage } from "../Pages";
 
 type Props = {
   vocab: VocabWord;

@@ -5,13 +5,14 @@ import LearnPage from "./LearnPage/LearnPage";
 import AddWords from "./AddWords/AddWords";
 import ManageWords from "./ManageWords/ManageWords";
 import ImportPage from "./ImportPage/ImportPage";
-import Sidebar, { Page, SubPage } from "./Components/Sidebar/Sidebar";
+import Sidebar from "./Components/Sidebar/Sidebar";
 import Header from "./Components/Header/Header";
 import * as SettingIcon from "./settings-icon.svg";
 import { addVocabWord, bulkAddVocabWords, deleteVocabWord, getRandomVocabWord, VocabWord } from "../Utils/DB/IndexdbUtils";
 import UserPreferences from "./UserPreferences/UserPreferences";
 import TestPage from "./TestPage/TestPage";
 import ReaderPage from "./ReaderPage/ReaderPage";
+import { Page, SubPage } from "./Pages";
 
 type Props = {};
 
@@ -69,15 +70,6 @@ class NewTabPage extends PureComponent<Props> {
 
   render() {
     const { page, vocab, subPage } = this.state;
-    const pages = [
-      Page.Reader,
-      Page.Manage,
-      Page.Add,
-      Page.Import,
-      Page.UserPreferences,
-      Page.Learn
-    ];
-
     const hasLayout = [Page.Learn, Page.Test].indexOf(page) === -1;
 
     return (
@@ -91,7 +83,6 @@ class NewTabPage extends PureComponent<Props> {
           <div className="NewTabPage__layout">
             <div className="NewTabPage__sidebar">
               <Sidebar
-                pages={pages}
                 selectPage={this.selectPage}
                 selectedPage={page}
               />

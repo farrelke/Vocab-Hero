@@ -1,7 +1,6 @@
 import * as React from "react";
 import { PureComponent } from "react";
 import "./ImportPage.scss";
-import { SubPage } from "../Components/Sidebar/Sidebar";
 import { saveAs } from "file-saver";
 import PreviewDeck from "./PreviewDeck";
 import {
@@ -13,6 +12,7 @@ import {
 import { getVocabDecks, GithubFile } from "../../Utils/Api/GithubUtils";
 import AnkiImport from "./AnkiImport";
 import { clearAllVocab, getVocabWords, VocabWord } from "../../Utils/DB/IndexdbUtils";
+import { SubPage } from "../Pages";
 
 type Props = {
   addWords: (words: VocabWord[]) => any;

@@ -3,7 +3,7 @@ import { PureComponent } from "react";
 import "./InputAdd.scss";
 import PinyinConverter from "../../Utils/PinyinConverter";
 import {
-  getUserPreferences,
+  getUserPreferences, isUserLangChinese,
   Language
 } from "../../Utils/UserPreferencesUtils";
 import { findWord, VocabWord } from "../../Utils/DB/IndexdbUtils";
@@ -78,7 +78,7 @@ class InputAdd extends PureComponent<Props> {
   };
 
   render() {
-    const isChinese = getUserPreferences().language === Language.Chinese;
+    const isChinese = isUserLangChinese();
     const { hanzi, pinyin, translation, dictDef } = this.state;
 
 
