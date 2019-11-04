@@ -1,4 +1,5 @@
-import { getJsonFile } from "./FetchUtils";
+import { getJsonFile } from "../FetchUtils";
+import { GithubVocabListsURL } from "../../constants";
 
 
 export type GithubFile = {
@@ -6,8 +7,9 @@ export type GithubFile = {
 }
 
 export async function getVocabDecks(): Promise<GithubFile> {
-  const files = await getJsonFile("https://api.github.com/repos/farrelke/Vocab-Hero/contents/VocabLists") as any;
+  const files = await getJsonFile(GithubVocabListsURL) as any;
   return files.map(file => {
+    // remove .json from the file name
     const name = file.name.replace(/\.[^/.]+$/, "");
     return { name, downloadUrl: file.download_url };
   })

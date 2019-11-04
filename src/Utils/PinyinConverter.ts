@@ -45,16 +45,9 @@ class PinyinConverter {
     this.cache[originalStr] = string;
     return string;
   };
+
   getReplacement = (match: string) => {
-    let accentMap,
-      accentedVowelChar,
-      base,
-      replacedWord,
-      tone,
-      vowel,
-      vowelChar,
-      vowelNum,
-      word;
+    let accentMap, accentedVowelChar, base, replacedWord, tone, vowel, vowelChar, vowelNum, word;
     accentMap = this.getAccentMap();
     tone = match.slice(-1);
     word = match
@@ -67,9 +60,7 @@ class PinyinConverter {
         vowelChar = vowel.match(/.\*/)[0];
         vowelNum = this.vowels[vowelChar];
         accentedVowelChar = this.pinyin[tone.toString()][vowelNum];
-        replacedWord = word
-          .replace(base, vowel)
-          .replace(vowelChar, accentedVowelChar);
+        replacedWord = word.replace(base, vowel).replace(vowelChar, accentedVowelChar);
         return replacedWord;
       }
     }

@@ -35,35 +35,3 @@ export const setUserPreferences = (userPreferences: UserPreferences) => {
   preferences = userPreferences;
   localStorage.setItem("userPreferences", JSON.stringify(userPreferences));
 };
-
-export const getChromeSettings = async (): Promise<{
-  forceReview: boolean;
-}> => {
-  const val = await getChromeLocalVal("forceReview", false);
-  return { forceReview: val };
-};
-export const updateForceReview = (forceReview: boolean) => {
-  updateChromeSetting({ forceReview });
-};
-
-export const getChromeLocalVal = <T>(
-  key: string,
-  defaultVal: T
-): Promise<T> => {
-  return new Promise(resolve => {
-    if (chrome && chrome.storage && chrome.storage.local) {
-      chrome.storage.local.get([key], res =>
-        resolve(undefined ? defaultVal : res[key])
-      );
-    } else {
-      return defaultVal;
-    }
-  });
-};
-
-export const updateChromeSetting = (settings: { [key: string]: any }) => {
-  chrome &&
-    chrome.storage &&
-    chrome.storage.local &&
-    chrome.storage.local.set(settings);
-};

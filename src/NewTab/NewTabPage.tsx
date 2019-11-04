@@ -8,7 +8,7 @@ import ImportPage from "./ImportPage/ImportPage";
 import Sidebar, { Page, SubPage } from "./Components/Sidebar/Sidebar";
 import Header from "./Components/Header/Header";
 import * as SettingIcon from "./settings-icon.svg";
-import { addVocabWord, bulkAddVocabWords, deleteVocabWord, getRandomVocabWord, VocabWord } from "../Utils/IndexdbUtils";
+import { addVocabWord, bulkAddVocabWords, deleteVocabWord, getRandomVocabWord, VocabWord } from "../Utils/DB/IndexdbUtils";
 import UserPreferences from "./UserPreferences/UserPreferences";
 import TestPage from "./TestPage/TestPage";
 import ReaderPage from "./ReaderPage/ReaderPage";

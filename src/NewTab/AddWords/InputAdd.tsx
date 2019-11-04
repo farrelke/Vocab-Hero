@@ -5,9 +5,9 @@ import PinyinConverter from "../../Utils/PinyinConverter";
 import {
   getUserPreferences,
   Language
-} from "../../Utils/DbUtils";
-import { findWord, VocabWord } from "../../Utils/IndexdbUtils";
-import { WordDef } from "../../Utils/VocabDb";
+} from "../../Utils/UserPreferencesUtils";
+import { findWord, VocabWord } from "../../Utils/DB/IndexdbUtils";
+import { WordDef } from "../../Utils/DB/VocabDb";
 
 type Props = {
   addWord: (word: VocabWord) => any;

@@ -1,9 +1,9 @@
 import * as React from "react";
 import { PureComponent } from "react";
 import "./AnkiImport.scss";
-import { AnkiData } from "../../Utils/ImportUtils";
+import { AnkiData } from "../../Utils/Import/ImportUtils";
 import VocabCard from "../Components/VocabCard/VocabCard";
-import { VocabWord } from "../../Utils/IndexdbUtils";
+import { VocabWord } from "../../Utils/DB/IndexdbUtils";
 
 type Props = {
   ankiData: AnkiData;

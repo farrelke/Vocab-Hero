@@ -9,10 +9,10 @@ import {
   importAnkiFile,
   importJsonFile,
   importPlecoFile
-} from "../../Utils/ImportUtils";
-import { getVocabDecks, GithubFile } from "../../Utils/GithubUtils";
+} from "../../Utils/Import/ImportUtils";
+import { getVocabDecks, GithubFile } from "../../Utils/Api/GithubUtils";
 import AnkiImport from "./AnkiImport";
-import { clearAllVocab, getVocabWords, VocabWord } from "../../Utils/IndexdbUtils";
+import { clearAllVocab, getVocabWords, VocabWord } from "../../Utils/DB/IndexdbUtils";
 
 type Props = {
   addWords: (words: VocabWord[]) => any;

@@ -1,6 +1,6 @@
-import { getWordDict, initDict, WordDict } from "./IndexdbUtils";
+import { getWordDict, initDict, WordDict } from "./DB/IndexdbUtils";
 import PinyinConverter from "./PinyinConverter";
-import { WordDef } from "./VocabDb";
+import { WordDef } from "./DB/VocabDb";
 
 export const getLongestMatch = (wordDict: WordDict, str: string) => {
   let i, max_word_len, slice;

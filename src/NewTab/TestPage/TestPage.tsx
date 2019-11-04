@@ -2,8 +2,9 @@ import * as React from "react";
 import { PureComponent } from "react";
 import "./TestPage.scss";
 import { speak } from "../../Utils/SpeechUtils";
-import { getVocabWords, VocabWord } from "../../Utils/IndexdbUtils";
+import { getVocabWords, VocabWord } from "../../Utils/DB/IndexdbUtils";
 import { Page, SubPage } from "../Components/Sidebar/Sidebar";
+import classNames from "classnames";
 
 type Props = {
   vocab: VocabWord;
@@ -47,19 +48,15 @@ class TestPage extends PureComponent<Props> {
 
     return (
       <div className="TestPage">
-        <div className="TestPage__reading">
-          {showAnswer ? vocab.reading : ""}
-        </div>
+        <div className="TestPage__reading">{showAnswer ? vocab.reading : ""}</div>
         <div className="TestPage__word" onClick={() => speak(vocab.word)}>
           {vocab.word}
         </div>
 
         <div
-          className={`TestPage__meaning ${
-            vocab.meaning && vocab.meaning.length > 40
-              ? "TestPage__meaning--long"
-              : ""
-          }`}
+          className={classNames("TestPage__meaning", {
+            "TestPage__meaning--long": vocab.meaning && vocab.meaning.length > 60
+          })}
         >
           {showAnswer ? vocab.meaning : ""}
         </div>
@@ -78,10 +75,7 @@ class TestPage extends PureComponent<Props> {
           </div>
         )}
 
-        <div
-          className="TestPage__closeBtn"
-          onClick={() => this.props.selectPage(Page.Learn, SubPage.Learn)}
-        >
+        <div className="TestPage__closeBtn" onClick={() => this.props.selectPage(Page.Learn, SubPage.Learn)}>
           Exit
         </div>
       </div>

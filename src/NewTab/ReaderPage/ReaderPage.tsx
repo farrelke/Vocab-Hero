@@ -2,11 +2,11 @@ import * as React from "react";
 import "./ReaderPage.scss";
 import { segment } from "../../Utils/SegementerUtils";
 import { useEffect, useState } from "react";
-import { VocabWord, WordDef } from "../../Utils/VocabDb";
+import { VocabWord, WordDef } from "../../Utils/DB/VocabDb";
 import classNames from "classnames";
 import { speak } from "../../Utils/SpeechUtils";
 import { useAsyncEffect } from "use-async-effect";
-import { getWordDict, initDict } from "../../Utils/IndexdbUtils";
+import { getWordDict, initDict } from "../../Utils/DB/IndexdbUtils";
 type Props = {
   addWord: (word: VocabWord) => any;
 };

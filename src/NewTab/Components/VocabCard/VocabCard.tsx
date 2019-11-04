@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./VocabCard.scss";
 import * as React from "react";
 import { speak } from "../../../Utils/SpeechUtils";
-import { VocabWord } from "../../../Utils/VocabDb";
+import { VocabWord } from "../../../Utils/DB/VocabDb";
 import PinyinConverter from "../../../Utils/PinyinConverter";
 import EditVocabCard from "./EditVocabCard";
 

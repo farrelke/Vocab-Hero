@@ -1,6 +1,9 @@
 import Dexie from "dexie";
-import { stopWords } from "./StringUtils";
+import { stopWords } from "./StopWords";
 
+
+// Generate word tokens from sentences so we can allow the user to
+// search by the english meaning. We first remove any punctuation and then remove any stop words
 const punctuationRE = /[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,\-.\/:;<=>?@\[\]^_`{|}~]/g;
 export const getWordTokens = (text: string): string[] => {
   const tokens = text
@@ -45,6 +48,9 @@ export class VocabDb extends Dexie {
 
   constructor() {
     super("VocabDb");
+
+    // when saving words to the database we store them using for tone marks
+    // so the user will be able to search with the correct tones
     this.version(3).stores({
       vocab: "++id,word",
       dict:

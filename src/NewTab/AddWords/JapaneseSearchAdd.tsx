@@ -1,8 +1,8 @@
 import * as React from "react";
-import { VocabWord } from "../../Utils/VocabDb";
+import { VocabWord } from "../../Utils/DB/VocabDb";
 import { PureComponent } from "react";
 import VocabCard from "../Components/VocabCard/VocabCard";
-import { searchJisho } from "../../Utils/JishoUtils";
+import { searchJisho } from "../../Utils/Api/JishoUtils";
 
 type Props = {
   addWord: (word: VocabWord) => any;

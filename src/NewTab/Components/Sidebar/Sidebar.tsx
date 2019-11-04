@@ -2,7 +2,7 @@ import * as React from "react";
 import { PureComponent } from "react";
 import "./Sidebar.scss";
 import * as SidebarLogo from "./sidebar-logo.png";
-import { getUserPreferences, Language } from "../../../Utils/DbUtils";
+import { getUserPreferences, Language } from "../../../Utils/UserPreferencesUtils";
 
 export enum Page {
   Test = "Test Words Page",

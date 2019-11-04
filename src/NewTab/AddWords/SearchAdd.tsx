@@ -3,8 +3,8 @@ import { PureComponent } from "react";
 import "./SearchAdd.scss";
 import VocabCard from "../Components/VocabCard/VocabCard";
 import PinyinConverter from "../../Utils/PinyinConverter";
-import { initDict, searchDict, VocabWord } from "../../Utils/IndexdbUtils";
-import { WordDef } from "../../Utils/VocabDb";
+import { initDict, searchDict, VocabWord } from "../../Utils/DB/IndexdbUtils";
+import { WordDef } from "../../Utils/DB/VocabDb";
 
 type Props = {
   addWord: (word: VocabWord) => any;

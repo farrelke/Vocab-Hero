@@ -1,8 +1,8 @@
 import * as React from "react";
 import  { useState } from "react";
 import "./EditVocabCard.scss";
-import { VocabWord } from "../../../Utils/VocabDb";
-import { getUserPreferences, Language } from "../../../Utils/DbUtils";
+import { VocabWord } from "../../../Utils/DB/VocabDb";
+import { getUserPreferences, Language } from "../../../Utils/UserPreferencesUtils";
 import PinyinConverter from "../../../Utils/PinyinConverter";
 
 type Props = {

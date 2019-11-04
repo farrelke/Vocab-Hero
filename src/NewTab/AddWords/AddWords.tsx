@@ -4,9 +4,9 @@ import PasteAdd from "./PasteAdd";
 import SearchAdd from "./SearchAdd";
 import { SubPage } from "../Components/Sidebar/Sidebar";
 import InputAdd from "./InputAdd";
-import { VocabWord } from "../../Utils/VocabDb";
+import { VocabWord } from "../../Utils/DB/VocabDb";
 import JapaneseSearchAdd from "./JapaneseSearchAdd";
-import { getUserPreferences, Language } from "../../Utils/DbUtils";
+import { getUserPreferences, Language } from "../../Utils/UserPreferencesUtils";
 
 type Props = {
   addWord: (word: VocabWord) => any;

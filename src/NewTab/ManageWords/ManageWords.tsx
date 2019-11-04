@@ -6,7 +6,7 @@ import {
   getVocabWords,
   updateVocabWord,
   VocabWord
-} from "../../Utils/IndexdbUtils";
+} from "../../Utils/DB/IndexdbUtils";
 
 type Props = {
   deleteWord: (word: VocabWord) => any;

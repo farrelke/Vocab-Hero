@@ -4,7 +4,7 @@ import "./PreviewDeck.scss";
 import { getJsonFile } from "../../Utils/FetchUtils";
 import PinyinConverter from "../../Utils/PinyinConverter";
 import VocabCard from "../Components/VocabCard/VocabCard";
-import { VocabWord } from "../../Utils/VocabDb";
+import { VocabWord } from "../../Utils/DB/VocabDb";
 
 type Props = {
   previewUrl: string;

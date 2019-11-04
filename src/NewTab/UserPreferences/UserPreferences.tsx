@@ -2,15 +2,14 @@ import * as React from "react";
 import { PureComponent } from "react";
 import "./UserPreferences.scss";
 import {
-  getChromeSettings,
   getUserPreferences,
   Language,
   Languages,
   setUserPreferences,
-  updateForceReview,
   UserPreferences as UserPreferencesType
-} from "../../Utils/DbUtils";
+} from "../../Utils/UserPreferencesUtils";
 import { getVoicesByLanguage } from "../../Utils/SpeechUtils";
+import { getChromeSettings, updateChromeSetting } from "../../Utils/ChromeSettingUtils";
 
 type Props = {};
 
@@ -37,21 +36,21 @@ class UserPreferences extends PureComponent<Props> {
           ? (e.target as HTMLInputElement).checked
           : e.target.value
     };
+
     if (field === "language") {
       const voices = getVoicesByLanguage(e.target.value as Language);
       newState["voiceURI"] = voices[0].voiceURI;
     }
 
     this.setState({ localState: newState }, () => {
-      const { ...pref } = this.state.localState;
-      setUserPreferences(pref);
+      setUserPreferences(this.state.localState);
     });
   };
 
   onForceReviewChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const forceReview = e.target.checked;
     this.setState({ chromeState: { forceReview } });
-    updateForceReview(forceReview);
+    updateChromeSetting({ forceReview });
   };
 
   render() {

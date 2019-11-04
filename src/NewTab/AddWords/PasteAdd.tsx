@@ -4,8 +4,8 @@ import "./PasteAdd.scss";
 import { TextareaAutosize } from "react-autosize-textarea/lib/TextareaAutosize";
 import VocabCard from "../Components/VocabCard/VocabCard";
 import { getTextLines } from "../../Utils/StringUtils";
-import { VocabWord } from "../../Utils/IndexdbUtils";
-import { getUserPreferences, Language } from "../../Utils/DbUtils";
+import { VocabWord } from "../../Utils/DB/IndexdbUtils";
+import { getUserPreferences, Language } from "../../Utils/UserPreferencesUtils";
 
 type Props = {
   addWord: (word: VocabWord) => any;

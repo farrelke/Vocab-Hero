@@ -23,7 +23,7 @@
     "ts-loader": "^4.5.0",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-react": "^3.6.0",
-    "typescript": "^2.9.2",
+    "typescript": "^3.7.0-beta",
     "url-loader": "^2.0.0",
     "webpack": "^4.1.1",
     "webpack-cli": "^3.1.1",
