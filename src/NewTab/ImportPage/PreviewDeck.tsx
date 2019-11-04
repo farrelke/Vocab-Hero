@@ -3,8 +3,8 @@ import { PureComponent } from "react";
 import "./PreviewDeck.scss";
 import { getJsonFile } from "../../Utils/FetchUtils";
 import PinyinConverter from "../../Utils/PinyinConverter";
-import VocabCard from "../VocabCard";
-import { VocabWord } from "../../Utils/IndexdbUtils";
+import VocabCard from "../Components/VocabCard/VocabCard";
+import { VocabWord } from "../../Utils/VocabDb";
 
 type Props = {
   previewUrl: string;

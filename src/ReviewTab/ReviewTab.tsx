@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import * as React from "react";
 import "./ReviewTab.scss";
 import { speak } from "../Utils/SpeechUtils";
 import { getRandomVocabWord, VocabWord } from "../Utils/IndexdbUtils";
 import { getUserPreferences } from "../Utils/DbUtils";
-import CountdownTimer from "../newTab/components/CountdownTimer/CountdownTimer";
+import CountdownTimer from "../NewTab/Components/CountdownTimer/CountdownTimer";
+import { useAsyncEffect } from "use-async-effect";
+import classNames = require("classnames");
 
 type Props = {
   tabId: number;
@@ -19,22 +21,20 @@ const ReviewTab = (props: Props) => {
     chrome.tabs.update(props.tabId, { url: props.redirectUrl });
   };
 
-  useEffect(() => {
-    const fn = async () => {
-      const vocab = await getRandomVocabWord();
-      if (!vocab) {
-        onReviewDone();
-        return;
-      }
-      setVocab(vocab);
-      if (userPrefs.forceReviewAutoSpeak) {
-        speak(vocab.word);
-      }
-    };
-    fn();
+  useAsyncEffect(async () => {
+    const vocab = await getRandomVocabWord();
+
+    // If we don't have any vocab to review just return early
+    if (!vocab) {
+      onReviewDone();
+      return;
+    }
+
+    setVocab(vocab);
+    if (userPrefs.forceReviewAutoSpeak) {
+      speak(vocab.word);
+    }
   }, []);
-
-
 
   if (!vocab) return null;
 
@@ -46,11 +46,9 @@ const ReviewTab = (props: Props) => {
         {vocab.word}
       </div>
       <div
-        className={`ReviewTab__meaning ${
-          vocab.meaning && vocab.meaning.length > 40
-            ? "ReviewTab__meaning--long"
-            : ""
-        }`}
+        className={classNames("ReviewTab__meaning", {
+          "ReviewTab__meaning--long": vocab.meaning && vocab.meaning.length > 40
+        })}
       >
         {vocab.meaning}
       </div>

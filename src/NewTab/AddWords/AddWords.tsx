@@ -2,7 +2,7 @@ import * as React from "react";
 import "./AddWords.scss";
 import PasteAdd from "./PasteAdd";
 import SearchAdd from "./SearchAdd";
-import { SubPage } from "../components/Sidebar/Sidebar";
+import { SubPage } from "../Components/Sidebar/Sidebar";
 import InputAdd from "./InputAdd";
 import { VocabWord } from "../../Utils/VocabDb";
 import JapaneseSearchAdd from "./JapaneseSearchAdd";

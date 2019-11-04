@@ -20,7 +20,7 @@ const forceReview = (tabId: number, url: string) => {
           shouldForceReview = now - TIME_TIL_NEXT_REVIEW > lastTime;
         } catch (e) {
           // something went wrong, better to just disable
-          // we don't want to piss off the user
+          // we don't want to annoy the user
           shouldForceReview = false;
         }
       }
@@ -29,11 +29,15 @@ const forceReview = (tabId: number, url: string) => {
         const extensionUrl = chrome.extension.getURL(
           `index.html#forceReview=${tabId}-${url}`
         );
+
         chrome.storage.local.set({ lastReview: new Date().toString() });
         chrome.tabs.update(null, {
           url: extensionUrl
         });
 
+        // we want to delete the url from history so if the user
+        // press the back button the will return back to the original website
+        // not the chrome extension
         setTimeout(() => {
           chrome.history.deleteUrl({ url: extensionUrl });
         }, 10000);
@@ -58,6 +62,8 @@ const setForceReviewHooks = () => {
 
 setForceReviewHooks();
 
+
+// when the user clicks on the vocab hero icon in the url
 chrome.browserAction.onClicked.addListener(() => {
   window.focus();
   chrome.tabs.create({

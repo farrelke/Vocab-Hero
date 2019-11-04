@@ -4,7 +4,7 @@ import { segment } from "../../Utils/SegementerUtils";
 import { useEffect, useState } from "react";
 import { VocabWord, WordDef } from "../../Utils/VocabDb";
 import classNames from "classnames";
-import { getVoicesByLanguage, speak } from "../../Utils/SpeechUtils";
+import { speak } from "../../Utils/SpeechUtils";
 import { useAsyncEffect } from "use-async-effect";
 import { getWordDict, initDict } from "../../Utils/IndexdbUtils";
 type Props = {

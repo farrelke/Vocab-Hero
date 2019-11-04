@@ -1,7 +1,7 @@
 import * as React from "react";
 import { PureComponent } from "react";
 import "./ManageWords.scss";
-import VocabCard from "./../VocabCard";
+import VocabCard from "../Components/VocabCard/VocabCard";
 import {
   getVocabWords,
   updateVocabWord,

@@ -2,7 +2,7 @@ import * as React from "react";
 import { PureComponent } from "react";
 import "./PasteAdd.scss";
 import { TextareaAutosize } from "react-autosize-textarea/lib/TextareaAutosize";
-import VocabCard from "../VocabCard";
+import VocabCard from "../Components/VocabCard/VocabCard";
 import { getTextLines } from "../../Utils/StringUtils";
 import { VocabWord } from "../../Utils/IndexdbUtils";
 import { getUserPreferences, Language } from "../../Utils/DbUtils";

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { PureComponent } from "react";
 import "./ImportPage.scss";
-import { SubPage } from "../components/Sidebar/Sidebar";
+import { SubPage } from "../Components/Sidebar/Sidebar";
 import { saveAs } from "file-saver";
 import PreviewDeck from "./PreviewDeck";
 import {

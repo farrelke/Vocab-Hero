@@ -2,12 +2,8 @@ import * as React from "react";
 import { PureComponent } from "react";
 import "./TestPage.scss";
 import { speak } from "../../Utils/SpeechUtils";
-import {
-  getRandomVocabWord,
-  getVocabWords,
-  VocabWord
-} from "../../Utils/IndexdbUtils";
-import { Page, SubPage } from "../components/Sidebar/Sidebar";
+import { getVocabWords, VocabWord } from "../../Utils/IndexdbUtils";
+import { Page, SubPage } from "../Components/Sidebar/Sidebar";
 
 type Props = {
   vocab: VocabWord;
@@ -75,13 +71,12 @@ class TestPage extends PureComponent<Props> {
         )}
 
         {showAnswer && (
-          <div className="TestPage__buttons" >
-            <div className="TestPage__showBtn" onClick={() => this.next()} >
+          <div className="TestPage__buttons">
+            <div className="TestPage__showBtn" onClick={() => this.next()}>
               Next
             </div>
           </div>
         )}
-
 
         <div
           className="TestPage__closeBtn"

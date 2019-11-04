@@ -1,7 +1,7 @@
 import * as React from "react";
 import { VocabWord } from "../../Utils/VocabDb";
 import { PureComponent } from "react";
-import VocabCard from "../VocabCard";
+import VocabCard from "../Components/VocabCard/VocabCard";
 import { searchJisho } from "../../Utils/JishoUtils";
 
 type Props = {
