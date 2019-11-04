@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    newTab: path.join(__dirname, "src/newTab/index.tsx"),
+    newTab: path.join(__dirname, "src/NewTab/index.tsx"),
     eventPage: path.join(__dirname, "src/eventPage.ts")
   },
   output: {
