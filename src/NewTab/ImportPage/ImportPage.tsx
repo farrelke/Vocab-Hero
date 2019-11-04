@@ -15,7 +15,7 @@ import { clearAllVocab, getVocabWords, VocabWord } from "../../Utils/DB/IndexdbU
 import { SubPage } from "../Pages";
 
 type Props = {
-  addWords: (words: VocabWord[]) => any;
+  addWords: (words: VocabWord[]) => unknown;
   subPage: SubPage;
 };
 

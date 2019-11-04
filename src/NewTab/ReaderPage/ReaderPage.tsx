@@ -9,7 +9,7 @@ import { useAsyncEffect } from "use-async-effect";
 import { getWordDict, initDict } from "../../Utils/DB/IndexdbUtils";
 
 type Props = {
-  addWord: (word: VocabWord) => any;
+  addWord: (word: VocabWord) => unknown;
 };
 
 const DEFAULT_HSK = 4;
@@ -142,7 +142,7 @@ const SelectGroup = (props: {
   label: string;
   link?: { label: string; link: string };
   value: string | number;
-  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => any;
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => unknown;
   options: ({ value: string | number; label: string } | number | string)[];
 }) => {
   return (

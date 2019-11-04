@@ -5,7 +5,7 @@ import VocabCard from "../Components/VocabCard/VocabCard";
 import { searchJisho } from "../../Utils/Api/JishoUtils";
 
 type Props = {
-  addWord: (word: VocabWord) => any;
+  addWord: (word: VocabWord) => unknown;
 };
 
 class JapaneseSearchAdd extends PureComponent<Props> {

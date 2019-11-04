@@ -7,7 +7,7 @@ import { initDict, searchDict, VocabWord } from "../../Utils/DB/IndexdbUtils";
 import { WordDef } from "../../Utils/DB/VocabDb";
 
 type Props = {
-  addWord: (word: VocabWord) => any;
+  addWord: (word: VocabWord) => unknown;
 };
 
 let dictLoaded = false;

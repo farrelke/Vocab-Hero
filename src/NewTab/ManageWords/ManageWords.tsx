@@ -9,7 +9,7 @@ import {
 } from "../../Utils/DB/IndexdbUtils";
 
 type Props = {
-  deleteWord: (word: VocabWord) => any;
+  deleteWord: (word: VocabWord) => unknown;
 };
 
 class ManageWords extends PureComponent<Props> {

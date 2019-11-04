@@ -8,7 +8,7 @@ import { Page, SubPage } from "../Pages";
 
 type Props = {
   vocab: VocabWord;
-  selectPage: (page: Page, subPage: SubPage) => any;
+  selectPage: (page: Page, subPage: SubPage) => unknown;
 };
 
 class TestPage extends PureComponent<Props> {

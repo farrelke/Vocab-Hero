@@ -7,9 +7,9 @@ import PinyinConverter from "../../../Utils/PinyinConverter";
 
 type Props = {
   word?: VocabWord;
-  save?: (word: VocabWord) => any;
-  cancel?: () => any;
-  addWord?: (word: VocabWord) => any;
+  save?: (word: VocabWord) => unknown;
+  cancel?: () => unknown;
+  addWord?: (word: VocabWord) => unknown;
 };
 
 const EditVocabCard = (props: Props) => {

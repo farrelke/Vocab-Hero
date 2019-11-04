@@ -6,7 +6,7 @@ import classNames from "classnames";
 import { getPageOrder, getSubPages, Page, SubPage } from "../../Pages";
 
 type Props = {
-  selectPage: (page: Page, subPage: SubPage) => any;
+  selectPage: (page: Page, subPage: SubPage) => unknown;
   selectedPage: Page;
 };
 

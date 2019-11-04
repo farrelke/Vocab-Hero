@@ -7,7 +7,7 @@ import { VocabWord } from "../../Utils/DB/VocabDb";
 
 type Props = {
   ankiData: AnkiData;
-  addWords: (words: VocabWord[]) => any;
+  addWords: (words: VocabWord[]) => unknown;
 };
 
 const VocabOptions = [

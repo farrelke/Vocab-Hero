@@ -8,9 +8,9 @@ import EditVocabCard from "./EditVocabCard";
 
 type Props = {
   word: VocabWord;
-  deleteWord?: () => any;
-  addWord?: () => any;
-  updateWord?: (word: VocabWord) => any;
+  deleteWord?: () => unknown;
+  addWord?: () => unknown;
+  updateWord?: (word: VocabWord) => unknown;
 };
 
 const VocabCard = (props: Props) => {

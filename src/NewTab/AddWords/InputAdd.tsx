@@ -10,7 +10,7 @@ import { findWord, VocabWord } from "../../Utils/DB/IndexdbUtils";
 import { WordDef } from "../../Utils/DB/VocabDb";
 
 type Props = {
-  addWord: (word: VocabWord) => any;
+  addWord: (word: VocabWord) => unknown;
 };
 
 class InputAdd extends PureComponent<Props> {

@@ -8,7 +8,7 @@ import { VocabWord } from "../../Utils/DB/IndexdbUtils";
 import { isUserLangChinese } from "../../Utils/UserPreferencesUtils";
 
 type Props = {
-  addWord: (word: VocabWord) => any;
+  addWord: (word: VocabWord) => unknown;
 };
 
 function RadioButton(props: {
@@ -16,7 +16,7 @@ function RadioButton(props: {
   label: string;
   name?: string;
   selected: string;
-  onSelect: (index: number, value: string) => any;
+  onSelect: (index: number, value: string) => unknown;
 }) {
   const word = props.name || props.label;
   const isSelected = props.selected === word;
@@ -35,7 +35,7 @@ function RadioButton(props: {
 function TypeLine(props: {
   index: number;
   selected: string;
-  onSelect: (index: number, value: string) => any;
+  onSelect: (index: number, value: string) => unknown;
 }) {
   const isChinese = isUserLangChinese();
   return (

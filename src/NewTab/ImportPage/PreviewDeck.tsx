@@ -8,8 +8,8 @@ import { VocabWord } from "../../Utils/DB/VocabDb";
 
 type Props = {
   previewUrl: string;
-  goBack: () => any;
-  addWords: (words: VocabWord[]) => any;
+  goBack: () => unknown;
+  addWords: (words: VocabWord[]) => unknown;
 };
 
 class PreviewDeck extends PureComponent<Props> {

@@ -9,7 +9,7 @@ import {  isUserLangChinese } from "../../Utils/UserPreferencesUtils";
 import { SubPage } from "../Pages";
 
 type Props = {
-  addWord: (word: VocabWord) => any;
+  addWord: (word: VocabWord) => unknown;
   subPage: SubPage;
 };
 

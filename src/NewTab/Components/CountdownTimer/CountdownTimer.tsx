@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useInterval } from "../../../Hooks/useInterval";
 
 type Props = {
-  onDone: () => any;
+  onDone: () => unknown;
   seconds: number;
 };
 

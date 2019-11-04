@@ -6,7 +6,7 @@ import classNames from "classnames";
 type Props = {
   page: Page;
   subPage: SubPage;
-  selectPage: (page: Page, subPage: SubPage) => any;
+  selectPage: (page: Page, subPage: SubPage) => unknown;
 };
 
 const Header = (props: Props) => {

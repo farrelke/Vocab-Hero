@@ -9,8 +9,8 @@ import { Page, SubPage } from "../Pages";
 
 type Props = {
   vocab: VocabWord;
-  deleteWord: (word: VocabWord) => any;
-  selectPage: (page: Page, subPage: SubPage) => any;
+  deleteWord: (word: VocabWord) => unknown;
+  selectPage: (page: Page, subPage: SubPage) => unknown;
 };
 
 class LearnPage extends PureComponent<Props> {
