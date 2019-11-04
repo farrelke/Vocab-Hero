@@ -75,6 +75,16 @@
     color: #56d924;
   }
 
+  &--test {
+    border: 1px solid #1bbc9b;
+    color: #1bbc9b;
+    opacity: 0.8;
+    position: fixed;
+    top: 16px;
+    right: 50px;
+    cursor: pointer;
+  }
+
   &:hover {
     opacity: 1;
   }
@@ -86,15 +96,9 @@
       position: fixed;
       opacity: 0.1;
     }
-  }
 
-  &--test {
-    border: 1px solid #1bbc9b;
-    color: #1bbc9b;
-    opacity: 0.8;
-    position: fixed;
-    top: 16px;
-    right: 50px;
-    cursor: pointer;
+    &:hover {
+      opacity: 0.5;
+    }
   }
 }

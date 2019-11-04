@@ -26,16 +26,14 @@ class LearnPage extends PureComponent<Props> {
     const { vocab } = this.props;
 
     return (
-      <div className={`LearnPage ${(showChinesePodLink || !isChinese) ?  'LearnPage--deleteBottom' : ''}`} >
+      <div className={`LearnPage ${showChinesePodLink || !isChinese ? "LearnPage--deleteBottom" : ""}`}>
         <div className="LearnPage__reading">{vocab.reading}</div>
         <div className="LearnPage__word" onClick={() => speak(vocab.word)}>
           {vocab.word}
         </div>
         <div
           className={`LearnPage__meaning ${
-            vocab.meaning && vocab.meaning.length > 40
-              ? "LearnPage__meaning--long"
-              : ""
+            vocab.meaning && vocab.meaning.length > 40 ? "LearnPage__meaning--long" : ""
           }`}
         >
           {vocab.meaning}
@@ -44,16 +42,11 @@ class LearnPage extends PureComponent<Props> {
         {vocab.sentences &&
           vocab.sentences.map((sentence, i) => (
             <div className="LearnPage__sentenceWrapper" key={i}>
-              <div
-                className="LearnPage__sentence"
-                onClick={() => speak(sentence.sentence)}
-              >
+              <div className="LearnPage__sentence" onClick={() => speak(sentence.sentence)}>
                 {sentence.sentence}
               </div>
 
-              <div className="LearnPage__sentencePinyin">
-                {sentence.reading}
-              </div>
+              <div className="LearnPage__sentencePinyin">{sentence.reading}</div>
             </div>
           ))}
 
@@ -61,8 +54,7 @@ class LearnPage extends PureComponent<Props> {
           <a
             className="LearnPage__btn LearnPage__btn--chinesePod"
             target="_blank"
-            href={`https://chinesepod.com/dictionary/english-chinese/${vocab.word &&
-              vocab.word.split(" ")[0]}`}
+            href={`https://chinesepod.com/dictionary/english-chinese/${vocab.word && vocab.word.split(" ")[0]}`}
           >
             Open in Chinesepod
           </a>
@@ -72,17 +64,13 @@ class LearnPage extends PureComponent<Props> {
           <a
             className="LearnPage__btn LearnPage__btn--jisho"
             target="_blank"
-            href={`https://jisho.org/search/${vocab.word &&
-              vocab.word.split(" ")[0]}`}
+            href={`https://jisho.org/search/${vocab.word && vocab.word.split(" ")[0]}`}
           >
             Open in jisho
           </a>
         )}
 
-        <div
-          className="LearnPage__btn LearnPage__btn--delete"
-          onClick={this.deleteWord}
-        >
+        <div className="LearnPage__btn LearnPage__btn--delete" onClick={this.deleteWord}>
           Delete word
         </div>
 

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import * as React from "react";
+import  { useState } from "react";
 import "./EditVocabCard.scss";
 import { VocabWord } from "../../../Utils/VocabDb";
 import { getUserPreferences, Language } from "../../../Utils/DbUtils";

@@ -1,4 +1,4 @@
-import { PureComponent } from "react";
+import { useState } from "react";
 import "./VocabCard.scss";
 import * as React from "react";
 import { speak } from "../../../Utils/SpeechUtils";
@@ -13,82 +13,61 @@ type Props = {
   updateWord?: (word: VocabWord) => any;
 };
 
-class VocabCard extends PureComponent<Props> {
-  state = {
-    editMode: false
+const VocabCard = (props: Props) => {
+  const [editMode, setEditMode] = useState(false);
+
+  const toggleEditing = () => {
+    setEditMode(!editMode);
   };
 
-  toggleEditing = () => {
-    this.setState({ editMode: !this.state.editMode });
+  const updateWord = (word: VocabWord) => {
+    setEditMode(false);
+    props.updateWord(word);
   };
 
-  updateWord = (word: VocabWord) => {
-    this.setState({ editMode: false });
-    this.props.updateWord(word);
-  };
-
-  render() {
-    const { editMode } = this.state;
-    const { word, deleteWord, addWord } = this.props;
-
-    if (editMode) {
-      return (
-        <EditVocabCard
-          word={word}
-          cancel={this.toggleEditing}
-          save={this.updateWord}
-        />
-      );
-    }
-
-    return (
-      <div className="VocabCard">
-        <div className="VocabCard__reading">
-          {PinyinConverter.convert(word.reading)}
-        </div>
-
-        {deleteWord && !editMode && (
-          <div className="VocabCard__btns">
-            <div className="VocabCard__btn" onClick={this.toggleEditing}>
-              Edit
-            </div>
-            <div
-              className="VocabCard__btn VocabCard__btn--delete"
-              onClick={deleteWord}
-            >
-              Delete
-            </div>
-          </div>
-        )}
-
-        {addWord && (
-          <div className="VocabCard__btn VocabCard__btn--add" onClick={addWord}>
-            Add
-          </div>
-        )}
-
-        <div className="VocabCard__word" onClick={() => speak(word.word)}>
-          {word.word}
-        </div>
-        <div className="VocabCard__wordMeaning">{word.meaning}</div>
-        {word.sentences &&
-          word.sentences.map((sentence, i) => (
-            <>
-              <div
-                key={"a" + i}
-                className="VocabCard__sentence"
-                onClick={() => speak(sentence.sentence)}
-              >
-                {sentence.sentence}
-              </div>
-              <div key={"b" + i} className="VocabCard__sentenceMeaning">
-                {sentence.reading}
-              </div>
-            </>
-          ))}
-      </div>
-    );
+  if (editMode) {
+    return <EditVocabCard word={props.word} cancel={toggleEditing} save={updateWord} />;
   }
-}
+
+  return (
+    <div className="VocabCard">
+      <div className="VocabCard__reading">{PinyinConverter.convert(props.word.reading)}</div>
+
+      {props.deleteWord && !editMode && (
+        <div className="VocabCard__btns">
+          <div className="VocabCard__btn" onClick={toggleEditing}>
+            Edit
+          </div>
+          <div className="VocabCard__btn VocabCard__btn--delete" onClick={props.deleteWord}>
+            Delete
+          </div>
+        </div>
+      )}
+
+      {props.addWord && (
+        <div className="VocabCard__btn VocabCard__btn--add" onClick={props.addWord}>
+          Add
+        </div>
+      )}
+
+      <div className="VocabCard__word" onClick={() => speak(props.word.word)}>
+        {props.word.word}
+      </div>
+
+      <div className="VocabCard__wordMeaning">{props.word.meaning}</div>
+      {props.word.sentences &&
+        props.word.sentences.map((sentence, i) => (
+          <>
+            <div key={`s${i}`} className="VocabCard__sentence" onClick={() => speak(sentence.sentence)}>
+              {sentence.sentence}
+            </div>
+            <div key={`r${i}`} className="VocabCard__sentenceMeaning">
+              {sentence.reading}
+            </div>
+          </>
+        ))}
+    </div>
+  );
+};
 
 export default VocabCard;

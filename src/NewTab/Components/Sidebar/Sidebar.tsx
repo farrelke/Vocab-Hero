@@ -15,7 +15,7 @@ export enum Page {
 }
 
 export enum SubPage {
-  TestWords = 'Test Words',
+  TestWords = "Test Words",
 
   Learn = "Learn",
 
@@ -32,7 +32,7 @@ export enum SubPage {
 
   Preferences = "Preferences",
 
-  Reader = "Reader",
+  Reader = "Reader"
 }
 
 type Props = {
@@ -45,14 +45,14 @@ const CnSubPagesDict = {
   [Page.Learn]: [SubPage.Learn],
   [Page.Add]: [SubPage.Input, SubPage.Search, SubPage.Paste],
   [Page.Manage]: [SubPage.Words],
-  [Page.Import]: [SubPage.Pleco, SubPage.Anki, SubPage.PreMade, SubPage.Local],
+  [Page.Import]: [SubPage.PreMade, SubPage.Pleco, SubPage.Anki, SubPage.Local],
   [Page.Reader]: [SubPage.Reader],
   [Page.UserPreferences]: [SubPage.Preferences]
 };
 
 const JaSubPagesDict = {
   [Page.Learn]: [SubPage.Learn],
-  [Page.Add]: [SubPage.Input,  SubPage.Search, SubPage.Paste],
+  [Page.Add]: [SubPage.Input, SubPage.Search, SubPage.Paste],
   [Page.Manage]: [SubPage.Words],
   [Page.Import]: [SubPage.Anki, SubPage.Local],
   [Page.UserPreferences]: [SubPage.Preferences]
