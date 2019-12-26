@@ -2,8 +2,11 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import NewTabPage from "./NewTabPage";
 import ReviewTab from "../ReviewTab/ReviewTab";
+import { initDb } from "../Utils/DB/IndexdbUtils";
+
 
 const renderPage = () => {
+  initDb();
   const [url, action] = location.href.split("#");
 
   if (action) {

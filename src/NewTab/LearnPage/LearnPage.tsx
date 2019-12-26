@@ -29,7 +29,7 @@ class LearnPage extends PureComponent<Props> {
     return (
       <div className={`LearnPage ${showChinesePodLink || !isChinese ? "LearnPage--deleteBottom" : ""}`}>
         <div className="LearnPage__reading">{vocab.reading}</div>
-        <div className="LearnPage__word" onClick={() => speak(vocab.word)}>
+        <div className="LearnPage__word" onClick={() => speak(vocab.word, vocab.audio)}>
           {vocab.word}
         </div>
         <div

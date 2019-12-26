@@ -4,7 +4,10 @@ import { getJsonFile } from "../FetchUtils";
 import { getChromeLocalVal, updateChromeSetting } from "../ChromeSettingUtils";
 export { VocabWord } from "./VocabDb";
 
-const db: VocabDb = new VocabDb();
+let db: VocabDb;
+export function initDb() {
+  db = db || new VocabDb();
+}
 
 export async function bulkAddVocabWords(words: VocabWord[]): Promise<void> {
   await db.vocab.bulkAdd(words);
@@ -54,11 +57,7 @@ let wordDict: WordDict | undefined;
 export async function getWordDict(): Promise<WordDict> {
   if (wordDict) return wordDict;
 
-
-  wordDict = await getChromeLocalVal<WordDict | undefined>(
-    "wordDict",
-    undefined
-  );
+  wordDict = await getChromeLocalVal<WordDict | undefined>("wordDict", undefined);
   if (wordDict) return wordDict;
 
   wordDict = {};

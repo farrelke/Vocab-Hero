@@ -22,6 +22,7 @@ export interface VocabWord {
     sentence: string;
     reading: string;
   }[];
+  audio?: Blob
 }
 
 export interface WordDef {
@@ -64,7 +65,7 @@ export class VocabDb extends Dexie {
       const reading = wordDef.reading || (wordDef as any).wordPinyin || "";
       wordDef.reading = reading;
       wordDef.readingNoSpaces = reading.replace(/ /g, "");
-      wordDef.readingSimple = wordDef.readingNoSpaces.replace(/[0-9]/g, "");
+      wordDef.readingSimple = wordDef.readingNoSpaces!.replace(/[0-9]/g, "");
       wordDef.meaningWords = getWordTokens(wordDef.meaning);
       wordDef.sentences = [];
     });

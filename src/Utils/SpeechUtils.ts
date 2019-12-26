@@ -19,7 +19,14 @@ export function getVoicesByLanguage(language: Language) {
   });
 }
 
-export function speak(word: string) {
+export function speak(word: string, audio?: Blob) {
+  if (audio) {
+    let blobURL = window.URL.createObjectURL(audio);
+    let audio0 = new Audio(blobURL);
+    audio0.play();
+    return;
+  }
+
   if (voices.length === 0) return;
 
   const voice = voices.find(a => a.voiceURI === getUserPreferences().voiceURI);
