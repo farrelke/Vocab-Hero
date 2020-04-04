@@ -1,6 +1,6 @@
 // Listen to messages sent from other parts of the extension.
 import { addVocabWord, initDb } from "./Utils/DB/IndexdbUtils";
-import { addChuckBlock, getFile, removeFile} from "./Utils/MessageUtils";
+import { addChuckBlock, getFile, removeFile } from "./Utils/MessageUtils";
 
 chrome.runtime.onMessageExternal.addListener((request, sender, sendResponse) => {
   if (request.blobAsText) {
@@ -12,7 +12,6 @@ chrome.runtime.onMessageExternal.addListener((request, sender, sendResponse) => 
   if (request.fileId) {
     audioFile = getFile(request.fileId);
     removeFile(request.fileId);
-    console.log(audioFile);
   }
 
   initDb();

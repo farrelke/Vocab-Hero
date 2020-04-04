@@ -1,6 +1,7 @@
 
 
 declare module "react-radio-buttons";
+declare var MediaRecorder: any;
 
 declare module "*.png" {
   const value: any;

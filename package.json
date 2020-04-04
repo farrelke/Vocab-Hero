@@ -50,6 +50,7 @@
     "react-autosize-textarea": "^7.0.0",
     "react-dom": "^16.8.6",
     "react-radio-buttons": "^1.2.2",
+    "recorder-js": "^1.0.7",
     "unicode-loader": "^1.0.7",
     "use-async-effect": "^2.2.1",
     "xlsx": "^0.14.3",

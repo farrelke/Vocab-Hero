@@ -24,8 +24,8 @@ type Props = {};
 
 class NewTabPage extends PureComponent<Props> {
   state = {
-    page: Page.Learn,
-    subPage: SubPage.Learn,
+    page: Page.Add,
+    subPage: SubPage.Input,
     vocab: null as VocabWord
   };
 

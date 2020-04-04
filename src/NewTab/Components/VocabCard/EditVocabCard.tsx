@@ -1,9 +1,10 @@
 import * as React from "react";
-import  { useState } from "react";
+import { useState } from "react";
 import "./EditVocabCard.scss";
 import { VocabWord } from "../../../Utils/DB/VocabDb";
 import { isUserLangChinese } from "../../../Utils/UserPreferencesUtils";
 import PinyinConverter from "../../../Utils/PinyinConverter";
+import AudioInput from "../AudioInput/AudioInput";
 
 type Props = {
   word?: VocabWord;
@@ -16,6 +17,7 @@ const EditVocabCard = (props: Props) => {
   const [word, setWord] = useState(props.word ? props.word.word : "");
   const [reading, setReading] = useState(props.word ? props.word.reading : "");
   const [meaning, setMeaning] = useState(props.word ? props.word.meaning : "");
+  const [audio, setAudio] = useState(props.word ? props.word.audio : null);
   const isChinese = isUserLangChinese();
 
   const resetState = () => {
@@ -25,7 +27,7 @@ const EditVocabCard = (props: Props) => {
   };
 
   const saveChanged = () => {
-    props.save({ ...props.word, word, reading, meaning });
+    props.save({ ...props.word, word, reading, meaning, audio });
   };
 
   const addNewWord = () => {
@@ -35,6 +37,7 @@ const EditVocabCard = (props: Props) => {
       meaning,
       sentences: []
     };
+    console.log(newWord);
     props.addWord(newWord);
     resetState();
   };
@@ -68,20 +71,21 @@ const EditVocabCard = (props: Props) => {
         className="EditVocabCard__word"
         placeholder={isChinese ? "hanzi" : "kanji"}
       />
-      <input
-        type="text"
+      <textarea
         onChange={e => setMeaning(e.target.value)}
         value={meaning}
         className="EditVocabCard__wordMeaning"
         placeholder="translation"
       />
+
+      <div className="EditVocabCard__audioWrapper" >
+        <AudioInput file={audio as File} onChange={audioFile => setAudio(audioFile)} />
+      </div>
+
       <div className="EditVocabCard__editBtns EditVocabCard__btn--save">
         {!props.addWord && (
           <>
-            <div
-              onClick={props.cancel}
-              className="EditVocabCard__btn EditVocabCard__btn--cancel"
-            >
+            <div onClick={props.cancel} className="EditVocabCard__btn EditVocabCard__btn--cancel">
               Cancel
             </div>
             <div onClick={saveChanged} className="EditVocabCard__btn">

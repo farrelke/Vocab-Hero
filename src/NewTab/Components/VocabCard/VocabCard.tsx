@@ -15,6 +15,7 @@ type Props = {
 
 const VocabCard = (props: Props) => {
   const [editMode, setEditMode] = useState(false);
+  const { word } = props;
 
   const toggleEditing = () => {
     setEditMode(!editMode);
@@ -26,12 +27,12 @@ const VocabCard = (props: Props) => {
   };
 
   if (editMode) {
-    return <EditVocabCard word={props.word} cancel={toggleEditing} save={updateWord} />;
+    return <EditVocabCard word={word} cancel={toggleEditing} save={updateWord} />;
   }
 
   return (
     <div className="VocabCard">
-      <div className="VocabCard__reading">{PinyinConverter.convert(props.word.reading)}</div>
+      <div className="VocabCard__reading">{PinyinConverter.convert(word.reading)}</div>
 
       {props.deleteWord && !editMode && (
         <div className="VocabCard__btns">
@@ -50,13 +51,13 @@ const VocabCard = (props: Props) => {
         </div>
       )}
 
-      <div className="VocabCard__word" onClick={() => speak(props.word.word)}>
-        {props.word.word}
+      <div className="VocabCard__word" onClick={() => speak(word.word, word.audio)}>
+        {word.word}
       </div>
 
-      <div className="VocabCard__wordMeaning">{props.word.meaning}</div>
-      {props.word.sentences &&
-        props.word.sentences.map((sentence, i) => (
+      <div className="VocabCard__wordMeaning">{word.meaning}</div>
+      {word.sentences &&
+        word.sentences.map((sentence, i) => (
           <>
             <div key={`s${i}`} className="VocabCard__sentence" onClick={() => speak(sentence.sentence)}>
               {sentence.sentence}

@@ -2,11 +2,7 @@ import * as React from "react";
 import { PureComponent } from "react";
 import "./ManageWords.scss";
 import VocabCard from "../Components/VocabCard/VocabCard";
-import {
-  getVocabWords,
-  updateVocabWord,
-  VocabWord
-} from "../../Utils/DB/IndexdbUtils";
+import { getVocabWords, updateVocabWord, VocabWord } from "../../Utils/DB/IndexdbUtils";
 
 type Props = {
   deleteWord: (word: VocabWord) => unknown;

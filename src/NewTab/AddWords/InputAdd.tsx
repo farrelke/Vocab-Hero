@@ -2,12 +2,10 @@ import * as React from "react";
 import { PureComponent } from "react";
 import "./InputAdd.scss";
 import PinyinConverter from "../../Utils/PinyinConverter";
-import {
-  getUserPreferences, isUserLangChinese,
-  Language
-} from "../../Utils/UserPreferencesUtils";
+import { getUserPreferences, isUserLangChinese, Language } from "../../Utils/UserPreferencesUtils";
 import { findWord, VocabWord } from "../../Utils/DB/IndexdbUtils";
 import { WordDef } from "../../Utils/DB/VocabDb";
+import AudioInput from "./../Components/AudioInput/AudioInput";
 
 type Props = {
   addWord: (word: VocabWord) => unknown;
@@ -18,18 +16,16 @@ class InputAdd extends PureComponent<Props> {
     hanzi: "",
     pinyin: "",
     translation: "",
+    audioFile: null as File,
     dictDef: null as WordDef
   };
   hanziInput: any;
 
   async componentDidMount() {}
 
-  updateText = (type: string) => async (
-    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  updateText = (type: string) => async (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const newValue = e.currentTarget.value;
     this.setState({ [type]: newValue });
-
 
     if (type === "hanzi" && getUserPreferences().language === Language.Chinese) {
       this.setState({ dictDef: null });
@@ -49,19 +45,19 @@ class InputAdd extends PureComponent<Props> {
     }
   };
 
-  addWord = () => {
+  addWord = async () => {
     const { addWord } = this.props;
-    const { hanzi, pinyin, translation, dictDef } = this.state;
-
+    const { hanzi, pinyin, translation, dictDef, audioFile } = this.state;
 
     const newWord: VocabWord = {
       word: hanzi,
       reading: PinyinConverter.convert(pinyin || dictDef.reading),
       meaning: translation || dictDef.meaning,
-      sentences: []
+      sentences: [],
+      audio: audioFile
     };
     addWord(newWord);
-    this.setState({ hanzi: "", pinyin: "", translation: "" });
+    this.setState({ hanzi: "", pinyin: "", translation: "", audioFile: null });
   };
 
   onKeyDownTranslation = (e: any) => {
@@ -79,15 +75,12 @@ class InputAdd extends PureComponent<Props> {
 
   render() {
     const isChinese = isUserLangChinese();
-    const { hanzi, pinyin, translation, dictDef } = this.state;
-
+    const { hanzi, pinyin, translation, audioFile, dictDef } = this.state;
 
     return (
       <div className="InputAdd">
         <div className="InputAdd__inputContainer">
-          <div className="InputAdd__inputLabel">
-            {isChinese ? "Hanzi" : "Kanji"}
-          </div>
+          <div className="InputAdd__inputLabel">{isChinese ? "Hanzi" : "Kanji"}</div>
           <input
             ref={ref => (this.hanziInput = ref)}
             type="text"
@@ -98,27 +91,25 @@ class InputAdd extends PureComponent<Props> {
         </div>
 
         <div className="InputAdd__inputContainer">
-          <div className="InputAdd__inputLabel">
-            {isChinese ? "Pinyin" : "Reading"}
-          </div>
+          <div className="InputAdd__inputLabel">{isChinese ? "Pinyin" : "Reading"}</div>
           <input
             type="text"
             value={pinyin}
-            placeholder={PinyinConverter.convert(
-              (dictDef && dictDef.reading) || ""
-            )}
+            placeholder={PinyinConverter.convert((dictDef && dictDef.reading) || "")}
             onKeyDown={this.onKeyDownPinyin}
             onChange={this.updateText("pinyin")}
             className="InputAdd__input"
           />
           {isChinese && (
-            <div
-              className="InputAdd__btn InputAdd__btn--inputBtn"
-              onClick={this.pinyinise}
-            >
+            <div className="InputAdd__btn InputAdd__btn--inputBtn" onClick={this.pinyinise}>
               Pinyinise
             </div>
           )}
+        </div>
+
+        <div className="InputAdd__inputContainer">
+          <div className="InputAdd__inputLabel">Audio</div>
+          <AudioInput file={audioFile} onChange={audioFile => this.setState({ audioFile })} />
         </div>
 
         <div className="InputAdd__inputContainer">
@@ -133,10 +124,7 @@ class InputAdd extends PureComponent<Props> {
           />
         </div>
 
-        <div
-          className="InputAdd__btn InputAdd__btn--add"
-          onClick={this.addWord}
-        >
+        <div className="InputAdd__btn InputAdd__btn--add" onClick={this.addWord}>
           Add Word
         </div>
       </div>
