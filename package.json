@@ -7,7 +7,8 @@
     "dev": "webpack --config webpack.dev.js",
     "watch": "webpack -w --config webpack.dev.js",
     "lint": "tslint 'src/**/*.{ts, tsx}'",
-    "create-data": "node ./data/create-word-db.js"
+    "create-data": "node ./data/create-word-db.js",
+    "create-hsk-data": "node ./data/create-hsk-lists.js"
   },
   "author": "Kevin Farrell",
   "license": "MIT",
@@ -45,7 +46,9 @@
     "classnames": "^2.2.6",
     "dexie": "^2.0.4",
     "file-saver": "^2.0.2",
+    "jszip": "^3.3.0",
     "localforage": "^1.7.3",
+    "mime-types": "^2.1.26",
     "react": "^16.8.6",
     "react-autosize-textarea": "^7.0.0",
     "react-dom": "^16.8.6",

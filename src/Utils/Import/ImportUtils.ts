@@ -3,7 +3,7 @@ import { stripHtml } from "../StringUtils";
 import { convertPlecoStructureToVocabWords } from "./ImportPlecoUtils";
 import { VocabWord } from "../DB/VocabDb";
 
-export async function getTextFromFile(file: File): Promise<string> {
+export async function getTextFromFile(file: File | Blob): Promise<string> {
   return new Promise<string>(resolve => {
     const reader = new FileReader();
     reader.onload = () => {
@@ -14,15 +14,7 @@ export async function getTextFromFile(file: File): Promise<string> {
   });
 }
 
-export async function importJsonFile(file: File): Promise<VocabWord[]> {
-  try {
-    const jsonString = await getTextFromFile(file);
-    const data = JSON.parse(jsonString);
-    return data as VocabWord[];
-  } catch (e) {
-    return [];
-  }
-}
+
 
 export async function importPlecoFile(file: File): Promise<VocabWord[]> {
   const xmlString = await getTextFromFile(file);

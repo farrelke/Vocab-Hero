@@ -5,8 +5,8 @@ export const useRecorder = () => {
   const [isRecording, setRecording] = useState(false);
 
   const onStartRecording = useCallback(async () => {
-    setRecording(true);
     await startRecording();
+    setRecording(true);
   }, []);
 
   const onStopRecording = useCallback(async () => {

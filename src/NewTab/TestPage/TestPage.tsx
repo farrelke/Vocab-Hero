@@ -28,7 +28,7 @@ class TestPage extends PureComponent<Props> {
   showAnswer = async () => {
     const { vocabWords, vocabIndex } = this.state;
     const vocab = vocabWords[vocabIndex];
-    speak(vocab.word);
+    speak(vocab.word, vocab.audio);
     this.setState({ showAnswer: true });
   };
 
@@ -49,7 +49,7 @@ class TestPage extends PureComponent<Props> {
     return (
       <div className="TestPage">
         <div className="TestPage__reading">{showAnswer ? vocab.reading : ""}</div>
-        <div className="TestPage__word" onClick={() => speak(vocab.word)}>
+        <div className="TestPage__word" onClick={() => speak(vocab.word, vocab.audio)}>
           {vocab.word}
         </div>
 

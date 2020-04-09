@@ -37,7 +37,7 @@ export const startRecording = async () => {
   if (isRecording) return;
   isRecording = true;
   await initRecorder();
-  recorder.start(1000);
+  recorder.start();
 };
 
 export const stopRecording = async (): Promise<Blob> => {

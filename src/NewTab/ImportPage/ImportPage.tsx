@@ -1,18 +1,13 @@
 import * as React from "react";
 import { PureComponent } from "react";
 import "./ImportPage.scss";
-import { saveAs } from "file-saver";
 import PreviewDeck from "./PreviewDeck";
-import {
-  AnkiData,
-  importAnkiFile,
-  importJsonFile,
-  importPlecoFile
-} from "../../Utils/Import/ImportUtils";
+import { AnkiData, importAnkiFile, importPlecoFile } from "../../Utils/Import/ImportUtils";
 import { getVocabDecks, GithubFile } from "../../Utils/Api/GithubUtils";
 import AnkiImport from "./AnkiImport";
 import { clearAllVocab, getVocabWords, VocabWord } from "../../Utils/DB/IndexdbUtils";
 import { SubPage } from "../Pages";
+import { importLocalFile, saveWordsAsJson } from "../../Utils/Import/ImportLocalUtils";
 
 type Props = {
   addWords: (words: VocabWord[]) => unknown;
@@ -73,7 +68,7 @@ class ImportPage extends PureComponent<Props> {
     try {
       if (selectorFiles && selectorFiles[0]) {
         this.setState({ addingWord: true });
-        const words = await importJsonFile(selectorFiles[0]);
+        const words = await importLocalFile(selectorFiles[0]);
         this.props.addWords(words);
       }
     } catch (e) {
@@ -82,9 +77,7 @@ class ImportPage extends PureComponent<Props> {
   };
 
   clearAllCards = async () => {
-    const confirm1 = confirm(
-      "Are you sure you want to delete all current cards. This action cannot be undo!"
-    );
+    const confirm1 = confirm("Are you sure you want to delete all current cards. This action cannot be undo!");
     if (confirm1) {
       await clearAllVocab();
     }
@@ -95,25 +88,12 @@ class ImportPage extends PureComponent<Props> {
   };
 
   previewHskLevel = async (level: number) => {
-    this.previewDesk(
-      `https://raw.githubusercontent.com/farrelke/chinese-vocab/master/data/hsk-${level}.json`
-    );
+    this.previewDesk(`https://raw.githubusercontent.com/farrelke/chinese-vocab/master/data/hsk-${level}.json`);
   };
 
   exportVocabulary = async () => {
-    const words = (await getVocabWords()).reverse().map(word => {
-      delete word.id;
-      return word;
-    });
-
-    const vocabFile = new File(
-      [JSON.stringify(words, null, 2)],
-      "vocab-list.json",
-      {
-        type: "application/json;charset=utf-8"
-      }
-    );
-    saveAs(vocabFile);
+    const words = await getVocabWords();
+    await saveWordsAsJson(words);
   };
 
   render() {
@@ -126,11 +106,7 @@ class ImportPage extends PureComponent<Props> {
 
     if (previewUrl) {
       return (
-        <PreviewDeck
-          previewUrl={previewUrl}
-          addWords={addWords}
-          goBack={() => this.setState({ previewUrl: "" })}
-        />
+        <PreviewDeck previewUrl={previewUrl} addWords={addWords} goBack={() => this.setState({ previewUrl: "" })} />
       );
     }
 
@@ -150,56 +126,41 @@ class ImportPage extends PureComponent<Props> {
 
         {subPage === SubPage.Pleco && (
           <div className="ImportPage__section">
-            <div className="ImportPage__sectionTitle">
-              Import flashcards from Pleco
-            </div>
+            <div className="ImportPage__sectionTitle">Import flashcards from Pleco</div>
             <div className="ImportPage__sectionDesc">
               To generate an export file in Pleco:
               <ul className="ImportPage__sectionDescList">
                 <li>
-                  First open the export file function in{" "}
-                  <b> Pleco > Flashcards > Import/Export</b>.
+                  First open the export file function in <b> Pleco > Flashcards > Import/Export</b>.
                 </li>
                 <li>
-                  Set the file format to <b>XML File</b> (should be the
-                  default).
+                  Set the file format to <b>XML File</b> (should be the default).
                 </li>
                 <li>
                   Set <b>card and dictionary definitions</b> to export.
                 </li>
               </ul>
             </div>
-            <input
-              type="file"
-              id="files"
-              name="files[]"
-              onChange={e => this.handlePlecoImport(e.target.files)}
-            />
+            <input type="file" id="files" name="files[]" onChange={e => this.handlePlecoImport(e.target.files)} />
           </div>
         )}
 
         {subPage === SubPage.Anki && (
           <div className="ImportPage__section">
-            <div className="ImportPage__sectionTitle">
-              Import flashcards from Anki
-            </div>
+            <div className="ImportPage__sectionTitle">Import flashcards from Anki</div>
             <div className="ImportPage__sectionDesc">
               To generate an export file in Anki:
               <ul className="ImportPage__sectionDescList">
                 <li>
                   First install the add-on{" "}
-                  <a href="https://ankiweb.net/shared/info/1788670778">
-                    CrowdAnki: JSON export&import
-                  </a>{" "}
-                  in anki using <b>Tools > Add-ons > Get Add-ons...</b>.
+                  <a href="https://ankiweb.net/shared/info/1788670778">CrowdAnki: JSON export&import</a> in anki using{" "}
+                  <b>Tools > Add-ons > Get Add-ons...</b>.
                 </li>
                 <li>
-                  After you install the CrowdAnki add-on then export your anki
-                  deck using <b>Export..</b>.
+                  After you install the CrowdAnki add-on then export your anki deck using <b>Export..</b>.
                 </li>
                 <li>
-                  Set the export format to CrowdAnki JSON representation and
-                  select the deck you want to export.&nbsp;
+                  Set the export format to CrowdAnki JSON representation and select the deck you want to export.&nbsp;
                   <b>Do not select "All Decks"</b>
                 </li>
                 <li>
@@ -210,50 +171,29 @@ class ImportPage extends PureComponent<Props> {
                 </li>
               </ul>
             </div>
-            <input
-              type="file"
-              id="files"
-              name="files[]"
-              onChange={e => this.handleAnkiImport(e.target.files)}
-            />
+            <input type="file" id="files" name="files[]" onChange={e => this.handleAnkiImport(e.target.files)} />
           </div>
         )}
 
         {subPage === SubPage.PreMade && (
           <>
             <div className="ImportPage__section">
-              <div className="ImportPage__sectionTitle">
-                Import Hsk Vocabulary
-              </div>
-              <div className="ImportPage__sectionDesc">
-                Hsk Vocabulary divided by level
-              </div>
+              <div className="ImportPage__sectionTitle">Import Hsk Vocabulary</div>
+              <div className="ImportPage__sectionDesc">Hsk Vocabulary divided by level</div>
               <div className="ImportPage__hskButtons">
-                {["Hsk 1", "Hsk 2", "Hsk 3", "Hsk 4", "Hsk 5", "Hsk 6"].map(
-                  (hsk, i) => (
-                    <div
-                      className="ImportPage__hskBtn"
-                      key={i}
-                      onClick={() => this.previewHskLevel(i + 1)}
-                    >
-                      {hsk}
-                    </div>
-                  )
-                )}
+                {["Hsk 1", "Hsk 2", "Hsk 3", "Hsk 4", "Hsk 5", "Hsk 6"].map((hsk, i) => (
+                  <div className="ImportPage__hskBtn" key={i} onClick={() => this.previewHskLevel(i + 1)}>
+                    {hsk}
+                  </div>
+                ))}
               </div>
             </div>
 
             <div className="ImportPage__section">
-              <div className="ImportPage__sectionTitle">
-                Import User made lists
-              </div>
-              <div className="ImportPage__sectionDesc">
-                Vocab lists submitted by users
-              </div>
+              <div className="ImportPage__sectionTitle">Import User made lists</div>
+              <div className="ImportPage__sectionDesc">Vocab lists submitted by users</div>
               <div className="ImportPage__hskButtons">
-                {!vocabLists && (
-                  <div className="ImportPage__loading">Fetching Decks...</div>
-                )}
+                {!vocabLists && <div className="ImportPage__loading">Fetching Decks...</div>}
                 {vocabLists &&
                   vocabLists.map(list => (
                     <div
@@ -272,24 +212,15 @@ class ImportPage extends PureComponent<Props> {
         {subPage === SubPage.Local && (
           <>
             <div className="ImportPage__section">
-              <div className="ImportPage__sectionTitle">
-                Export vocabulary to json file
-              </div>
+              <div className="ImportPage__sectionTitle">Export vocabulary to json file</div>
               <div className="ImportPage__btn" onClick={this.exportVocabulary}>
                 Export Vocabulary
               </div>
             </div>
             <div className="ImportPage__section">
-              <div className="ImportPage__sectionTitle">
-                Import local json file
-              </div>
+              <div className="ImportPage__sectionTitle">Import local json file</div>
 
-              <input
-                type="file"
-                id="files"
-                name="files[]"
-                onChange={e => this.handleJsonImport(e.target.files)}
-              />
+              <input type="file" id="files" name="files[]" onChange={e => this.handleJsonImport(e.target.files)} />
             </div>
           </>
         )}

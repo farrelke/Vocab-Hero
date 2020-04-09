@@ -1,5 +1,4 @@
-const fs = require("fs");
-const hsk = require("cedict/hsk");
+const fs = require("fs").promises;
 const getWordFreq = require("./create-freq-list.js");
 
 const loadData = () => {
@@ -16,8 +15,6 @@ const fieldSorter = (fields) => (a, b) => fields.map(o => {
 
 const init = async () => {
   const data = await loadData();
-  console.log(data[1010]);
-  console.log(data[1010].definitions);
   const wordFreq = await getWordFreq();
 
   const wordList = data.map(wordData => {
@@ -25,9 +22,11 @@ const init = async () => {
     word.word = wordData.simplified || wordData.traditional;
     word.reading =
       (wordData.definitions && wordData.definitions[0].pinyin) || "";
+
+    // always use last definitions has they will be the most common case
     word.meaning =
       (wordData.definitions &&
-        wordData.definitions[0].translations.join(", ")) ||
+        wordData.definitions[wordData.definitions.length - 1].translations.join(", ")) ||
       "";
     word.freq = Number(wordFreq[word.word] || 0);
     word.hsk = wordData.hsk || 7;
@@ -35,8 +34,7 @@ const init = async () => {
   }).sort(fieldSorter(['hsk', '-freq']));
 
   const json = JSON.stringify(wordList);
-
-  fs.writeFile("./data/wordDictList.json", json, "utf8", () => {});
+  await fs.writeFile("./data/wordDictList.json", json, "utf8");
 };
 
 init();
