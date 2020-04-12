@@ -24,7 +24,9 @@ class PreviewDeck extends PureComponent<Props> {
       const file = await fileData.blob();
       const words: VocabWord[] = await importLocalFile(file, this.props.previewUrl);
 
-      this.setState({ words });
+      this.setState({
+        words: words.map(word => ({ ...word, reading: PinyinConverter.convert(word.reading || ""), sentences: [] }))
+      });
     } catch (e) {
       alert("Could not load vocab");
       this.props.goBack();
