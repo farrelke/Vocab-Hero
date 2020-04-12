@@ -3,7 +3,7 @@ import { PureComponent } from "react";
 import "./ImportPage.scss";
 import PreviewDeck from "./PreviewDeck";
 import { AnkiData, importAnkiFile, importPlecoFile } from "../../Utils/Import/ImportUtils";
-import { getVocabDecks, GithubFile } from "../../Utils/Api/GithubUtils";
+import { getHskDecks, getShanghaineseDecks, getVocabDecks, GithubFile } from "../../Utils/Api/GithubUtils";
 import AnkiImport from "./AnkiImport";
 import { clearAllVocab, getVocabWords, VocabWord } from "../../Utils/DB/IndexdbUtils";
 import { SubPage } from "../Pages";
@@ -12,6 +12,33 @@ import { importLocalFile, saveWordsAsJson } from "../../Utils/Import/ImportLocal
 type Props = {
   addWords: (words: VocabWord[]) => unknown;
   subPage: SubPage;
+};
+
+const ImportSection = ({
+  title,
+  description,
+  list,
+  onSelect
+}: {
+  title: string;
+  description: string;
+  list: GithubFile[] | undefined;
+  onSelect: (downloadUrl: string) => unknown;
+}) => {
+  return (
+    <div className="ImportPage__section">
+      <div className="ImportPage__sectionTitle">{title}Import Hsk Vocabulary</div>
+      <div className="ImportPage__sectionDesc">{description}Hsk Vocabulary divided by level</div>
+      <div className="ImportPage__hskButtons">
+        {!list && <div className="ImportPage__loading">Fetching Decks...</div>}
+        {list.map(deck => (
+          <div className="ImportPage__hskBtn" key={deck.name} onClick={() => onSelect(deck.downloadUrl)}>
+            {deck.name}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 class ImportPage extends PureComponent<Props> {
@@ -87,10 +114,6 @@ class ImportPage extends PureComponent<Props> {
     this.setState({ previewUrl });
   };
 
-  previewHskLevel = async (level: number) => {
-    this.previewDesk(`https://raw.githubusercontent.com/farrelke/chinese-vocab/master/data/hsk-${level}.json`);
-  };
-
   exportVocabulary = async () => {
     const words = await getVocabWords();
     await saveWordsAsJson(words);
@@ -117,6 +140,9 @@ class ImportPage extends PureComponent<Props> {
         </div>
       );
     }
+
+    const hskWords = getHskDecks();
+    const shanghaineseDecks = getShanghaineseDecks();
 
     return (
       <div className="ImportPage">
@@ -177,35 +203,26 @@ class ImportPage extends PureComponent<Props> {
 
         {subPage === SubPage.PreMade && (
           <>
-            <div className="ImportPage__section">
-              <div className="ImportPage__sectionTitle">Import Hsk Vocabulary</div>
-              <div className="ImportPage__sectionDesc">Hsk Vocabulary divided by level</div>
-              <div className="ImportPage__hskButtons">
-                {["Hsk 1", "Hsk 2", "Hsk 3", "Hsk 4", "Hsk 5", "Hsk 6"].map((hsk, i) => (
-                  <div className="ImportPage__hskBtn" key={i} onClick={() => this.previewHskLevel(i + 1)}>
-                    {hsk}
-                  </div>
-                ))}
-              </div>
-            </div>
+            <ImportSection
+              title="Import Hsk Vocabulary"
+              description="Hsk Vocabulary divided by level"
+              list={hskWords}
+              onSelect={this.previewDesk}
+            />
 
-            <div className="ImportPage__section">
-              <div className="ImportPage__sectionTitle">Import User made lists</div>
-              <div className="ImportPage__sectionDesc">Vocab lists submitted by users</div>
-              <div className="ImportPage__hskButtons">
-                {!vocabLists && <div className="ImportPage__loading">Fetching Decks...</div>}
-                {vocabLists &&
-                  vocabLists.map(list => (
-                    <div
-                      className="ImportPage__hskBtn"
-                      key={list.name}
-                      onClick={() => this.previewDesk(list.downloadUrl)}
-                    >
-                      {list.name}
-                    </div>
-                  ))}
-              </div>
-            </div>
+            <ImportSection
+              title="Import Shanghainese lists"
+              description="Learn Shanghainese words (with audio)"
+              list={shanghaineseDecks}
+              onSelect={this.previewDesk}
+            />
+
+            <ImportSection
+              title="Import User made lists"
+              description="Vocab lists submitted by users"
+              list={vocabLists}
+              onSelect={this.previewDesk}
+            />
           </>
         )}
 
