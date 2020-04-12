@@ -5,6 +5,7 @@ import { getJsonFile } from "../../Utils/FetchUtils";
 import PinyinConverter from "../../Utils/PinyinConverter";
 import VocabCard from "../Components/VocabCard/VocabCard";
 import { VocabWord } from "../../Utils/DB/VocabDb";
+import { importLocalFile } from "../../Utils/Import/ImportLocalUtils";
 
 type Props = {
   previewUrl: string;
@@ -19,15 +20,9 @@ class PreviewDeck extends PureComponent<Props> {
 
   async componentDidMount() {
     try {
-      const wordData = await getJsonFile<{ word: string; reading: string; meaning: string }[]>(this.props.previewUrl);
-
-      const words: VocabWord[] = wordData
-        .filter(word => word)
-        .map(word => ({
-          ...word,
-          reading: PinyinConverter.convert(word.reading || ""),
-          sentences: []
-        }));
+      const fileData = await fetch(this.props.previewUrl);
+      const file = await fileData.blob();
+      const words: VocabWord[] = await importLocalFile(file, this.props.previewUrl);
 
       this.setState({ words });
     } catch (e) {

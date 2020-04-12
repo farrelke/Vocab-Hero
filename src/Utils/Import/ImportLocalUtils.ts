@@ -59,7 +59,7 @@ async function importJsonFile(file: File | Blob): Promise<VocabWord[]> {
   }
 }
 
-async function importZipFile(file: File): Promise<VocabWord[]> {
+async function importZipFile(file: File | Blob): Promise<VocabWord[]> {
   try {
     const zip = await JSZip.loadAsync(file);
     const jsonFile = await zip.files["vocab-list.json"].async("blob");
@@ -77,8 +77,8 @@ async function importZipFile(file: File): Promise<VocabWord[]> {
   }
 }
 
-export async function importLocalFile(file: File): Promise<VocabWord[]> {
-  const ext = file.name.split(".").pop();
+export async function importLocalFile(file: File | Blob, fileUrl: string = ""): Promise<VocabWord[]> {
+  const ext = ((file as File).name || fileUrl).split(".").pop();
   if (ext === "json") {
     return importJsonFile(file);
   } else if (ext === "zip") {

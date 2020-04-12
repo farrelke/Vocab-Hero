@@ -14,7 +14,7 @@ type Props = {
   subPage: SubPage;
 };
 
-const ImportSection = ({
+const VocabListSection = ({
   title,
   description,
   list,
@@ -27,11 +27,11 @@ const ImportSection = ({
 }) => {
   return (
     <div className="ImportPage__section">
-      <div className="ImportPage__sectionTitle">{title}Import Hsk Vocabulary</div>
-      <div className="ImportPage__sectionDesc">{description}Hsk Vocabulary divided by level</div>
+      <div className="ImportPage__sectionTitle">{title}</div>
+      <div className="ImportPage__sectionDesc">{description}</div>
       <div className="ImportPage__hskButtons">
         {!list && <div className="ImportPage__loading">Fetching Decks...</div>}
-        {list.map(deck => (
+        {list && list.map(deck => (
           <div className="ImportPage__hskBtn" key={deck.name} onClick={() => onSelect(deck.downloadUrl)}>
             {deck.name}
           </div>
@@ -203,21 +203,21 @@ class ImportPage extends PureComponent<Props> {
 
         {subPage === SubPage.PreMade && (
           <>
-            <ImportSection
+            <VocabListSection
               title="Import Hsk Vocabulary"
               description="Hsk Vocabulary divided by level"
               list={hskWords}
               onSelect={this.previewDesk}
             />
 
-            <ImportSection
+            <VocabListSection
               title="Import Shanghainese lists"
-              description="Learn Shanghainese words (with audio)"
+              description="Learn some shanghainese words"
               list={shanghaineseDecks}
               onSelect={this.previewDesk}
             />
 
-            <ImportSection
+            <VocabListSection
               title="Import User made lists"
               description="Vocab lists submitted by users"
               list={vocabLists}
