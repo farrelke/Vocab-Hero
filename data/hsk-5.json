@@ -1,8 +1,8 @@
 [
 	{
 		"word": "唉",
-		"reading": "ai1",
-		"meaning": "interjection or grunt of agreement or recognition (e.g. yes, it's me!), to sigh",
+		"reading": "ai4",
+		"meaning": "alas, oh dear",
 		"freq": 832,
 		"hsk": 5
 	},
@@ -113,8 +113,8 @@
 	},
 	{
 		"word": "薄",
-		"reading": "Bo2",
-		"meaning": "surname Bo",
+		"reading": "bo4",
+		"meaning": "see 薄荷[bo4 he5]",
 		"freq": 338,
 		"hsk": 5
 	},
@@ -176,8 +176,8 @@
 	},
 	{
 		"word": "背",
-		"reading": "bei1",
-		"meaning": "to be burdened, to carry on the back or shoulder",
+		"reading": "bei4",
+		"meaning": "the back of a body or object, to turn one's back, to hide something from, to learn by heart, to recite from memory, unlucky (slang), hard of hearing",
 		"freq": 2023,
 		"hsk": 5
 	},
@@ -288,8 +288,8 @@
 	},
 	{
 		"word": "便",
-		"reading": "bian4",
-		"meaning": "plain, informal, suitable, convenient, opportune, to urinate or defecate, equivalent to 就[jiu4]: then, in that case, even if, soon afterwards",
+		"reading": "pian2",
+		"meaning": "see 便宜|便宜[pian2 yi5]",
 		"freq": 2380,
 		"hsk": 5
 	},
@@ -666,8 +666,8 @@
 	},
 	{
 		"word": "朝",
-		"reading": "Chao2",
-		"meaning": "abbr. for 朝鮮|朝鲜[Chao2 xian3] Korea",
+		"reading": "zhao1",
+		"meaning": "morning",
 		"freq": 2436,
 		"hsk": 5
 	},
@@ -729,8 +729,8 @@
 	},
 	{
 		"word": "称",
-		"reading": "chen4",
-		"meaning": "to fit, balanced, suitable",
+		"reading": "cheng4",
+		"meaning": "variant of 秤[cheng4], steelyard",
 		"freq": 1423,
 		"hsk": 5
 	},
@@ -876,8 +876,8 @@
 	},
 	{
 		"word": "冲",
-		"reading": "chong1",
-		"meaning": "thoroughfare, to go straight ahead, to rush, to clash",
+		"reading": "chong4",
+		"meaning": "powerful, vigorous, pungent, towards, in view of",
 		"freq": 3852,
 		"hsk": 5
 	},
@@ -939,8 +939,8 @@
 	},
 	{
 		"word": "臭",
-		"reading": "chou4",
-		"meaning": "stench, smelly, to smell (bad), repulsive, loathsome, terrible, bad, severely, ruthlessly, dud (ammunition)",
+		"reading": "xiu4",
+		"meaning": "sense of smell, smell bad",
 		"freq": 2499,
 		"hsk": 5
 	},
@@ -1247,8 +1247,8 @@
 	},
 	{
 		"word": "大方",
-		"reading": "da4 fang1",
-		"meaning": "expert, scholar, mother earth, a type of green tea",
+		"reading": "da4 fang5",
+		"meaning": "generous, magnanimous, stylish, in good taste, easy-mannered, natural and relaxed",
 		"freq": 150,
 		"hsk": 5
 	},
@@ -1394,8 +1394,8 @@
 	},
 	{
 		"word": "倒",
-		"reading": "dao3",
-		"meaning": "to fall, to collapse, to lie horizontally, to overthrow, to fail, to go bankrupt, to change (trains or buses), to move around, to resell at a profit",
+		"reading": "dao4",
+		"meaning": "to place upside down, to invert, to pour, to throw out, to move backwards, however, actually, as a matter of fact, contrary to expectation",
 		"freq": 6092,
 		"hsk": 5
 	},
@@ -1485,8 +1485,8 @@
 	},
 	{
 		"word": "地道",
-		"reading": "di4 dao4",
-		"meaning": "tunnel, causeway",
+		"reading": "di4 dao5",
+		"meaning": "authentic, genuine, typical, from a place known for the product, thorough, conscientious",
 		"freq": 253,
 		"hsk": 5
 	},
@@ -1562,8 +1562,8 @@
 	},
 	{
 		"word": "丁",
-		"reading": "Ding1",
-		"meaning": "surname Ding",
+		"reading": "ding1",
+		"meaning": "fourth of the ten Heavenly Stems 十天干[shi2 tian1 gan1], fourth in order, letter \"D\" or Roman \"IV\" in list \"A, B, C\", or \"I, II, III\" etc, ancient Chinese compass point: 195°, butyl, cubes (of food)",
 		"freq": 572,
 		"hsk": 5
 	},
@@ -1849,8 +1849,8 @@
 	},
 	{
 		"word": "方",
-		"reading": "Fang1",
-		"meaning": "surname Fang",
+		"reading": "fang1",
+		"meaning": "square, power or involution (math.), upright, honest, fair and square, direction, side, party (to a contract, dispute etc), place, method, prescription (medicine), just when, only or just, classifier for square things, abbr. for square or cubic meter",
 		"freq": 1698,
 		"hsk": 5
 	},
@@ -1898,8 +1898,8 @@
 	},
 	{
 		"word": "非",
-		"reading": "Fei1",
-		"meaning": "abbr. for 非洲[Fei1 zhou1], Africa",
+		"reading": "fei1",
+		"meaning": "to not be, not, wrong, incorrect, non-, un-, in-, to reproach or blame, (colloquial) to insist on, simply must",
 		"freq": 1948,
 		"hsk": 5
 	},
@@ -2115,8 +2115,8 @@
 	},
 	{
 		"word": "盖",
-		"reading": "Ge3",
-		"meaning": "surname Ge",
+		"reading": "gai4",
+		"meaning": "lid, top, cover, canopy, to cover, to conceal, to build",
 		"freq": 1227,
 		"hsk": 5
 	},
@@ -2304,8 +2304,8 @@
 	},
 	{
 		"word": "更",
-		"reading": "geng1",
-		"meaning": "to change or replace, to experience, one of the five two-hour periods into which the night was formerly divided, watch (e.g. of a sentry or guard)",
+		"reading": "geng4",
+		"meaning": "more, even more, further, still, still more",
 		"freq": 32253,
 		"hsk": 5
 	},
@@ -2493,8 +2493,8 @@
 	},
 	{
 		"word": "故事",
-		"reading": "gu4 shi4",
-		"meaning": "old practice, CL:個|个[ge4]",
+		"reading": "gu4 shi5",
+		"meaning": "narrative, story, tale",
 		"freq": 6551,
 		"hsk": 5
 	},
@@ -2535,8 +2535,8 @@
 	},
 	{
 		"word": "官",
-		"reading": "Guan1",
-		"meaning": "surname Guan",
+		"reading": "guan1",
+		"meaning": "government official, governmental, official, public, organ of the body, CL:個|个[ge4]",
 		"freq": 1764,
 		"hsk": 5
 	},
@@ -2577,8 +2577,8 @@
 	},
 	{
 		"word": "管子",
-		"reading": "Guan3 zi3",
-		"meaning": "Guanzi or Guan Zhong 管仲 (-645 BC), famous politician of Qi 齊國|齐国 of Spring and Autumn period, Guanzi, classical book containing writings of Guan Zhong and his school",
+		"reading": "guan3 zi5",
+		"meaning": "tube, pipe, drinking straw, CL:根[gen1]",
 		"freq": 362,
 		"hsk": 5
 	},
@@ -2724,8 +2724,8 @@
 	},
 	{
 		"word": "过",
-		"reading": "Guo4",
-		"meaning": "surname Guo",
+		"reading": "guo5",
+		"meaning": "(experienced action marker)",
 		"freq": 112388,
 		"hsk": 5
 	},
@@ -2752,8 +2752,8 @@
 	},
 	{
 		"word": "哈",
-		"reading": "Ha1",
-		"meaning": "abbr. for 哈薩克斯坦|哈萨克斯坦[Ha1 sa4 ke4 si1 tan3], Kazakhstan, abbr. for 哈爾濱|哈尔滨[Ha1 er3 bin1], Harbin",
+		"reading": "ha3",
+		"meaning": "a Pekinese, a pug, (dialect) to scold",
 		"freq": 5460,
 		"hsk": 5
 	},
@@ -2801,8 +2801,8 @@
 	},
 	{
 		"word": "和平",
-		"reading": "He2 ping2",
-		"meaning": "Heping district of Shenyang city 瀋陽市|沈阳市, Liaoning, Hoping township in Taichung county 臺中縣|台中县[Tai2 zhong1 xian4], Taiwan",
+		"reading": "he2 ping2",
+		"meaning": "peace, peaceful",
 		"freq": 1262,
 		"hsk": 5
 	},
@@ -2871,8 +2871,8 @@
 	},
 	{
 		"word": "横",
-		"reading": "heng2",
-		"meaning": "horizontal, across, (horizontal character stroke)",
+		"reading": "heng4",
+		"meaning": "harsh and unreasonable, unexpected",
 		"freq": 260,
 		"hsk": 5
 	},
@@ -3550,15 +3550,15 @@
 	},
 	{
 		"word": "结实",
-		"reading": "jie1 shi2",
-		"meaning": "to bear fruit",
+		"reading": "jie1 shi5",
+		"meaning": "rugged, sturdy, strong, durable, buff (physique)",
 		"freq": 200,
 		"hsk": 5
 	},
 	{
 		"word": "节",
-		"reading": "jie1",
-		"meaning": "see 節骨眼|节骨眼[jie1 gu5 yan3]",
+		"reading": "jie2",
+		"meaning": "festival, holiday, node, joint, section, segment, part, to economize, to save, to abridge, moral integrity, classifier for segments, e.g. lessons, train wagons, biblical verses, CL:個|个[ge4]",
 		"freq": 2019,
 		"hsk": 5
 	},
@@ -4145,8 +4145,8 @@
 	},
 	{
 		"word": "老板",
-		"reading": "Lao3 ban3",
-		"meaning": "Robam (brand)",
+		"reading": "lao3 ban3",
+		"meaning": "boss, business proprietor, CL:個|个[ge4]",
 		"freq": 3349,
 		"hsk": 5
 	},
@@ -4180,8 +4180,8 @@
 	},
 	{
 		"word": "雷",
-		"reading": "Lei2",
-		"meaning": "surname Lei",
+		"reading": "lei2",
+		"meaning": "thunder, mine (weapon), (Internet slang) terrifying, terrific",
 		"freq": 2873,
 		"hsk": 5
 	},
@@ -4418,8 +4418,8 @@
 	},
 	{
 		"word": "龙",
-		"reading": "Long2",
-		"meaning": "surname Long",
+		"reading": "long2",
+		"meaning": "dragon, CL:條|条[tiao2], imperial",
 		"freq": 1232,
 		"hsk": 5
 	},
@@ -4432,8 +4432,8 @@
 	},
 	{
 		"word": "露",
-		"reading": "Lu4",
-		"meaning": "surname Lu",
+		"reading": "lu4",
+		"meaning": "dew, syrup, nectar, outdoors (not under cover), to show, to reveal, to betray, to expose",
 		"freq": 1216,
 		"hsk": 5
 	},
@@ -4523,8 +4523,8 @@
 	},
 	{
 		"word": "毛",
-		"reading": "Mao2",
-		"meaning": "surname Mao",
+		"reading": "mao2",
+		"meaning": "hair, feather, down, wool, mildew, mold, coarse or semifinished, young, raw, careless, unthinking, nervous, scared, (of currency) to devalue or depreciate, classifier for Chinese fractional monetary unit ( = 角[jiao3] , = one-tenth of a yuan or 10 fen 分[fen1])",
 		"freq": 2068,
 		"hsk": 5
 	},
@@ -4747,8 +4747,8 @@
 	},
 	{
 		"word": "摸",
-		"reading": "mo1",
-		"meaning": "to feel with the hand, to touch, to stroke, to grope, to steal, to abstract",
+		"reading": "mo2",
+		"meaning": "variant of 摹[mo2]",
 		"freq": 1215,
 		"hsk": 5
 	},
@@ -5055,15 +5055,15 @@
 	},
 	{
 		"word": "匹",
-		"reading": "pi3",
-		"meaning": "variant of 匹[pi3], classifier for cloth: bolt",
+		"reading": "ya3",
+		"meaning": "variant of 雅[ya3]",
 		"freq": 1355,
 		"hsk": 5
 	},
 	{
 		"word": "片",
-		"reading": "pian1",
-		"meaning": "disk, sheet",
+		"reading": "pian4",
+		"meaning": "thin piece, flake, a slice, film, TV play, to slice, to carve thin, partial, incomplete, one-sided, classifier for slices, tablets, tract of land, area of water, classifier for CDs, movies, DVDs etc, used with numeral 一[yi1]: classifier for scenario, scene, feeling, atmosphere, sound etc",
 		"freq": 4597,
 		"hsk": 5
 	},
@@ -5104,8 +5104,8 @@
 	},
 	{
 		"word": "平",
-		"reading": "Ping2",
-		"meaning": "surname Ping",
+		"reading": "ping2",
+		"meaning": "flat, level, equal, to tie (make the same score), to draw (score), calm, peaceful, see also 平聲|平声[ping2 sheng1]",
 		"freq": 1120,
 		"hsk": 5
 	},
@@ -5279,8 +5279,8 @@
 	},
 	{
 		"word": "浅",
-		"reading": "jian1",
-		"meaning": "sound of moving water",
+		"reading": "qian3",
+		"meaning": "shallow, light (color)",
 		"freq": 300,
 		"hsk": 5
 	},
@@ -5314,8 +5314,8 @@
 	},
 	{
 		"word": "抢",
-		"reading": "qiang1",
-		"meaning": "see 搶風|抢风[qiang1 feng1]",
+		"reading": "qiang3",
+		"meaning": "to fight over, to rush, to scramble, to grab, to rob, to snatch",
 		"freq": 2228,
 		"hsk": 5
 	},
@@ -5342,8 +5342,8 @@
 	},
 	{
 		"word": "切",
-		"reading": "qie1",
-		"meaning": "to cut, to slice, tangent (math)",
+		"reading": "qie4",
+		"meaning": "definitely, absolutely (not), (scoffing or dismissive interjection) Yeah, right., Tut!, to grind, close to, eager, to correspond to, see also 反切[fan3 qie4]",
 		"freq": 1688,
 		"hsk": 5
 	},
@@ -5391,8 +5391,8 @@
 	},
 	{
 		"word": "青",
-		"reading": "Qing1",
-		"meaning": "abbr. for 青海[Qing1 hai3], Qinghai Province",
+		"reading": "qing1",
+		"meaning": "nature's color, green or blue, greenish black, youth, young (of people)",
 		"freq": 561,
 		"hsk": 5
 	},
@@ -5489,8 +5489,8 @@
 	},
 	{
 		"word": "圈",
-		"reading": "juan1",
-		"meaning": "to confine, to lock up, to pen in",
+		"reading": "quan1",
+		"meaning": "circle, ring, loop, classifier for loops, orbits, laps of race etc, CL:個|个[ge4], to surround, to circle",
 		"freq": 2168,
 		"hsk": 5
 	},
@@ -5993,8 +5993,8 @@
 	},
 	{
 		"word": "诗",
-		"reading": "Shi1",
-		"meaning": "abbr. for Shijing 詩經|诗经[Shi1 jing1], the Book of Songs",
+		"reading": "shi1",
+		"meaning": "poem, CL:首[shou3], poetry, verse",
 		"freq": 839,
 		"hsk": 5
 	},
@@ -6021,8 +6021,8 @@
 	},
 	{
 		"word": "时代",
-		"reading": "Shi2 dai4",
-		"meaning": "Time, US weekly news magazine",
+		"reading": "shi2 dai4",
+		"meaning": "age, era, epoch, period (in one's life), CL:個|个[ge4]",
 		"freq": 1544,
 		"hsk": 5
 	},
@@ -6525,8 +6525,8 @@
 	},
 	{
 		"word": "趟",
-		"reading": "tang1",
-		"meaning": "to wade, to trample, to turn the soil",
+		"reading": "tang4",
+		"meaning": "classifier for times, round trips or rows, a time, a trip",
 		"freq": 1519,
 		"hsk": 5
 	},
@@ -6777,8 +6777,8 @@
 	},
 	{
 		"word": "土地",
-		"reading": "tu3 di4",
-		"meaning": "land, soil, territory, CL:片[pian4],塊|块[kuai4]",
+		"reading": "tu3 di5",
+		"meaning": "local god, genius loci",
 		"freq": 1121,
 		"hsk": 5
 	},
@@ -6791,8 +6791,8 @@
 	},
 	{
 		"word": "吐",
-		"reading": "tu3",
-		"meaning": "to spit, to put, to say",
+		"reading": "tu4",
+		"meaning": "to vomit, to throw up",
 		"freq": 1911,
 		"hsk": 5
 	},
@@ -6854,8 +6854,8 @@
 	},
 	{
 		"word": "歪",
-		"reading": "wai1",
-		"meaning": "askew, at a crooked angle, devious, noxious, (coll.) to lie on one's side",
+		"reading": "wai3",
+		"meaning": "to sprain (one's ankle) (Tw)",
 		"freq": 440,
 		"hsk": 5
 	},
@@ -7057,8 +7057,8 @@
 	},
 	{
 		"word": "闻",
-		"reading": "Wen2",
-		"meaning": "surname Wen",
+		"reading": "wen2",
+		"meaning": "to hear, news, well-known, famous, reputation, fame, to smell, to sniff at",
 		"freq": 2337,
 		"hsk": 5
 	},
@@ -7183,8 +7183,8 @@
 	},
 	{
 		"word": "系",
-		"reading": "ji4",
-		"meaning": "to tie, to fasten, to button up",
+		"reading": "xi4",
+		"meaning": "to connect, to arrest, to worry",
 		"freq": 1010,
 		"hsk": 5
 	},
@@ -7218,8 +7218,8 @@
 	},
 	{
 		"word": "吓",
-		"reading": "he4",
-		"meaning": "to scare, to intimidate, to threaten, (interjection showing disapproval) tut-tut, (interjection showing astonishment)",
+		"reading": "xia4",
+		"meaning": "to frighten, to scare",
 		"freq": 3408,
 		"hsk": 5
 	},
@@ -7344,8 +7344,8 @@
 	},
 	{
 		"word": "项",
-		"reading": "Xiang4",
-		"meaning": "surname Xiang",
+		"reading": "xiang4",
+		"meaning": "back of neck, item, thing, term (in a mathematical formula), sum (of money), classifier for principles, items, clauses, tasks, research projects etc",
 		"freq": 2146,
 		"hsk": 5
 	},
@@ -7736,8 +7736,8 @@
 	},
 	{
 		"word": "延长",
-		"reading": "Yan2 chang2",
-		"meaning": "Yanchang county in Yan'an 延安[Yan2 an1], Shaanxi",
+		"reading": "yan2 chang2",
+		"meaning": "to prolong, to extend, to delay",
 		"freq": 193,
 		"hsk": 5
 	},
@@ -7785,8 +7785,8 @@
 	},
 	{
 		"word": "摇",
-		"reading": "Yao2",
-		"meaning": "surname Yao",
+		"reading": "yao2",
+		"meaning": "to shake, to rock, to row, to crank",
 		"freq": 693,
 		"hsk": 5
 	},
@@ -7904,8 +7904,8 @@
 	},
 	{
 		"word": "乙",
-		"reading": "yi3",
-		"meaning": "second of the ten Heavenly Stems 十天干[shi2 tian1 gan1], second in order, letter \"B\" or Roman \"II\" in list \"A, B, C\", or \"I, II, III\" etc, second party (in legal contract, usually 乙方[yi3 fang1], as opposed to 甲方[jia3 fang1]), ethyl, bent, winding, radical in Chinese characters (Kangxi radical 5), ancient Chinese compass point: 105°",
+		"reading": "zhe2",
+		"meaning": "turning stroke (in Chinese characters), see also 折[zhe2]",
 		"freq": 102,
 		"hsk": 5
 	},
@@ -8156,8 +8156,8 @@
 	},
 	{
 		"word": "与",
-		"reading": "yu2",
-		"meaning": "variant of 歟|欤[yu2]",
+		"reading": "yu4",
+		"meaning": "to take part in",
 		"freq": 13700,
 		"hsk": 5
 	},
@@ -8247,8 +8247,8 @@
 	},
 	{
 		"word": "晕",
-		"reading": "yun1",
-		"meaning": "confused, dizzy, giddy, to faint, to swoon, to lose consciousness, to pass out",
+		"reading": "yun4",
+		"meaning": "dizzy, halo, ring around moon or sun",
 		"freq": 980,
 		"hsk": 5
 	},
@@ -8380,8 +8380,8 @@
 	},
 	{
 		"word": "涨",
-		"reading": "zhang3",
-		"meaning": "to rise (of prices, rivers)",
+		"reading": "zhang4",
+		"meaning": "to swell, to distend",
 		"freq": 255,
 		"hsk": 5
 	},
@@ -8534,8 +8534,8 @@
 	},
 	{
 		"word": "正",
-		"reading": "zheng1",
-		"meaning": "first month of the lunar year",
+		"reading": "zheng4",
+		"meaning": "straight, upright, proper, main, principal, to correct, to rectify, exactly, just (at that time), right (in that place), (math.) positive",
 		"freq": 19536,
 		"hsk": 5
 	},
@@ -8583,8 +8583,8 @@
 	},
 	{
 		"word": "支",
-		"reading": "Zhi1",
-		"meaning": "surname Zhi",
+		"reading": "zhi1",
+		"meaning": "to support, to sustain, to erect, to raise, branch, division, to draw money, classifier for rods such as pens and guns, for army divisions and for songs or compositions",
 		"freq": 3321,
 		"hsk": 5
 	},
@@ -8597,8 +8597,8 @@
 	},
 	{
 		"word": "直",
-		"reading": "Zhi2",
-		"meaning": "surname Zhi, Zhi (c. 2000 BC), fifth of the legendary Flame Emperors 炎帝[Yan2 di4] descended from Shennong 神農|神农[Shen2 nong2] Farmer God",
+		"reading": "zhi2",
+		"meaning": "straight, to straighten, fair and reasonable, frank, straightforward, (indicates continuing motion or action), vertical, vertical downward stroke in Chinese characters",
 		"freq": 1762,
 		"hsk": 5
 	},
@@ -8723,8 +8723,8 @@
 	},
 	{
 		"word": "重",
-		"reading": "chong2",
-		"meaning": "to repeat, repetition, again, re-, classifier: layer",
+		"reading": "zhong4",
+		"meaning": "heavy, serious, to attach importance to",
 		"freq": 5079,
 		"hsk": 5
 	},
@@ -8912,8 +8912,8 @@
 	},
 	{
 		"word": "资源",
-		"reading": "Zi1 yuan2",
-		"meaning": "Ziyuan county in Guilin 桂林[Gui4 lin2], Guangxi",
+		"reading": "zi1 yuan2",
+		"meaning": "natural resource (such as water or minerals), resource (such as manpower or tourism)",
 		"freq": 502,
 		"hsk": 5
 	},

@@ -92,15 +92,15 @@
 	},
 	{
 		"word": "大",
-		"reading": "da4",
-		"meaning": "big, huge, large, major, great, wide, deep, older (than), oldest, eldest, greatly, very much, (dialect) father, father's elder or younger brother",
+		"reading": "dai4",
+		"meaning": "see 大夫[dai4 fu5]",
 		"freq": 45061,
 		"hsk": 1
 	},
 	{
 		"word": "的",
-		"reading": "de5",
-		"meaning": "of, ~'s (possessive particle), (used after an attribute), (used to form a nominal expression), (used at the end of a declarative sentence for emphasis)",
+		"reading": "di4",
+		"meaning": "aim, clear",
 		"freq": 1682530,
 		"hsk": 1
 	},
@@ -134,22 +134,22 @@
 	},
 	{
 		"word": "东西",
-		"reading": "dong1 xi1",
-		"meaning": "east and west",
+		"reading": "dong1 xi5",
+		"meaning": "thing, stuff, person, CL:個|个[ge4],件[jian4]",
 		"freq": 38127,
 		"hsk": 1
 	},
 	{
 		"word": "都",
-		"reading": "Du1",
-		"meaning": "surname Du",
+		"reading": "du1",
+		"meaning": "capital city, metropolis",
 		"freq": 177619,
 		"hsk": 1
 	},
 	{
 		"word": "读",
-		"reading": "dou4",
-		"meaning": "comma, phrase marked by pause",
+		"reading": "du2",
+		"meaning": "to read, to study, reading of word (i.e. pronunciation), similar to 拼音[pin1 yin1]",
 		"freq": 4661,
 		"hsk": 1
 	},
@@ -169,8 +169,8 @@
 	},
 	{
 		"word": "多少",
-		"reading": "duo1 shao3",
-		"meaning": "number, amount, somewhat",
+		"reading": "duo1 shao5",
+		"meaning": "how much?, how many?, (phone number, student ID etc) what number?",
 		"freq": 9965,
 		"hsk": 1
 	},
@@ -246,15 +246,15 @@
 	},
 	{
 		"word": "好",
-		"reading": "hao3",
-		"meaning": "good, well, proper, good to, easy to, very, so, (suffix indicating completion or readiness), (of two people) close, on intimate terms, (after a personal pronoun) hello",
+		"reading": "hao4",
+		"meaning": "to be fond of, to have a tendency to, to be prone to",
 		"freq": 334698,
 		"hsk": 1
 	},
 	{
 		"word": "喝",
-		"reading": "he1",
-		"meaning": "to drink, My goodness!",
+		"reading": "he4",
+		"meaning": "to shout loudly",
 		"freq": 14004,
 		"hsk": 1
 	},
@@ -288,8 +288,8 @@
 	},
 	{
 		"word": "会",
-		"reading": "hui4",
-		"meaning": "can, to be possible, to be able to, will, to be likely to, to be sure to, to assemble, to meet, to gather, to see, union, group, association, CL:個|个[ge4], a moment (Taiwan pr. for this sense is [hui3])",
+		"reading": "kuai4",
+		"meaning": "to balance an account, accountancy, accounting",
 		"freq": 265929,
 		"hsk": 1
 	},
@@ -302,15 +302,15 @@
 	},
 	{
 		"word": "几",
-		"reading": "ji1",
-		"meaning": "almost",
+		"reading": "ji3",
+		"meaning": "how much, how many, several, a few",
 		"freq": 22431,
 		"hsk": 1
 	},
 	{
 		"word": "家",
-		"reading": "Jia1",
-		"meaning": "surname Jia",
+		"reading": "jia1",
+		"meaning": "home, family, (polite) my (sister, uncle etc), classifier for families or businesses, refers to the philosophical schools of pre-Han China, noun suffix for a specialist in some activity, such as a musician or revolutionary, corresponding to English -ist, -er, -ary or -ian, CL:個|个[ge4]",
 		"freq": 27026,
 		"hsk": 1
 	},
@@ -344,8 +344,8 @@
 	},
 	{
 		"word": "看",
-		"reading": "kan1",
-		"meaning": "to look after, to take care of, to watch, to guard",
+		"reading": "kan4",
+		"meaning": "to see, to look at, to read, to watch, to visit, to call on, to consider, to regard as, to look after, to treat (an illness), to depend on, to feel (that), (after verb) to give it a try, Watch out! (for a danger)",
 		"freq": 102546,
 		"hsk": 3
 	},
@@ -379,22 +379,22 @@
 	},
 	{
 		"word": "了",
-		"reading": "liao3",
-		"meaning": "(of eyes) bright, clear-sighted, to understand clearly",
+		"reading": "liao4",
+		"meaning": "to watch from a height or distance, to survey",
 		"freq": 946365,
 		"hsk": 1
 	},
 	{
 		"word": "冷",
-		"reading": "Leng3",
-		"meaning": "surname Leng",
+		"reading": "leng3",
+		"meaning": "cold",
 		"freq": 2343,
 		"hsk": 1
 	},
 	{
 		"word": "里",
-		"reading": "Li3",
-		"meaning": "Li (surname)",
+		"reading": "li3",
+		"meaning": "li, ancient measure of length, approx. 500 m, neighborhood, ancient administrative unit of 25 families, (Tw) borough, administrative unit between the township 鎮|镇[zhen4] and neighborhood 鄰|邻[lin2] levels",
 		"freq": 63276,
 		"hsk": 1
 	},
@@ -421,8 +421,8 @@
 	},
 	{
 		"word": "吗",
-		"reading": "ma3",
-		"meaning": "see 嗎啡|吗啡, morphine",
+		"reading": "ma5",
+		"meaning": "(question particle for \"yes-no\" questions)",
 		"freq": 249187,
 		"hsk": 1
 	},
@@ -442,8 +442,8 @@
 	},
 	{
 		"word": "没",
-		"reading": "mei2",
-		"meaning": "(negative prefix for verbs), have not, not",
+		"reading": "mo4",
+		"meaning": "drowned, to end, to die, to inundate",
 		"freq": 159508,
 		"hsk": 1
 	},
@@ -477,8 +477,8 @@
 	},
 	{
 		"word": "哪",
-		"reading": "na3",
-		"meaning": "how, which",
+		"reading": "nei3",
+		"meaning": "which? (interrogative, followed by classifier or numeral-classifier)",
 		"freq": 26385,
 		"hsk": 1
 	},
@@ -491,8 +491,8 @@
 	},
 	{
 		"word": "那",
-		"reading": "Na1",
-		"meaning": "surname Na",
+		"reading": "nuo2",
+		"meaning": "(archaic) many, beautiful, how, old variant of 挪[nuo2]",
 		"freq": 190087,
 		"hsk": 1
 	},
@@ -505,15 +505,15 @@
 	},
 	{
 		"word": "呢",
-		"reading": "ne5",
-		"meaning": "particle indicating that a previously asked question is to be applied to the preceding word (\"What about ...?\", \"And ...?\"), particle for inquiring about location (\"Where is ...?\"), particle signaling a pause, to emphasize the preceding words and allow the listener time to take them on board (\"ok?\", \"are you with me?\"), (at the end of a declarative sentence) particle indicating continuation of a state or action, particle indicating strong affirmation",
+		"reading": "ni2",
+		"meaning": "woolen material",
 		"freq": 76752,
 		"hsk": 1
 	},
 	{
 		"word": "能",
-		"reading": "Neng2",
-		"meaning": "surname Neng",
+		"reading": "neng2",
+		"meaning": "can, to be able to, might possibly, ability, (physics) energy",
 		"freq": 166656,
 		"hsk": 1
 	},
@@ -568,8 +568,8 @@
 	},
 	{
 		"word": "钱",
-		"reading": "Qian2",
-		"meaning": "surname Qian",
+		"reading": "qian2",
+		"meaning": "coin, money, CL:筆|笔[bi3], unit of weight, one tenth of a tael 兩|两[liang3]",
 		"freq": 29221,
 		"hsk": 1
 	},
@@ -617,15 +617,15 @@
 	},
 	{
 		"word": "日",
-		"reading": "Ri4",
-		"meaning": "abbr. for 日本[Ri4 ben3], Japan",
+		"reading": "ri4",
+		"meaning": "sun, day, date, day of the month",
 		"freq": 4114,
 		"hsk": 1
 	},
 	{
 		"word": "三",
-		"reading": "San1",
-		"meaning": "surname San",
+		"reading": "san1",
+		"meaning": "three, 3",
 		"freq": 16916,
 		"hsk": 1
 	},
@@ -638,8 +638,8 @@
 	},
 	{
 		"word": "上",
-		"reading": "shang3",
-		"meaning": "see 上聲|上声[shang3 sheng1]",
+		"reading": "shang4",
+		"meaning": "on top, upon, above, upper, previous, first (of multiple parts), to climb, to get onto, to go up, to attend (class or university)",
 		"freq": 114371,
 		"hsk": 1
 	},
@@ -652,8 +652,8 @@
 	},
 	{
 		"word": "少",
-		"reading": "shao3",
-		"meaning": "few, less, to lack, to be missing, to stop (doing sth), seldom",
+		"reading": "shao4",
+		"meaning": "young",
 		"freq": 5325,
 		"hsk": 1
 	},
@@ -694,15 +694,15 @@
 	},
 	{
 		"word": "书",
-		"reading": "Shu1",
-		"meaning": "abbr. for 書經|书经[Shu1 jing1]",
+		"reading": "shu1",
+		"meaning": "book, letter, document, CL:本[ben3],冊|册[ce4],部[bu4], to write",
 		"freq": 7152,
 		"hsk": 1
 	},
 	{
 		"word": "水",
-		"reading": "Shui3",
-		"meaning": "surname Shui",
+		"reading": "shui3",
+		"meaning": "water, river, liquid, beverage, additional charges or income, (of clothes) classifier for number of washes",
 		"freq": 7581,
 		"hsk": 1
 	},
@@ -771,8 +771,8 @@
 	},
 	{
 		"word": "听",
-		"reading": "ting1",
-		"meaning": "to listen, to hear, to obey, a can (loanword from English \"tin\"), classifier for canned beverages",
+		"reading": "ting4",
+		"meaning": "(literary pronunciation, still advocated in Taiwan) to rule, to sentence, to allow",
 		"freq": 54888,
 		"hsk": 1
 	},
@@ -841,8 +841,8 @@
 	},
 	{
 		"word": "先生",
-		"reading": "Xian1 sheng5",
-		"meaning": "Mister (Mr.)",
+		"reading": "xian1 sheng5",
+		"meaning": "teacher, husband, doctor (dialect), CL:位[wei4]",
 		"freq": 46864,
 		"hsk": 1
 	},
@@ -1065,8 +1065,8 @@
 	},
 	{
 		"word": "坐",
-		"reading": "Zuo4",
-		"meaning": "surname Zuo",
+		"reading": "zuo4",
+		"meaning": "to sit, to take a seat, to take (a bus, airplane etc), to bear fruit, variant of 座[zuo4]",
 		"freq": 14204,
 		"hsk": 1
 	}

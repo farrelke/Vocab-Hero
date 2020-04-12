@@ -8,8 +8,8 @@
 	},
 	{
 		"word": "啊",
-		"reading": "a1",
-		"meaning": "interjection of surprise, Ah!, Oh!",
+		"reading": "a5",
+		"meaning": "modal particle ending sentence, showing affirmation, approval, or consent",
 		"freq": 130963,
 		"hsk": 3
 	},
@@ -36,15 +36,15 @@
 	},
 	{
 		"word": "把",
-		"reading": "ba3",
-		"meaning": "to hold, to contain, to grasp, to take hold of, handle, particle marking the following noun as a direct object, classifier for objects with handle, classifier for small objects: handful",
+		"reading": "ba4",
+		"meaning": "handle",
 		"freq": 124534,
 		"hsk": 3
 	},
 	{
 		"word": "班",
-		"reading": "Ban1",
-		"meaning": "surname Ban",
+		"reading": "ban1",
+		"meaning": "team, class, squad, work shift, ranking, CL:個|个[ge4], classifier for groups",
 		"freq": 2235,
 		"hsk": 3
 	},
@@ -85,8 +85,8 @@
 	},
 	{
 		"word": "包",
-		"reading": "Bao1",
-		"meaning": "surname Bao",
+		"reading": "bao1",
+		"meaning": "to cover, to wrap, to hold, to include, to take charge of, to contract (to or for), package, wrapper, container, bag, to hold or embrace, bundle, packet, CL:個|个[ge4],隻|只[zhi1]",
 		"freq": 3748,
 		"hsk": 3
 	},
@@ -204,8 +204,8 @@
 	},
 	{
 		"word": "草",
-		"reading": "cao3",
-		"meaning": "grass, straw, manuscript, draft (of a document), careless, rough, CL:棵[ke1],撮[zuo3],株[zhu1],根[gen1]",
+		"reading": "cao4",
+		"meaning": "variant of 肏[cao4]",
 		"freq": 743,
 		"hsk": 3
 	},
@@ -218,8 +218,8 @@
 	},
 	{
 		"word": "差",
-		"reading": "cha1",
-		"meaning": "difference, discrepancy, to differ, error, to err, to make a mistake",
+		"reading": "chai1",
+		"meaning": "to send, to commission, messenger, mission",
 		"freq": 3016,
 		"hsk": 3
 	},
@@ -281,8 +281,8 @@
 	},
 	{
 		"word": "春",
-		"reading": "Chun1",
-		"meaning": "surname Chun",
+		"reading": "chun1",
+		"meaning": "spring (season), gay, joyful, youthful, love, lust, life",
 		"freq": 241,
 		"hsk": 3
 	},
@@ -344,8 +344,8 @@
 	},
 	{
 		"word": "地",
-		"reading": "de5",
-		"meaning": "-ly, structural particle: used before a verb or adjective, linking it to preceding modifying adverbial adjunct",
+		"reading": "di4",
+		"meaning": "earth, ground, field, place, land, CL:片[pian4]",
 		"freq": 18009,
 		"hsk": 3
 	},
@@ -365,8 +365,8 @@
 	},
 	{
 		"word": "地方",
-		"reading": "di4 fang1",
-		"meaning": "region, regional (away from the central administration), local",
+		"reading": "di4 fang5",
+		"meaning": "area, place, space, room, territory, CL:處|处[chu4],個|个[ge4],塊|块[kuai4]",
 		"freq": 23358,
 		"hsk": 6
 	},
@@ -400,15 +400,15 @@
 	},
 	{
 		"word": "东",
-		"reading": "Dong1",
-		"meaning": "surname Dong",
+		"reading": "dong1",
+		"meaning": "east, host (i.e. sitting on east side of guest), landlord",
 		"freq": 1347,
 		"hsk": 3
 	},
 	{
 		"word": "冬",
-		"reading": "Dong1",
-		"meaning": "surname Dong",
+		"reading": "dong1",
+		"meaning": "(onom.) beating a drum, rat-a-tat",
 		"freq": 161,
 		"hsk": 3
 	},
@@ -428,8 +428,8 @@
 	},
 	{
 		"word": "段",
-		"reading": "Duan4",
-		"meaning": "surname Duan",
+		"reading": "duan4",
+		"meaning": "paragraph, section, segment, stage (of a process), classifier for stories, periods of time, lengths of thread etc",
 		"freq": 6430,
 		"hsk": 3
 	},
@@ -505,8 +505,8 @@
 	},
 	{
 		"word": "分",
-		"reading": "fen1",
-		"meaning": "to divide, to separate, to distribute, to allocate, to distinguish (good and bad), part or subdivision, fraction, one tenth (of certain units), unit of length equivalent to 0.33 cm, minute (unit of time), minute (angular measurement unit), a point (in sports or games), 0.01 yuan (unit of money)",
+		"reading": "fen4",
+		"meaning": "part, share, ingredient, component",
 		"freq": 5455,
 		"hsk": 3
 	},
@@ -568,8 +568,8 @@
 	},
 	{
 		"word": "更",
-		"reading": "geng1",
-		"meaning": "to change or replace, to experience, one of the five two-hour periods into which the night was formerly divided, watch (e.g. of a sentry or guard)",
+		"reading": "geng4",
+		"meaning": "more, even more, further, still, still more",
 		"freq": 32253,
 		"hsk": 5
 	},
@@ -582,8 +582,8 @@
 	},
 	{
 		"word": "故事",
-		"reading": "gu4 shi4",
-		"meaning": "old practice, CL:個|个[ge4]",
+		"reading": "gu4 shi5",
+		"meaning": "narrative, story, tale",
 		"freq": 6551,
 		"hsk": 5
 	},
@@ -596,8 +596,8 @@
 	},
 	{
 		"word": "关",
-		"reading": "Guan1",
-		"meaning": "surname Guan",
+		"reading": "guan1",
+		"meaning": "mountain pass, to close, to shut, to turn off, to concern, to involve",
 		"freq": 5998,
 		"hsk": 3
 	},
@@ -638,8 +638,8 @@
 	},
 	{
 		"word": "过去",
-		"reading": "guo4 qu4",
-		"meaning": "(in the) past, former, previous, to go over, to pass by",
+		"reading": "guo4 qu5",
+		"meaning": "(verb suffix)",
 		"freq": 13485,
 		"hsk": 3
 	},
@@ -708,8 +708,8 @@
 	},
 	{
 		"word": "还",
-		"reading": "Huan2",
-		"meaning": "surname Huan",
+		"reading": "huan2",
+		"meaning": "to pay back, to return",
 		"freq": 130326,
 		"hsk": 3
 	},
@@ -729,8 +729,8 @@
 	},
 	{
 		"word": "黄",
-		"reading": "Huang2",
-		"meaning": "surname Huang or Hwang",
+		"reading": "huang2",
+		"meaning": "yellow, pornographic, to fall through",
 		"freq": 979,
 		"hsk": 3
 	},
@@ -820,22 +820,22 @@
 	},
 	{
 		"word": "教",
-		"reading": "Jiao4",
-		"meaning": "surname Jiao",
+		"reading": "jiao4",
+		"meaning": "religion, teaching, to make, to cause, to tell",
 		"freq": 5127,
 		"hsk": 3
 	},
 	{
 		"word": "脚",
-		"reading": "jiao3",
-		"meaning": "foot, leg (of an animal or an object), base (of an object), CL:雙|双[shuang1],隻|只[zhi1], classifier for kicks",
+		"reading": "jue2",
+		"meaning": "variant of 角[jue2], role",
 		"freq": 3836,
 		"hsk": 3
 	},
 	{
 		"word": "角",
-		"reading": "Jue2",
-		"meaning": "surname Jue",
+		"reading": "jue2",
+		"meaning": "role (theater), to compete, ancient three legged wine vessel, third note of pentatonic scale",
 		"freq": 1355,
 		"hsk": 3
 	},
@@ -891,7 +891,7 @@
 	{
 		"word": "借",
 		"reading": "jie4",
-		"meaning": "variant of 借[jie4]",
+		"meaning": "sleeping mat, to placate",
 		"freq": 3185,
 		"hsk": 3
 	},
@@ -953,8 +953,8 @@
 	},
 	{
 		"word": "看",
-		"reading": "kan1",
-		"meaning": "to look after, to take care of, to watch, to guard",
+		"reading": "kan4",
+		"meaning": "to see, to look at, to read, to watch, to visit, to call on, to consider, to regard as, to look after, to treat (an illness), to depend on, to feel (that), (after verb) to give it a try, Watch out! (for a danger)",
 		"freq": 102546,
 		"hsk": 3
 	},
@@ -1023,8 +1023,8 @@
 	},
 	{
 		"word": "蓝",
-		"reading": "Lan2",
-		"meaning": "surname Lan",
+		"reading": "lan2",
+		"meaning": "blue, indigo plant",
 		"freq": 1610,
 		"hsk": 3
 	},
@@ -1093,8 +1093,8 @@
 	},
 	{
 		"word": "楼",
-		"reading": "Lou2",
-		"meaning": "surname Lou",
+		"reading": "lou2",
+		"meaning": "house with more than 1 story, storied building, floor, CL:層|层[ceng2],座[zuo4],棟|栋[dong4]",
 		"freq": 3580,
 		"hsk": 3
 	},
@@ -1107,8 +1107,8 @@
 	},
 	{
 		"word": "马",
-		"reading": "Ma3",
-		"meaning": "surname Ma, abbr. for Malaysia 馬來西亞|马来西亚[Ma3 lai2 xi1 ya4]",
+		"reading": "ma3",
+		"meaning": "horse, CL:匹[pi3], horse or cavalry piece in Chinese chess, knight in Western chess",
 		"freq": 6796,
 		"hsk": 3
 	},
@@ -1135,8 +1135,8 @@
 	},
 	{
 		"word": "米",
-		"reading": "Mi3",
-		"meaning": "surname Mi",
+		"reading": "mi3",
+		"meaning": "rice, CL:粒[li4], meter (classifier)",
 		"freq": 3034,
 		"hsk": 3
 	},
@@ -1177,15 +1177,15 @@
 	},
 	{
 		"word": "南",
-		"reading": "Nan2",
-		"meaning": "surname Nan",
+		"reading": "nan2",
+		"meaning": "south",
 		"freq": 1094,
 		"hsk": 3
 	},
 	{
 		"word": "难",
-		"reading": "nan2",
-		"meaning": "difficult (to...), problem, difficulty, difficult, not good",
+		"reading": "nan4",
+		"meaning": "disaster, distress, to scold",
 		"freq": 10254,
 		"hsk": 3
 	},
@@ -1212,8 +1212,8 @@
 	},
 	{
 		"word": "鸟",
-		"reading": "diao3",
-		"meaning": "variant of 屌[diao3], penis",
+		"reading": "niao3",
+		"meaning": "bird, CL:隻|只[zhi1],群[qun2], (dialect) to pay attention to, (intensifier) damned, goddam",
 		"freq": 2172,
 		"hsk": 3
 	},
@@ -1240,8 +1240,8 @@
 	},
 	{
 		"word": "胖",
-		"reading": "pan2",
-		"meaning": "healthy, at ease",
+		"reading": "pang4",
+		"meaning": "fat, plump",
 		"freq": 1209,
 		"hsk": 3
 	},
@@ -1282,8 +1282,8 @@
 	},
 	{
 		"word": "骑",
-		"reading": "ji4",
-		"meaning": "(Taiwan) saddle horse, mounted soldier",
+		"reading": "qi2",
+		"meaning": "to ride (an animal or bike), to sit astride, classifier for saddle-horses",
 		"freq": 1423,
 		"hsk": 3
 	},
@@ -1450,8 +1450,8 @@
 	},
 	{
 		"word": "双",
-		"reading": "Shuang1",
-		"meaning": "surname Shuang",
+		"reading": "shuang1",
+		"meaning": "two, double, pair, both, even (number)",
 		"freq": 3384,
 		"hsk": 3
 	},
@@ -1590,8 +1590,8 @@
 	},
 	{
 		"word": "万",
-		"reading": "Wan4",
-		"meaning": "surname Wan",
+		"reading": "wan4",
+		"meaning": "ten thousand, a great number",
 		"freq": 6031,
 		"hsk": 3
 	},
@@ -1604,8 +1604,8 @@
 	},
 	{
 		"word": "为",
-		"reading": "wei2",
-		"meaning": "variant of 為|为[wei2], as (i.e. in the capacity of), to take sth as, to act as, to serve as, to behave as, to become, to be, to do",
+		"reading": "wei4",
+		"meaning": "variant of 為|为[wei4], because of, for, to",
 		"freq": 45565,
 		"hsk": 3
 	},
@@ -1632,8 +1632,8 @@
 	},
 	{
 		"word": "西",
-		"reading": "Xi1",
-		"meaning": "the West, abbr. for Spain 西班牙[Xi1 ban1 ya2], Spanish",
+		"reading": "xi1",
+		"meaning": "west",
 		"freq": 2606,
 		"hsk": 3
 	},
@@ -1660,8 +1660,8 @@
 	},
 	{
 		"word": "夏",
-		"reading": "Xia4",
-		"meaning": "the Xia or Hsia dynasty c. 2000 BC, Xia of the Sixteen Kingdoms (407-432), surname Xia",
+		"reading": "xia4",
+		"meaning": "summer",
 		"freq": 359,
 		"hsk": 3
 	},
@@ -1793,8 +1793,8 @@
 	},
 	{
 		"word": "要",
-		"reading": "yao1",
-		"meaning": "to demand, to request, to coerce",
+		"reading": "yao4",
+		"meaning": "important, vital, to want, to ask for, will, going to (as future auxiliary), may, must, (used in a comparison) must be, probably, if",
 		"freq": 238656,
 		"hsk": 3
 	},
@@ -1954,15 +1954,15 @@
 	},
 	{
 		"word": "越",
-		"reading": "Yue4",
-		"meaning": "generic word for peoples or states of south China or south Asia at different historical periods, abbr. for Vietnam 越南",
+		"reading": "yue4",
+		"meaning": "to exceed, to climb over, to surpass, the more... the more",
 		"freq": 4457,
 		"hsk": 3
 	},
 	{
 		"word": "云",
-		"reading": "Yun2",
-		"meaning": "surname Yun, abbr. for Yunnan Province 雲南省|云南省[Yun2 nan2 Sheng3]",
+		"reading": "yun2",
+		"meaning": "cloud, CL:朵[duo3]",
 		"freq": 363,
 		"hsk": 3
 	},
@@ -1975,8 +1975,8 @@
 	},
 	{
 		"word": "长",
-		"reading": "chang2",
-		"meaning": "length, long, forever, always, constantly",
+		"reading": "zhang3",
+		"meaning": "chief, head, elder, to grow, to develop, to increase, to enhance",
 		"freq": 12173,
 		"hsk": 3
 	},
@@ -2031,8 +2031,8 @@
 	},
 	{
 		"word": "种",
-		"reading": "zhong3",
-		"meaning": "seed, species, kind, type, classifier for types, kinds, sorts",
+		"reading": "zhong4",
+		"meaning": "to plant, to grow, to cultivate",
 		"freq": 15716,
 		"hsk": 3
 	},
@@ -2059,8 +2059,8 @@
 	},
 	{
 		"word": "祝",
-		"reading": "Zhu4",
-		"meaning": "surname Zhu",
+		"reading": "zhu4",
+		"meaning": "to wish, to express good wishes, to pray, (old) wizard",
 		"freq": 4136,
 		"hsk": 3
 	},

@@ -8,8 +8,8 @@
 	},
 	{
 		"word": "挨",
-		"reading": "ai1",
-		"meaning": "in order, in sequence, close to, adjacent to",
+		"reading": "ai2",
+		"meaning": "to suffer, to endure, to pull through (hard times), to delay, to stall, to play for time, to dawdle",
 		"freq": 365,
 		"hsk": 6
 	},
@@ -50,8 +50,8 @@
 	},
 	{
 		"word": "安宁",
-		"reading": "An1 ning2",
-		"meaning": "Anning District of Lanzhou City 蘭州市|兰州市[Lan2 zhou1 Shi4], Gansu, Anning City, to the west of Kunming 昆明[Kun1 ming2], Yunnan",
+		"reading": "an1 ning2",
+		"meaning": "peaceful, tranquil, calm, composed, free from worry",
 		"freq": 243,
 		"hsk": 6
 	},
@@ -113,8 +113,8 @@
 	},
 	{
 		"word": "熬",
-		"reading": "ao1",
-		"meaning": "to boil, to simmer",
+		"reading": "ao2",
+		"meaning": "to cook on a slow fire, to extract by heating, to decoct, to endure",
 		"freq": 692,
 		"hsk": 6
 	},
@@ -127,8 +127,8 @@
 	},
 	{
 		"word": "扒",
-		"reading": "ba1",
-		"meaning": "to peel, to skin, to tear, to pull down, to cling to (sth on which one is climbing), to dig",
+		"reading": "pa2",
+		"meaning": "to rake up, to steal, to braise, to crawl",
 		"freq": 172,
 		"hsk": 6
 	},
@@ -169,8 +169,8 @@
 	},
 	{
 		"word": "把手",
-		"reading": "ba3 shou3",
-		"meaning": "to shake hands",
+		"reading": "ba3 shou5",
+		"meaning": "handle, grip, knob",
 		"freq": 146,
 		"hsk": 6
 	},
@@ -603,8 +603,8 @@
 	},
 	{
 		"word": "奔驰",
-		"reading": "Ben1 chi2",
-		"meaning": "Benz (name), Mercedes-Benz, German car maker",
+		"reading": "ben1 chi2",
+		"meaning": "to run quickly, to speed, to gallop",
 		"freq": 155,
 		"hsk": 6
 	},
@@ -638,8 +638,8 @@
 	},
 	{
 		"word": "本事",
-		"reading": "ben3 shi4",
-		"meaning": "source material, original story",
+		"reading": "ben3 shi5",
+		"meaning": "ability, skill",
 		"freq": 509,
 		"hsk": 6
 	},
@@ -666,8 +666,8 @@
 	},
 	{
 		"word": "甭",
-		"reading": "beng2",
-		"meaning": "contraction of 不用, need not, please don't",
+		"reading": "beng4",
+		"meaning": "(dialect) very",
 		"freq": 86,
 		"hsk": 6
 	},
@@ -806,8 +806,8 @@
 	},
 	{
 		"word": "扁",
-		"reading": "Pian1",
-		"meaning": "surname Pian",
+		"reading": "pian1",
+		"meaning": "small boat",
 		"freq": 549,
 		"hsk": 6
 	},
@@ -1863,8 +1863,8 @@
 	},
 	{
 		"word": "盛",
-		"reading": "Sheng4",
-		"meaning": "surname Sheng",
+		"reading": "sheng4",
+		"meaning": "flourishing, vigorous, magnificent, extensively",
 		"freq": 107,
 		"hsk": 6
 	},
@@ -1919,8 +1919,8 @@
 	},
 	{
 		"word": "澄清",
-		"reading": "cheng2 qing1",
-		"meaning": "clear (of liquid), limpid, to clarify, to make sth clear, to be clear (about the facts)",
+		"reading": "deng4 qing1",
+		"meaning": "to settle (of liquid), to become clear (by precipitation of impurities), precipitate (chemistry), to put in order, to quell disturbances",
 		"freq": 229,
 		"hsk": 6
 	},
@@ -1975,8 +1975,8 @@
 	},
 	{
 		"word": "秤",
-		"reading": "cheng1",
-		"meaning": "variant of 稱|称[cheng1], to weigh",
+		"reading": "cheng4",
+		"meaning": "steelyard, Roman balance, CL:臺|台[tai2]",
 		"freq": 44,
 		"hsk": 6
 	},
@@ -2192,8 +2192,8 @@
 	},
 	{
 		"word": "出息",
-		"reading": "chu1 xi1",
-		"meaning": "to yield interest, profit etc, to exhale (Buddhism)",
+		"reading": "chu1 xi5",
+		"meaning": "future prospects, profit, to mature, to grow up",
 		"freq": 50,
 		"hsk": 6
 	},
@@ -2409,8 +2409,8 @@
 	},
 	{
 		"word": "刺",
-		"reading": "ci1",
-		"meaning": "(onom.) whoosh",
+		"reading": "ci4",
+		"meaning": "thorn, sting, thrust, to prick, to pierce, to stab, to assassinate, to murder",
 		"freq": 1449,
 		"hsk": 6
 	},
@@ -2640,8 +2640,8 @@
 	},
 	{
 		"word": "大意",
-		"reading": "da4 yi4",
-		"meaning": "general idea, main idea",
+		"reading": "da4 yi5",
+		"meaning": "careless",
 		"freq": 85,
 		"hsk": 6
 	},
@@ -2738,8 +2738,8 @@
 	},
 	{
 		"word": "淡水",
-		"reading": "Dan4 shui3",
-		"meaning": "Danshui or Tanshui town in New Taipei City 新北市[Xin1 bei3 shi4], Taiwan",
+		"reading": "dan4 shui3",
+		"meaning": "potable water (water with low salt content), fresh water",
 		"freq": 35,
 		"hsk": 6
 	},
@@ -2801,8 +2801,8 @@
 	},
 	{
 		"word": "党",
-		"reading": "Dang3",
-		"meaning": "surname Dang",
+		"reading": "dang3",
+		"meaning": "party, association, club, society, CL:個|个[ge4]",
 		"freq": 603,
 		"hsk": 6
 	},
@@ -2899,8 +2899,8 @@
 	},
 	{
 		"word": "得罪",
-		"reading": "de2 zui4",
-		"meaning": "to commit an offense, to violate the law, excuse me! (formal), see also 得罪[de2 zui5]",
+		"reading": "de2 zui5",
+		"meaning": "to offend sb, to make a faux pas, a faux pas, see also 得罪[de2 zui4]",
 		"freq": 152,
 		"hsk": 6
 	},
@@ -2990,8 +2990,8 @@
 	},
 	{
 		"word": "地方",
-		"reading": "di4 fang1",
-		"meaning": "region, regional (away from the central administration), local",
+		"reading": "di4 fang5",
+		"meaning": "area, place, space, room, territory, CL:處|处[chu4],個|个[ge4],塊|块[kuai4]",
 		"freq": 23358,
 		"hsk": 6
 	},
@@ -3508,8 +3508,8 @@
 	},
 	{
 		"word": "恶心",
-		"reading": "e3 xin1",
-		"meaning": "nausea, to feel sick, disgust, nauseating, to embarrass (deliberately)",
+		"reading": "e4 xin1",
+		"meaning": "bad habit, vicious habit, vice",
 		"freq": 2846,
 		"hsk": 6
 	},
@@ -3648,8 +3648,8 @@
 	},
 	{
 		"word": "番",
-		"reading": "Pan1",
-		"meaning": "surname Pan",
+		"reading": "fan1",
+		"meaning": "foreign (non-Chinese), barbarian, classifier for occurrences (of an event, action or speech utterance), classifier for iterations: times, -fold (as in twofold etc), classifier for situations: kind, sort",
 		"freq": 269,
 		"hsk": 6
 	},
@@ -3795,8 +3795,8 @@
 	},
 	{
 		"word": "方言",
-		"reading": "Fang1 yan2",
-		"meaning": "the first Chinese dialect dictionary, edited by Yang Xiong 揚雄|扬雄[Yang2 Xiong2] in 1st century, containing over 9000 characters",
+		"reading": "fang1 yan2",
+		"meaning": "topolect, dialect",
 		"freq": 55,
 		"hsk": 6
 	},
@@ -4047,8 +4047,8 @@
 	},
 	{
 		"word": "分量",
-		"reading": "fen1 liang4",
-		"meaning": "(vector) component",
+		"reading": "fen4 liang5",
+		"meaning": "quantity, weight, measure",
 		"freq": 83,
 		"hsk": 6
 	},
@@ -4096,8 +4096,8 @@
 	},
 	{
 		"word": "丰满",
-		"reading": "Feng1 man3",
-		"meaning": "Fengman district of Jilin city 吉林市, Jilin province",
+		"reading": "feng1 man3",
+		"meaning": "ample, well developed, fully rounded",
 		"freq": 162,
 		"hsk": 6
 	},
@@ -4348,8 +4348,8 @@
 	},
 	{
 		"word": "复兴",
-		"reading": "Fu4 xing1",
-		"meaning": "Fuxing district of Handan city 邯鄲市|邯郸市[Han2 dan1 shi4], Hebei, Fuxing or Fuhsing township in Taoyuan county 桃園縣|桃园县[Tao2 yuan2 xian4], north Taiwan",
+		"reading": "fu4 xing1",
+		"meaning": "to revive, to rejuvenate",
 		"freq": 59,
 		"hsk": 6
 	},
@@ -4362,8 +4362,8 @@
 	},
 	{
 		"word": "富裕",
-		"reading": "Fu4 yu4",
-		"meaning": "Fuyu county in Qiqihar 齊齊哈爾|齐齐哈尔[Qi2 qi2 ha1 er3], Heilongjiang",
+		"reading": "fu4 yu4",
+		"meaning": "prosperous, well-to-do, well-off",
 		"freq": 109,
 		"hsk": 6
 	},
@@ -4523,8 +4523,8 @@
 	},
 	{
 		"word": "高明",
-		"reading": "Gao1 ming2",
-		"meaning": "Gaoming district of Foshan city 佛山市[Fo2 shan1 shi4], Guangdong",
+		"reading": "gao1 ming2",
+		"meaning": "brilliant, superior, tall and bright",
 		"freq": 151,
 		"hsk": 6
 	},
@@ -4572,8 +4572,8 @@
 	},
 	{
 		"word": "搁",
-		"reading": "ge1",
-		"meaning": "to place, to put aside, to shelve",
+		"reading": "ge2",
+		"meaning": "to bear, to stand, to endure",
 		"freq": 90,
 		"hsk": 6
 	},
@@ -4635,8 +4635,8 @@
 	},
 	{
 		"word": "跟前",
-		"reading": "gen1 qian2",
-		"meaning": "the front (of), (in) front, (in) sb's presence, just before (a date)",
+		"reading": "gen1 qian5",
+		"meaning": "(of children, parents etc) at one's side, living with one",
 		"freq": 72,
 		"hsk": 6
 	},
@@ -4705,8 +4705,8 @@
 	},
 	{
 		"word": "公道",
-		"reading": "gong1 dao4",
-		"meaning": "justice, fairness, public highway",
+		"reading": "gong1 dao5",
+		"meaning": "fair, equitable",
 		"freq": 174,
 		"hsk": 6
 	},
@@ -4719,8 +4719,8 @@
 	},
 	{
 		"word": "工夫",
-		"reading": "gong1 fu1",
-		"meaning": "(old) laborer",
+		"reading": "gong1 fu5",
+		"meaning": "period of time (may be months, or mere seconds), spare time, skill, labor, effort",
 		"freq": 132,
 		"hsk": 6
 	},
@@ -5391,8 +5391,8 @@
 	},
 	{
 		"word": "呵",
-		"reading": "a1",
-		"meaning": "variant of 啊[a1]",
+		"reading": "he1",
+		"meaning": "expel breath, my goodness",
 		"freq": 479,
 		"hsk": 6
 	},
@@ -6595,8 +6595,8 @@
 	},
 	{
 		"word": "将军",
-		"reading": "Jiang1 jun1",
-		"meaning": "Chiangchun township in Tainan county 台南縣|台南县[Tai2 nan2 xian4], Taiwan",
+		"reading": "jiang1 jun1",
+		"meaning": "general, high-ranking military officer, to check or checkmate, fig. to embarrass, to challenge, to put sb on the spot",
 		"freq": 2138,
 		"hsk": 6
 	},
@@ -6770,8 +6770,8 @@
 	},
 	{
 		"word": "结果",
-		"reading": "jie1 guo3",
-		"meaning": "to bear fruit, CL:個|个[ge4]",
+		"reading": "jie2 guo3",
+		"meaning": "outcome, result, conclusion, in the end, as a result, to kill, to dispatch",
 		"freq": 7085,
 		"hsk": 6
 	},
@@ -7113,8 +7113,8 @@
 	},
 	{
 		"word": "井",
-		"reading": "Jing3",
-		"meaning": "Jing, one of the 28 constellations of Chinese astronomy, surname Jing",
+		"reading": "jing3",
+		"meaning": "a well, CL:口[kou3], neat, orderly",
 		"freq": 478,
 		"hsk": 6
 	},
@@ -7540,8 +7540,8 @@
 	},
 	{
 		"word": "磕",
-		"reading": "ke1",
-		"meaning": "to tap, to knock (against sth hard), to knock (mud from boots, ashes from a pipe etc)",
+		"reading": "ke4",
+		"meaning": "variant of 嗑[ke4]",
 		"freq": 264,
 		"hsk": 6
 	},
@@ -7673,8 +7673,8 @@
 	},
 	{
 		"word": "孔",
-		"reading": "Kong3",
-		"meaning": "surname Kong",
+		"reading": "kong3",
+		"meaning": "hole, CL:個|个[ge4], classifier for cave dwellings",
 		"freq": 226,
 		"hsk": 6
 	},
@@ -7729,8 +7729,8 @@
 	},
 	{
 		"word": "口音",
-		"reading": "kou3 yin1",
-		"meaning": "oral speech sounds (linguistics)",
+		"reading": "kou3 yin5",
+		"meaning": "voice, accent",
 		"freq": 552,
 		"hsk": 6
 	},
@@ -7792,8 +7792,8 @@
 	},
 	{
 		"word": "款式",
-		"reading": "kuan3 shi4",
-		"meaning": "pattern, style, design, CL:種|种[zhong3]",
+		"reading": "kuan3 shi5",
+		"meaning": "elegant, elegance, good taste",
 		"freq": 100,
 		"hsk": 6
 	},
@@ -7876,8 +7876,8 @@
 	},
 	{
 		"word": "啦",
-		"reading": "la1",
-		"meaning": "(onom.) sound of singing, cheering etc, (phonetic), (dialect) to chat",
+		"reading": "la5",
+		"meaning": "sentence-final particle, contraction of 了啊, indicating exclamation, particle placed after each item in a list of examples",
 		"freq": 13369,
 		"hsk": 6
 	},
@@ -8079,8 +8079,8 @@
 	},
 	{
 		"word": "利害",
-		"reading": "li4 hai4",
-		"meaning": "pros and cons, advantages and disadvantages, gains and losses",
+		"reading": "li4 hai5",
+		"meaning": "terrible, formidable, serious, devastating, tough, capable, sharp, severe, fierce",
 		"freq": 48,
 		"hsk": 6
 	},
@@ -8198,8 +8198,8 @@
 	},
 	{
 		"word": "联想",
-		"reading": "Lian2 xiang3",
-		"meaning": "abbr. for 聯想集團|联想集团[Lian2 xiang3 Ji2 tuan2]",
+		"reading": "lian2 xiang3",
+		"meaning": "to associate (cognitively), to make an associative connection, mental association, word prediction and auto-complete functions of input method editing programs",
 		"freq": 116,
 		"hsk": 6
 	},
@@ -8240,8 +8240,8 @@
 	},
 	{
 		"word": "淋",
-		"reading": "lin2",
-		"meaning": "to sprinkle, to drip, to pour, to drench",
+		"reading": "lin4",
+		"meaning": "to filter, to strain, to drain, gonorrhea, (TCM) strangury",
 		"freq": 224,
 		"hsk": 6
 	},
@@ -8429,8 +8429,8 @@
 	},
 	{
 		"word": "搂",
-		"reading": "lou1",
-		"meaning": "to draw towards oneself, to gather, to gather up (one's gown, sleeves etc), to grab (money), to extort",
+		"reading": "lou3",
+		"meaning": "to hug, to embrace, to hold in one's arms",
 		"freq": 141,
 		"hsk": 6
 	},
@@ -8688,8 +8688,8 @@
 	},
 	{
 		"word": "枚",
-		"reading": "Mei2",
-		"meaning": "surname Mei",
+		"reading": "mei2",
+		"meaning": "classifier for coins, rings, badges, pearls, sporting medals, rockets, satellites etc, tree trunk, whip, wooden peg, used as a gag for marching soldiers (old)",
 		"freq": 762,
 		"hsk": 6
 	},
@@ -8744,8 +8744,8 @@
 	},
 	{
 		"word": "蒙",
-		"reading": "Meng2",
-		"meaning": "surname Meng",
+		"reading": "meng2",
+		"meaning": "to cover, ignorant, to suffer (misfortune), to receive (a favor), to cheat",
 		"freq": 811,
 		"hsk": 6
 	},
@@ -9199,8 +9199,8 @@
 	},
 	{
 		"word": "嗯",
-		"reading": "en1",
-		"meaning": "(a groaning sound)",
+		"reading": "en5",
+		"meaning": "interjection indicating approval, appreciation or agreement",
 		"freq": 34639,
 		"hsk": 6
 	},
@@ -9227,8 +9227,8 @@
 	},
 	{
 		"word": "拧",
-		"reading": "ning2",
-		"meaning": "to pinch, wring",
+		"reading": "ning4",
+		"meaning": "stubborn",
 		"freq": 227,
 		"hsk": 6
 	},
@@ -9318,8 +9318,8 @@
 	},
 	{
 		"word": "哦",
-		"reading": "e2",
-		"meaning": "to chant",
+		"reading": "o5",
+		"meaning": "sentence-final particle that conveys informality, warmth, friendliness or intimacy, may also indicate that one is stating a fact that the other person is not aware of",
 		"freq": 69380,
 		"hsk": 6
 	},
@@ -9500,8 +9500,8 @@
 	},
 	{
 		"word": "劈",
-		"reading": "pi1",
-		"meaning": "to hack, to chop, to split open, (of lightning) to strike",
+		"reading": "pi3",
+		"meaning": "to split in two, to divide",
 		"freq": 157,
 		"hsk": 6
 	},
@@ -9752,8 +9752,8 @@
 	},
 	{
 		"word": "颇",
-		"reading": "Po1",
-		"meaning": "surname Po, Taiwan pr. [Po3]",
+		"reading": "po1",
+		"meaning": "rather, quite, considerably, oblique, inclined, slanting, Taiwan pr. [po3]",
 		"freq": 218,
 		"hsk": 6
 	},
@@ -9794,8 +9794,8 @@
 	},
 	{
 		"word": "铺",
-		"reading": "pu1",
-		"meaning": "to spread, to display, to set up, (old) holder for door-knocker",
+		"reading": "pu4",
+		"meaning": "plank bed, place to sleep, shop, store, (old) relay station",
 		"freq": 372,
 		"hsk": 6
 	},
@@ -10228,8 +10228,8 @@
 	},
 	{
 		"word": "翘",
-		"reading": "qiao2",
-		"meaning": "outstanding, to raise",
+		"reading": "qiao4",
+		"meaning": "to stick up, to rise on one end, to tilt",
 		"freq": 529,
 		"hsk": 6
 	},
@@ -10711,8 +10711,8 @@
 	},
 	{
 		"word": "人家",
-		"reading": "ren2 jia1",
-		"meaning": "household, dwelling, family, sb else's house, household business, house of woman's husband-to-be, CL:戶|户[hu4],家[jia1]",
+		"reading": "ren2 jia5",
+		"meaning": "other people, sb else, he, she or they, I, me (referring to oneself as \"one\" or \"people\")",
 		"freq": 1027,
 		"hsk": 6
 	},
@@ -11439,8 +11439,8 @@
 	},
 	{
 		"word": "拾",
-		"reading": "she4",
-		"meaning": "to ascend in light steps",
+		"reading": "shi2",
+		"meaning": "to pick up, to collate or arrange, ten (banker's anti-fraud numeral)",
 		"freq": 179,
 		"hsk": 6
 	},
@@ -11838,8 +11838,8 @@
 	},
 	{
 		"word": "数",
-		"reading": "shu3",
-		"meaning": "to count, to count as, to regard as, to enumerate (sb's shortcomings)",
+		"reading": "shuo4",
+		"meaning": "frequently, repeatedly",
 		"freq": 2707,
 		"hsk": 6
 	},
@@ -11852,8 +11852,8 @@
 	},
 	{
 		"word": "束",
-		"reading": "Shu4",
-		"meaning": "surname Shu",
+		"reading": "shu4",
+		"meaning": "to bind, bunch, bundle, classifier for bunches, bundles, beams of light etc, to control",
 		"freq": 283,
 		"hsk": 6
 	},
@@ -11887,8 +11887,8 @@
 	},
 	{
 		"word": "耍",
-		"reading": "Shua3",
-		"meaning": "surname Shua",
+		"reading": "shua3",
+		"meaning": "to play with, to wield, to act (cool etc), to display (a skill, one's temper etc)",
 		"freq": 1824,
 		"hsk": 6
 	},
@@ -12881,8 +12881,8 @@
 	},
 	{
 		"word": "哇",
-		"reading": "wa1",
-		"meaning": "Wow!, sound of child's crying, sound of vomiting",
+		"reading": "wa5",
+		"meaning": "replaces 啊[a5] when following the vowel \"u\" or \"ao\"",
 		"freq": 9951,
 		"hsk": 6
 	},
@@ -13007,8 +13007,8 @@
 	},
 	{
 		"word": "网络",
-		"reading": "Wang3 luo4",
-		"meaning": "Internet",
+		"reading": "wang3 luo4",
+		"meaning": "network (computing, telecommunications, transport etc)",
 		"freq": 985,
 		"hsk": 6
 	},
@@ -13070,8 +13070,8 @@
 	},
 	{
 		"word": "威信",
-		"reading": "Wei1 xin4",
-		"meaning": "Weixin county in Zhaotong 昭通[Zhao1 tong1], Yunnan",
+		"reading": "wei1 xin4",
+		"meaning": "prestige, reputation, trust, credit with the people",
 		"freq": 37,
 		"hsk": 6
 	},
@@ -13203,8 +13203,8 @@
 	},
 	{
 		"word": "温和",
-		"reading": "wen1 he2",
-		"meaning": "mild, gentle, moderate",
+		"reading": "wen1 huo5",
+		"meaning": "lukewarm",
 		"freq": 182,
 		"hsk": 6
 	},
@@ -14134,8 +14134,8 @@
 	},
 	{
 		"word": "兴隆",
-		"reading": "Xing1 long2",
-		"meaning": "Xinglong county in Chengde 承德[Cheng2 de2], Hebei",
+		"reading": "xing1 long2",
+		"meaning": "prosperous, thriving, flourishing",
 		"freq": 18,
 		"hsk": 6
 	},
@@ -15072,8 +15072,8 @@
 	},
 	{
 		"word": "翼",
-		"reading": "Yi4",
-		"meaning": "surname Yi, alternative name for 絳|绛[Jiang4] capital of the Jin State during the Spring and Autumn Period (770-475 BC)",
+		"reading": "yi4",
+		"meaning": "wing, area surrounding the bullseye of a target, to assist, one of the 28 constellations of Chinese astronomy, old variant of 翌",
 		"freq": 172,
 		"hsk": 6
 	},
@@ -15485,8 +15485,8 @@
 	},
 	{
 		"word": "熨",
-		"reading": "yu4",
-		"meaning": "reconciled, smooth",
+		"reading": "yun4",
+		"meaning": "an iron, to iron",
 		"freq": 102,
 		"hsk": 6
 	},
@@ -15709,8 +15709,8 @@
 	},
 	{
 		"word": "咋",
-		"reading": "za3",
-		"meaning": "dialectal equivalent of 怎麼|怎么[zen3 me5]",
+		"reading": "zha4",
+		"meaning": "loud noise, shout, suddenly",
 		"freq": 419,
 		"hsk": 6
 	},
@@ -15758,8 +15758,8 @@
 	},
 	{
 		"word": "攒",
-		"reading": "cuan2",
-		"meaning": "to bring together",
+		"reading": "zan3",
+		"meaning": "to collect, to hoard, to accumulate, to save",
 		"freq": 119,
 		"hsk": 6
 	},
@@ -16108,8 +16108,8 @@
 	},
 	{
 		"word": "照应",
-		"reading": "zhao4 ying4",
-		"meaning": "to correlate with, to correspond to",
+		"reading": "zhao4 ying5",
+		"meaning": "to look after, to take care of, to attend to",
 		"freq": 45,
 		"hsk": 6
 	},
@@ -16130,7 +16130,7 @@
 	{
 		"word": "折",
 		"reading": "zhe2",
-		"meaning": "variant of 折[zhe2], to fold",
+		"meaning": "document folded in accordion form, to fold",
 		"freq": 391,
 		"hsk": 6
 	},
@@ -16234,8 +16234,8 @@
 	},
 	{
 		"word": "振兴",
-		"reading": "Zhen4 xing1",
-		"meaning": "Zhengxing district of Dandong city 丹東市|丹东市[Dan1 dong1 shi4], Liaoning",
+		"reading": "zhen4 xing1",
+		"meaning": "to revive, to revitalize, to invigorate, to re-energize",
 		"freq": 8,
 		"hsk": 6
 	},
@@ -16325,8 +16325,8 @@
 	},
 	{
 		"word": "正当",
-		"reading": "zheng4 dang1",
-		"meaning": "timely, just (when needed)",
+		"reading": "zheng4 dang4",
+		"meaning": "honest, reasonable, fair, sensible",
 		"freq": 404,
 		"hsk": 6
 	},
@@ -16794,8 +16794,8 @@
 	},
 	{
 		"word": "粥",
-		"reading": "yu4",
-		"meaning": "see 葷粥|荤粥[Xun1 yu4]",
+		"reading": "zhou1",
+		"meaning": "congee, gruel, porridge, CL:碗[wan3]",
 		"freq": 142,
 		"hsk": 6
 	},
@@ -16997,8 +16997,8 @@
 	},
 	{
 		"word": "拽",
-		"reading": "ye4",
-		"meaning": "to drag, to haul",
+		"reading": "zhuai4",
+		"meaning": "to pull, to tug at (sth)",
 		"freq": 428,
 		"hsk": 6
 	},
@@ -17109,8 +17109,8 @@
 	},
 	{
 		"word": "幢",
-		"reading": "chuang2",
-		"meaning": "banner",
+		"reading": "zhuang4",
+		"meaning": "classifier for buildings, carriage curtain (old)",
 		"freq": 435,
 		"hsk": 6
 	},
@@ -17158,8 +17158,8 @@
 	},
 	{
 		"word": "琢磨",
-		"reading": "zhuo2 mo2",
-		"meaning": "to carve and polish (jade), to polish and refine a literary work",
+		"reading": "zuo2 mo5",
+		"meaning": "to ponder, to mull over, to think through, Taiwan pr. [zhuo2 mo2]",
 		"freq": 202,
 		"hsk": 6
 	},
@@ -17375,8 +17375,8 @@
 	},
 	{
 		"word": "组",
-		"reading": "Zu3",
-		"meaning": "surname Zu",
+		"reading": "zu3",
+		"meaning": "to form, to organize, group, team, classifier for sets, series, groups of people, batteries",
 		"freq": 3623,
 		"hsk": 6
 	},

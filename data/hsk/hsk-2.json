@@ -1,22 +1,22 @@
 [
 	{
 		"word": "吧",
-		"reading": "ba1",
-		"meaning": "bar (loanword) (serving drinks, or providing Internet access etc), to puff (on a pipe etc), (onom.) bang, abbr. for 貼吧|贴吧[tie1 ba1]",
+		"reading": "bia1",
+		"meaning": "(onom.) smack!",
 		"freq": 194084,
 		"hsk": 2
 	},
 	{
 		"word": "白",
-		"reading": "Bai2",
-		"meaning": "surname Bai",
+		"reading": "bai2",
+		"meaning": "white, snowy, pure, bright, empty, blank, plain, clear, to make clear, in vain, gratuitous, free of charge, reactionary, anti-communist, funeral, to stare coldly, to write wrong character, to state, to explain, vernacular, spoken lines in opera",
 		"freq": 2684,
 		"hsk": 2
 	},
 	{
 		"word": "百",
-		"reading": "Bai3",
-		"meaning": "surname Bai",
+		"reading": "bai3",
+		"meaning": "hundred, numerous, all kinds of",
 		"freq": 981,
 		"hsk": 2
 	},
@@ -36,8 +36,8 @@
 	},
 	{
 		"word": "比",
-		"reading": "Bi3",
-		"meaning": "Belgium, Belgian, abbr. for 比利時|比利时[Bi3 li4 shi2]",
+		"reading": "bi4",
+		"meaning": "to associate with, to be near",
 		"freq": 21371,
 		"hsk": 2
 	},
@@ -50,8 +50,8 @@
 	},
 	{
 		"word": "长",
-		"reading": "chang2",
-		"meaning": "length, long, forever, always, constantly",
+		"reading": "zhang3",
+		"meaning": "chief, head, elder, to grow, to develop, to increase, to enhance",
 		"freq": 12173,
 		"hsk": 3
 	},
@@ -92,15 +92,15 @@
 	},
 	{
 		"word": "从",
-		"reading": "Cong2",
-		"meaning": "surname Cong",
+		"reading": "cong2",
+		"meaning": "from, through, via, to follow, to obey, to engage in (an activity), never (in negative sentence), (Taiwan pr. [zong4]) retainer, assistant, auxiliary, subordinate, related by common paternal grandfather or earlier ancestor",
 		"freq": 47313,
 		"hsk": 2
 	},
 	{
 		"word": "错",
-		"reading": "Cuo4",
-		"meaning": "surname Cuo",
+		"reading": "cuo4",
+		"meaning": "mistake, wrong, bad, interlocking, complex, to grind, to polish, to alternate, to stagger, to miss, to let slip, to evade, to inlay with gold or silver",
 		"freq": 36166,
 		"hsk": 2
 	},
@@ -127,8 +127,8 @@
 	},
 	{
 		"word": "得",
-		"reading": "de2",
-		"meaning": "to obtain, to get, to gain, to catch (a disease), proper, suitable, proud, contented, to allow, to permit, ready, finished",
+		"reading": "dei3",
+		"meaning": "to have to, must, ought to, to need to",
 		"freq": 105189,
 		"hsk": 4
 	},
@@ -190,15 +190,15 @@
 	},
 	{
 		"word": "高",
-		"reading": "Gao1",
-		"meaning": "surname Gao",
+		"reading": "gao1",
+		"meaning": "high, tall, above average, loud, your (honorific)",
 		"freq": 7415,
 		"hsk": 2
 	},
 	{
 		"word": "告诉",
-		"reading": "gao4 su4",
-		"meaning": "to press charges, to file a complaint",
+		"reading": "gao4 su5",
+		"meaning": "to tell, to inform, to let know",
 		"freq": 61222,
 		"hsk": 2
 	},
@@ -211,8 +211,8 @@
 	},
 	{
 		"word": "给",
-		"reading": "gei3",
-		"meaning": "to, for, for the benefit of, to give, to allow, to do sth (for sb), (grammatical equivalent of 被), (grammatical equivalent of 把), (sentence intensifier)",
+		"reading": "ji3",
+		"meaning": "to supply, to provide",
 		"freq": 117218,
 		"hsk": 2
 	},
@@ -246,15 +246,15 @@
 	},
 	{
 		"word": "过",
-		"reading": "Guo4",
-		"meaning": "surname Guo",
+		"reading": "guo5",
+		"meaning": "(experienced action marker)",
 		"freq": 112388,
 		"hsk": 5
 	},
 	{
 		"word": "还",
-		"reading": "Huan2",
-		"meaning": "surname Huan",
+		"reading": "huan2",
+		"meaning": "to pay back, to return",
 		"freq": 130326,
 		"hsk": 3
 	},
@@ -267,29 +267,29 @@
 	},
 	{
 		"word": "好吃",
-		"reading": "hao3 chi1",
-		"meaning": "tasty, delicious",
+		"reading": "hao4 chi1",
+		"meaning": "to be fond of eating, to be gluttonous",
 		"freq": 1210,
 		"hsk": 2
 	},
 	{
 		"word": "号",
-		"reading": "hao2",
-		"meaning": "roar, cry, CL:個|个[ge4]",
+		"reading": "hao4",
+		"meaning": "ordinal number, day of a month, mark, sign, business establishment, size, ship suffix, horn (wind instrument), bugle call, assumed name, to take a pulse, classifier used to indicate number of people",
 		"freq": 11862,
 		"hsk": 2
 	},
 	{
 		"word": "黑",
-		"reading": "Hei1",
-		"meaning": "abbr. for Heilongjiang province 黑龍江|黑龙江[Hei1 long2 jiang1]",
+		"reading": "hei1",
+		"meaning": "black, dark, sinister, secret, shady, illegal, to hide (sth) away, to vilify, (loanword) to hack (computing)",
 		"freq": 4563,
 		"hsk": 2
 	},
 	{
 		"word": "红",
-		"reading": "Hong2",
-		"meaning": "surname Hong",
+		"reading": "hong2",
+		"meaning": "red, popular, revolutionary, bonus",
 		"freq": 2932,
 		"hsk": 2
 	},
@@ -435,15 +435,15 @@
 	},
 	{
 		"word": "累",
-		"reading": "Lei2",
-		"meaning": "surname Lei",
+		"reading": "lei2",
+		"meaning": "rope, to bind together, to twist around",
 		"freq": 2375,
 		"hsk": 2
 	},
 	{
 		"word": "离",
-		"reading": "Li2",
-		"meaning": "surname Li",
+		"reading": "li2",
+		"meaning": "to leave, to part from, to be away from, (in giving distances) from, without (sth), independent of, one of the Eight Trigrams 八卦[ba1 gua4], symbolizing fire, ☲",
 		"freq": 6088,
 		"hsk": 2
 	},
@@ -456,8 +456,8 @@
 	},
 	{
 		"word": "路",
-		"reading": "Lu4",
-		"meaning": "surname Lu",
+		"reading": "lu4",
+		"meaning": "road, CL:條|条[tiao2], journey, route, line (bus etc), sort, kind",
 		"freq": 6993,
 		"hsk": 2
 	},
@@ -505,8 +505,8 @@
 	},
 	{
 		"word": "门",
-		"reading": "Men2",
-		"meaning": "surname Men",
+		"reading": "men2",
+		"meaning": "gate, door, CL:扇[shan4], gateway, doorway, CL:個|个[ge4], opening, valve, switch, way to do something, knack, family, house, (religious) sect, school (of thought), class, category, phylum or division (taxonomy), classifier for large guns, classifier for lessons, subjects, branches of technology, (suffix) -gate (i.e. scandal; derived from Watergate)",
 		"freq": 8879,
 		"hsk": 2
 	},
@@ -533,8 +533,8 @@
 	},
 	{
 		"word": "女人",
-		"reading": "nü3 ren2",
-		"meaning": "woman",
+		"reading": "nü3 ren5",
+		"meaning": "wife",
 		"freq": 14388,
 		"hsk": 2
 	},
@@ -554,8 +554,8 @@
 	},
 	{
 		"word": "便宜",
-		"reading": "bian4 yi2",
-		"meaning": "convenient",
+		"reading": "pian2 yi5",
+		"meaning": "cheap, inexpensive, small advantages, to let sb off lightly",
 		"freq": 860,
 		"hsk": 2
 	},
@@ -568,8 +568,8 @@
 	},
 	{
 		"word": "妻子",
-		"reading": "qi1 zi3",
-		"meaning": "wife and children",
+		"reading": "qi1 zi5",
+		"meaning": "wife, CL:個|个[ge4]",
 		"freq": 6494,
 		"hsk": 2
 	},
@@ -687,8 +687,8 @@
 	},
 	{
 		"word": "题",
-		"reading": "Ti2",
-		"meaning": "surname Ti",
+		"reading": "ti2",
+		"meaning": "topic, problem for discussion, exam question, subject, to inscribe, to mention, CL:個|个[ge4],道[dao4]",
 		"freq": 584,
 		"hsk": 2
 	},
@@ -792,8 +792,8 @@
 	},
 	{
 		"word": "新",
-		"reading": "Xin1",
-		"meaning": "abbr. for Xinjiang 新疆[Xin1 jiang1] or Singapore 新加坡[Xin1 jia1 po1], surname Xin",
+		"reading": "xin1",
+		"meaning": "new, newly, meso- (chemistry)",
 		"freq": 17291,
 		"hsk": 2
 	},
@@ -813,8 +813,8 @@
 	},
 	{
 		"word": "雪",
-		"reading": "Xue3",
-		"meaning": "surname Xue",
+		"reading": "xue3",
+		"meaning": "snow, snowfall, CL:場|场[chang2], to have the appearance of snow, to wipe away, off or out, to clean",
 		"freq": 968,
 		"hsk": 2
 	},
@@ -848,15 +848,15 @@
 	},
 	{
 		"word": "要",
-		"reading": "yao1",
-		"meaning": "to demand, to request, to coerce",
+		"reading": "yao4",
+		"meaning": "important, vital, to want, to ask for, will, going to (as future auxiliary), may, must, (used in a comparison) must be, probably, if",
 		"freq": 238656,
 		"hsk": 3
 	},
 	{
 		"word": "也",
-		"reading": "Ye3",
-		"meaning": "surname Ye",
+		"reading": "ye3",
+		"meaning": "also, too, (in Classical Chinese) final particle implying affirmation",
 		"freq": 131801,
 		"hsk": 2
 	},
@@ -911,22 +911,22 @@
 	},
 	{
 		"word": "鱼",
-		"reading": "Yu2",
-		"meaning": "surname Yu",
+		"reading": "yu2",
+		"meaning": "fish, CL:條|条[tiao2],尾[wei3]",
 		"freq": 2532,
 		"hsk": 2
 	},
 	{
 		"word": "元",
-		"reading": "Yuan2",
-		"meaning": "surname Yuan, the Yuan or Mongol dynasty (1279-1368)",
+		"reading": "yuan2",
+		"meaning": "currency unit (esp. Chinese yuan), first, original, primary, fundamental, constituent, part, era (of a reign), meta- (prefix), (math.) argument, variable, (Tw) (geology) eon",
 		"freq": 1945,
 		"hsk": 2
 	},
 	{
 		"word": "远",
-		"reading": "yuan3",
-		"meaning": "far, distant, remote, (intensifier in a comparison) by far, much (lower etc)",
+		"reading": "yuan4",
+		"meaning": "to distance oneself from (classical)",
 		"freq": 6570,
 		"hsk": 2
 	},
@@ -953,8 +953,8 @@
 	},
 	{
 		"word": "张",
-		"reading": "Zhang1",
-		"meaning": "surname Zhang",
+		"reading": "zhang1",
+		"meaning": "to open up, to spread, sheet of paper, classifier for flat objects, sheet, classifier for votes",
 		"freq": 11146,
 		"hsk": 2
 	},
@@ -974,8 +974,8 @@
 	},
 	{
 		"word": "着",
-		"reading": "zhao1",
-		"meaning": "(chess) move, trick, all right!, (dialect) to add",
+		"reading": "zhu4",
+		"meaning": "to make known, to show, to prove, to write, book, outstanding",
 		"freq": 100091,
 		"hsk": 2
 	},

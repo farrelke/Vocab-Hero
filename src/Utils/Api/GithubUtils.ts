@@ -25,7 +25,7 @@ export function getHskDecks(): GithubFile[] {
 }
 
 export function getShanghaineseDecks(): GithubFile[] {
-  return [{ name: "Hsk 1", link: "hsk-1.zip" }].map(file => ({
+  return [{ name: "Hsk 1", link: "hsk-1.zip" }, { name: "Hsk 2", link: "hsk-2.zip"  }].map(file => ({
     name: file.name,
     downloadUrl: `${GithubRawUrl}/data/shanghainese/${file.link}`
   }));

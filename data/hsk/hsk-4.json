@@ -281,8 +281,8 @@
 	},
 	{
 		"word": "场",
-		"reading": "chang2",
-		"meaning": "variant of 場|场[chang2]",
+		"reading": "chang3",
+		"meaning": "variant of 場|场[chang3]",
 		"freq": 10963,
 		"hsk": 4
 	},
@@ -302,8 +302,8 @@
 	},
 	{
 		"word": "成功",
-		"reading": "Cheng2 gong1",
-		"meaning": "Chenggong or Chengkung town in Taitung County 臺東縣|台东县[Tai2 dong1 Xian4], southeast Taiwan",
+		"reading": "cheng2 gong1",
+		"meaning": "success, to succeed, CL:次[ci4],個|个[ge4]",
 		"freq": 6305,
 		"hsk": 4
 	},
@@ -477,8 +477,8 @@
 	},
 	{
 		"word": "戴",
-		"reading": "Dai4",
-		"meaning": "surname Dai",
+		"reading": "dai4",
+		"meaning": "to put on or wear (glasses, hat, gloves etc), to respect, to bear, to support",
 		"freq": 3987,
 		"hsk": 4
 	},
@@ -498,15 +498,15 @@
 	},
 	{
 		"word": "大夫",
-		"reading": "da4 fu1",
-		"meaning": "senior official (in imperial China)",
+		"reading": "dai4 fu5",
+		"meaning": "doctor, physician",
 		"freq": 654,
 		"hsk": 4
 	},
 	{
 		"word": "当",
-		"reading": "dang1",
-		"meaning": "to be, to act as, manage, withstand, when, during, ought, should, match equally, equal, same, obstruct, just at (a time or place), on the spot, right, just at",
+		"reading": "dang4",
+		"meaning": "at or in the very same..., suitable, adequate, fitting, proper, to replace, to regard as, to think, to pawn, (coll.) to fail (a student)",
 		"freq": 29619,
 		"hsk": 4
 	},
@@ -519,15 +519,15 @@
 	},
 	{
 		"word": "当时",
-		"reading": "dang1 shi2",
-		"meaning": "then, at that time, while",
+		"reading": "dang4 shi2",
+		"meaning": "at once, right away",
 		"freq": 6935,
 		"hsk": 4
 	},
 	{
 		"word": "刀",
-		"reading": "Dao1",
-		"meaning": "surname Dao",
+		"reading": "dao1",
+		"meaning": "knife, blade, single-edged sword, cutlass, CL:把[ba3], (slang) dollar (loanword), classifier for sets of one hundred sheets (of paper), classifier for knife cuts or stabs",
 		"freq": 2741,
 		"hsk": 4
 	},
@@ -568,15 +568,15 @@
 	},
 	{
 		"word": "得",
-		"reading": "de2",
-		"meaning": "to obtain, to get, to gain, to catch (a disease), proper, suitable, proud, contented, to allow, to permit, ready, finished",
+		"reading": "dei3",
+		"meaning": "to have to, must, ought to, to need to",
 		"freq": 105189,
 		"hsk": 4
 	},
 	{
 		"word": "底",
-		"reading": "de5",
-		"meaning": "(equivalent to 的 as possessive particle)",
+		"reading": "di3",
+		"meaning": "background, bottom, base, end (of the month, year etc), remnants, (math.) radix, base",
 		"freq": 3925,
 		"hsk": 4
 	},
@@ -820,8 +820,8 @@
 	},
 	{
 		"word": "富",
-		"reading": "Fu4",
-		"meaning": "surname Fu",
+		"reading": "fu4",
+		"meaning": "rich, abundant, wealthy",
 		"freq": 533,
 		"hsk": 4
 	},
@@ -1128,8 +1128,8 @@
 	},
 	{
 		"word": "汗",
-		"reading": "han2",
-		"meaning": "see 可汗[ke4 han2], 汗國|汗国[han2 guo2]",
+		"reading": "han4",
+		"meaning": "perspiration, sweat, CL:滴[di1],頭|头[tou2],身[shen1], to be speechless (out of helplessness, embarrassment etc) (Internet slang used as an interjection)",
 		"freq": 548,
 		"hsk": 4
 	},
@@ -1261,8 +1261,8 @@
 	},
 	{
 		"word": "火",
-		"reading": "Huo3",
-		"meaning": "surname Huo",
+		"reading": "huo3",
+		"meaning": "fire, urgent, ammunition, fiery or flaming, internal heat (Chinese medicine), hot (popular), classifier for military units (old)",
 		"freq": 3536,
 		"hsk": 4
 	},
@@ -1506,8 +1506,8 @@
 	},
 	{
 		"word": "结果",
-		"reading": "jie1 guo3",
-		"meaning": "to bear fruit, CL:個|个[ge4]",
+		"reading": "jie2 guo3",
+		"meaning": "outcome, result, conclusion, in the end, as a result, to kill, to dispatch",
 		"freq": 7085,
 		"hsk": 6
 	},
@@ -1562,8 +1562,8 @@
 	},
 	{
 		"word": "精神",
-		"reading": "jing1 shen2",
-		"meaning": "spirit, mind, consciousness, thought, mental, psychological, essence, gist, CL:個|个[ge4]",
+		"reading": "jing1 shen5",
+		"meaning": "vigor, vitality, drive, spiritual",
 		"freq": 4099,
 		"hsk": 4
 	},
@@ -1744,8 +1744,8 @@
 	},
 	{
 		"word": "宽",
-		"reading": "Kuan1",
-		"meaning": "surname Kuan",
+		"reading": "kuan1",
+		"meaning": "lenient, wide, broad",
 		"freq": 396,
 		"hsk": 4
 	},
@@ -1898,8 +1898,8 @@
 	},
 	{
 		"word": "连",
-		"reading": "Lian2",
-		"meaning": "surname Lian",
+		"reading": "lian2",
+		"meaning": "to link, to join, to connect, continuously, in succession, including, (used with 也[ye3], 都[dou1] etc) even, company (military)",
 		"freq": 7706,
 		"hsk": 4
 	},
@@ -2003,8 +2003,8 @@
 	},
 	{
 		"word": "满",
-		"reading": "Man3",
-		"meaning": "Manchu ethnic group",
+		"reading": "man3",
+		"meaning": "to fill, full, filled, packed, fully, completely, quite, to reach the limit, to satisfy, satisfied, contented",
 		"freq": 3311,
 		"hsk": 4
 	},
@@ -2122,8 +2122,8 @@
 	},
 	{
 		"word": "弄",
-		"reading": "long4",
-		"meaning": "variant of 弄[long4]",
+		"reading": "xiang4",
+		"meaning": "variant of 巷[xiang4]",
 		"freq": 13574,
 		"hsk": 4
 	},
@@ -2255,8 +2255,8 @@
 	},
 	{
 		"word": "起来",
-		"reading": "qi3 lai5",
-		"meaning": "to stand up, to get up, also pr. [qi3 lai2]",
+		"reading": "qi5 lai5",
+		"meaning": "(after a verb) indicating the beginning and continuation of an action or a state, indicating an upward movement (e.g. after 站[zhan4]), bringing things together (e.g. after 收拾[shou1 shi5]), (after a perception verb, e.g. 看[kan4]) expressing preliminary judgment, also pr. [qi3 lai5]",
 		"freq": 37205,
 		"hsk": 4
 	},
@@ -2570,8 +2570,8 @@
 	},
 	{
 		"word": "省",
-		"reading": "sheng3",
-		"meaning": "to save, to economize, to do without, to omit, to leave out, province, CL:個|个[ge4]",
+		"reading": "xing3",
+		"meaning": "to inspect, to examine, to be aware, to pay a visit (to one's parents or elders)",
 		"freq": 1401,
 		"hsk": 4
 	},
@@ -2612,8 +2612,8 @@
 	},
 	{
 		"word": "狮子",
-		"reading": "Shi1 zi3",
-		"meaning": "Leo (star sign), Shihtzu township in Pingtung County 屏東縣|屏东县[Ping2 dong1 Xian4], Taiwan",
+		"reading": "shi1 zi5",
+		"meaning": "lion, CL:隻|只[zhi1],頭|头[tou2]",
 		"freq": 428,
 		"hsk": 4
 	},
@@ -2773,8 +2773,8 @@
 	},
 	{
 		"word": "帅",
-		"reading": "Shuai4",
-		"meaning": "surname Shuai",
+		"reading": "shuai4",
+		"meaning": "handsome, graceful, smart, commander in chief, (coll.) cool!, sweet!",
 		"freq": 2268,
 		"hsk": 4
 	},
@@ -2864,8 +2864,8 @@
 	},
 	{
 		"word": "孙子",
-		"reading": "Sun1 zi3",
-		"meaning": "Sun Tzu, also known as Sun Wu 孫武|孙武[Sun1 Wu3] (c. 500 BC, dates of birth and death uncertain), general, strategist and philosopher of the Spring and Autumn Period (700-475 BC), believed to be the author of the “Art of War” 孫子兵法|孙子兵法[Sun1 zi3 Bing1 fa3], one of the Seven Military Classics of ancient China 武經七書|武经七书[Wu3 jing1 Qi1 shu1]",
+		"reading": "sun1 zi5",
+		"meaning": "grandson, son's son",
 		"freq": 549,
 		"hsk": 4
 	},
@@ -2899,22 +2899,22 @@
 	},
 	{
 		"word": "谈",
-		"reading": "Tan2",
-		"meaning": "surname Tan",
+		"reading": "tan2",
+		"meaning": "to speak, to talk, to converse, to chat, to discuss",
 		"freq": 11653,
 		"hsk": 4
 	},
 	{
 		"word": "汤",
-		"reading": "Tang1",
-		"meaning": "surname Tang",
+		"reading": "tang1",
+		"meaning": "soup, hot or boiling water, decoction of medicinal herbs, water in which sth has been boiled",
 		"freq": 1007,
 		"hsk": 4
 	},
 	{
 		"word": "趟",
-		"reading": "tang1",
-		"meaning": "to wade, to trample, to turn the soil",
+		"reading": "tang4",
+		"meaning": "classifier for times, round trips or rows, a time, a trip",
 		"freq": 1519,
 		"hsk": 5
 	},
@@ -3179,8 +3179,8 @@
 	},
 	{
 		"word": "现代",
-		"reading": "Xian4 dai4",
-		"meaning": "Hyundai, South Korean company",
+		"reading": "xian4 dai4",
+		"meaning": "modern times, modern age, modern era",
 		"freq": 510,
 		"hsk": 4
 	},
@@ -3298,8 +3298,8 @@
 	},
 	{
 		"word": "行",
-		"reading": "hang2",
-		"meaning": "row, line, commercial firm, line of business, profession, to rank (first, second etc) among one's siblings (by age), (in data tables) row, (Tw) column",
+		"reading": "xing2",
+		"meaning": "to walk, to go, to travel, a visit, temporary, makeshift, current, in circulation, to do, to perform, capable, competent, effective, all right, OK!, will do, behavior, conduct, Taiwan pr. [xing4] for the behavior-conduct sense",
 		"freq": 26032,
 		"hsk": 4
 	},
@@ -3466,8 +3466,8 @@
 	},
 	{
 		"word": "页",
-		"reading": "xie2",
-		"meaning": "head",
+		"reading": "ye4",
+		"meaning": "page, leaf",
 		"freq": 1114,
 		"hsk": 4
 	},
@@ -3487,8 +3487,8 @@
 	},
 	{
 		"word": "以",
-		"reading": "Yi3",
-		"meaning": "abbr. for Israel 以色列[Yi3 se4 lie4]",
+		"reading": "yi3",
+		"meaning": "to use, by means of, according to, in order to, because of, at (a certain date or place)",
 		"freq": 13083,
 		"hsk": 4
 	},
@@ -3620,8 +3620,8 @@
 	},
 	{
 		"word": "友好",
-		"reading": "You3 hao3",
-		"meaning": "Youhao district of Yichun city 伊春市[Yi1 chun1 shi4], Heilongjiang",
+		"reading": "you3 hao3",
+		"meaning": "friendly, amicable, close friend",
 		"freq": 667,
 		"hsk": 4
 	},
@@ -3648,8 +3648,8 @@
 	},
 	{
 		"word": "与",
-		"reading": "yu2",
-		"meaning": "variant of 歟|欤[yu2]",
+		"reading": "yu4",
+		"meaning": "to take part in",
 		"freq": 13700,
 		"hsk": 5
 	},
@@ -3956,8 +3956,8 @@
 	},
 	{
 		"word": "重点",
-		"reading": "chong2 dian3",
-		"meaning": "to recount (e.g. results of election), to re-evaluate",
+		"reading": "zhong4 dian3",
+		"meaning": "important point, main point, focus, key (project etc), to focus on, to put the emphasis on",
 		"freq": 1178,
 		"hsk": 4
 	},
@@ -4033,8 +4033,8 @@
 	},
 	{
 		"word": "赚",
-		"reading": "zhuan4",
-		"meaning": "to earn, to make a profit",
+		"reading": "zuan4",
+		"meaning": "to cheat, to swindle",
 		"freq": 1959,
 		"hsk": 4
 	},

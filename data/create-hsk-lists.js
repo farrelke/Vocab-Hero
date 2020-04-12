@@ -14,7 +14,7 @@ const createHskList = async level => {
       return dictWord;
     })
     .filter(a => a);
-  await fs.writeFile(`./data/hsk-${level}.json`, toJson(hskWords), "utf8");
+  await fs.writeFile(`./data/hsk/hsk-${level}.json`, toJson(hskWords), "utf8");
   console.log(`Hsk List ${level} has been generated with ${hskWords.length} words`);
 };
 
