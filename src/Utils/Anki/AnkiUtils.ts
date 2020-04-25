@@ -4,7 +4,7 @@ import front from "./templates/anki-front";
 import back from "./templates/anki-front";
 import styling from "./templates/anki-front";
 import { VocabWord } from "../DB/VocabDb";
-import { convertWebmToOgg } from "../WebmConverterUtils";
+import { convertWebmToOgg } from "../FfmpegUtils";
 
 const ankiServer = "http://127.0.0.1:8765";
 const version = 6;
@@ -101,9 +101,10 @@ const createNotes = async (deckName: string, modelName: string, notes: Note[]) =
 };
 
 const storeMediaFile = async (file: Blob) => {
-  const oggBlob = await convertWebmToOgg(file);
+  // TODO do more testing on supported file types in ffmpeg and anki
+  if (["audio/webm", "audio/ogg"].indexOf(file.type) === -1) return "";
+  const oggBlob = file.type === "audio/webm" ? await convertWebmToOgg(file) : file;
   const dataBase64 = await convertBlobToBase64(oggBlob);
-  console.log(dataBase64);
   const filename = `vocabhero-${Guid.create()}.ogg`;
   await sendAnkiAction("storeMediaFile", {
     filename,

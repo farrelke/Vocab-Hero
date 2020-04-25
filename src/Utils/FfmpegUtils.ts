@@ -6,7 +6,7 @@ const loadWorker = async () => {
   const newWorker: any = createWorker({
     corePath: "chrome-extension://egbhlijnkoompngemjibfdfpchopglaf/ffmpeg/ffmpeg-core.js",
     workerPath: "chrome-extension://egbhlijnkoompngemjibfdfpchopglaf/ffmpeg/worker.min.js",
-    logger: m => {} // console.log(m)
+    logger: m =>  console.log(m)
   });
   await newWorker.load();
   worker = newWorker;

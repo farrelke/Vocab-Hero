@@ -69,7 +69,7 @@ function toHanzi(langCode, trad, simp, hideTones) {
 		result = primaryHanzi;
 	}
 	else {
-		var spanPatt = /(<span class="?(?:[a-z]{3}_)?tone\d"?>)(.+?)(<\/span>)/;
+		var spanPatt = /(<span class="?(?:[a-z]{3}_)?tone\\d"?>)(.+?)(<\\/span>)/;
 		var remainingPrimary = primaryHanzi;
 		var remainingSecondary = secondaryHanzi;
 		var maskedSecondary = '';
@@ -101,7 +101,7 @@ function toHanzi(langCode, trad, simp, hideTones) {
 		}
 	}
 	if (!coloringEnabled) {
-		return result.replace(/<span class="?(?:[a-z]{3}_)?tone\d"?>(.+?)<\/span>/g, '$1');
+		return result.replace(/<span class="?(?:[a-z]{3}_)?tone\\d"?>(.+?)<\\/span>/g, '$1');
 	}
 	return result;
 }

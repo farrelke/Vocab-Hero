@@ -28,6 +28,7 @@ export enum SubPage {
   // Page.Import
   Pleco = "Pleco",
   Anki = "Anki",
+  AnkiConnect =  "AnkiConnect",
   PreMade = "Vocabulary Lists",
   Local = "Local Import/Export",
 
@@ -51,7 +52,7 @@ const CN_SUB_PAGES_DICT = {
   [Page.Learn]: [SubPage.Learn],
   [Page.Add]: [SubPage.Input, SubPage.Search, SubPage.Paste],
   [Page.Manage]: [SubPage.Words],
-  [Page.Import]: [SubPage.PreMade, SubPage.Pleco, SubPage.Anki, SubPage.Local],
+  [Page.Import]: [SubPage.PreMade, SubPage.Pleco, SubPage.Anki, SubPage.AnkiConnect, SubPage.Local],
   [Page.Reader]: [SubPage.Reader],
   [Page.UserPreferences]: [SubPage.Preferences]
 };
