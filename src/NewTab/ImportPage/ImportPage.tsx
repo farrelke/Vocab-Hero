@@ -8,6 +8,7 @@ import AnkiImport from "./AnkiImport";
 import { clearAllVocab, getVocabWords, VocabWord } from "../../Utils/DB/IndexdbUtils";
 import { SubPage } from "../Pages";
 import { importLocalFile, saveWordsAsJson } from "../../Utils/Import/ImportLocalUtils";
+import AnkiExport from "./AnkiExport";
 
 type Props = {
   addWords: (words: VocabWord[]) => unknown;
@@ -31,11 +32,12 @@ const VocabListSection = ({
       <div className="ImportPage__sectionDesc">{description}</div>
       <div className="ImportPage__hskButtons">
         {!list && <div className="ImportPage__loading">Fetching Decks...</div>}
-        {list && list.map(deck => (
-          <div className="ImportPage__hskBtn" key={deck.name} onClick={() => onSelect(deck.downloadUrl)}>
-            {deck.name}
-          </div>
-        ))}
+        {list &&
+          list.map(deck => (
+            <div className="ImportPage__hskBtn" key={deck.name} onClick={() => onSelect(deck.downloadUrl)}>
+              {deck.name}
+            </div>
+          ))}
       </div>
     </div>
   );
@@ -120,8 +122,8 @@ class ImportPage extends PureComponent<Props> {
   };
 
   render() {
-    const { addingWord, previewUrl, vocabLists, ankiData } = this.state;
     const { subPage, addWords } = this.props;
+    const { addingWord, previewUrl, vocabLists, ankiData } = this.state;
 
     if (ankiData) {
       return <AnkiImport addWords={addWords} ankiData={ankiData} />;
@@ -171,35 +173,7 @@ class ImportPage extends PureComponent<Props> {
           </div>
         )}
 
-        {subPage === SubPage.Anki && (
-          <div className="ImportPage__section">
-            <div className="ImportPage__sectionTitle">Import flashcards from Anki</div>
-            <div className="ImportPage__sectionDesc">
-              To generate an export file in Anki:
-              <ul className="ImportPage__sectionDescList">
-                <li>
-                  First install the add-on{" "}
-                  <a href="https://ankiweb.net/shared/info/1788670778">CrowdAnki: JSON export&import</a> in anki using{" "}
-                  <b>Tools > Add-ons > Get Add-ons...</b>.
-                </li>
-                <li>
-                  After you install the CrowdAnki add-on then export your anki deck using <b>Export..</b>.
-                </li>
-                <li>
-                  Set the export format to CrowdAnki JSON representation and select the deck you want to export.&nbsp;
-                  <b>Do not select "All Decks"</b>
-                </li>
-                <li>
-                  Unset <b>include media</b> and <b>include tags</b>
-                </li>
-                <li>
-                  Click <b>Export...</b>
-                </li>
-              </ul>
-            </div>
-            <input type="file" id="files" name="files[]" onChange={e => this.handleAnkiImport(e.target.files)} />
-          </div>
-        )}
+        {subPage === SubPage.Anki && <AnkiExport />}
 
         {subPage === SubPage.PreMade && (
           <>

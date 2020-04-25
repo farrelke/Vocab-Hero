@@ -3,6 +3,7 @@ import { useCallback, useRef } from "react";
 import "./AudioInput.scss";
 import { useRecorder } from "../../../Hooks/useRecorder";
 import { useObjectUrl } from "../../../Hooks/useObjectUrl";
+import { convertWebmToOgg } from "../../../Utils/WebmConverterUtils";
 
 
 type Props = {
@@ -29,6 +30,14 @@ const AudioInput = ({ onChange, file }: Props) => {
     onChange(blob as any);
   }, [onChange, stopRecording]);
 
+  const convertToOgg = useCallback(async () => {
+    if (file) {
+      const oggFile = await convertWebmToOgg(file as any);
+      console.log(URL.createObjectURL(oggFile));
+    }
+  }, [file]);
+
+
   return (
     <div className="AudioInput">
       <div className="AudioInput__controls">
@@ -54,11 +63,15 @@ const AudioInput = ({ onChange, file }: Props) => {
             Stop Recording
           </div>
         )}
-        {file && (
+        {file && (<>
           <div className="AudioInput__btn AudioInput__btn--red" onClick={() => onChange()}>
             Clear
           </div>
-        )}
+
+          <div className="AudioInput__btn AudioInput__btn--red" onClick={() => convertToOgg()}>
+          Convert To Ogg
+          </div>
+        </>)}
       </div>
 
       {fileUrl && !isRecording && <audio className="AudioInput__audioPlayer" controls src={fileUrl} />}
