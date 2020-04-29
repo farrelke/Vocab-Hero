@@ -13,7 +13,7 @@ const JsonResult = json => ({
 });
 
 exports.handler = async function(event, context) {
-  const query = event && event.pathParameters;
+  const query = event && event.queryStringParameters;
 
   if (!query) {
     return JsonResult(["pathParameters is wrong name"]);
