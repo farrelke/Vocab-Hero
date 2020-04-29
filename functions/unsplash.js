@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+const fetch = require("node-fetch");
 global.fetch = fetch;
 const Unsplash = require("unsplash-js").default;
 const UNSPLASH_ACCESS_KEY = process.env.UNSPLASH_ACCESS_KEY;
@@ -13,10 +13,16 @@ const JsonResult = json => ({
 });
 
 exports.handler = async function(event, context) {
-  const keyword = event && event.query && event.query.keyword;
-  const page = (event && event.query && event.query.page) || 1;
-  const perPage = (event && event.query && event.query.perPage) || 10;
-  const orientation = (event && event.query && event.query.orientation) || "landscape";
+  const query = event && event.pathParameters;
+
+  if (!query) {
+    return JsonResult(["pathParameters is wrong name"]);
+  }
+
+  const keyword = query.keyword;
+  const page = query.page || 1;
+  const perPage = query.perPage || 10;
+  const orientation = query.orientation || "landscape";
 
   if (!keyword) {
     return JsonResult([]);
