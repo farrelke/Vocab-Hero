@@ -1,7 +1,16 @@
 .LearnPage {
-  background-color: #fafafa;
+  background-color: white;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (prefers-color-scheme: dark) {
+    background-color: #41403e;
+  }
+}
+
+.LearnPage__inner {
   color: #1bbc9b;
   font-family: "PingFang SC", serif;
   display: flex;
@@ -10,9 +19,22 @@
   box-sizing: border-box;
   padding: 50px;
   justify-content: center;
-
-  @media (prefers-color-scheme: dark) {
-    background-color: #41403e;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    position: absolute;
+    right:  -25px;
+    bottom: -25px;
+    background-color: white;
+    box-shadow: inset 0 0 0 200px rgba(255,255,255,0.3);
+    filter: blur(10px);
+    content: " ";
+    z-index: -1;
+    opacity: 0.85;
+    left: -25px;  //giving minus -25px left position
+    top: -25px;
   }
 }
 
@@ -30,8 +52,8 @@
 
 .LearnPage__meaning {
   font-size: 60px;
-  color: #ababab;
-  margin-bottom: 80px;
+  color: #8a8a8a;
+ // margin-bottom: 80px;
   text-align: center;
 
   &--long {
@@ -101,4 +123,17 @@
       opacity: 0.5;
     }
   }
+}
+
+.LearnPage__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  box-sizing: border-box;
+  object-position: center center;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+ // filter: blur(2px);
 }

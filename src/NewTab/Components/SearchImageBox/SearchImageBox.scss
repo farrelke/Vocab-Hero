@@ -1,0 +1,53 @@
+.SearchImageBox {
+  width: 100%;
+}
+
+.SearchImageBox__controls {
+  display: flex;
+  height: 33px;
+  align-items: center;
+}
+
+.SearchImageBox__input {
+  height: 41px;
+  width: 360px !important;
+  box-sizing: border-box;
+}
+
+.SearchImageBox__box {
+  width: 360px;
+}
+
+.SearchImageBox__loading {
+  color: #1bbc9b;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.SearchImageBox__imageContainer {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  margin-top: 20px;
+
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 4px solid transparent;
+
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  &:hover {
+    border: 4px solid #1bbc9b;
+  }
+}
+
+.SearchImageBox__image {
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}

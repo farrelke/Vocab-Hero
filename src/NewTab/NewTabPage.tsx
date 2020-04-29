@@ -19,6 +19,7 @@ import UserPreferences from "./UserPreferences/UserPreferences";
 import TestPage from "./TestPage/TestPage";
 import ReaderPage from "./ReaderPage/ReaderPage";
 import { Page, SubPage } from "./Pages";
+import { searchPhotos } from "../Utils/Unsplash";
 
 type Props = {};
 
@@ -32,6 +33,8 @@ class NewTabPage extends PureComponent<Props> {
   async componentDidMount() {
     // When updating the database add this back in
     // upgradeLegacyUsers().then();
+
+    // searchPhotos("bottle");
 
     const vocab = await getRandomVocabWord();
     if (vocab) {

@@ -6,6 +6,7 @@ import { getUserPreferences, isUserLangChinese, Language } from "../../Utils/Use
 import { findWord, VocabWord } from "../../Utils/DB/IndexdbUtils";
 import { WordDef } from "../../Utils/DB/VocabDb";
 import AudioInput from "./../Components/AudioInput/AudioInput";
+import SearchImageBox from "../Components/SearchImageBox/SearchImageBox";
 
 type Props = {
   addWord: (word: VocabWord) => unknown;
@@ -16,6 +17,7 @@ class InputAdd extends PureComponent<Props> {
     hanzi: "",
     pinyin: "",
     translation: "",
+    imageUrl: "",
     audioFile: null as File,
     dictDef: null as WordDef
   };
@@ -47,13 +49,14 @@ class InputAdd extends PureComponent<Props> {
 
   addWord = async () => {
     const { addWord } = this.props;
-    const { hanzi, pinyin, translation, dictDef, audioFile } = this.state;
+    const { hanzi, pinyin, translation, dictDef, audioFile, imageUrl } = this.state;
 
     const newWord: VocabWord = {
       word: hanzi,
       reading: PinyinConverter.convert(pinyin || dictDef.reading),
       meaning: translation || dictDef.meaning,
       sentences: [],
+      imageUrl: imageUrl,
       audio: audioFile
     };
     addWord(newWord);
@@ -105,6 +108,11 @@ class InputAdd extends PureComponent<Props> {
               Pinyinise
             </div>
           )}
+        </div>
+
+        <div className="InputAdd__inputContainer">
+          <div className="InputAdd__inputLabel">Images</div>
+          <SearchImageBox setImageUrl={imageUrl => this.setState({ imageUrl })} />
         </div>
 
         <div className="InputAdd__inputContainer">

@@ -22,6 +22,7 @@ export interface VocabWord {
     sentence: string;
     reading: string;
   }[];
+  imageUrl?: string;
   audio?: Blob
 }
 

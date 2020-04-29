@@ -55,6 +55,10 @@ const VocabCard = (props: Props) => {
         {word.word}
       </div>
 
+      {word.imageUrl && (
+        <img className="VocabCard__image" src={word.imageUrl} />
+      )}
+
       <div className="VocabCard__wordMeaning">{word.meaning}</div>
       {word.sentences &&
         word.sentences.map((sentence, i) => (

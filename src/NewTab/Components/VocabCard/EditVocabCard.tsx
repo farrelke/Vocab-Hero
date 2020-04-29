@@ -5,6 +5,7 @@ import { VocabWord } from "../../../Utils/DB/VocabDb";
 import { isUserLangChinese } from "../../../Utils/UserPreferencesUtils";
 import PinyinConverter from "../../../Utils/PinyinConverter";
 import AudioInput from "../AudioInput/AudioInput";
+import SearchImageBox from "../SearchImageBox/SearchImageBox";
 
 type Props = {
   word?: VocabWord;
@@ -77,6 +78,10 @@ const EditVocabCard = (props: Props) => {
         className="EditVocabCard__wordMeaning"
         placeholder="translation"
       />
+
+      <div className="EditVocabCard__searchBox">
+        <SearchImageBox setImageUrl={imageUrl => this.setState({ imageUrl })} />
+      </div>
 
       <div className="EditVocabCard__audioWrapper" >
         <AudioInput file={audio as File} onChange={audioFile => setAudio(audioFile)} />
