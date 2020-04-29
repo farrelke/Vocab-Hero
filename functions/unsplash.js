@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
 global.fetch = fetch;
-const Unsplash = require("unsplash-js");
+const Unsplash = require("unsplash-js").default;
 const UNSPLASH_ACCESS_KEY = process.env.UNSPLASH_ACCESS_KEY;
 const unsplash = new Unsplash({ accessKey: UNSPLASH_ACCESS_KEY });
 
