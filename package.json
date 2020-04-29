@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Vocab Hero a chrome extension to help you learn chinese.",
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js; netlify-lambda build lambda/bundled-function",
     "dev": "webpack --config webpack.dev.js",
     "watch": "webpack -w --config webpack.dev.js",
     "lint": "tslint 'src/**/*.{ts, tsx}'",
@@ -52,6 +52,7 @@
     "jszip": "^3.3.0",
     "localforage": "^1.7.3",
     "mime-types": "^2.1.26",
+    "netlify-lambda": "^1.6.3",
     "react": "^16.8.6",
     "react-autosize-textarea": "^7.0.0",
     "react-dom": "^16.8.6",
