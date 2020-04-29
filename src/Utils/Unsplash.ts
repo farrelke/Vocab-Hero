@@ -10,15 +10,11 @@ export type UnsplashImage = {
 };
 
 export const searchPhotos = (keyword: string): Promise<UnsplashImage[]> => {
-  return <any>[];
-  /* unsplash.search
-    .photos(keyword, 1, 10, { orientation: "landscape" })
+  return fetch(`https://vocab-hero.netlify.app/.netlify/functions/unsplash?keyword=${keyword}`)
     .then(res => res.json())
     .then(json =>
       json.results.map(res => {
         return { id: res.id, ...res.urls };
       })
     );
-
-   */
 };
