@@ -8,7 +8,8 @@
     "watch": "webpack -w --config webpack.dev.js",
     "lint": "tslint 'src/**/*.{ts, tsx}'",
     "create-data": "node ./data/create-word-db.js",
-    "create-hsk-data": "node ./data/create-hsk-lists.js"
+    "create-hsk-data": "node ./data/create-hsk-lists.js",
+    "postinstall": "netlify-lambda install"
   },
   "author": "Kevin Farrell",
   "license": "MIT",
