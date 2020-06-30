@@ -1,5 +1,6 @@
 import Dexie from "dexie";
 import { stopWords } from "./StopWords";
+import { ImageAuthor } from "../Unsplash";
 
 
 // Generate word tokens from sentences so we can allow the user to
@@ -23,6 +24,7 @@ export interface VocabWord {
     reading: string;
   }[];
   imageUrl?: string;
+  imageAuthor?: ImageAuthor;
   audio?: Blob
 }
 

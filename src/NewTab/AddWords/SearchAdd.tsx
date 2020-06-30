@@ -76,7 +76,10 @@ class SearchAdd extends PureComponent<Props> {
                 <VocabCard
                   key={result.id}
                   word={{ ...result, sentences: [] } as any}
-                  addWord={() => this.addWord(result)}
+                  addWord={() => {
+                    console.log(result)
+                    this.addWord(result)
+                  }}
                 />
               ))}
           </>

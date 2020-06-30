@@ -1,21 +1,33 @@
 import * as React from "react";
 import { useState } from "react";
 import "./SearchImageBox.scss";
-import { searchPhotos, UnsplashImage } from "../../../Utils/Unsplash";
+import { ImageAuthor, searchPhotos, UnsplashImage } from "../../../Utils/Unsplash";
 
 type Props = {
-
-  setImageUrl: (url: string) => unknown
+  initialImage?: { imageUrl?: string; imageAuthor?: ImageAuthor };
+  setImageUrl: (url: string, userInfo?: ImageAuthor) => unknown;
 };
 
 const SearchImageBox = (props: Props) => {
   const [keyword, setKeyword] = useState("");
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState(() =>
+    props.initialImage ? ([{ small: props.initialImage.imageUrl, user: props.initialImage.imageAuthor }] as any) : []
+  );
   const [loading, setLoading] = useState(false);
+  const [warning, setWarning] = useState("");
 
   const searchImages = async () => {
+    setWarning("");
+    setImages([]);
+    if (keyword === "") {
+      return
+    }
     setLoading(true);
+
     const newImages = await searchPhotos(keyword);
+    if (newImages.length === 0) {
+      setWarning("No results");
+    }
     setImages(newImages);
     setLoading(false);
   };
@@ -28,7 +40,7 @@ const SearchImageBox = (props: Props) => {
 
   const selectImage = (image: UnsplashImage) => {
     setImages([image]);
-    props.setImageUrl(image.regular);
+    props.setImageUrl(image.regular, image.author);
   };
 
   return (
@@ -48,12 +60,24 @@ const SearchImageBox = (props: Props) => {
 
       <div className="SearchImageBox__box">
         {loading && <div className="SearchImageBox__loading">Loading...</div>}
-        {!loading &&
-          images.map(image => (
-            <div className="SearchImageBox__imageContainer" onClick={() => selectImage(image)} >
-              <img key={image.id} className="SearchImageBox__image" src={image.small} />
-            </div>
-          ))}
+        {warning && !loading && <div className="SearchImageBox__loading">{warning}</div>}
+        {!loading && (
+          <>
+            {images.map(image => (
+              <div key={image.id} className="SearchImageBox__imageContainer" onClick={() => selectImage(image)}>
+                <img className="SearchImageBox__image" src={image.small} />
+                {image.author && (
+                  <div className="SearchImageBox__attribute">
+                    by{" "}
+                    <a target="_blank" href={image.author.link}>
+                      {image.author.name}
+                    </a>
+                  </div>
+                )}
+              </div>
+            ))}
+          </>
+        )}
       </div>
     </div>
   );

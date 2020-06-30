@@ -5,6 +5,7 @@ import { speak } from "../../Utils/SpeechUtils";
 import { VocabWord } from "../../Utils/DB/VocabDb";
 import { getUserPreferences, Language } from "../../Utils/UserPreferencesUtils";
 import { Page, SubPage } from "../Pages";
+import ColoredReading from "./ColoredReading";
 
 type Props = {
   vocab: VocabWord;
@@ -28,7 +29,9 @@ class LearnPage extends PureComponent<Props> {
     return (
       <div className={`LearnPage ${showChinesePodLink || !isChinese ? "LearnPage--deleteBottom" : ""}`}>
         <div className="LearnPage__inner" style={{ zIndex: 10 }}>
-          <div className="LearnPage__reading">{vocab.reading}</div>
+          <div className="LearnPage__reading">
+            <ColoredReading reading={vocab.reading} />
+          </div>
 
           <div className="LearnPage__word" onClick={() => speak(vocab.word, vocab.audio)}>
             {vocab.word}
@@ -87,7 +90,19 @@ class LearnPage extends PureComponent<Props> {
           </div>
         </div>
 
-        {vocab.imageUrl && <img className="LearnPage__image" src={vocab.imageUrl} />}
+        {vocab.imageUrl && (
+          <>
+            <img className="LearnPage__image" src={vocab.imageUrl} />
+            {vocab.imageAuthor && (
+              <div className="LearnPage__imageAuthor">
+                Image by{" "}
+                <a target="_blank" href={vocab.imageAuthor.link}>
+                  {vocab.imageAuthor.name}
+                </a>
+              </div>
+            )}
+          </>
+        )}
       </div>
     );
   }

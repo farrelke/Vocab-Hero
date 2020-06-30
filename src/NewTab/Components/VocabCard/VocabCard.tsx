@@ -15,7 +15,7 @@ type Props = {
 
 const VocabCard = (props: Props) => {
   const [editMode, setEditMode] = useState(false);
-  const { word } = props;
+  const { word, addWord } = props;
 
   const toggleEditing = () => {
     setEditMode(!editMode);
@@ -26,8 +26,9 @@ const VocabCard = (props: Props) => {
     props.updateWord(word);
   };
 
+
   if (editMode) {
-    return <EditVocabCard word={word} cancel={toggleEditing} save={updateWord} />;
+    return <EditVocabCard word={word} cancel={toggleEditing} save={addWord || updateWord} />;
   }
 
   return (
@@ -46,8 +47,13 @@ const VocabCard = (props: Props) => {
       )}
 
       {props.addWord && (
-        <div className="VocabCard__btn VocabCard__btn--add" onClick={props.addWord}>
-          Add
+        <div className="VocabCard__btns">
+          <div className="VocabCard__btn" onClick={toggleEditing}>
+            Edit
+          </div>
+          <div className="VocabCard__btn VocabCard__btn--add" onClick={props.addWord}>
+            Add
+          </div>
         </div>
       )}
 
@@ -55,9 +61,7 @@ const VocabCard = (props: Props) => {
         {word.word}
       </div>
 
-      {word.imageUrl && (
-        <img className="VocabCard__image" src={word.imageUrl} />
-      )}
+      {word.imageUrl && <img className="VocabCard__image" src={word.imageUrl} />}
 
       <div className="VocabCard__wordMeaning">{word.meaning}</div>
       {word.sentences &&

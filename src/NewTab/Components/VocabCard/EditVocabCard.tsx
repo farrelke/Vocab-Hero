@@ -19,6 +19,9 @@ const EditVocabCard = (props: Props) => {
   const [reading, setReading] = useState(props.word ? props.word.reading : "");
   const [meaning, setMeaning] = useState(props.word ? props.word.meaning : "");
   const [audio, setAudio] = useState(props.word ? props.word.audio : null);
+  const [image, setImage] = useState(() =>
+    props.word && props.word.imageUrl ? { imageUrl: props.word.imageUrl, imageAuthor: props.word.imageAuthor } : null
+  );
   const isChinese = isUserLangChinese();
 
   const resetState = () => {
@@ -28,7 +31,15 @@ const EditVocabCard = (props: Props) => {
   };
 
   const saveChanged = () => {
-    props.save({ ...props.word, word, reading, meaning, audio });
+    props.save({
+      ...props.word,
+      word,
+      reading,
+      meaning,
+      audio,
+      imageUrl: image && image.imageUrl,
+      imageAuthor: image && image.imageAuthor
+    });
   };
 
   const addNewWord = () => {
@@ -36,7 +47,9 @@ const EditVocabCard = (props: Props) => {
       word,
       reading: PinyinConverter.convert(reading),
       meaning,
-      sentences: []
+      sentences: [],
+      imageUrl: image && image.imageUrl,
+      imageAuthor: image && image.imageAuthor
     };
     console.log(newWord);
     props.addWord(newWord);
@@ -80,10 +93,13 @@ const EditVocabCard = (props: Props) => {
       />
 
       <div className="EditVocabCard__searchBox">
-        <SearchImageBox setImageUrl={imageUrl => this.setState({ imageUrl })} />
+        <SearchImageBox
+          initialImage={image}
+          setImageUrl={(imageUrl, imageAuthor) => setImage({ imageUrl, imageAuthor })}
+        />
       </div>
 
-      <div className="EditVocabCard__audioWrapper" >
+      <div className="EditVocabCard__audioWrapper">
         <AudioInput file={audio as File} onChange={audioFile => setAudio(audioFile)} />
       </div>
 

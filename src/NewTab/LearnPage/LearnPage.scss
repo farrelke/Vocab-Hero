@@ -23,17 +23,18 @@
   background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
+  min-width: 30%;
   &:before {
     position: absolute;
-    right:  -25px;
+    right: -25px;
     bottom: -25px;
     background-color: white;
-    box-shadow: inset 0 0 0 200px rgba(255,255,255,0.3);
+    box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.3);
     filter: blur(10px);
     content: " ";
     z-index: -1;
     opacity: 0.85;
-    left: -25px;  //giving minus -25px left position
+    left: -25px; //giving minus -25px left position
     top: -25px;
   }
 }
@@ -53,8 +54,9 @@
 .LearnPage__meaning {
   font-size: 60px;
   color: #8a8a8a;
- // margin-bottom: 80px;
+  // margin-bottom: 80px;
   text-align: center;
+  max-width: 600px;
 
   &--long {
     font-size: 40px;
@@ -135,5 +137,20 @@
   z-index: 0;
   width: 100vw;
   height: 100vh;
- // filter: blur(2px);
+  // filter: blur(2px);
+}
+
+.LearnPage__imageAuthor {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 10;
+  padding: 5px 10px;
+  border-radius: 3px;
+  box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.1);
+  a {
+    color: #003a2c;
+    text-decoration: none;
+  }
 }

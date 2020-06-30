@@ -1,0 +1,19 @@
+.ColoredReading {
+}
+
+.ColoredReading__word {
+  padding: 0 5px;
+  opacity: 0.6;
+  &--1 {
+    color: rgb(227, 0, 0);
+  }
+  &--2 {
+    color: rgb(002, 179, 028);
+  }
+  &--3 {
+    color: rgb(021, 016, 240);
+  }
+  &--4 {
+    color: rgb(137, 0, 191);
+  }
+}

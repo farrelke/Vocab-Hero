@@ -49,7 +49,7 @@ class UserPreferences extends PureComponent<Props> {
   };
 
   render() {
-    const { language, voiceURI, showChinesePodLink, forceReviewAutoSpeak } = this.state.localState;
+    const { language, voiceURI, showChinesePodLink, forceReviewAutoSpeak, disableToneColors } = this.state.localState;
     const chromeState = this.state.chromeState;
     const voices = getVoicesByLanguage(language);
 
@@ -73,6 +73,12 @@ class UserPreferences extends PureComponent<Props> {
           label="Link to ChinesePod"
           value={showChinesePodLink}
           onChange={this.onChange("showChinesePodLink")}
+        />
+
+        <CheckboxOption
+          label="Disable tone colors"
+          value={disableToneColors}
+          onChange={this.onChange("disableToneColors")}
         />
 
         {chromeState && (

@@ -14,6 +14,7 @@ export async function bulkAddVocabWords(words: VocabWord[]): Promise<void> {
 }
 
 export async function addVocabWord(word: VocabWord): Promise<VocabWord> {
+  console.log(word)
   const id: string = await db.vocab.put(word);
   return { ...word, id };
 }

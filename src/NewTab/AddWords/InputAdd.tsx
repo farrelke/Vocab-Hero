@@ -18,6 +18,7 @@ class InputAdd extends PureComponent<Props> {
     pinyin: "",
     translation: "",
     imageUrl: "",
+    imageAuthor: null,
     audioFile: null as File,
     dictDef: null as WordDef
   };
@@ -49,14 +50,15 @@ class InputAdd extends PureComponent<Props> {
 
   addWord = async () => {
     const { addWord } = this.props;
-    const { hanzi, pinyin, translation, dictDef, audioFile, imageUrl } = this.state;
+    const { hanzi, pinyin, translation, dictDef, audioFile, imageUrl, imageAuthor } = this.state;
 
     const newWord: VocabWord = {
       word: hanzi,
-      reading: PinyinConverter.convert(pinyin || dictDef.reading),
-      meaning: translation || dictDef.meaning,
+      reading: PinyinConverter.convert(pinyin || dictDef?.reading || ''),
+      meaning: translation || dictDef?.meaning || '',
       sentences: [],
       imageUrl: imageUrl,
+      imageAuthor: imageAuthor,
       audio: audioFile
     };
     addWord(newWord);
@@ -112,7 +114,9 @@ class InputAdd extends PureComponent<Props> {
 
         <div className="InputAdd__inputContainer">
           <div className="InputAdd__inputLabel">Images</div>
-          <SearchImageBox setImageUrl={imageUrl => this.setState({ imageUrl })} />
+          <SearchImageBox setImageUrl={(imageUrl, imageAuthor) =>
+            this.setState({ imageUrl, imageAuthor })
+          } />
         </div>
 
         <div className="InputAdd__inputContainer">

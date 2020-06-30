@@ -55,6 +55,8 @@
     "mime-types": "^2.1.26",
     "netlify-lambda": "^1.6.3",
     "node-fetch": "^2.6.0",
+    "pinyin-split": "^1.111.0",
+    "pinyin-utils": "^1.61.0",
     "react": "^16.8.6",
     "react-autosize-textarea": "^7.0.0",
     "react-dom": "^16.8.6",

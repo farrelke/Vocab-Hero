@@ -9,6 +9,7 @@ export type UserPreferences = {
   language: Language;
   voiceURI: string;
   forceReviewAutoSpeak: boolean;
+  disableToneColors: boolean;
 };
 
 let preferences: UserPreferences;
@@ -21,7 +22,8 @@ export const getUserPreferences = () => {
       showChinesePodLink: true,
       language: Language.Chinese,
       voiceURI: "Google\u00A0普通话（中国大陆）", // unicode space is different from ascii space :(
-      forceReviewAutoSpeak: false
+      forceReviewAutoSpeak: false,
+      disableToneColors: false
     } as UserPreferences);
 
   if (preferences.showChinesePodLink === undefined) {
