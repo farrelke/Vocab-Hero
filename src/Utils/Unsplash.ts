@@ -24,7 +24,13 @@ export const searchPhotos = (keyword: string): Promise<UnsplashImage[]> => {
     .then(json =>
       json.results.map(res => {
         const author = { name: res?.user?.name, link: res?.user?.links?.html   };
-        return { id: res.id, ...res.urls, link: res.links?.html, author  };
+        return { id: res.id, ...res.urls,  link: res.links?.html, author  };
       })
     );
+};
+
+
+// Unsplash requires apps to call this api when the user does something with a photo
+export const triggerPhotoSelected = (image: UnsplashImage) => {
+  return fetch(`https://vocab-hero.netlify.app/.netlify/functions/unsplash-download?imageId=${image.id}`);
 };

@@ -1,7 +1,8 @@
 import * as React from "react";
 import { useState } from "react";
 import "./SearchImageBox.scss";
-import { ImageAuthor, searchPhotos, UnsplashImage } from "../../../Utils/Unsplash";
+import * as logo from "./UnspashLogo.svg";
+import { ImageAuthor, searchPhotos, triggerPhotoSelected, UnsplashImage } from "../../../Utils/Unsplash";
 
 type Props = {
   initialImage?: { imageUrl?: string; imageAuthor?: ImageAuthor };
@@ -20,7 +21,7 @@ const SearchImageBox = (props: Props) => {
     setWarning("");
     setImages([]);
     if (keyword === "") {
-      return
+      return;
     }
     setLoading(true);
 
@@ -41,6 +42,7 @@ const SearchImageBox = (props: Props) => {
   const selectImage = (image: UnsplashImage) => {
     setImages([image]);
     props.setImageUrl(image.regular, image.author);
+    triggerPhotoSelected(image);
   };
 
   return (
@@ -63,6 +65,14 @@ const SearchImageBox = (props: Props) => {
         {warning && !loading && <div className="SearchImageBox__loading">{warning}</div>}
         {!loading && (
           <>
+            {images.length > 0 && (
+              <div className="SearchImageBox__unsplashBanner">
+                Powered by
+                <a href="https://unsplash.com/" target="_blank">
+                  <img className="SearchImageBox__unsplashLogo" src={logo} />
+                </a>
+              </div>
+            )}
             {images.map(image => (
               <div key={image.id} className="SearchImageBox__imageContainer" onClick={() => selectImage(image)}>
                 <img className="SearchImageBox__image" src={image.small} />
