@@ -3,17 +3,21 @@
 
 .ColoredReading__word {
   padding: 0 5px;
-  opacity: 0.6;
+
   &--1 {
+    opacity: 0.5;
     color: rgb(227, 0, 0);
   }
   &--2 {
+    opacity: 0.5;
     color: rgb(002, 179, 028);
   }
   &--3 {
+    opacity: 0.5;
     color: rgb(021, 016, 240);
   }
   &--4 {
+    opacity: 0.5;
     color: rgb(137, 0, 191);
   }
 }
