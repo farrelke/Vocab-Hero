@@ -25,7 +25,8 @@ exports.handler = async function(event, context) {
   }
 
   try {
-    return fetch(`https://api.unsplash.com/photos/${imageId}/download?client_id=${UNSPLASH_ACCESS_KEY}`);
+    await fetch(`https://api.unsplash.com/photos/${imageId}/download?client_id=${UNSPLASH_ACCESS_KEY}`);
+    return JsonResult("success");
   } catch (e) {
     return {
       statusCode: 500,

@@ -23,7 +23,12 @@ export const searchPhotos = (keyword: string): Promise<UnsplashImage[]> => {
     .then(res => res.json())
     .then(json =>
       json.results.map(res => {
-        const author = { name: res?.user?.name, link: res?.user?.links?.html   };
+        const authorLink = res?.user?.links?.html;
+        const author = {
+          name: res?.user?.name,
+          link:  authorLink ? `${authorLink}?utm_source=vocab-hero&utm_medium=referral` : ''
+        };
+
         return { id: res.id, ...res.urls,  link: res.links?.html, author  };
       })
     );
